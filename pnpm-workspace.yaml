@@ -1,0 +1,10 @@
+packages:
+  - "packages/*"
+  - "services/*"
+
+injectWorkspacePackages: true
+
+onlyBuiltDependencies:
+  - esbuild
+allowBuilds:
+  esbuild: true

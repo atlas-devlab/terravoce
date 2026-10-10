@@ -1,0 +1,13 @@
+# TerraLex policy for a reversible Po delta oxygen-response pilot.
+policy "po-water-oxygen" version 1 {
+  region "IT-PO-DELTA";
+  metric "water.oxygen.mg_l";
+  when risk >= 0.72 and confidence >= 0.80 and observations >= 5;
+  allow "EXTRA_SAMPLING" reversible;
+  allow "WATER_AERATION" reversible;
+  budget 250 USDC per 7 days;
+  challenge 24 hours;
+  require community challenge;
+  require guardian pause;
+  forbid irreversible;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "terravoce",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "check": "pnpm -r --if-present check",
+    "test": "pnpm -r --if-present test",
+    "terralex": "pnpm --filter @terravoce/terralex cli",
+    "contracts:test": "pnpm --filter @terravoce/contracts test",
+    "oracle:dev": "pnpm --filter @terravoce/oracle dev",
+    "demo": "pnpm --filter @terravoce/oracle demo",
+    "e2e": "pnpm build && pnpm --filter @terravoce/contracts e2e"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "tsx": "4.23.1",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}

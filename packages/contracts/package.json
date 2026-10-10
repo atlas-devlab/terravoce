@@ -1,0 +1,26 @@
+{
+  "name": "@terravoce/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "hardhat compile",
+    "check": "hardhat compile",
+    "test": "hardhat test",
+    "e2e": "hardhat run scripts/e2e.ts"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.6.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "3.0.7",
+    "@terravoce/oracle": "workspace:*",
+    "@terravoce/protocol": "workspace:*",
+    "@types/chai": "5.2.3",
+    "@types/mocha": "10.0.10",
+    "@types/node": "24.13.3",
+    "chai": "6.2.2",
+    "hardhat": "3.9.1",
+    "typescript": "5.9.3"
+  }
+}

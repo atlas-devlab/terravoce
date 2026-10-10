@@ -1,0 +1,23 @@
+name: Contribution or research proposal
+description: Offer a focused code, documentation or environmental research contribution.
+title: "[Proposal]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or question
+      description: What concrete part of the environmental prototype would you improve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed contribution
+      description: Describe a small first step, affected files or evidence sources.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: How to verify it
+      description: Suggest a reproducible test or review criterion. Identify data provenance and licensing for research proposals.

@@ -1,0 +1,23 @@
+name: Bug report
+description: Report reproducible behavior in the local prototype.
+title: "[Bug]: "
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Include the affected package or command.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Use synthetic observations and the simulated local network.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and verification
+      description: Include OS, Node/pnpm versions and relevant test output. Remove credentials and personal data.
