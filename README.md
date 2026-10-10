@@ -1,21 +1,48 @@
 # TerraVoce
 
-An open source research prototype for environmental coordination: signed sensor
-observations, reproducible risk assessments, executable environmental policies,
-and community governance enforced by Solidity smart contracts.
+An open source research prototype for making environmental data and decisions
+traceable and reproducible.
 
-The current example models dissolved oxygen in the Po Delta using synthetic
-observations. It demonstrates the path from evidence to an authorized, budgeted
-intervention on an ephemeral local blockchain.
+The current example follows synthetic dissolved-oxygen observations through a
+simple risk model, explicit policy rules, and a community decision on a local
+simulated blockchain.
 
 **Status: research MVP.** There is no public-chain deployment, live environmental
 pilot, real treasury funding, connected physical actuator, or independent audit.
-The risk model is a simple deterministic mathematical model. TerraVoce and
-TerraLex are working names; TerraLex refers here to the experimental policy
-language in this repository.
+The risk model and its risk/confidence scores are demonstration heuristics,
+without field validation. TerraVoce and TerraLex are working names; TerraLex
+refers here to the experimental policy language in this repository.
 
 > Per una spiegazione completa in italiano, leggi la
 > [guida operativa](GUIDA_OPERATIVA.md).
+
+## First goal: replay one open oxygen dataset
+
+Replay **one openly licensed dissolved-oxygen time series from one monitoring
+station, offline**. Compare the current model with a simple prediction that uses
+the latest measured value, and report the errors. This replay is not implemented
+yet; [issue #3](https://github.com/atlas-devlab/terravoce/issues/3) is the place to
+suggest a dataset or help with the experiment. The result should be reproducible
+by another person. See the [validation criteria](CONTRIBUTING.md#validation-target-for-the-replay).
+
+## Everyone can take part
+
+You do not need coding experience or an environmental qualification to ask a
+question, share an idea, improve an explanation, translate a paragraph, or report
+what happened when you tried the demo. Questions about what is unclear are useful.
+
+| Small first step | Where to start |
+| --- | --- |
+| Ask a question, try the demo, or clarify or translate one part of the walkthrough. | [Issue #1](https://github.com/atlas-devlab/terravoce/issues/1) |
+| Suggest a public oxygen dataset, or ask about a demonstration threshold. | [Issue #3](https://github.com/atlas-devlab/terravoce/issues/3) |
+| If you want to contribute code, add one negative test for an existing policy rule. | [Issue #2](https://github.com/atlas-devlab/terravoce/issues/2) |
+
+For a small change, fork the repository and open a pull request without waiting
+for an assignment. A short issue comment can help avoid duplicate work. Larger
+changes should start with a discussion. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+**Puoi partecipare anche senza saper programmare:** una domanda, un'idea, una
+traduzione o una prova della demo sono già contributi utili.
 
 ## How it works
 
@@ -40,7 +67,7 @@ language in this repository.
 | `policies` | Demonstration policy for Po Delta water oxygen |
 | `docs` | Architecture, API, invariants, threat model, deployment and validation |
 
-## Run locally
+## Run the current demo locally
 
 Install **Node.js 24 or later** and **pnpm 11.7.0**, matching `package.json`.
 From the repository root:
@@ -78,23 +105,6 @@ See [deployment notes](docs/deployment.md) for configuration and production gate
 
 See [validation](docs/VALIDATION.md) for the checks rerun for this source publication
 and the boundaries of that verification.
-
-## Help build it
-
-We welcome contributions from developers, environmental researchers, data and
-sensor specialists, and people interested in community governance. Useful first
-steps include clearer examples, more negative test cases, API documentation,
-scientific criticism of demo assumptions, and accessible Italian/English guides.
-
-**Invito alla community:** aiutaci a costruire TerraVoce. Cerchiamo contributi
-al codice e ai test, competenze su dati e sensori ambientali, e confronto sulle
-regole di partecipazione delle comunità. Puoi iniziare con una piccola attività,
-fare una domanda o proporre un miglioramento nelle issue. Il progetto è un
-prototipo aperto: ogni contributo deve poter essere discusso e verificato.
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md), browse the
-[open issues](https://github.com/atlas-devlab/terravoce/issues), or propose a small,
-reproducible improvement. Use synthetic data in examples and tests.
 
 ## License
 
