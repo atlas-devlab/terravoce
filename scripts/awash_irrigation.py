@@ -18,6 +18,15 @@ def digest(raw: bytes) -> str:
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
+def same_value(left, right):
+    if type(left) in (int, float) and type(right) in (int, float):
+        return math.isclose(left, right, rel_tol=0, abs_tol=1e-10)
+    if isinstance(left, dict) and isinstance(right, dict):
+        return left.keys() == right.keys() and all(same_value(left[k], right[k]) for k in left)
+    if isinstance(left, list) and isinstance(right, list):
+        return len(left) == len(right) and all(same_value(a, b) for a, b in zip(left, right))
+    return type(left) is type(right) and left == right
+
 def write_new(path: Path, value):
     raw = (json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False) + "\n").encode()
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -161,12 +170,14 @@ def prediction():
 
 def verify_seal():
     saved = read_json(EVIDENCE / "prediction.json")
-    if saved != prediction():
+    if not same_value(saved, prediction()):
         raise ValueError("Sealed prediction does not reproduce from history")
     return saved
 
 def evaluation():
     forecast, target = verify_seal(), load_phase("target")
+    if read_json(DATA / "target/manifest.json")["predictionHashBeforeAcquisition"] != digest((EVIDENCE / "prediction.json").read_bytes()):
+        raise ValueError("Prediction changed after target acquisition")
     actual = next(row for row in target["records"] if row["metric"] == "aeti")
     if not actual["complete"]:
         raise ValueError("Target has missing area; evaluation stays pending")
@@ -198,7 +209,7 @@ def main():
     else:
         for filename, expected in (("history.json", load_phase("history")),
                                    ("target.json", load_phase("target")), ("result.json", evaluation())):
-            if read_json(EVIDENCE / filename) != expected:
+            if not same_value(read_json(EVIDENCE / filename), expected):
                 raise ValueError(f"Evidence does not reproduce: {filename}")
         result = {"verified": True, "scope": "archived native pixel extracts and deterministic scoring; not field validation",
                   "result": evaluation()}

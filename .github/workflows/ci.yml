@@ -71,6 +71,11 @@ jobs:
           pnpm forecast:verify
           pnpm forecast:verify "$PWD/docs/evidence/willamette-forecast"
 
+      - name: Replay the sealed Awash learning game without network access
+        run: |
+          python3 scripts/awash_irrigation.py verify
+          pnpm --filter @terravoce/environmental-case irrigation:verify
+
       - name: Validate Oracle bridge digest interoperability
         run: |
           python3 -m venv services/autonomy/.venv

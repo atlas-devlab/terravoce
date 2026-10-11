@@ -68,3 +68,24 @@ from the same USGS public-domain service. Every manifest additionally binds the
 raw protocol hash, exact frozen research-model file hash, and pre-capture Git
 commit. Low archived oxygen values remain source observations, not proof of
 an independently observed ecological event or USGS endorsement of an alert.
+
+## FAO WaPOR native window extracts
+
+`docs/datasets/awash-irrigation` retains FAO WaPOR v3 catalog/mapset/raster
+responses and native pixel windows read from the publisher's public cloud
+assets. The manifest hashes these archived extracts and metadata, not the
+complete original continental GeoTIFFs. Attribution: FAO WaPOR database,
+accessed 12 October 2026 in Europe/Rome; precipitation is distributed from
+CHIRPS. See https://www.fao.org/in-action/remote-sensing-for-water-productivity/wapor-data-access/en.
+
+Publisher data terms apply separately from TerraVoce's MIT code license.
+The archived L1-PCP-D mapset explicitly declares CC BY-NC-SA 4.0 in
+`additionalInfo.Citation`; retain that attribution and source notice with its
+extracts and derived data. The L2-AETI-D response has no explicit license in
+`additionalInfo`; do not infer MIT licensing or unrestricted commercial reuse
+from its open API availability. Preserve source terms with any reuse.
+FAO does not endorse the forecast or a claim about irrigation withdrawals.
+
+Rasterio 1.5.2 is an optional capture dependency (BSD-3-Clause), with separately
+licensed GDAL and other wheel components. It is not vendored and is not needed
+for the offline replay. Its dependency notices remain applicable.

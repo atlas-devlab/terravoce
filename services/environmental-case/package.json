@@ -13,7 +13,9 @@
     "verify-live": "tsx src/cli.ts verify-live",
     "fetch": "tsx src/cli.ts fetch",
     "forecast:replay": "tsx src/forecast-cli.ts replay",
-    "forecast:verify": "tsx src/forecast-cli.ts verify"
+    "forecast:verify": "tsx src/forecast-cli.ts verify",
+    "irrigation:replay": "tsx src/irrigation-cli.ts replay",
+    "irrigation:verify": "tsx src/irrigation-cli.ts verify"
   },
   "dependencies": {
     "@terravoce/oracle": "workspace:*",

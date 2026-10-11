@@ -1,5 +1,6 @@
 import copy
 import tempfile
+import shutil
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -63,6 +64,26 @@ class AwashTests(unittest.TestCase):
             awash.write_new(path, {"value": 1})
             with self.assertRaisesRegex(ValueError, "Refusing"):
                 awash.write_new(path, {"value": 2})
+
+    def test_tampered_source_pixels_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            copied = Path(directory) / "data"
+            shutil.copytree(awash.DATA, copied)
+            path = copied / "history/aeti-2024-02-D3.pixels.json"
+            changed = awash.read_json(path)
+            changed["values"][0][0] += 1
+            path.write_text(__import__("json").dumps(changed), encoding="utf-8")
+            with patch.object(awash, "DATA", copied):
+                with self.assertRaisesRegex(ValueError, "hash mismatch"):
+                    awash.load_phase("history")
+
+    def test_sealed_target_result_replays_without_skill_or_funding_claim(self):
+        result = awash.evaluation()
+        self.assertAlmostEqual(result["absoluteErrorMmPerDay"], abs(result["predictedDailyMeanMm"]-result["actualEstimatedDailyMeanMm"]))
+        self.assertEqual(result["scoredRounds"], 1)
+        self.assertFalse(result["skillEstablished"])
+        self.assertFalse(result["fundingRelease"])
+        self.assertIsNone(result["irrigationWithdrawalM3"])
 
 if __name__ == "__main__":
     unittest.main()
