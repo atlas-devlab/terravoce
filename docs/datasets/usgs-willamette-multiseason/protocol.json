@@ -1,0 +1,69 @@
+{
+  "version": "willamette-multiseason-one-hour-v1",
+  "stationId": "USGS-14211720",
+  "purpose": "One fixed ridge recipe learned on four inspected 2024 windows and evaluated once on four predeclared later 2025 windows; isolated research",
+  "trainingFolder": "docs/datasets/usgs-willamette-training-audit",
+  "trainingWindows": ["winter-2024", "spring-2024", "summer-2024", "autumn-2024"],
+  "testWindows": [
+    {"id": "winter-2025", "start": "2025-01-15T00:00:00Z", "end": "2025-01-29T00:00:00Z"},
+    {"id": "spring-2025", "start": "2025-04-15T00:00:00Z", "end": "2025-04-29T00:00:00Z"},
+    {"id": "summer-2025", "start": "2025-07-15T00:00:00Z", "end": "2025-07-29T00:00:00Z"},
+    {"id": "autumn-2025", "start": "2025-10-15T00:00:00Z", "end": "2025-10-29T00:00:00Z"}
+  ],
+  "sources": {
+    "oxygen": {"parameterCode": "00300", "timeSeriesId": "1ccd1e712b6b4cb69fdcfbf407f7358b", "unit": "mg/l", "scale": 1},
+    "temperature": {"parameterCode": "00010", "timeSeriesId": "78520072e15541dea31a430cc3a72b93", "unit": "degC", "scale": 1},
+    "discharge": {"parameterCode": "00060", "timeSeriesId": "25161ce7dc08491389080de10c85fd9e", "unit": "ft^3/s", "scale": 0.028316846592}
+  },
+  "quality": "Approved, unqualified, finite; exact station/series/statistic 00011/units, preserve signed instantaneous flow; no interpolation or window substitution",
+  "model": {
+    "name": "oxygen-clock-temperature:ridge-100",
+    "alpha": 100,
+    "featureWidth": 8,
+    "horizonSeconds": 3600,
+    "historySamples": 12,
+    "sampleSpacingSeconds": 1800,
+    "features": ["oxygenNow", "oxygenDelta30m", "oxygenDelta2h", "oxygenDelta5h30m", "clockSinUTC", "clockCosUTC", "temperatureNow", "temperatureDelta2h"],
+    "target": "future oxygen minus current oxygen",
+    "objective": "sum squared residual error plus alpha times sum squared standardized coefficients; intercept unpenalized",
+    "preprocessing": "center and scale from 2024 training rows only",
+    "selection": "one recipe fixed before training and before test capture; no candidate search, refit or tuning on the test",
+    "note": "With sum-loss and fixed alpha the relative penalty also depends on training size; this evaluates the whole new fit, not a causal effect of seasonal diversity"
+  },
+  "evaluation": {
+    "primaryBaseline": "persistence: future oxygen equals current oxygen",
+    "otherReferences": ["existing-linear", "frozen original summer ridge"],
+    "primaryMetric": "MAE in mg/L, same accepted origin/target pairs for all methods",
+    "aggregation": "arithmetic mean of four seasonal MAEs; relative gain is 100 times (1 - macro model MAE / macro persistence MAE); zero baseline yields null relative gain",
+    "diagnostics": ["seasonal RMSE and signed bias", "95th percentile absolute error", "daily results", "feature-range extrapolation", "negative predictions", "targets below illustrative 5 mg/L", "fixed UTC grid coverage"],
+    "minimumAcceptedPairsPerTestWindow": 500,
+    "minimumFixedGridCoveragePerTestWindow": 0.9,
+    "availabilityMeaning": "Practical research completeness screen, not a scientific power or accuracy guarantee"
+  },
+  "uncertainty": {
+    "method": "paired calendar-block bootstrap within each season; resample nonempty blocks and recompute equally weighted seasonal mean error differences",
+    "primaryBlockHours": 48,
+    "sensitivityBlockHours": [24, 72],
+    "iterations": 5000,
+    "baseSeed": 20261012,
+    "seedRule": "baseSeed plus blockHours, Python Random MT19937",
+    "confidenceFraction": 0.95,
+    "quantiles": "linear interpolation at 0.025 and 0.975",
+    "minimumNonemptyBlocksPerSeason": 4,
+    "limitations": "Exploratory uncertainty conditional on these selected windows and assumed block dependence; not a distribution-free or ecological guarantee"
+  },
+  "decision": {
+    "numericalToleranceMgL": 1e-9,
+    "credibleExploratoryImprovement": "All four test data screens pass; macro MAE decreases; no seasonal point MAE increases beyond numerical tolerance; primary and sensitivity bootstrap lower bounds of macro paired absolute-error gain exceed numerical tolerance; no negative predictions",
+    "seasonalMeaning": "No observed seasonal point-MAE loss does not prove statistical noninferiority in every season",
+    "otherOutcomes": ["insufficient-data", "no-overall-improvement", "observed-seasonal-tradeoff", "inconclusive-gain", "invalid-negative-prediction"],
+    "aspirationalGainPercent": 10,
+    "tenPercentIsAcceptanceGate": false,
+    "practicalEnvironmentalBenefitDefined": false,
+    "operationalPromotion": false
+  },
+  "freezeOrder": "Commit protocol before fit; commit frozen model and implementation before acquiring test values; captures bind protocol and exact frozen model raw-body hash",
+  "predictionIntervals": "Not calibrated in this point-forecast test; do not reuse the failed summer band",
+  "scope": "Retrospective finalized archive for one station and one-hour dissolved oxygen; no live-availability, pollutant/causal intervention, ecological benefit or three-month skill claim",
+  "mission": "Preserve environmental coordination, verifiable evidence, community/youth decision rights and funding tied to verified outcomes; LLM, Oracle operational routing, governance and contracts unchanged"
+}
