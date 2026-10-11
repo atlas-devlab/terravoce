@@ -9,6 +9,13 @@ The data are real. The clock, civic identities, result reviewers, consensus
 certificate signers, and token transfers in the demonstration are simulated.
 No field operator has been commissioned and no ecological improvement is claimed.
 
+## Separate numerical experiment
+
+`pnpm forecast:replay` and `pnpm forecast:verify` (repository root) run a
+separate observation-only oxygen/temperature/discharge comparison. See the
+[protocol, results and rollback boundary](../../docs/WILLAMETTE_FORECAST_EXPERIMENT.md).
+It does not replace the assessment or change the real-data review/escrow below.
+
 ## Source and scientific protocol
 
 - USGS station `USGS-14211720`, Willamette River at Portland, Oregon, a tidal stream.

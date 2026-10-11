@@ -39,6 +39,19 @@ After `pnpm build`, run `pnpm case:replay`, `pnpm case:verify` and `pnpm case:e2
 [Issue #3](https://github.com/atlas-devlab/terravoce/issues/3) remains a place to
 discuss methods and limitations. See the [validation criteria](CONTRIBUTING.md#validation-target-for-the-replay).
 
+## Observation-only multivariate forecasting experiment
+
+A separate [Willamette experiment](docs/WILLAMETTE_FORECAST_EXPERIMENT.md) joins
+real oxygen, temperature and signed instantaneous discharge measurements.
+Training, selection, interval calibration and final evaluation use separate
+chronological phases. On 143 final 1-hour pairs, the selected temperature model
+has MAE 0.264 mg/L versus persistence 0.268 mg/L (1.55% lower); adding discharge
+does not improve it. Its empirical interval covers 76.92% versus a requested
+90%, so the experiment stays in observation mode. No operational Oracle,
+governance or funding behavior changes. Run `pnpm forecast:replay` and
+`pnpm forecast:verify` after building. This remains a reusable part of the
+environmental coordination mission, not a validated causal scenario engine.
+
 ## Everyone can take part
 
 You do not need coding experience or an environmental qualification to ask a

@@ -11,7 +11,9 @@
     "replay": "tsx src/cli.ts replay",
     "verify": "tsx src/cli.ts verify",
     "verify-live": "tsx src/cli.ts verify-live",
-    "fetch": "tsx src/cli.ts fetch"
+    "fetch": "tsx src/cli.ts fetch",
+    "forecast:replay": "tsx src/forecast-cli.ts replay",
+    "forecast:verify": "tsx src/forecast-cli.ts verify"
   },
   "dependencies": {
     "@terravoce/oracle": "workspace:*",

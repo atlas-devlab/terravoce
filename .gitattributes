@@ -1,3 +1,4 @@
 * text=auto eol=lf
 docs/datasets/usgs-willamette/continuous.json -text
 docs/datasets/usgs-willamette/station.json -text
+docs/datasets/usgs-willamette-multivariate/*.gz -text

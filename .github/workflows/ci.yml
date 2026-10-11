@@ -64,6 +64,13 @@ jobs:
           pnpm case:verify
           pnpm case:e2e
 
+      - name: Replay and reproduce the observation-only multivariate experiment
+        # The new numerical experiment stays separate from the certified operational assessment.
+        run: |
+          pnpm forecast:replay
+          pnpm forecast:verify
+          pnpm forecast:verify "$PWD/docs/evidence/willamette-forecast"
+
       - name: Validate Oracle bridge digest interoperability
         run: |
           python3 -m venv services/autonomy/.venv

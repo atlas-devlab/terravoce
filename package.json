@@ -18,7 +18,9 @@
     "e2e": "pnpm build && pnpm --filter @terravoce/contracts e2e",
     "case:replay": "pnpm --filter @terravoce/environmental-case replay",
     "case:verify": "pnpm --filter @terravoce/environmental-case verify",
-    "case:e2e": "pnpm --filter @terravoce/contracts case:e2e"
+    "case:e2e": "pnpm --filter @terravoce/contracts case:e2e",
+    "forecast:replay": "pnpm --filter @terravoce/environmental-case forecast:replay",
+    "forecast:verify": "pnpm --filter @terravoce/environmental-case forecast:verify"
   },
   "devDependencies": {
     "@types/node": "24.13.3",

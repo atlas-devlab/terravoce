@@ -1,0 +1,45 @@
+{
+  "version": "willamette-multivariate-v1",
+  "stationId": "USGS-14211720",
+  "start": "2025-08-01T00:00:00Z",
+  "end": "2025-08-15T00:00:00Z",
+  "oxygenSourceHash": "0x512c37bd9c3b03c76887cd8660945b51bdb32d6e009183f790f6f13b6f72cf57",
+  "stationHash": "0x298ecdf09d96bf5e30068a150e7ce07a14fbb5d7d05e81c0bb61e8b99d080dea",
+  "license": "US Government work; public domain",
+  "sources": {
+    "temperature": {
+      "file": "temperature.json.gz",
+      "rawSha256": "0x9ad0988eecc66ffcc2d3f7ab6166139fa0a187189962e998bd96f38b66f1af39",
+      "parameterCode": "00010",
+      "timeSeriesId": "78520072e15541dea31a430cc3a72b93",
+      "unit": "degC",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00010&time=2025-08-01T00%3A00%3A00Z%2F2025-08-15T00%3A00%3A00Z&limit=10000",
+      "capturedAt": "2026-10-11T14:47:41.414Z"
+    },
+    "discharge": {
+      "file": "discharge.json.gz",
+      "rawSha256": "0xf21872396f219a24b15b94ca7ab753c291ec4c41460a0384aa347362bd0bc16b",
+      "parameterCode": "00060",
+      "timeSeriesId": "25161ce7dc08491389080de10c85fd9e",
+      "unit": "ft^3/s",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00060&time=2025-08-01T00%3A00%3A00Z%2F2025-08-15T00%3A00%3A00Z&limit=10000",
+      "capturedAt": "2026-10-11T14:47:41.574Z"
+    }
+  },
+  "experiment": {
+    "horizonSeconds": 3600,
+    "windowSize": 12,
+    "selectionStart": "2025-08-08T00:00:00Z",
+    "calibrationStart": "2025-08-10T00:00:00Z",
+    "holdoutStart": "2025-08-12T00:00:00Z",
+    "ridgeAlphas": [
+      0.1,
+      1,
+      10,
+      100
+    ],
+    "intervalCoverage": 0.9,
+    "selectionMetric": "MAE",
+    "status": "declared before fitting; exploratory historical experiment"
+  }
+}

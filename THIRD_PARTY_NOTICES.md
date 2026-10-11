@@ -43,3 +43,9 @@ https://api.waterdata.usgs.gov/ogcapi/v1/
 The accompanying manifest records station, time interval, retrieval date,
 source URLs, quality protocol and exact body hashes. These data are not relicensed
 as TerraVoce-generated measurements and USGS does not endorse this prototype.
+
+The temperature and instantaneous discharge snapshots under
+`docs/datasets/usgs-willamette-multivariate` come from the same public-domain
+USGS service. Their gzip files preserve the original UTF-8 response bodies;
+the accompanying manifest records the hashes of the decompressed bodies,
+source URLs, parameters, units and local capture timestamps.
