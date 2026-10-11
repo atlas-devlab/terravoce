@@ -1,0 +1,43 @@
+{
+  "version": "fao-native-pixel-window-v1",
+  "rasterCode": "WAPOR-3.L1-PCP-D.2024-02-D1",
+  "period": {
+    "code": "2024-02-D1",
+    "start": "2024-02-01",
+    "end": "2024-02-10",
+    "days": 10
+  },
+  "unit": "mm/day",
+  "scale": 0.1,
+  "offset": 0.0,
+  "noDataValue": -9999.0,
+  "crs": "EPSG:4326",
+  "affineTransform": [
+    -180.0,
+    0.05000000074505806,
+    0.0,
+    60.0,
+    0.0,
+    -0.05000000074505806
+  ],
+  "window": {
+    "col": 4383,
+    "row": 1030,
+    "width": 2,
+    "height": 1
+  },
+  "values": [
+    [
+      4,
+      4
+    ]
+  ],
+  "source": {
+    "metadataUrl": "https://data.apps.fao.org/gismgr/api/v2/catalog/workspaces/WAPOR-3/mapsets/L1-PCP-D/rasters/WAPOR-3.L1-PCP-D.2024-02-D1",
+    "downloadUrl": "https://storage.googleapis.com/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET/L1-PCP-D/WAPOR-3.L1-PCP-D.2024-02-D1.tif",
+    "generation": "1762017710844067",
+    "pinnedRangeReadUrl": "https://storage.googleapis.com/fao-gismgr-wapor-3-data/DATA/WAPOR-3/MAPSET/L1-PCP-D/WAPOR-3.L1-PCP-D.2024-02-D1.tif?generation=1762017710844067",
+    "serverChecksum": "crc32c=cvx/wg==",
+    "archiveScope": "native pixel window, not a complete copy/hash of the original GeoTIFF"
+  }
+}
