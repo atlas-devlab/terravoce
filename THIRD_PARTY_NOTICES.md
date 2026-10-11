@@ -57,3 +57,8 @@ responses. Their manifests bind exact decompressed response hashes, retrieval
 timestamps and source URLs to the predeclared validation protocol. Approval
 status describes the archived observations; it does not prove their historical
 real-time availability or constitute USGS endorsement of our predictions.
+
+The four seasonal source captures under `docs/datasets/usgs-willamette-training-audit`
+are from the same USGS public-domain service. Their manifests preserve source
+URLs, exact decompressed-body hashes and retrieval timestamps. They are data
+readiness evidence, not new measurements or USGS validation of a forecast.

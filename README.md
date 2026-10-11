@@ -58,6 +58,11 @@ environmental coordination mission. Run
 to reproduce the seasonal check offline. See the executed
 [audit notebook](docs/notebooks/willamette-forecast-audit.ipynb).
 
+A subsequent [training-source readiness audit](docs/WILLAMETTE_TRAINING_READINESS.md)
+archives four 2024 seasonal windows with 2,559 complete one-hour pairs. It also
+exposes missing forecast origins: autumn has only 90.15% expected-grid coverage.
+This prepares a new experiment; no new model is fitted or forecast skill claimed.
+
 ## Everyone can take part
 
 You do not need coding experience or an environmental qualification to ask a

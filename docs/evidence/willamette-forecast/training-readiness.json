@@ -1,0 +1,325 @@
+{
+  "version": "willamette-training-readiness-report-v1",
+  "protocolHash": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b",
+  "stationId": "USGS-14211720",
+  "windows": [
+    {
+      "window": {
+        "id": "winter-2024",
+        "start": "2024-01-01T00:00:00Z",
+        "end": "2024-01-15T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0xf88847fa183d3d6e4a4e44d7332d2af0e801e5ebca9681fbed6e4249ebd35149",
+        "temperature": "0x14554095e79d2c9ed0e6698ed4cc7e876b82c8a911abc4773c6369e6091cfc8f",
+        "discharge": "0x6308536a336141989a921e899592bdfd94120631c700c6a5bd72a0cc27741254"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 673,
+          "accepted": 673,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 673,
+          "accepted": 673,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 4033,
+          "accepted": 4033,
+          "excluded": []
+        }
+      },
+      "ranges": {
+        "oxygen": {
+          "min": 12.4,
+          "max": 14.7,
+          "mean": 13.1851411589896,
+          "unit": "mg/L",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-01-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-01-15T00:00:00.000Z"
+        },
+        "temperature": {
+          "min": 5.1,
+          "max": 8.6,
+          "mean": 7.431946508172362,
+          "unit": "degC",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-01-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-01-15T00:00:00.000Z"
+        },
+        "discharge": {
+          "min": -124.02778807296,
+          "max": 3199.803664896,
+          "mean": 1550.8248461073415,
+          "unit": "m3/s",
+          "negativeRecords": 21,
+          "firstAcceptedUTC": "2024-01-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-01-15T00:00:00.000Z"
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 660,
+        "acceptedPairs": 660,
+        "skipped": 0
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 660,
+        "missingApprovedOxygenOrigins": 0,
+        "presentOriginsWithIncompleteHistoryOrTarget": 0,
+        "acceptedGridFraction": 1.0,
+        "interpretation": "Fixed UTC grid includes entirely missing oxygen origins; separate from the predeclared conditional-origin screen"
+      },
+      "skippedOriginFraction": 0.0,
+      "readinessScreenPassed": true,
+      "approvedTargetsBelowIllustrative5MgL": 0
+    },
+    {
+      "window": {
+        "id": "spring-2024",
+        "start": "2024-04-01T00:00:00Z",
+        "end": "2024-04-15T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0xed4aa8331ca0e3b941cef7280ecfa380859197c55eaa77a46544d7866171aabb",
+        "temperature": "0xa946a31d0788d970c6877ec1fd4090c835dc4df8435112964bc6e6c26ceaf1cf",
+        "discharge": "0x4ee896eee86460ba2df2c4b591e62b26b0e4aaebc7ef4a49fe184957b2e4db46"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 670,
+          "accepted": 670,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 668,
+          "accepted": 668,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 4033,
+          "accepted": 4033,
+          "excluded": []
+        }
+      },
+      "ranges": {
+        "oxygen": {
+          "min": 11.4,
+          "max": 12.6,
+          "mean": 12.072985074626866,
+          "unit": "mg/L",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-04-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-04-15T00:00:00.000Z"
+        },
+        "temperature": {
+          "min": 9.5,
+          "max": 12.7,
+          "mean": 10.823053892215569,
+          "unit": "degC",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-04-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-04-15T00:00:00.000Z"
+        },
+        "discharge": {
+          "min": -413.4259602432,
+          "max": 1452.6542301696,
+          "mean": 861.4890156206168,
+          "unit": "m3/s",
+          "negativeRecords": 125,
+          "firstAcceptedUTC": "2024-04-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-04-15T00:00:00.000Z"
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 657,
+        "acceptedPairs": 644,
+        "skipped": 13
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 644,
+        "missingApprovedOxygenOrigins": 3,
+        "presentOriginsWithIncompleteHistoryOrTarget": 13,
+        "acceptedGridFraction": 0.9757575757575757,
+        "interpretation": "Fixed UTC grid includes entirely missing oxygen origins; separate from the predeclared conditional-origin screen"
+      },
+      "skippedOriginFraction": 0.0197869101978691,
+      "readinessScreenPassed": true,
+      "approvedTargetsBelowIllustrative5MgL": 0
+    },
+    {
+      "window": {
+        "id": "summer-2024",
+        "start": "2024-07-01T00:00:00Z",
+        "end": "2024-07-15T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0x60226924a5ba8c627443eb6c7e22dc76b3667a2b76537c1641c94eeae1fa2736",
+        "temperature": "0x574a229edb9c5188561b019c752ff2d0e7134f440d6770f5bf4ec684fbdbc74d",
+        "discharge": "0x7e5b557639d2acc4e54ef266d750407e37a3f18a0a909372a5c839162952b799"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 673,
+          "accepted": 673,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 673,
+          "accepted": 673,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 4033,
+          "accepted": 4033,
+          "excluded": []
+        }
+      },
+      "ranges": {
+        "oxygen": {
+          "min": 7.4,
+          "max": 9.3,
+          "mean": 8.764487369985142,
+          "unit": "mg/L",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-07-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-07-15T00:00:00.000Z"
+        },
+        "temperature": {
+          "min": 20.7,
+          "max": 25.0,
+          "mean": 22.577711738484396,
+          "unit": "degC",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-07-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-07-15T00:00:00.000Z"
+        },
+        "discharge": {
+          "min": -874.9905596928,
+          "max": 1005.2480540160001,
+          "mean": 313.5643047759775,
+          "unit": "m3/s",
+          "negativeRecords": 734,
+          "firstAcceptedUTC": "2024-07-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-07-15T00:00:00.000Z"
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 660,
+        "acceptedPairs": 660,
+        "skipped": 0
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 660,
+        "missingApprovedOxygenOrigins": 0,
+        "presentOriginsWithIncompleteHistoryOrTarget": 0,
+        "acceptedGridFraction": 1.0,
+        "interpretation": "Fixed UTC grid includes entirely missing oxygen origins; separate from the predeclared conditional-origin screen"
+      },
+      "skippedOriginFraction": 0.0,
+      "readinessScreenPassed": true,
+      "approvedTargetsBelowIllustrative5MgL": 0
+    },
+    {
+      "window": {
+        "id": "autumn-2024",
+        "start": "2024-10-01T00:00:00Z",
+        "end": "2024-10-15T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0xec99765814b5a25fb900eb9ffcae481ff32d47a1c4eee035c6ba632036a09c74",
+        "temperature": "0x667a2b86f5efd8c933eadfcc7145af4f21bc162e27f6ab1f79f62e2a8733db54",
+        "discharge": "0x7bb0070541585bc799ad5c60ca41527b465bf28d51123a21263447d77ed58f53"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 621,
+          "accepted": 621,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 622,
+          "accepted": 622,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 4033,
+          "accepted": 4033,
+          "excluded": []
+        }
+      },
+      "ranges": {
+        "oxygen": {
+          "min": 8.8,
+          "max": 9.9,
+          "mean": 9.571175523349437,
+          "unit": "mg/L",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-10-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-10-15T00:00:00.000Z"
+        },
+        "temperature": {
+          "min": 14.8,
+          "max": 17.8,
+          "mean": 15.983922829581994,
+          "unit": "degC",
+          "negativeRecords": 0,
+          "firstAcceptedUTC": "2024-10-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-10-15T00:00:00.000Z"
+        },
+        "discharge": {
+          "min": -1056.2183778816,
+          "max": 982.5945767424,
+          "mean": 253.9663081799597,
+          "unit": "m3/s",
+          "negativeRecords": 885,
+          "firstAcceptedUTC": "2024-10-01T00:00:00.000Z",
+          "lastAcceptedUTC": "2024-10-15T00:00:00.000Z"
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 608,
+        "acceptedPairs": 595,
+        "skipped": 13
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 595,
+        "missingApprovedOxygenOrigins": 52,
+        "presentOriginsWithIncompleteHistoryOrTarget": 13,
+        "acceptedGridFraction": 0.9015151515151515,
+        "interpretation": "Fixed UTC grid includes entirely missing oxygen origins; separate from the predeclared conditional-origin screen"
+      },
+      "skippedOriginFraction": 0.02138157894736842,
+      "readinessScreenPassed": true,
+      "approvedTargetsBelowIllustrative5MgL": 0
+    }
+  ],
+  "totalAcceptedPairs": 2559,
+  "allFourWindowsPassAvailabilityScreen": true,
+  "availabilityScreen": {
+    "minimumPairsPerWindow": 500,
+    "maximumSkippedOriginFraction": 0.05
+  },
+  "screenMeaning": "Practical data-availability screen only; no proof of representativeness, forecast accuracy or ecological validity",
+  "modelFitted": false,
+  "forecastSkillEvaluated": false,
+  "operationalModelChanged": false,
+  "decision": "use this audit to plan a separate one-hour experiment; no model promotion",
+  "limitations": [
+    "Four selected fortnight windows are not a full year or proof of representativeness",
+    "Finalized archival data do not establish historical live availability",
+    "Missing/provisional/qualified records are excluded without interpolation",
+    "No prediction, uncertainty calibration or critical-event detection skill is evaluated",
+    "These inspected values cannot be called an untouched final test of a future model"
+  ]
+}

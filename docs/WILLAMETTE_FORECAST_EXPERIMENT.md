@@ -251,6 +251,9 @@ i token e il certificato 3-su-4 di quel comando restano fixture locali; il clust
 ABCI con guasti non è stato rilanciato per questo incremento.
 
 La verifica su altre stagioni è stata eseguita e ha dato esito negativo.
+Il successivo [controllo dei dati di addestramento](WILLAMETTE_TRAINING_READINESS.md)
+ha acquisito quattro finestre del 2024, con 2.559 abbinamenti completi e vuoti
+espliciti nella griglia attesa. Non è un nuovo fit o una verifica di previsione.
 Prima di una nuova variante: raccogliere un addestramento più rappresentativo
 e fissare nuove finestre di verifica non usate per scegliere la variante,
 con criteri di errore e copertura dichiarati prima dell'esecuzione.

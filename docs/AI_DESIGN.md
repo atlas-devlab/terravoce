@@ -37,6 +37,11 @@ esperimento isolato; non sostituisce l'Oracle e non modifica i finanziamenti.
 In questi test "modello" indica la regressione numerica, non il LLM. Il LLM
 locale non è stato chiamato, riaddestrato o cambiato durante l'esperimento.
 
+Il successivo [controllo dei dati di quattro stagioni](WILLAMETTE_TRAINING_READINESS.md)
+prepara la nuova prova a un'ora. Espone anche gli orari completamente mancanti:
+2559 coppie sono disponibili, con copertura autunnale della griglia del 90.15%.
+Non introduce un nuovo fit, una previsione migliore o un collegamento dell'LLM.
+
 ## Due ruoli, un percorso verificabile
 
 | Componente | Compito previsto | Controllo |

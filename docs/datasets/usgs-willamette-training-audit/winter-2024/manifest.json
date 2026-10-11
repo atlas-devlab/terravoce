@@ -1,0 +1,34 @@
+{
+  "version": "training-capture-v1",
+  "protocolHash": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b",
+  "window": {
+    "id": "winter-2024",
+    "start": "2024-01-01T00:00:00Z",
+    "end": "2024-01-15T00:00:00Z"
+  },
+  "status": "captured",
+  "license": "US Government work; public domain",
+  "sources": {
+    "oxygen": {
+      "file": "oxygen.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00300&time=2024-01-01T00%3A00%3A00Z%2F2024-01-15T00%3A00%3A00Z&limit=10000",
+      "rawSha256": "0xf88847fa183d3d6e4a4e44d7332d2af0e801e5ebca9681fbed6e4249ebd35149",
+      "capturedAt": "2026-10-11T19:00:20.722Z",
+      "records": 673
+    },
+    "temperature": {
+      "file": "temperature.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00010&time=2024-01-01T00%3A00%3A00Z%2F2024-01-15T00%3A00%3A00Z&limit=10000",
+      "rawSha256": "0x14554095e79d2c9ed0e6698ed4cc7e876b82c8a911abc4773c6369e6091cfc8f",
+      "capturedAt": "2026-10-11T19:00:20.756Z",
+      "records": 673
+    },
+    "discharge": {
+      "file": "discharge.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00060&time=2024-01-01T00%3A00%3A00Z%2F2024-01-15T00%3A00%3A00Z&limit=10000",
+      "rawSha256": "0x6308536a336141989a921e899592bdfd94120631c700c6a5bd72a0cc27741254",
+      "capturedAt": "2026-10-11T19:00:21.338Z",
+      "records": 4033
+    }
+  }
+}
