@@ -1,0 +1,29 @@
+{
+  "version": "frozen-willamette-validation-v1",
+  "purpose": "Test a frozen summer model on later, unseen seasonal windows; no fitting, selection or calibration",
+  "stationId": "USGS-14211720",
+  "frozenReportHash": "0xe631f0492ebbca40fa7e76b05578b0aac40a8c21690d405bfb82f41200a98dde",
+  "frozenReportFileHash": "0x786ea6c17bec5e55238875cf02b55a9b6bd65985b78ac1a56851b1b150a5bd29",
+  "frozenCandidate": "oxygen-clock-temperature:ridge-100",
+  "horizonSeconds": 3600,
+  "historyMeasurements": 12,
+  "frozenIntervalHalfWidthMgL": 0.4069621494793889,
+  "windows": [
+    { "id": "autumn-2025", "start": "2025-10-01T00:00:00Z", "end": "2025-10-15T00:00:00Z" },
+    { "id": "winter-2026", "start": "2026-01-01T00:00:00Z", "end": "2026-01-15T00:00:00Z" }
+  ],
+  "sources": {
+    "oxygen": { "parameterCode": "00300", "timeSeriesId": "1ccd1e712b6b4cb69fdcfbf407f7358b", "unit": "mg/l", "scale": 1 },
+    "temperature": { "parameterCode": "00010", "timeSeriesId": "78520072e15541dea31a430cc3a72b93", "unit": "degC", "scale": 1 },
+    "discharge": { "parameterCode": "00060", "timeSeriesId": "25161ce7dc08491389080de10c85fd9e", "unit": "ft^3/s", "scale": 0.028316846592 }
+  },
+  "quality": "Approved, unqualified, finite values; nonnegative oxygen; pinned series/statistic/units; preserve signed flow and authentic irregular timestamps",
+  "alignment": "Twelve consecutive 30-minute UTC timestamps across all sources; exact oxygen target; skip missing joins; no interpolation",
+  "metrics": ["MAE", "RMSE", "bias", "coverage of unchanged interval", "daily stability", "accepted and skipped pair counts", "feature range extrapolation", "illustrative low oxygen events"],
+  "baselines": ["last measurement", "unchanged existing Oracle linear forecast"],
+  "extrapolationCheck": "Any selected feature outside its min/max on the original training phase; diagnostic only",
+  "operationalDecision": "Observation-only regardless of outcome; a pass cannot authorize spending or promote the model",
+  "fallbackIfDataUnavailable": "Report blocked or partial window; do not choose a different period after inspecting outcomes",
+  "disclosure": "Finalized archival measurements; not independent field measurement or historical as-of-origin availability",
+  "declaredBeforeFetchingWindowValues": true
+}
