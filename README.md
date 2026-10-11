@@ -69,6 +69,7 @@ traduzione o una prova della demo sono già contributi utili.
 | `packages/protocol` | Signed observation and assessment schemas |
 | `packages/contracts` | Evidence, policy, civic governance, treasury and ENV contracts |
 | `services/oracle` | Sensor API, deterministic analysis, storage and policy evaluation |
+| `services/autonomy` | Replicated Oracle certification and 3-of-4 proposal bridge |
 | `policies` | Demonstration policy for Po Delta water oxygen |
 | `docs` | Architecture, API, invariants, threat model, deployment and validation |
 
@@ -124,3 +125,11 @@ Il [ponte Open Autonomy](services/autonomy/README.md) aggiunge consenso 3-di-4 t
 Oracle replicati e un contratto che presenta proposte reversibili al Governor.
 La prova locale spegne un nodo completo e verifica il blocco con due nodi spenti,
 mantenendo i diritti delle camere civiche e la protezione della tesoreria.
+
+## Prossimo passo per l'AI
+
+La [proposta tecnica per l'AI](docs/AI_DESIGN.md) distingue analisi numerica,
+assistente linguistico locale e controlli deterministici. Il primo incremento
+previsto è un assistente in modalità osservazione che spiega un assessment,
+cita le fonti e suggerisce un'azione autorizzata oppure si astiene. Il LLM e la
+validazione su dati ambientali reali restano da implementare.
