@@ -1,0 +1,11 @@
+{
+  "policySource": "# TerraLex policy for a reversible Po delta oxygen-response pilot.\npolicy \"po-water-oxygen\" version 1 {\n  region \"IT-PO-DELTA\";\n  metric \"water.oxygen.mg_l\";\n  when risk >= 0.72 and confidence >= 0.80 and observations >= 5;\n  allow \"EXTRA_SAMPLING\" reversible;\n  allow \"WATER_AERATION\" reversible;\n  budget 250 USDC per 7 days;\n  challenge 24 hours;\n  require community challenge;\n  require guardian pause;\n  forbid irreversible;\n}\n",
+  "trustedSensors": [
+    {
+      "sensorId": "advisor-synthetic-01",
+      "regionId": "IT-PO-DELTA",
+      "label": "Synthetic advisor benchmark",
+      "publicKeyDerBase64": "MCowBQYDK2VwAyEAOtzpk0OYyME5rWLUm9u5oSFCw996wwzqjiHzKkI8mRo="
+    }
+  ]
+}

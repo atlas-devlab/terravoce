@@ -1,7 +1,8 @@
 # AI per TerraVoce: decisione tecnica e prossimo incremento
 
-Proposta di architettura aggiornata l'11 ottobre 2026. Questo documento descrive
-il lavoro da implementare; non annuncia un modello AI già integrato o validato.
+Architettura aggiornata l'11 ottobre 2026. Il primo advisor in modalità
+osservazione è implementato e provato con un modello locale; la validazione
+scientifica su dati reali e il collegamento al bridge restano da implementare.
 
 La missione resta il coordinamento ambientale globale: analisi distribuita,
 evidenze pubbliche resilienti, finanziamento di interventi verificabili e diritti
@@ -16,8 +17,10 @@ primo banco di verifica di componenti riutilizzabili, non il limite del progetto
   valuta quella richiesta con TerraLex; non sceglie autonomamente l'intervento.
 - Open Autonomy certifica un job immutabile attraverso tre repliche su quattro.
   Il bridge può presentare una proposta reversibile al Governor.
-- Non sono presenti un LLM, addestramento ambientale, retrieval di documenti,
-  validazione su dati reali o esecuzione AI continua. La prova usa un solo host.
+- `services/ai-advisor` usa un LLM locale per selezionare fatti e citazioni da
+  un corpus pubblico fissato nel codice. Produce spiegazioni controllate e
+  suggerimenti senza inoltro alla blockchain. Non sono presenti addestramento
+  ambientale, retrieval generale, validazione su dati reali o esecuzione continua.
 
 ## Due ruoli, un percorso verificabile
 
@@ -36,17 +39,17 @@ accordo non dimostra da solo la correttezza scientifica delle conclusioni.
 
 ## Scelta per il primo assistente
 
-Proponiamo un servizio separato `services/ai-advisor`, in TypeScript, con un
-adapter per **Ollama locale** e output JSON vincolato a schema. Il modello di
-pesi aperti sarà scelto con un benchmark sull'hardware disponibile, verificando
-licenza, memoria, qualità in italiano e latenza; non fissiamo oggi un modello
-senza averlo misurato. L'interfaccia consentirà di cambiare backend senza
-modificare Governor o bridge.
+Il servizio separato `services/ai-advisor`, in TypeScript, usa un adapter per
+**Ollama locale** e output JSON vincolato a schema. Il primo confronto ha scelto
+Qwen3 1.7B Q4_K_M per il superamento dei casi sintetici e una latenza media di
+circa 2,8 secondi. L'output finale italiano è composto da frasi controllate: non
+abbiamo validato la qualità della generazione libera in italiano.
+L'interfaccia consente futuri backend senza modificare Governor o bridge.
 
 Input: snapshot delle osservazioni verificate, assessment, catalogo di azioni,
-policy e fonti pubbliche approvate. Output proposto: `advisory-v1` con riferimento
+policy e fonti pubbliche approvate. Output implementato: `advisory-v1` con riferimento
 all'assessment, azione suggerita o astensione, motivazione, limiti, riferimenti
-alle fonti e provenienza di modello, prompt e runtime. È uno schema futuro,
+alle fonti e provenienza di modello, prompt e runtime. È uno schema locale,
 distinto dagli schemi `Assessment` e `ActionDraft` esistenti.
 
 Gli importi finanziabili e i destinatari devono derivare da un catalogo e da
@@ -76,11 +79,11 @@ rimane il confine di fiducia; non sarà riscritto automaticamente dal LLM.
 
 ## Primo incremento e criterio di completamento
 
-Implementare `ai-advisor` **in modalità osservazione**, senza inoltro automatico
+Il primo incremento implementa `ai-advisor` **in modalità osservazione**, senza inoltro automatico
 di proposte: legge un assessment, produce una spiegazione citata e suggerisce
 `EXTRA_SAMPLING` dal catalogo oppure si astiene. Non servono fondi reali.
 
-L'incremento è completo quando:
+I criteri di verifica del primo incremento sono:
 
 1. Una demo locale usa un vero modello, registra la provenienza e conserva
    input, advisory e hash; le fixture sono etichettate come tali.
@@ -102,6 +105,9 @@ usati per addestrarlo. Soglie operative richiedono revisione scientifica e civic
 Solo dopo queste verifiche collegheremo advisory, archivio replicato delle
 evidenze e consenso. Ulteriori metriche e territori useranno cataloghi e policy
 specifici, senza perdere la tracciabilità degli interventi finanziati.
+
+Comandi, esiti osservati e limiti della verifica sono nel
+[rapporto AI](AI_VALIDATION.md) e nella [guida del modulo](../services/ai-advisor/README.md).
 
 ## Riferimenti tecnici primari
 
