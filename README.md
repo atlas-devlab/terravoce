@@ -70,6 +70,7 @@ traduzione o una prova della demo sono già contributi utili.
 | `packages/contracts` | Evidence, policy, civic governance, treasury and ENV contracts |
 | `services/oracle` | Sensor API, deterministic analysis, storage and policy evaluation |
 | `services/autonomy` | Replicated Oracle certification and 3-of-4 proposal bridge |
+| `services/ai-advisor` | Local observation-only language advisor with verified citations |
 | `policies` | Demonstration policy for Po Delta water oxygen |
 | `docs` | Architecture, API, invariants, threat model, deployment and validation |
 
@@ -126,10 +127,13 @@ Oracle replicati e un contratto che presenta proposte reversibili al Governor.
 La prova locale spegne un nodo completo e verifica il blocco con due nodi spenti,
 mantenendo i diritti delle camere civiche e la protezione della tesoreria.
 
-## Prossimo passo per l'AI
+## AI locale in modalità osservazione
 
-La [proposta tecnica per l'AI](docs/AI_DESIGN.md) distingue analisi numerica,
-assistente linguistico locale e controlli deterministici. Il primo incremento
-previsto è un assistente in modalità osservazione che spiega un assessment,
-cita le fonti e suggerisce un'azione autorizzata oppure si astiene. Il LLM e la
-validazione su dati ambientali reali restano da implementare.
+Il [modulo AI advisor](services/ai-advisor/README.md) integra un modello locale
+in modalità osservazione: seleziona fatti e citazioni verificabili per spiegare
+un assessment e suggerisce un campionamento aggiuntivo oppure si astiene.
+Qwen3 1.7B è stato selezionato su una piccola suite sintetica; il rapporto
+[di validazione](docs/AI_VALIDATION.md) include anche il modello scartato.
+L'advisor non presenta proposte sulla blockchain. La validazione dell'analisi
+numerica su dati reali e il collegamento dell'advisory al consenso restano da
+implementare, come descritto nel [progetto tecnico](docs/AI_DESIGN.md).

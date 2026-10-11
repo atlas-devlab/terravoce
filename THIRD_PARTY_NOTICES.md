@@ -23,3 +23,14 @@ The generated runtime retains both upstream LICENSE files and the bridge
 Valory's `register_reset_abci` configuration and declares Apache-2.0. Upstream
 source is fetched at the immutable revisions recorded by `prepare.py`; it is
 excluded from Git alongside generated local identities and Tendermint state.
+
+## Optional local AI runtime and model
+
+The AI advisor connects to a separately installed Ollama runtime (MIT license):
+https://github.com/ollama/ollama. Runtime binaries and model weights are not
+redistributed in this repository.
+
+The local experiment evaluated Qwen3 0.6B and 1.7B, quantized as Q4_K_M and
+downloaded through Ollama. The upstream Qwen model cards identify Apache-2.0:
+https://huggingface.co/Qwen/Qwen3-0.6B and https://huggingface.co/Qwen/Qwen3-1.7B.
+Keep the upstream model/runtime licenses with any separate redistribution.

@@ -5,7 +5,9 @@ uses synthetic sensor data and a deterministic mathematical risk model. A real
 Open Autonomy service now runs four Oracle/agent/validator replicas locally and
 certifies one immutable job with a 3-of-4 quorum. Treasury operations use a local
 simulated blockchain; independently operated replicas, a public deployment and
-a field pilot are future work. See [bridge validation](AUTONOMY_VALIDATION.md).
+a field pilot are future work. A separate local language advisor selects grounded
+facts and citations in observation-only mode; it is not wired into the bridge.
+See [bridge validation](AUTONOMY_VALIDATION.md) and [AI validation](AI_VALIDATION.md).
 
 ## Design decision
 
@@ -13,10 +15,10 @@ AI inference does not run inside the blockchain. Models are too expensive to
 execute on-chain, model weights are difficult to reproduce across runtimes, and
 opaque inference would make consensus depend on a vendor. Instead, independent
 oracle operators reproduce numerical assessments and validate a canonical
-proposal. A future language model generates a frozen advisory candidate outside
-consensus; validators check its evidence and permitted action rather than require
-identical generated text. Model provenance and advisory hashes still need to be
-bound into the evidence protocol. Contracts enforce quorum, authorization,
+proposal. The implemented language advisor generates a local advisory outside
+consensus. Future consensus validators will check its evidence and permitted
+action rather than require identical generated text. Model provenance and
+advisory hashes still need to be bound into the evidence protocol. Contracts enforce quorum, authorization,
 delays, budgets, and execution. See [the AI design proposal](AI_DESIGN.md).
 
 ## Components
