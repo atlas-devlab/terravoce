@@ -57,3 +57,17 @@ jobs:
 
       - name: Run local blockchain demonstration
         run: pnpm e2e
+
+      - name: Validate Oracle bridge digest interoperability
+        run: |
+          python3 -m venv services/autonomy/.venv
+          services/autonomy/.venv/bin/python -m pip install -r services/autonomy/requirements.txt
+          services/autonomy/.venv/bin/python -m pytest services/autonomy/tests -q
+
+      - name: Test four replicas with node outages
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          services/autonomy/.venv/bin/python services/autonomy/prepare.py
+          docker build -f services/autonomy/Dockerfile -t terravoce-autonomy:local .
+          docker build -f services/autonomy/Oracle.Dockerfile -t terravoce-oracle:local .
+          AUTONOMY_PYTHON="$PWD/services/autonomy/.venv/bin/python" pnpm --filter @terravoce/contracts autonomy:e2e

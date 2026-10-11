@@ -348,4 +348,74 @@ describe("TerraAct protocol", function () {
         .release(999, accounts.admin.address, 1n * USDC, false)
     ).to.be.revertedWithCustomError(treasury, "UnauthorizedGovernor");
   });
+
+  describe("Open Autonomy bridge", function () {
+    async function bridgeFixture() {
+      const f = await deployFixture();
+      const operators = [f.accounts.oracle1, f.accounts.oracle2, f.accounts.automation, f.accounts.guardian];
+      const bridge = await f.ethers.deployContract("TerraAutonomyBridge", [await f.governor.getAddress(), operators.map(s => s.address)]);
+      await f.governor.grantRole(await f.governor.AUTOMATION_ROLE(), await bridge.getAddress());
+      const jobId = f.ethers.id("governed-autonomy-job");
+      const validUntil = (await f.networkHelpers.time.latest()) + 3600;
+      const request = f.autonomousRequest();
+      async function sign(target = bridge, action = request, id = jobId, deadline = validUntil, signers = operators.slice(0,3)) {
+        const digest = await target.actionDigest(id, deadline, action);
+        const sorted = [...signers].sort((a,b) => a.address.toLowerCase().localeCompare(b.address.toLowerCase()));
+        return Promise.all(sorted.map(s => s.signMessage(f.ethers.getBytes(digest))));
+      }
+      return {...f, bridge, jobId, validUntil, request, operators, sign};
+    }
+
+    it("requires three distinct operators and rejects modified actions", async function () {
+      const f = await bridgeFixture();
+      const signatures = await f.sign();
+      await expect(f.bridge.submit(f.jobId,f.validUntil,f.request,signatures.slice(0,2))).to.be.revertedWithCustomError(f.bridge,"InvalidQuorum");
+      await expect(f.bridge.submit(f.jobId,f.validUntil,f.request,[signatures[0],signatures[0],signatures[1]])).to.be.revertedWithCustomError(f.bridge,"InvalidQuorum");
+      await expect(f.bridge.submit(f.jobId,f.validUntil,{...f.request,amount:1n},signatures)).to.be.revertedWithCustomError(f.bridge,"InvalidQuorum");
+      const outsider = await f.sign(f.bridge,f.request,f.jobId,f.validUntil,[f.operators[0],f.operators[1],f.accounts.outsider]);
+      await expect(f.bridge.submit(f.jobId,f.validUntil,f.request,outsider)).to.be.revertedWithCustomError(f.bridge,"InvalidQuorum");
+    });
+
+    it("binds certificates to their bridge and rejects replay and expiry", async function () {
+      const f = await bridgeFixture();
+      const other = await f.ethers.deployContract("TerraAutonomyBridge",[await f.governor.getAddress(),f.operators.map(s=>s.address)]);
+      const signatures = await f.sign();
+      await expect(other.submit(f.jobId,f.validUntil,f.request,signatures)).to.be.revertedWithCustomError(other,"InvalidQuorum");
+      await f.bridge.submit(f.jobId,f.validUntil,f.request,signatures);
+      await expect(f.bridge.submit(f.jobId,f.validUntil,f.request,signatures)).to.be.revertedWithCustomError(f.bridge,"AlreadySubmitted");
+      await f.networkHelpers.time.increase(3601);
+      await expect(f.bridge.submit(f.ethers.id("expired"),f.validUntil,f.request,signatures)).to.be.revertedWithCustomError(f.bridge,"ExpiredCertificate");
+    });
+
+    it("cannot bypass policy, reversibility or civic challenge", async function () {
+      const f = await bridgeFixture();
+      const signatures = await f.sign();
+      await expect(f.bridge.submit(f.jobId,f.validUntil,{...f.request,riskTier:1},signatures)).to.be.revertedWithCustomError(f.bridge,"InvalidAction");
+      await f.policies.deactivatePolicy(f.policyHash);
+      await expect(f.bridge.submit(f.jobId,f.validUntil,f.request,signatures)).to.be.revertedWithCustomError(f.governor,"PolicyNotActive");
+      expect(await f.bridge.consumed(f.jobId)).to.equal(false);
+    });
+
+    it("allows a certified proposal but the youth chamber can stop funding", async function () {
+      const f = await bridgeFixture();
+      await f.bridge.connect(f.accounts.outsider).submit(f.jobId,f.validUntil,f.request,await f.sign());
+      await expect(f.governor.execute(1)).to.be.revertedWithCustomError(f.governor,"ProposalNotReady");
+      await f.governor.connect(f.accounts.community1).challenge(1);
+      await f.governor.connect(f.accounts.community1).castVote(1,0,true);
+      await f.governor.connect(f.accounts.community2).castVote(1,0,true);
+      await f.networkHelpers.time.increase(3*DAY+1);
+      expect(await f.governor.proposalState(1)).to.equal(4);
+      await expect(f.governor.execute(1)).to.be.revertedWithCustomError(f.governor,"ProposalNotReady");
+      expect(await f.stablecoin.balanceOf(f.accounts.recipient.address)).to.equal(0);
+    });
+
+    it("funds a certified reversible action only through the Governor after its window", async function () {
+      const f = await bridgeFixture();
+      await f.bridge.submit(f.jobId,f.validUntil,f.request,await f.sign());
+      await f.networkHelpers.time.increase(DAY+1);
+      await f.governor.execute(1);
+      expect(await f.stablecoin.balanceOf(f.accounts.recipient.address)).to.equal(f.request.amount);
+      await expect(f.governor.execute(1)).to.be.revertedWithCustomError(f.governor,"ProposalNotReady");
+    });
+  });
 });

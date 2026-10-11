@@ -3,6 +3,11 @@
 An open source research prototype for making environmental data and decisions
 traceable and reproducible.
 
+TerraVoce's long-term mission is a global environmental coordination system:
+distributed AI analysis, resilient public evidence, blockchain funding for
+verifiable interventions, and decision rights for affected communities and young
+people. The local prototypes below test individual parts of that mission.
+
 The current example follows synthetic dissolved-oxygen observations through a
 simple risk model, explicit policy rules, and a community decision on a local
 simulated blockchain.
@@ -16,7 +21,7 @@ refers here to the experimental policy language in this repository.
 > Per una spiegazione completa in italiano, leggi la
 > [guida operativa](GUIDA_OPERATIVA.md).
 
-## First goal: replay one open oxygen dataset
+## Scientific validation target: replay one open oxygen dataset
 
 Replay **one openly licensed dissolved-oxygen time series from one monitoring
 station, offline**. Compare the current model with a simple prediction that uses
@@ -64,6 +69,7 @@ traduzione o una prova della demo sono già contributi utili.
 | `packages/protocol` | Signed observation and assessment schemas |
 | `packages/contracts` | Evidence, policy, civic governance, treasury and ENV contracts |
 | `services/oracle` | Sensor API, deterministic analysis, storage and policy evaluation |
+| `services/autonomy` | Replicated Oracle certification and 3-of-4 proposal bridge |
 | `policies` | Demonstration policy for Po Delta water oxygen |
 | `docs` | Architecture, API, invariants, threat model, deployment and validation |
 
@@ -112,3 +118,18 @@ Project source is published under the [MIT License](LICENSE), consistent with
 the MIT SPDX headers already present in the recovered Solidity contracts.
 External dependencies retain their own licenses; see
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Replica del servizio Oracle
+
+Il [ponte Open Autonomy](services/autonomy/README.md) aggiunge consenso 3-di-4 tra
+Oracle replicati e un contratto che presenta proposte reversibili al Governor.
+La prova locale spegne un nodo completo e verifica il blocco con due nodi spenti,
+mantenendo i diritti delle camere civiche e la protezione della tesoreria.
+
+## Prossimo passo per l'AI
+
+La [proposta tecnica per l'AI](docs/AI_DESIGN.md) distingue analisi numerica,
+assistente linguistico locale e controlli deterministici. Il primo incremento
+previsto è un assistente in modalità osservazione che spiega un assessment,
+cita le fonti e suggerisce un'azione autorizzata oppure si astiene. Il LLM e la
+validazione su dati ambientali reali restano da implementare.

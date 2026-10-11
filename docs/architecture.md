@@ -1,17 +1,23 @@
 # TerraVoce architecture
 
 This document describes the intended architecture. The current research MVP
-uses synthetic sensor data and a deterministic mathematical risk model. Oracle
-participants and treasury operations are simulated locally; independently
-operated oracle replicas, a public deployment and a field pilot are future work.
+uses synthetic sensor data and a deterministic mathematical risk model. A real
+Open Autonomy service now runs four Oracle/agent/validator replicas locally and
+certifies one immutable job with a 3-of-4 quorum. Treasury operations use a local
+simulated blockchain; independently operated replicas, a public deployment and
+a field pilot are future work. See [bridge validation](AUTONOMY_VALIDATION.md).
 
 ## Design decision
 
 AI inference does not run inside the blockchain. Models are too expensive to
 execute on-chain, model weights are difficult to reproduce across runtimes, and
 opaque inference would make consensus depend on a vendor. Instead, independent
-oracle operators run the same open model and attest to a canonical evidence
-hash. Contracts enforce quorum, authorization, delays, budgets, and execution.
+oracle operators reproduce numerical assessments and validate a canonical
+proposal. A future language model generates a frozen advisory candidate outside
+consensus; validators check its evidence and permitted action rather than require
+identical generated text. Model provenance and advisory hashes still need to be
+bound into the evidence protocol. Contracts enforce quorum, authorization,
+delays, budgets, and execution. See [the AI design proposal](AI_DESIGN.md).
 
 ## Components
 
@@ -21,8 +27,10 @@ hash. Contracts enforce quorum, authorization, delays, budgets, and execution.
    risk using a versioned deterministic model.
 4. TerraLex evaluates whether an assessment may create an autonomous reversible
    action. The compiled policy and its hash are public.
-5. Oracle operators attest the evidence hash on-chain. A proposal can reference
-   evidence only after the configured quorum is reached.
+5. The evidence registry requires its configured attestation quorum; the current
+   test sets up attestations through a fixture. Separately, Open Autonomy collects
+   three operator signatures and TerraAutonomyBridge submits a reversible
+   proposal. Distributed publication of evidence attestations remains future work.
 6. TerraAct routes the proposal through an autonomous challenge window or a
    two-chamber vote, depending on risk.
 7. The treasury releases one stable funding asset only through an executable
