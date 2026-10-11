@@ -1,0 +1,59 @@
+{
+  "version": "awash-offline-replay-v1",
+  "phase": "target",
+  "protocolHash": "0xa45f599b48be4a3c3a81e52eceaab1c17d8569593a7679dd4bf4fa1a481ad3c7",
+  "manifestHash": "0x3457c2c513c4460bce2890dc160fbc85112177622e5cd42e2e3ebaaa06f29aba",
+  "capturedAt": "2026-10-11T23:23:29.827755Z",
+  "records": [
+    {
+      "metric": "aeti",
+      "period": {
+        "code": "2024-03-D1",
+        "start": "2024-03-01",
+        "end": "2024-03-10",
+        "days": 10
+      },
+      "unit": "mm/day",
+      "dailyMeanMm": 3.041692839741762,
+      "validAreaFraction": 1.0,
+      "nativePixels": 462,
+      "validPixels": 462,
+      "missingPixels": 0,
+      "periodTotalMm": 30.41692839741762,
+      "complete": true,
+      "nativePixelDegrees": [
+        0.0009765625,
+        0.0009765625
+      ],
+      "nature": "remote-sensing-estimate",
+      "sourceRaster": "WAPOR-3.L2-AETI-D.2024-03-D1",
+      "sourceUpdated": "2026-05-12T05:12:55Z",
+      "extractionHash": "0xa4ce45127c71382fbd031dd4c2f422d810e794eba197619313aabbe6c5bb1f93"
+    },
+    {
+      "metric": "precipitation",
+      "period": {
+        "code": "2024-03-D1",
+        "start": "2024-03-01",
+        "end": "2024-03-10",
+        "days": 10
+      },
+      "unit": "mm/day",
+      "dailyMeanMm": 7.999755024910186,
+      "validAreaFraction": 1.0,
+      "nativePixels": 2,
+      "validPixels": 2,
+      "missingPixels": 0,
+      "periodTotalMm": 79.99755024910186,
+      "complete": true,
+      "nativePixelDegrees": [
+        0.05000000074505806,
+        0.05000000074505806
+      ],
+      "nature": "remote-sensing-estimate",
+      "sourceRaster": "WAPOR-3.L1-PCP-D.2024-03-D1",
+      "sourceUpdated": "2025-11-01T17:22:02Z",
+      "extractionHash": "0x448348f43b9943d6603bfabfb6ed165060f1965b03a06b03fe1733596685165d"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "version": "awash-pinned-native-windows-v1",
+  "phase": "history",
+  "protocolHash": "0xa45f599b48be4a3c3a81e52eceaab1c17d8569593a7679dd4bf4fa1a481ad3c7",
+  "capturedAt": "2026-10-11T23:22:34.302512Z",
+  "records": [
+    {
+      "metric": "aeti",
+      "period": "2024-02-D1",
+      "mapsetPath": "aeti-mapset.json",
+      "mapsetHash": "0x378f0b3014c22f2c17df734f64b109f850102c6297da1870bc9fe0956851e852",
+      "metadataPath": "aeti-2024-02-D1.metadata.json",
+      "metadataHash": "0x8e7cd91dd2e44011723a95a1f19e574b72a2c836efe049380c3cf25aeaaabcb3",
+      "extractionPath": "aeti-2024-02-D1.pixels.json",
+      "extractionHash": "0xc6efcd730e86525f54bf13776e988f81083263ac0addd4059b6426772b688c62"
+    },
+    {
+      "metric": "aeti",
+      "period": "2024-02-D2",
+      "mapsetPath": "aeti-mapset.json",
+      "mapsetHash": "0x378f0b3014c22f2c17df734f64b109f850102c6297da1870bc9fe0956851e852",
+      "metadataPath": "aeti-2024-02-D2.metadata.json",
+      "metadataHash": "0x57903a27e784bc0bff73cac9bb59e52e8bc894450eb51405bad4cb826b600d5e",
+      "extractionPath": "aeti-2024-02-D2.pixels.json",
+      "extractionHash": "0xc0b4ee7696e740b5c9208f295e9e54b1cbe49aa7b9f45d37ad0730ea53a86bc8"
+    },
+    {
+      "metric": "aeti",
+      "period": "2024-02-D3",
+      "mapsetPath": "aeti-mapset.json",
+      "mapsetHash": "0x378f0b3014c22f2c17df734f64b109f850102c6297da1870bc9fe0956851e852",
+      "metadataPath": "aeti-2024-02-D3.metadata.json",
+      "metadataHash": "0xf67f6ac5e3f4bbd7ff206e5929d200134708b08c2cbc9b2da6c4528e59fe0ab4",
+      "extractionPath": "aeti-2024-02-D3.pixels.json",
+      "extractionHash": "0x7e47b014a9655a720e2f69f1f58cbd788dd89362ae5261937499b82ea31c7fde"
+    },
+    {
+      "metric": "precipitation",
+      "period": "2024-02-D1",
+      "mapsetPath": "precipitation-mapset.json",
+      "mapsetHash": "0x7f54dc3d9d36b47249c3f9d50e95e1e3d006b69e9c6cb6918504399f743eecc1",
+      "metadataPath": "precipitation-2024-02-D1.metadata.json",
+      "metadataHash": "0x903ced04eb8f0ac0722846c4daabc972e2c35f23319cd9169851cb84eb0de9ed",
+      "extractionPath": "precipitation-2024-02-D1.pixels.json",
+      "extractionHash": "0xd5edef097e2f70c3757041dec87550cc720ad5aff8875f4289025f487dbb1208"
+    },
+    {
+      "metric": "precipitation",
+      "period": "2024-02-D2",
+      "mapsetPath": "precipitation-mapset.json",
+      "mapsetHash": "0x7f54dc3d9d36b47249c3f9d50e95e1e3d006b69e9c6cb6918504399f743eecc1",
+      "metadataPath": "precipitation-2024-02-D2.metadata.json",
+      "metadataHash": "0x8f259e61465dc6ed0d6bc2b52f618d2d3e7e3a26be7659f98650d9f266a94c75",
+      "extractionPath": "precipitation-2024-02-D2.pixels.json",
+      "extractionHash": "0xe80c1f25fe5683822b0d0213783d1bef603695cabcbede90067f7d5fafba2636"
+    },
+    {
+      "metric": "precipitation",
+      "period": "2024-02-D3",
+      "mapsetPath": "precipitation-mapset.json",
+      "mapsetHash": "0x7f54dc3d9d36b47249c3f9d50e95e1e3d006b69e9c6cb6918504399f743eecc1",
+      "metadataPath": "precipitation-2024-02-D3.metadata.json",
+      "metadataHash": "0x96739de506006b8843fdbcd8051d5dd20218e11b977affcc96f5f8f3c488456d",
+      "extractionPath": "precipitation-2024-02-D3.pixels.json",
+      "extractionHash": "0xcad36f244a49b8f5278e6ad9f8c8728dbd17dcfb269ebc2c9ec9c3bd4658b3e0"
+    }
+  ],
+  "fullOriginalRasterArchived": false,
+  "license": "FAO WaPOR attribution; source-specific mapset license retained in raw metadata",
+  "captureLibrary": {
+    "rasterio": "1.5.2",
+    "gdal": "3.12.2"
+  }
+}

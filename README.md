@@ -76,6 +76,19 @@ or operational behavior changes. Reproduce offline with
 `python scripts/experiment_multiseason.py verify-fit` and `verify`.
 See the executed [four-season notebook](docs/notebooks/willamette-multiseason.ipynb).
 
+## Awash irrigation observation and prediction game
+
+The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small
+FAO WaPOR evapotranspiration and precipitation windows near Wonji, Ethiopia.
+A history-only persistence prediction was saved and pushed before target
+acquisition: 2.9814 versus the next period's FAO estimate of 3.0417 mm/day,
+absolute error 0.0603 mm/day. This is one retrospective round using revised
+source estimates, not established forecasting skill or measured irrigation.
+Native rainfall pixels remain coarse; missing values are not zero-filled.
+The research evidence envelope cannot claim verified withdrawals, ecological
+improvement or funding eligibility. Run `pnpm irrigation:verify` offline.
+The Willamette forecast and operational Oracle/governance remain separate.
+
 ## Everyone can take part
 
 You do not need coding experience or an environmental qualification to ask a

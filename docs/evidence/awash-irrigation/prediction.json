@@ -1,0 +1,14 @@
+{
+  "version": "awash-sealed-persistence-v1",
+  "protocolHash": "0xa45f599b48be4a3c3a81e52eceaab1c17d8569593a7679dd4bf4fa1a481ad3c7",
+  "historyManifestHash": "0x0c4927908e4c76f2c8a1e2413c40dbd52e82525e56370b602314c53c22383d1e",
+  "inputPeriod": "2024-02-D3",
+  "targetPeriod": "2024-03-D1",
+  "predictedDailyMeanMm": 2.9813664208092177,
+  "unit": "mm/day",
+  "method": "persistence",
+  "trainedModel": false,
+  "scope": "retrospective learning game using current revised FAO estimates",
+  "irrigationWithdrawalM3": null,
+  "operationalEligible": false
+}

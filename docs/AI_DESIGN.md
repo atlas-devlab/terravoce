@@ -156,3 +156,14 @@ Comandi, esiti osservati e limiti della verifica sono nel
   descrive servizi fuori dalla blockchain con repliche e consenso.
 
 Per il risultato già ottenuto vedere [la verifica del bridge](AUTONOMY_VALIDATION.md).
+
+## Prova osservativa sull'irrigazione
+
+Il [gioco storico sull'Awash](AWASH_IRRIGATION_GAME.md) aggiunge un territorio e
+due stime aperte, con un perimetro separato: evapotranspirazione/intercettazione
+e pioggia. La previsione è soltanto la persistenza dell'ultima media, salvata
+prima dell'acquisizione del target. Un singolo turno vicino al riferimento non
+dimostra abilità generale. Non allena né chiama un LLM e non modifica il
+previsore del Willamette. Il rapporto di ricerca conserva hash e unità e
+mantiene sconosciuti prelievi irrigui, attribuzione causale e beneficio ecologico;
+non viene inoltrato come assessment operativo o azione di finanziamento.

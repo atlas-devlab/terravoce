@@ -1,0 +1,35 @@
+{
+  "version": "terravoce-irrigation-research-review-v1",
+  "regionId": "awash-wonji-demo",
+  "mode": "historical-research",
+  "evidenceNature": "remote-sensing-estimate",
+  "objective": "Review source provenance and a sealed persistence prediction; no field outcome claim",
+  "suggestedAction": "DATA_REVIEW",
+  "requiredReview": [
+    "scientific",
+    "affected-community"
+  ],
+  "operationalEligible": false,
+  "fundingRelease": false,
+  "irrigationWithdrawalM3": null,
+  "ecologicalImprovementVerified": false,
+  "result": {
+    "version": "awash-learning-result-v1",
+    "predictionHash": "0x9ff7604276dfa8a4e571da9deaba1514fc299165cbc31f3744160f839d4ac22a",
+    "targetManifestHash": "0x3457c2c513c4460bce2890dc160fbc85112177622e5cd42e2e3ebaaa06f29aba",
+    "targetPeriod": "2024-03-D1",
+    "predictedDailyMeanMm": 2.9813664208092177,
+    "actualEstimatedDailyMeanMm": 3.041692839741762,
+    "signedErrorMmPerDay": -0.060326418932544534,
+    "absoluteErrorMmPerDay": 0.060326418932544534,
+    "unit": "mm/day",
+    "scoredRounds": 1,
+    "skillEstablished": false,
+    "irrigationWithdrawalM3": null,
+    "irrigationAttributionEstablished": false,
+    "ecologicalImprovementVerified": false,
+    "fundingRelease": false,
+    "operationalEligible": false
+  },
+  "evidenceHash": "0x9051daa5c7e4638afcfb2d1fe3d4396adc78d522ff6c05b9666e01acaff6b981"
+}

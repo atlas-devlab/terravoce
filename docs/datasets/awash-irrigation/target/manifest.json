@@ -1,0 +1,35 @@
+{
+  "version": "awash-pinned-native-windows-v1",
+  "phase": "target",
+  "protocolHash": "0xa45f599b48be4a3c3a81e52eceaab1c17d8569593a7679dd4bf4fa1a481ad3c7",
+  "capturedAt": "2026-10-11T23:23:29.827755Z",
+  "records": [
+    {
+      "metric": "aeti",
+      "period": "2024-03-D1",
+      "mapsetPath": "aeti-mapset.json",
+      "mapsetHash": "0x972ccfd9adecac509c1007aa6c6423a1117f52b67e0928e0eeb001f67dc9c548",
+      "metadataPath": "aeti-2024-03-D1.metadata.json",
+      "metadataHash": "0xd66ea0b3c3e3c184b2ba61dc3f40ece4ef2c3c478a46fb853ddcadc8531c37ea",
+      "extractionPath": "aeti-2024-03-D1.pixels.json",
+      "extractionHash": "0xa4ce45127c71382fbd031dd4c2f422d810e794eba197619313aabbe6c5bb1f93"
+    },
+    {
+      "metric": "precipitation",
+      "period": "2024-03-D1",
+      "mapsetPath": "precipitation-mapset.json",
+      "mapsetHash": "0x1a7a60c975f88368ab900372bbbadf5a45e4fd256e00ce1c83b1ee55aaeab5f4",
+      "metadataPath": "precipitation-2024-03-D1.metadata.json",
+      "metadataHash": "0x5b70f8251ef2559e05e7fd650dd10232980fb3d9d99faf73f99c54fb60f04dec",
+      "extractionPath": "precipitation-2024-03-D1.pixels.json",
+      "extractionHash": "0x448348f43b9943d6603bfabfb6ed165060f1965b03a06b03fe1733596685165d"
+    }
+  ],
+  "fullOriginalRasterArchived": false,
+  "license": "FAO WaPOR attribution; source-specific mapset license retained in raw metadata",
+  "captureLibrary": {
+    "rasterio": "1.5.2",
+    "gdal": "3.12.2"
+  },
+  "predictionHashBeforeAcquisition": "0x9ff7604276dfa8a4e571da9deaba1514fc299165cbc31f3744160f839d4ac22a"
+}
