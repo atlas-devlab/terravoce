@@ -2,6 +2,8 @@
 
 Questo incremento verifica una domanda limitata: temperatura e portata aiutano
 a prevedere l'ossigeno disciolto **un'ora dopo**? Rimane in modalità osservazione.
+**Esito: il calcolo è riproducibile, ma il modello fallisce la verifica su altre
+stagioni e non è adatto a essere promosso nel percorso operativo.**
 Il percorso operativo dell'Oracle, il bridge, TerraLex, la governance delle
 comunità e dei giovani e i finanziamenti rimangono quelli precedenti.
 
@@ -21,6 +23,11 @@ numerico sperimentale non autorizza proposte, pagamenti o attuatori fisici.
 Non stiamo ancora simulando nuovi scarichi, interventi o il futuro ecologico del
 bacino. Quelli richiedono dati e modelli fisici aggiuntivi. Il LLM non esegue
 questi calcoli e non è stato richiamato durante l'esperimento.
+
+Il modello linguistico locale (LLM) serve a leggere evidenze e produrre spiegazioni
+controllate. Qui "modello" indica invece una regressione numerica: impara
+coefficienti per stimare una misura futura. Le due componenti hanno verifiche
+diverse. Un LLM capace di spiegare un risultato non ne dimostra l'accuratezza.
 
 ## Fonti e controlli
 
@@ -116,6 +123,61 @@ capacità di prevedere eventi critici rimane non valutata.
 modello operativo, nessuna autorizzazione di spesa.** Il piccolo miglioramento
 non costituisce prova di efficacia ecologica o di causalità.
 
+## Controllo indipendente del codice e prova stagionale congelata
+
+`scripts/audit_willamette.py` ricostruisce le serie originali, gli abbinamenti,
+le variabili, i 14 candidati e le 143 previsioni finali. Usa Python standard e
+una soluzione Cholesky con Decimal a 50 cifre, senza importare l'implementazione
+TypeScript. La massima differenza su coefficienti e metriche è circa
+`2.84e-14`, sotto la tolleranza `1e-9`. Questo è un controllo con una seconda
+implementazione dello stesso progetto; non è una revisione scientifica esterna
+né una misura indipendente sul campo.
+
+Prima di acquisire le nuove osservazioni, il commit
+`16ffae5029cd2d426ce67e09f46f1b6c137b9a6c` ha pubblicato
+`docs/datasets/usgs-willamette-validation/protocol.json`. Il protocollo fissa:
+
+- Le finestre 1–15 ottobre 2025 e 1–15 gennaio 2026, in UTC.
+- La stessa stazione, le serie, le unità e i criteri di qualità.
+- L'hash del modello estivo selezionato e la sua fascia di errore.
+- Nessun nuovo addestramento, scelta o calibrazione sui dati successivi.
+- Nessuna sostituzione di un periodo se i dati non fossero disponibili.
+
+È una dichiarazione anticipata nel nostro repository, non una preregistrazione
+indipendente. Il modello estivo e il rapporto originale restano immutati.
+
+| Verifica | Coppie | MAE modello (mg/L) | MAE persistenza (mg/L) | Copertura fascia |
+| --- | ---: | ---: | ---: | ---: |
+| Estate, tre giorni finali | 143 | 0.263681 | 0.267832 | 76.92% |
+| Autunno, finestra dichiarata | 660 | 0.305686 | 0.101515 | 76.36% |
+| Inverno, finestra dichiarata | 645 | 1.278611 | 0.012403 | 0% |
+
+In inverno 13 origini candidate sono escluse per storia o bersaglio incompleti;
+non vengono interpolate. Tutte le coppie autunnali e invernali hanno almeno una
+variabile fuori dall'intervallo osservato nell'addestramento. È un diagnostico
+per singola variabile, non una probabilità di errore o un dominio di validità
+scientificamente certificato.
+
+Il coefficiente dell'ossigeno corrente nella variazione prevista tende a
+riportare il valore verso il livello estivo imparato. Quando il livello medio
+cambia, questa relazione induce una sottostima: il bias invernale è
+`-1.278611 mg/L`. Il fit originale vedeva ossigeno 7.3–9.0 mg/L e temperatura
+23.0–24.5 °C. Questa diagnosi descrive la regressione, non una legge causale
+che colleghi temperatura e ossigeno. Non correggiamo il fit dopo aver visto il
+risultato per far sparire il fallimento.
+
+**Decisione aggiornata: mantenere isolata la ricerca. Il modello fallisce la
+trasferibilità stagionale e la fascia non è affidabile nelle nuove condizioni.**
+Neppure in queste finestre ci sono bersagli sotto 5 mg/L: il riconoscimento di
+eventi critici rimane non valutato. Il risultato non copre nuovi scarichi,
+inquinanti, interventi fisici, investimenti o benefici ecologici.
+
+Il riepilogo è in `docs/evidence/willamette-forecast/seasonal-summary.json`.
+Il rapporto completo, con ogni previsione e la sua provenienza, è conservato
+in `seasonal-validation.json.gz`; il riepilogo ne riporta l'hash decompresso.
+Il [notebook eseguito](notebooks/willamette-forecast-audit.ipynb) rende visibili
+i controlli e i risultati in poche celle.
+
 ## Riproduzione e ritorno al percorso precedente
 
 Dalla radice, con Node.js 24 e pnpm 11.7.0:
@@ -127,6 +189,8 @@ pnpm check
 pnpm test
 pnpm forecast:replay
 pnpm forecast:verify
+python3 -m unittest discover -s scripts -p 'test_*.py'
+python3 scripts/audit_willamette.py --external --summary
 ```
 
 Per riprodurre il rapporto pubblicato, passando un percorso assoluto:
@@ -139,6 +203,17 @@ Il primo comando scrive `outputs/willamette-forecast/forecast.json`. La verifica
 ricalcola ogni campo e l'hash dell'intero rapporto dal dataset fissato. Un file
 diverso non viene sovrascritto: occorre indicare una nuova cartella. Gli hash
 sono impegni del nostro importatore e del rapporto, non firme USGS.
+
+Per verificare anche gli artefatti stagionali salvati, senza rete:
+
+```sh
+python3 scripts/audit_willamette.py --external --summary --output docs/evidence/willamette-forecast/seasonal-validation.json.gz --summary-output docs/evidence/willamette-forecast/seasonal-summary.json
+```
+
+Su Windows si può sostituire `python3` con il percorso del Python disponibile.
+La cattura opzionale `node scripts/capture-willamette-validation.mjs` richiede
+rete e rifiuta cartelle già esistenti; non è necessaria per la riproduzione e
+non viene eseguita dalla CI.
 
 L'esperimento è su una branch e una PR dedicate, impilate sul primo caso reale.
 Per rinunciarvi basta non integrare questa PR. I comandi `case:replay`,
@@ -155,13 +230,20 @@ le misure future della verifica finale e accerta che coefficienti, scelta,
 intervallo calibrato e previsione precedente restino invariati.
 
 Build/check, 83 test TypeScript/Solidity e 7 test Python sono passati localmente.
+Sette ulteriori test Python dell'audit verificano la soluzione nota, qualità e
+duplicati UTC, numero completo delle previsioni, ricostruzione dei candidati,
+assenza di nuovo fit stagionale, vettori incompleti/valori non finiti e rifiuto
+di hash alterati. La CI ripete questi
+controlli e la valutazione stagionale sui dati archiviati, senza chiamare USGS.
 Il caso reale sulla blockchain locale riproduce i precedenti caseHash/resultHash
 e verifica ancora il blocco del pagamento prima delle due revisioni. Le identità,
 i token e il certificato 3-su-4 di quel comando restano fixture locali; il cluster
 ABCI con guasti non è stato rilanciato per questo incremento.
 
-Prima di estendere il modello: fissare un esperimento su stagioni e condizioni
-diverse, con criteri di errore e copertura dichiarati prima dell'esecuzione.
+La verifica su altre stagioni è stata eseguita e ha dato esito negativo.
+Prima di una nuova variante: raccogliere un addestramento più rappresentativo
+e fissare nuove finestre di verifica non usate per scegliere la variante,
+con criteri di errore e copertura dichiarati prima dell'esecuzione.
 Successivamente potranno entrare meteo, carichi inquinanti documentati e un
 modello fisico calibrato per il tratto pertinente. Una nuova ricerca deve avere
 un nuovo manifest e rapporto, senza ritoccare questa verifica finale.
@@ -171,3 +253,4 @@ Riferimenti metodologici:
 - [Ridge, documentazione scikit-learn](https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification).
 - [Validazione temporale e variabili ritardate](https://scikit-learn.org/stable/auto_examples/applications/plot_time_series_lagged_features.html).
 - [Modelli USGS CE-QUAL-W2 per il Willamette](https://www.usgs.gov/data/ce-qual-w2-models-willamette-river-and-major-tributaries-downstream-us-army-corps-engineers): individuati per gli scenari, non installati o eseguiti in questo incremento. Il dominio fluviale del rapporto 2022 termina alle Willamette Falls; non trasferire automaticamente la calibrazione alla stazione di Portland.
+- [Lower Willamette: condizioni al contorno e configurazione, PSU 2001](https://pdxscholar.library.pdx.edu/cengin_fac/149/) e [calibrazione](https://pdxscholar.library.pdx.edu/cengin_fac/146/): riferimenti storici per un dominio che comprende influenze del Columbia e delle maree. Richiedono dati di portate/livelli, meteo, geometria, affluenti e scarichi; non sono una calibrazione attuale pronta all'uso. Sono state consultate le descrizioni, non eseguito il modello.

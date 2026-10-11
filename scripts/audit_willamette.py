@@ -13,6 +13,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal, localcontext
 from pathlib import Path
+from urllib.parse import urlparse, parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
 TOLERANCE = 1e-9
@@ -28,6 +29,14 @@ def iso(value):
 
 def digest(raw):
     return "0x" + hashlib.sha256(raw).hexdigest()
+
+
+def compressed_body(path):
+    with gzip.open(path, "rb") as source:
+        raw = source.read(10_000_001)
+    if len(raw) > 10_000_000:
+        raise ValueError("Decompressed source exceeds size limit")
+    return raw
 
 
 def read_collection(raw, station, code, series, unit, start, end, scale=1.0):
@@ -127,6 +136,9 @@ def prediction(candidate, row):
     if candidate["name"] == "existing-linear":
         return row["linear"]
     m = candidate["model"]
+    width = len(m["coefficients"])
+    if not width or len(m["mean"]) != width or len(m["scale"]) != width or len(row["features"]) < width:
+        raise ValueError("Incomplete model vectors or input features")
     return row["persistence"] + m["residualIntercept"] + sum((v - mean) / scale * w for v, mean, scale, w in
         zip(row["features"], m["mean"], m["scale"], m["coefficients"]))
 
@@ -134,15 +146,15 @@ def prediction(candidate, row):
 def metrics(rows, forecasts):
     if not rows:
         raise ValueError("Empty scoring phase")
-    errors = [p - r["actual"] for r, p in zip(rows, forecasts)]
-    if len(errors) != len(rows):
+    if len(forecasts) != len(rows):
         raise ValueError("Incomplete forecasts")
+    errors = [p - r["actual"] for r, p in zip(rows, forecasts)]
     return {"pairs": len(rows), "maeMgL": sum(map(abs, errors)) / len(errors),
             "rmseMgL": math.sqrt(sum(e * e for e in errors) / len(errors)), "biasMgL": sum(errors) / len(errors)}
 
 
 def close(actual, expected, label, tolerance=TOLERANCE):
-    if not math.isfinite(actual) or abs(actual - expected) > tolerance:
+    if not math.isfinite(actual) or not math.isfinite(expected) or abs(actual - expected) > tolerance:
         raise AssertionError(f"{label}: {actual} != {expected}")
     return abs(actual - expected)
 
@@ -160,7 +172,7 @@ def load_original(root):
     covariates, qualities = {}, {"oxygen": oq}
     for kind in ("temperature", "discharge"):
         source = manifest["sources"][kind]
-        raw = gzip.decompress((extra / source["file"]).read_bytes())
+        raw = compressed_body(extra / source["file"])
         if digest(raw) != source["rawSha256"]:
             raise ValueError("Covariate hash mismatch")
         records, quality = read_collection(raw, manifest["stationId"], source["parameterCode"], source["timeSeriesId"],
@@ -192,6 +204,8 @@ def original_audit(root=ROOT):
             model = decimal_ridge(train, len(saved["features"]), saved["model"]["alpha"])
             candidate["model"] = model
             for key in ("mean", "scale", "coefficients"):
+                if len(model[key]) != len(saved["model"][key]):
+                    raise AssertionError("Incomplete saved model vector")
                 for i, (a, b) in enumerate(zip(model[key], saved["model"][key])):
                     largest_difference = max(largest_difference, close(a, b, f"{saved['name']} {key}[{i}]"))
             largest_difference = max(largest_difference, close(model["residualIntercept"], saved["model"]["residualIntercept"], "intercept"))
@@ -209,9 +223,13 @@ def original_audit(root=ROOT):
     forecasts = [prediction(selected, r) for r in testing]
     covered = sum(abs(p - r["actual"]) <= halfwidth for p, r in zip(forecasts, testing))
     close(covered / len(testing), report["interval"]["holdoutCoverage"], "coverage")
+    if len(report["rows"]) != len(testing):
+        raise AssertionError("Incomplete holdout lineage")
     for r, saved, p in zip(testing, report["rows"], forecasts):
         if (r["origin"], r["target"], r["evidence"]) != (saved["origin"], saved["target"], saved["evidence"]):
             raise AssertionError("Record lineage mismatch")
+        if len(r["features"]) != len(saved["features"]):
+            raise AssertionError("Incomplete saved feature vector")
         for i, (a, b) in enumerate(zip(r["features"], saved["features"])):
             close(a, b, f"feature[{i}]")
         close(r["actual"], saved["actual"], "actual")
@@ -240,19 +258,120 @@ def original_audit(root=ROOT):
                         "Finalized archive does not establish historical real-time data availability"]}
 
 
+def frozen_validation(root=ROOT):
+    folder = root / "docs/datasets/usgs-willamette-validation"
+    protocol_raw = (folder / "protocol.json").read_bytes()
+    protocol = json.loads(protocol_raw)
+    report_bytes = (root / "docs/evidence/willamette-forecast/forecast.json").read_bytes()
+    report = json.loads(report_bytes)
+    if (digest(report_bytes), report["reportHash"], report["selected"], report["interval"]["halfWidthMgL"]) != (
+            protocol["frozenReportFileHash"], protocol["frozenReportHash"], protocol["frozenCandidate"], protocol["frozenIntervalHalfWidthMgL"]):
+        raise ValueError("Frozen model or interval commitment changed")
+    selected = next(c for c in report["candidates"] if c["name"] == report["selected"])
+    original_manifest, original_rows, _, _ = load_original(root)
+    train = [r for r in original_rows if instant(r["target"]) <= instant(original_manifest["experiment"]["selectionStart"])]
+    width = len(selected["features"])
+    training_ranges = [{"feature": name, "min": min(r["features"][j] for r in train), "max": max(r["features"][j] for r in train)}
+                       for j, name in enumerate(selected["features"])]
+    windows = []
+    for window in protocol["windows"]:
+        path = folder / window["id"]
+        if not (path / "manifest.json").exists():
+            windows.append({"window": window, "status": "blocked; predeclared source capture unavailable"})
+            continue
+        manifest = json.loads((path / "manifest.json").read_text(encoding="utf-8"))
+        if manifest["protocolHash"] != digest(protocol_raw) or manifest["window"] != window:
+            raise ValueError("External capture protocol mismatch")
+        start, end = instant(window["start"]), instant(window["end"])
+        sources, qualities, hashes = {}, {}, {}
+        for kind, spec in protocol["sources"].items():
+            source = manifest["sources"][kind]
+            if source["file"] != f"{kind}.json.gz":
+                raise ValueError("Unexpected source filename")
+            url, query = urlparse(source["sourceUrl"]), parse_qs(urlparse(source["sourceUrl"]).query)
+            if url.scheme != "https" or url.netloc != "api.waterdata.usgs.gov" or url.path != "/ogcapi/v1/collections/continuous/items" or query != {
+                    "f": ["json"], "monitoring_location_id": [protocol["stationId"]], "parameter_code": [spec["parameterCode"]],
+                    "time": [f"{window['start']}/{window['end']}"], "limit": ["10000"]}:
+                raise ValueError("External source URL mismatch")
+            raw = compressed_body(path / source["file"])
+            if digest(raw) != source["rawSha256"]:
+                raise ValueError("External raw-body hash mismatch")
+            records, quality = read_collection(raw, protocol["stationId"], spec["parameterCode"], spec["timeSeriesId"], spec["unit"], start, end, spec["scale"])
+            if quality["total"] != source["records"]:
+                raise ValueError("External manifest count mismatch")
+            sources[kind], qualities[kind], hashes[kind] = records, quality, source["rawSha256"]
+        rows, alignment = make_pairs(sources["oxygen"], sources["temperature"], sources["discharge"], start, end)
+        if not rows:
+            windows.append({"window": window, "status": "blocked; no complete approved exact-join pairs", "quality": qualities, "alignment": alignment})
+            continue
+        predicted = [prediction(selected, r) for r in rows]
+        model_score = metrics(rows, predicted)
+        persistence = metrics(rows, [r["persistence"] for r in rows])
+        linear = metrics(rows, [r["linear"] for r in rows])
+        halfwidth = protocol["frozenIntervalHalfWidthMgL"]
+        outside = [[j for j in range(width) if r["features"][j] < training_ranges[j]["min"] - TOLERANCE or
+                    r["features"][j] > training_ranges[j]["max"] + TOLERANCE] for r in rows]
+        daily = []
+        for day in sorted({r["origin"][:10] for r in rows}):
+            indices = [i for i, r in enumerate(rows) if r["origin"].startswith(day)]
+            subset = [rows[i] for i in indices]
+            ps = [predicted[i] for i in indices]
+            daily.append({"originDayUTC": day, "model": metrics(subset, ps),
+                          "persistence": metrics(subset, [r["persistence"] for r in subset]),
+                          "coverage": sum(abs(p - r["actual"]) <= halfwidth for p, r in zip(ps, subset)) / len(subset)})
+        windows.append({"window": window, "status": "evaluated without fitting or calibration", "sourceHashes": hashes,
+                        "quality": qualities, "alignment": alignment, "selectedModel": model_score,
+                        "persistence": persistence, "existingLinear": linear,
+                        "maeImprovementOverPersistencePercent": None if persistence["maeMgL"] == 0 else
+                            (1 - model_score["maeMgL"] / persistence["maeMgL"]) * 100,
+                        "unchangedIntervalCoverage": sum(abs(p - r["actual"]) <= halfwidth for p, r in zip(predicted, rows)) / len(rows),
+                        "featureExtrapolation": {"pairs": sum(bool(x) for x in outside), "fraction": sum(bool(x) for x in outside) / len(rows),
+                            "bySelectedFeature": {name: sum(j in x for x in outside) for j, name in enumerate(selected["features"])},
+                            "interpretation": "Univariate training-range diagnostic; not a probability or a validated applicability domain"},
+                        "observedTargetsBelowIllustrative5MgL": sum(r["actual"] < 5 for r in rows),
+                        "negativePredictions": sum(p < 0 for p in predicted), "daily": daily,
+                        "rows": [{**r, "selectedPredictionMgL": p, "lowerMgL": p - halfwidth, "upperMgL": p + halfwidth,
+                                  "outsideTrainingFeatures": [selected["features"][j] for j in out]} for r, p, out in zip(rows, predicted, outside)]})
+    return {"version": "frozen-seasonal-validation-v1", "protocolHash": digest(protocol_raw),
+            "frozenReportHash": report["reportHash"], "selected": selected["name"], "refitted": False, "recalibrated": False,
+            "operationalModelChanged": False, "independentFieldMeasurement": False, "trainingFeatureRanges": training_ranges,
+            "windows": windows, "decision": "retain as an isolated research experiment; no operational promotion",
+            "scope": "Later archival windows, frozen model/interval; correlation and finalized-data limitations remain"}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--external", action="store_true", help="Evaluate the predeclared later seasonal windows with a frozen model")
+    parser.add_argument("--summary", action="store_true", help="Print a compact summary while saving the full report")
+    parser.add_argument("--summary-output", type=Path, help="Save a compact report with the full decompressed report hash")
     args = parser.parse_args()
-    result = original_audit(args.root)
+    checked = original_audit(args.root)
+    result = frozen_validation(args.root) if args.external else checked
     content = json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
-    if args.output:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        if args.output.exists() and args.output.read_text(encoding="utf-8") != content:
+    def save(path, text):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        raw = text.encode("utf-8")
+        existing = gzip.decompress(path.read_bytes()) if path.exists() and path.suffix == ".gz" else path.read_bytes() if path.exists() else None
+        if existing is not None and existing.decode("utf-8").replace("\r\n", "\n") != text:
             raise ValueError("Different existing audit: choose a new output path")
-        args.output.write_text(content, encoding="utf-8")
-    print(content)
+        if existing is None:
+            path.write_bytes(gzip.compress(raw, mtime=0) if path.suffix == ".gz" else raw)
+    if args.output:
+        save(args.output, content)
+    if args.summary_output:
+        if not args.external:
+            raise ValueError("Summary artifact is for external validation")
+        brief = {k: v for k, v in result.items() if k != "windows"}
+        brief["fullDecompressedReportSha256"] = digest(content.encode("utf-8"))
+        brief["windows"] = [{k: v for k, v in w.items() if k != "rows"} for w in result["windows"]]
+        save(args.summary_output, json.dumps(brief, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+    if args.summary and args.external:
+        print(json.dumps({"decision": result["decision"], "windows": [{k: v for k, v in w.items() if k not in ("rows", "daily")}
+              for w in result["windows"]]}, indent=2, allow_nan=False))
+    else:
+        print(content)
 
 
 if __name__ == "__main__":

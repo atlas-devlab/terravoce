@@ -27,9 +27,15 @@ primo banco di verifica di componenti riutilizzabili, non il limite del progetto
   limiti della regressione attuale e il nuovo esperimento rimane in osservazione.
 
 Il [test multivariabile sul Willamette](WILLAMETTE_FORECAST_EXPERIMENT.md) confronta
-ossigeno, temperatura e portata con split temporali. Il miglioramento finale è
-piccolo e la copertura dell'intervallo insufficiente rispetto all'obiettivo:
-non sostituisce il modello operativo e non modifica governance o finanziamenti.
+ossigeno, temperatura e portata con split temporali. Il piccolo miglioramento
+estivo non si trasferisce alle finestre autunnale e invernale dichiarate prima
+del download: il modello congelato è molto peggiore della persistenza e la
+copertura invernale dell'intervallo è zero. Un secondo calcolo in Python verifica
+la riproducibilità numerica, non l'efficacia scientifica. Il modello resta un
+esperimento isolato; non sostituisce l'Oracle e non modifica i finanziamenti.
+
+In questi test "modello" indica la regressione numerica, non il LLM. Il LLM
+locale non è stato chiamato, riaddestrato o cambiato durante l'esperimento.
 
 ## Due ruoli, un percorso verificabile
 

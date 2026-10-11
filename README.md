@@ -44,13 +44,19 @@ discuss methods and limitations. See the [validation criteria](CONTRIBUTING.md#v
 A separate [Willamette experiment](docs/WILLAMETTE_FORECAST_EXPERIMENT.md) joins
 real oxygen, temperature and signed instantaneous discharge measurements.
 Training, selection, interval calibration and final evaluation use separate
-chronological phases. On 143 final 1-hour pairs, the selected temperature model
-has MAE 0.264 mg/L versus persistence 0.268 mg/L (1.55% lower); adding discharge
-does not improve it. Its empirical interval covers 76.92% versus a requested
-90%, so the experiment stays in observation mode. No operational Oracle,
+chronological phases. The small summer improvement does not transfer to the
+predeclared autumn and winter windows: frozen-model MAE is 0.306 versus 0.102
+mg/L in autumn, and 1.279 versus 0.012 mg/L in winter. Its unchanged empirical
+interval has zero winter coverage. An independent Python implementation checks
+the numerical calculations against the TypeScript implementation; this is a
+code cross-check by the same project, not an independent scientific audit.
+The experiment is unsuitable for operational promotion. No operational Oracle,
 governance or funding behavior changes. Run `pnpm forecast:replay` and
 `pnpm forecast:verify` after building. This remains a reusable part of the
-environmental coordination mission, not a validated causal scenario engine.
+environmental coordination mission. Run
+`python3 scripts/audit_willamette.py --external --summary`
+to reproduce the seasonal check offline. See the executed
+[audit notebook](docs/notebooks/willamette-forecast-audit.ipynb).
 
 ## Everyone can take part
 

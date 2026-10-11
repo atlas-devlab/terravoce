@@ -1,0 +1,653 @@
+{
+  "version": "frozen-seasonal-validation-v1",
+  "protocolHash": "0xd528c8e35c657d1fb5603d810a52076d3c655c75e3f27611defb50bada26e02e",
+  "frozenReportHash": "0xe631f0492ebbca40fa7e76b05578b0aac40a8c21690d405bfb82f41200a98dde",
+  "selected": "oxygen-clock-temperature:ridge-100",
+  "refitted": false,
+  "recalibrated": false,
+  "operationalModelChanged": false,
+  "independentFieldMeasurement": false,
+  "trainingFeatureRanges": [
+    {
+      "feature": "oxygenNow",
+      "min": 7.3,
+      "max": 9.0
+    },
+    {
+      "feature": "oxygenDelta30m",
+      "min": -0.8999999999999995,
+      "max": 0.6000000000000014
+    },
+    {
+      "feature": "oxygenDelta2h",
+      "min": -1.0000000000000009,
+      "max": 0.7000000000000011
+    },
+    {
+      "feature": "oxygenDelta5h30m",
+      "min": -1.0000000000000009,
+      "max": 1.0
+    },
+    {
+      "feature": "clockSinUTC",
+      "min": -1.0,
+      "max": 1.0
+    },
+    {
+      "feature": "clockCosUTC",
+      "min": -1.0,
+      "max": 1.0
+    },
+    {
+      "feature": "temperatureNow",
+      "min": 23.0,
+      "max": 24.5
+    },
+    {
+      "feature": "temperatureDelta2h",
+      "min": -0.3000000000000007,
+      "max": 0.40000000000000213
+    }
+  ],
+  "decision": "retain as an isolated research experiment; no operational promotion",
+  "scope": "Later archival windows, frozen model/interval; correlation and finalized-data limitations remain",
+  "fullDecompressedReportSha256": "0xb1fe33a30bff8e02e40908ce7b544fce83d3544a37bc0827de80a3ea53ee19d7",
+  "windows": [
+    {
+      "window": {
+        "id": "autumn-2025",
+        "start": "2025-10-01T00:00:00Z",
+        "end": "2025-10-15T00:00:00Z"
+      },
+      "status": "evaluated without fitting or calibration",
+      "sourceHashes": {
+        "oxygen": "0x32bc1d38500490441d2eef14741a9d261f264d4baabb30ab4794373092600314",
+        "temperature": "0x16d798a680a41518db2ef3a128efb78226ed088e592095f446d481b846d017f6",
+        "discharge": "0x4a22a90720debe0bbe1d23c4a6ef15446b76d7def09ba4d3d7e2918a216eca62"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 673,
+          "accepted": 673,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 673,
+          "accepted": 673,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 4033,
+          "accepted": 4033,
+          "excluded": []
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 660,
+        "acceptedPairs": 660,
+        "skipped": 0
+      },
+      "selectedModel": {
+        "pairs": 660,
+        "maeMgL": 0.30568567201249497,
+        "rmseMgL": 0.3327745800997276,
+        "biasMgL": -0.29688941849514877
+      },
+      "persistence": {
+        "pairs": 660,
+        "maeMgL": 0.10151515151515153,
+        "rmseMgL": 0.15374122295716153,
+        "biasMgL": -0.002424242424242424
+      },
+      "existingLinear": {
+        "pairs": 660,
+        "maeMgL": 0.11269657272727275,
+        "rmseMgL": 0.15317075602873795,
+        "biasMgL": -0.0003076272727273598
+      },
+      "maeImprovementOverPersistencePercent": -201.12319929589054,
+      "unchangedIntervalCoverage": 0.7636363636363637,
+      "featureExtrapolation": {
+        "pairs": 660,
+        "fraction": 1.0,
+        "bySelectedFeature": {
+          "oxygenNow": 488,
+          "oxygenDelta30m": 0,
+          "oxygenDelta2h": 0,
+          "oxygenDelta5h30m": 0,
+          "clockSinUTC": 0,
+          "clockCosUTC": 0,
+          "temperatureNow": 660,
+          "temperatureDelta2h": 0
+        },
+        "interpretation": "Univariate training-range diagnostic; not a probability or a validated applicability domain"
+      },
+      "observedTargetsBelowIllustrative5MgL": 0,
+      "negativePredictions": 0,
+      "daily": [
+        {
+          "originDayUTC": "2025-10-01",
+          "model": {
+            "pairs": 37,
+            "maeMgL": 0.23166170262491456,
+            "rmseMgL": 0.2550515593328274,
+            "biasMgL": -0.1837896126991511
+          },
+          "persistence": {
+            "pairs": 37,
+            "maeMgL": 0.12702702702702712,
+            "rmseMgL": 0.19796259542951347,
+            "biasMgL": -0.002702702702702741
+          },
+          "coverage": 0.9459459459459459
+        },
+        {
+          "originDayUTC": "2025-10-02",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.21041008794727448,
+            "rmseMgL": 0.23876328773572694,
+            "biasMgL": -0.18596842678756986
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.10833333333333346,
+            "rmseMgL": 0.16583123951777026,
+            "biasMgL": 0.0
+          },
+          "coverage": 0.9375
+        },
+        {
+          "originDayUTC": "2025-10-03",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.2320820194147711,
+            "rmseMgL": 0.25702013886228847,
+            "biasMgL": -0.21927423205594185
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.09999999999999987,
+            "rmseMgL": 0.15942605391424147,
+            "biasMgL": -0.004166666666666652
+          },
+          "coverage": 0.9375
+        },
+        {
+          "originDayUTC": "2025-10-04",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.27429566172981723,
+            "rmseMgL": 0.2998301547438815,
+            "biasMgL": -0.2606293964117958
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.12916666666666635,
+            "rmseMgL": 0.18142950880897663,
+            "biasMgL": -0.004166666666666652
+          },
+          "coverage": 0.8541666666666666
+        },
+        {
+          "originDayUTC": "2025-10-05",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.27784940671215236,
+            "rmseMgL": 0.30261167946373446,
+            "biasMgL": -0.276470828920797
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.09791666666666661,
+            "rmseMgL": 0.14930394055974092,
+            "biasMgL": -0.002083333333333326
+          },
+          "coverage": 0.9375
+        },
+        {
+          "originDayUTC": "2025-10-06",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.29425082630089966,
+            "rmseMgL": 0.31672147339389856,
+            "biasMgL": -0.29312845352613814
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.09583333333333333,
+            "rmseMgL": 0.13994046353122222,
+            "biasMgL": -0.004166666666666689
+          },
+          "coverage": 0.8541666666666666
+        },
+        {
+          "originDayUTC": "2025-10-07",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.3173487808930296,
+            "rmseMgL": 0.33452003785839013,
+            "biasMgL": -0.3173487808930296
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.09375000000000037,
+            "rmseMgL": 0.12500000000000033,
+            "biasMgL": -0.006250000000000015
+          },
+          "coverage": 0.8125
+        },
+        {
+          "originDayUTC": "2025-10-08",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.3366966098308861,
+            "rmseMgL": 0.35638921385090155,
+            "biasMgL": -0.3366966098308861
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.09166666666666685,
+            "rmseMgL": 0.12416387021459477,
+            "biasMgL": -0.004166666666666652
+          },
+          "coverage": 0.75
+        },
+        {
+          "originDayUTC": "2025-10-09",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.34806526770731455,
+            "rmseMgL": 0.37545362604878774,
+            "biasMgL": -0.3415653254799709
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.11249999999999989,
+            "rmseMgL": 0.1620185174601965,
+            "biasMgL": -0.004166666666666652
+          },
+          "coverage": 0.6041666666666666
+        },
+        {
+          "originDayUTC": "2025-10-10",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.3263865965841819,
+            "rmseMgL": 0.36199738611145404,
+            "biasMgL": -0.32362585483164114
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.1270833333333334,
+            "rmseMgL": 0.17260262647673336,
+            "biasMgL": 0.002083333333333326
+          },
+          "coverage": 0.6041666666666666
+        },
+        {
+          "originDayUTC": "2025-10-11",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.3309028280561774,
+            "rmseMgL": 0.35512417649680955,
+            "biasMgL": -0.3171712302171571
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.11458333333333341,
+            "rmseMgL": 0.1701714821388513,
+            "biasMgL": 0.006250000000000015
+          },
+          "coverage": 0.7291666666666666
+        },
+        {
+          "originDayUTC": "2025-10-12",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.3437878710845324,
+            "rmseMgL": 0.3615124924363477,
+            "biasMgL": -0.3369015559182858
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.09166666666666683,
+            "rmseMgL": 0.15138251770487482,
+            "biasMgL": -0.004166666666666689
+          },
+          "coverage": 0.6458333333333334
+        },
+        {
+          "originDayUTC": "2025-10-13",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 0.3494672546978226,
+            "rmseMgL": 0.36905534906394855,
+            "biasMgL": -0.3494672546978226
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.06874999999999998,
+            "rmseMgL": 0.11456439237389608,
+            "biasMgL": -0.002083333333333326
+          },
+          "coverage": 0.625
+        },
+        {
+          "originDayUTC": "2025-10-14",
+          "model": {
+            "pairs": 47,
+            "maeMgL": 0.39121247670424647,
+            "rmseMgL": 0.40892258882497073,
+            "biasMgL": -0.39044465867063577
+          },
+          "persistence": {
+            "pairs": 47,
+            "maeMgL": 0.06808510638297856,
+            "rmseMgL": 0.12377054955105501,
+            "biasMgL": -0.004255319148936155
+          },
+          "coverage": 0.48936170212765956
+        }
+      ]
+    },
+    {
+      "window": {
+        "id": "winter-2026",
+        "start": "2026-01-01T00:00:00Z",
+        "end": "2026-01-15T00:00:00Z"
+      },
+      "status": "evaluated without fitting or calibration",
+      "sourceHashes": {
+        "oxygen": "0xd1aca12701f9a8e7749e570cd99dd30896c55aaa847fe99c3d385080cd13f867",
+        "temperature": "0x0443b22875cc6bc88515d5c29aab494142743604acfe92f002493545522bfd2b",
+        "discharge": "0x9c04087e3a0e48f2c132a08ad621beb2927c65e62d2aee617df967e7ff3459c3"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 671,
+          "accepted": 671,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 671,
+          "accepted": 671,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 4032,
+          "accepted": 4032,
+          "excluded": []
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 658,
+        "acceptedPairs": 645,
+        "skipped": 13
+      },
+      "selectedModel": {
+        "pairs": 645,
+        "maeMgL": 1.278610529153127,
+        "rmseMgL": 1.2860322026742688,
+        "biasMgL": -1.278610529153127
+      },
+      "persistence": {
+        "pairs": 645,
+        "maeMgL": 0.012403100775193803,
+        "rmseMgL": 0.03521803625302497,
+        "biasMgL": 0.00031007751937984384
+      },
+      "existingLinear": {
+        "pairs": 645,
+        "maeMgL": 0.023346009302325596,
+        "rmseMgL": 0.03765689296840766,
+        "biasMgL": -9.812093023260498e-05
+      },
+      "maeImprovementOverPersistencePercent": -10208.797391297081,
+      "unchangedIntervalCoverage": 0.0,
+      "featureExtrapolation": {
+        "pairs": 645,
+        "fraction": 1.0,
+        "bySelectedFeature": {
+          "oxygenNow": 645,
+          "oxygenDelta30m": 0,
+          "oxygenDelta2h": 0,
+          "oxygenDelta5h30m": 0,
+          "clockSinUTC": 0,
+          "clockCosUTC": 0,
+          "temperatureNow": 645,
+          "temperatureDelta2h": 0
+        },
+        "interpretation": "Univariate training-range diagnostic; not a probability or a validated applicability domain"
+      },
+      "observedTargetsBelowIllustrative5MgL": 0,
+      "negativePredictions": 0,
+      "daily": [
+        {
+          "originDayUTC": "2026-01-01",
+          "model": {
+            "pairs": 37,
+            "maeMgL": 1.2560801590111965,
+            "rmseMgL": 1.2589364108718257,
+            "biasMgL": -1.2560801590111965
+          },
+          "persistence": {
+            "pairs": 37,
+            "maeMgL": 0.010810810810810773,
+            "rmseMgL": 0.03287979746107134,
+            "biasMgL": 0.005405405405405387
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-02",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.235513577220592,
+            "rmseMgL": 1.2382475390352665,
+            "biasMgL": -1.235513577220592
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.012499999999999956,
+            "rmseMgL": 0.03535533905932725,
+            "biasMgL": 0.004166666666666652
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-03",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.1976835474291854,
+            "rmseMgL": 1.2012873310166594,
+            "biasMgL": -1.1976835474291854
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.01250000000000003,
+            "rmseMgL": 0.03535533905932746,
+            "biasMgL": 0.008333333333333378
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-04",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.1329369694780573,
+            "rmseMgL": 1.1372967871120734,
+            "biasMgL": -1.1329369694780573
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.012499999999999956,
+            "rmseMgL": 0.03535533905932725,
+            "biasMgL": 0.012499999999999956
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-05",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.0890220977886311,
+            "rmseMgL": 1.0915497389745512,
+            "biasMgL": -1.0890220977886311
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.016666666666666902,
+            "rmseMgL": 0.04082482904638688,
+            "biasMgL": 0.0
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-06",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.1641721908289318,
+            "rmseMgL": 1.166335928076938,
+            "biasMgL": -1.1641721908289318
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.012499999999999956,
+            "rmseMgL": 0.03535533905932725,
+            "biasMgL": -0.012499999999999956
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-07",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.1866019647434982,
+            "rmseMgL": 1.188040496665136,
+            "biasMgL": -1.1866019647434982
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.008333333333333304,
+            "rmseMgL": 0.028867513459481187,
+            "biasMgL": -0.004166666666666652
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-08",
+          "model": {
+            "pairs": 37,
+            "maeMgL": 1.2799559544600392,
+            "rmseMgL": 1.2818432173130374,
+            "biasMgL": -1.2799559544600392
+          },
+          "persistence": {
+            "pairs": 37,
+            "maeMgL": 0.016216216216216255,
+            "rmseMgL": 0.040269363312841554,
+            "biasMgL": -0.016216216216216255
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-09",
+          "model": {
+            "pairs": 44,
+            "maeMgL": 1.424989511860697,
+            "rmseMgL": 1.4264459957056979,
+            "biasMgL": -1.424989511860697
+          },
+          "persistence": {
+            "pairs": 44,
+            "maeMgL": 0.00909090909090906,
+            "rmseMgL": 0.030151134457776257,
+            "biasMgL": -0.00909090909090906
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-10",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.4334340993143293,
+            "rmseMgL": 1.435650516692262,
+            "biasMgL": -1.4334340993143293
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.012499999999999956,
+            "rmseMgL": 0.03535533905932725,
+            "biasMgL": 0.0
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-11",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.4242621858427942,
+            "rmseMgL": 1.4262662361932847,
+            "biasMgL": -1.4242621858427942
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.002083333333333326,
+            "rmseMgL": 0.014433756729740593,
+            "biasMgL": 0.002083333333333326
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-12",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.384720319977342,
+            "rmseMgL": 1.3873505298501487,
+            "biasMgL": -1.384720319977342
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.016666666666666607,
+            "rmseMgL": 0.04082482904638616,
+            "biasMgL": 0.004166666666666652
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-13",
+          "model": {
+            "pairs": 48,
+            "maeMgL": 1.3554218498544692,
+            "rmseMgL": 1.3573835923661632,
+            "biasMgL": -1.3554218498544692
+          },
+          "persistence": {
+            "pairs": 48,
+            "maeMgL": 0.008333333333333304,
+            "rmseMgL": 0.028867513459481187,
+            "biasMgL": 0.004166666666666652
+          },
+          "coverage": 0.0
+        },
+        {
+          "originDayUTC": "2026-01-14",
+          "model": {
+            "pairs": 47,
+            "maeMgL": 1.3444683843515868,
+            "rmseMgL": 1.3463579500234844,
+            "biasMgL": -1.3444683843515868
+          },
+          "persistence": {
+            "pairs": 47,
+            "maeMgL": 0.02340425531914908,
+            "rmseMgL": 0.04837794468468997,
+            "biasMgL": 0.0021276595744680773
+          },
+          "coverage": 0.0
+        }
+      ]
+    }
+  ]
+}

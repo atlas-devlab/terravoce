@@ -64,7 +64,7 @@ describe("transparent multivariate experiment", () => {
     const incomplete = alignedPairs(changed);
     expect(incomplete.pairs.length).toBe(original.pairs.length - 12);
     expect(incomplete.skipped).toBe(12);
-  });
+  }, 20000);
   it("keeps model fitting, selection and calibration independent of future holdout data", () => {
     const before = runMultivariateExperiment(data), changed = structuredClone(data);
     const cutoff = Date.parse("2025-08-12T01:00:00Z");

@@ -2,3 +2,5 @@
 docs/datasets/usgs-willamette/continuous.json -text
 docs/datasets/usgs-willamette/station.json -text
 docs/datasets/usgs-willamette-multivariate/*.gz -text
+docs/datasets/usgs-willamette-validation/*/*.gz -text
+docs/evidence/willamette-forecast/*.gz -text
