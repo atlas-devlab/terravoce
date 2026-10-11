@@ -58,6 +58,12 @@ jobs:
       - name: Run local blockchain demonstration
         run: pnpm e2e
 
+      - name: Replay and verify the pinned real USGS oxygen case
+        run: |
+          pnpm case:replay
+          pnpm case:verify
+          pnpm case:e2e
+
       - name: Validate Oracle bridge digest interoperability
         run: |
           python3 -m venv services/autonomy/.venv

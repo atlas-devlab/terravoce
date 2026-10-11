@@ -1,0 +1,98 @@
+{
+  "version": "real-data-local-chain-v1",
+  "caseHash": "0xc25e870824265b9c1a32bf929ec3f42cc54ebc86e52a4d2560ac1096c9212185",
+  "resultHash": "0x012ff526a3a7e0f12a02f4cd5894893e348a85566d77bdb7a02a76409886e89d",
+  "observationSource": "real USGS approved archival measurements",
+  "importerSignature": "ephemeral local importer; not USGS signature",
+  "governance": "simulated affected-community and youth identities; both voted",
+  "consensus": "3-of-4 local signer fixture through TerraAutonomyBridge; ABCI cluster not launched in this run",
+  "verification": {
+    "verified": true,
+    "caseHash": "0xc25e870824265b9c1a32bf929ec3f42cc54ebc86e52a4d2560ac1096c9212185",
+    "resultHash": "0x012ff526a3a7e0f12a02f4cd5894893e348a85566d77bdb7a02a76409886e89d",
+    "scope": "reproducibility against pinned USGS snapshot; not independent field review"
+  },
+  "independentFieldReview": "pending; no real operator/reviewer enrolled",
+  "physicalSampling": "not performed",
+  "ecologicalImprovementVerified": false,
+  "funding": {
+    "mode": "local valueless test tokens",
+    "amount": "10 TEST",
+    "paidAfterBothReviews": true
+  },
+  "negativeChecks": {
+    "prematureGovernanceRejected": true,
+    "prematurePaymentRejected": true,
+    "outsiderReviewRejected": true,
+    "oneReviewPaymentRejected": true
+  },
+  "transactions": {
+    "bridgeProposal": "0x93755b1945228a7b2ea40c0d932c215fe3903fc9e60c999be1c0fdbcd50f53b7",
+    "civicExecution": "0x2720587169492829db9ec08774c3533cf19902d85f28bf2cf2711ecd8c7bd9f1",
+    "payment": "0x4da8aa47c4607e6fc2c195ee9f73b2e9413a74abf968d57abf5791e6fc35d9ad"
+  },
+  "contracts": {
+    "bridge": "0x9A676e781A523b5d0C0e43731313A708CB607508",
+    "governor": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+    "escrow": "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"
+  },
+  "result": {
+    "version": "environmental-result-v1",
+    "caseHash": "0xc25e870824265b9c1a32bf929ec3f42cc54ebc86e52a4d2560ac1096c9212185",
+    "sourceHash": "0x512c37bd9c3b03c76887cd8660945b51bdb32d6e009183f790f6f13b6f72cf57",
+    "stationId": "USGS-14211720",
+    "timeSeriesId": "1ccd1e712b6b4cb69fdcfbf407f7358b",
+    "deliveredAction": "DATA_REVIEW",
+    "targetRecord": {
+      "id": "538749e2-5a87-4d27-bd89-3424175c6fa4",
+      "time": "2025-08-08T01:00:00.000Z",
+      "value": 8.2,
+      "lastModified": "2026-04-29T21:15:15.518Z"
+    },
+    "unit": "mg/L",
+    "approval": "Approved",
+    "predictionMgL": 8.655594,
+    "persistenceMgL": 8.4,
+    "absoluteErrorMgL": 0.4555940000000014,
+    "persistenceAbsoluteErrorMgL": 0.20000000000000107,
+    "outcome": "public-data-review-delivered",
+    "ecologicalImprovementVerified": false,
+    "resultHash": "0x012ff526a3a7e0f12a02f4cd5894893e348a85566d77bdb7a02a76409886e89d"
+  },
+  "scientificReplay": {
+    "version": "oxygen-replay-v1",
+    "sourceHash": "0x512c37bd9c3b03c76887cd8660945b51bdb32d6e009183f790f6f13b6f72cf57",
+    "dataVintage": "retrospective approved archive; not an as-of-origin availability backtest",
+    "modelVersion": "terravoce-linear-risk-v1",
+    "horizonSeconds": 3600,
+    "windowSize": 12,
+    "evaluationStart": "2025-08-08T00:00:00Z",
+    "evaluatedPairs": 335,
+    "skippedGapsOrMissingTargets": 0,
+    "quality": {
+      "total": 673,
+      "accepted": 673,
+      "excluded": [],
+      "missingIntervals": 0,
+      "unit": "mg/L",
+      "approval": "Approved"
+    },
+    "threshold": {
+      "mgL": 5,
+      "status": "illustrative; not a local legal or ecological standard"
+    },
+    "observedLowOxygenEvents": 0,
+    "linear": {
+      "maeMgL": 0.2420380447761197,
+      "rmseMgL": 0.329716367392072,
+      "falseAlerts": 0,
+      "missedLowOxygen": 0
+    },
+    "persistence": {
+      "maeMgL": 0.20477611940298532,
+      "rmseMgL": 0.2973514930982543,
+      "falseAlerts": 0,
+      "missedLowOxygen": 0
+    }
+  }
+}

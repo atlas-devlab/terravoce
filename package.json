@@ -15,7 +15,10 @@
     "contracts:test": "pnpm --filter @terravoce/contracts test",
     "oracle:dev": "pnpm --filter @terravoce/oracle dev",
     "demo": "pnpm --filter @terravoce/oracle demo",
-    "e2e": "pnpm build && pnpm --filter @terravoce/contracts e2e"
+    "e2e": "pnpm build && pnpm --filter @terravoce/contracts e2e",
+    "case:replay": "pnpm --filter @terravoce/environmental-case replay",
+    "case:verify": "pnpm --filter @terravoce/environmental-case verify",
+    "case:e2e": "pnpm --filter @terravoce/contracts case:e2e"
   },
   "devDependencies": {
     "@types/node": "24.13.3",

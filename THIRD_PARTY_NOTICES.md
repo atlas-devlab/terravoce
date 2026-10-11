@@ -34,3 +34,12 @@ The local experiment evaluated Qwen3 0.6B and 1.7B, quantized as Q4_K_M and
 downloaded through Ollama. The upstream Qwen model cards identify Apache-2.0:
 https://huggingface.co/Qwen/Qwen3-0.6B and https://huggingface.co/Qwen/Qwen3-1.7B.
 Keep the upstream model/runtime licenses with any separate redistribution.
+## USGS real-data snapshot
+
+`docs/datasets/usgs-willamette/continuous.json` and `station.json` contain U.S.
+Geological Survey Water Data for the Nation data. The service identifies these
+as US Government work in the public domain:
+https://api.waterdata.usgs.gov/ogcapi/v1/
+The accompanying manifest records station, time interval, retrieval date,
+source URLs, quality protocol and exact body hashes. These data are not relicensed
+as TerraVoce-generated measurements and USGS does not endorse this prototype.

@@ -31,6 +31,9 @@ importers:
       '@nomicfoundation/hardhat-toolbox-mocha-ethers':
         specifier: 3.0.7
         version: 3.0.7(72ca3454263252d05599d8b8f3dbd620)
+      '@terravoce/environmental-case':
+        specifier: workspace:*
+        version: link:../../services/environmental-case
       '@terravoce/oracle':
         specifier: workspace:*
         version: link:../../services/oracle
@@ -95,6 +98,34 @@ importers:
         version: 4.1.10(@types/node@24.13.3)(vite@8.1.4(@types/node@24.13.3)(esbuild@0.28.1)(tsx@4.23.1))
 
   services/ai-advisor:
+    dependencies:
+      '@terravoce/oracle':
+        specifier: workspace:*
+        version: link:../oracle
+      '@terravoce/protocol':
+        specifier: workspace:*
+        version: link:../../packages/protocol
+      '@terravoce/terralex':
+        specifier: workspace:*
+        version: link:../../packages/terralex
+      zod:
+        specifier: 4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@types/node':
+        specifier: 24.13.3
+        version: 24.13.3
+      tsx:
+        specifier: 4.23.1
+        version: 4.23.1
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: 4.1.10
+        version: 4.1.10(@types/node@24.13.3)(vite@8.1.4(@types/node@24.13.3)(esbuild@0.28.1)(tsx@4.23.1))
+
+  services/environmental-case:
     dependencies:
       '@terravoce/oracle':
         specifier: workspace:*

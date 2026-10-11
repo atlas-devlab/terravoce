@@ -8,9 +8,10 @@ distributed AI analysis, resilient public evidence, blockchain funding for
 verifiable interventions, and decision rights for affected communities and young
 people. The local prototypes below test individual parts of that mission.
 
-The current example follows synthetic dissolved-oxygen observations through a
-simple risk model, explicit policy rules, and a community decision on a local
-simulated blockchain.
+The examples follow both synthetic observations and a pinned real USGS oxygen
+dataset through a simple risk model, explicit policy rules, and civic decisions
+on a local simulated blockchain. The real-data case verifies delivery of a
+data-review report and gates payment on two result reviews.
 
 **Status: research MVP.** There is no public-chain deployment, live environmental
 pilot, real treasury funding, connected physical actuator, or independent audit.
@@ -21,14 +22,22 @@ refers here to the experimental policy language in this repository.
 > Per una spiegazione completa in italiano, leggi la
 > [guida operativa](GUIDA_OPERATIVA.md).
 
-## Scientific validation target: replay one open oxygen dataset
+## First real-data case: review USGS oxygen measurements
 
-Replay **one openly licensed dissolved-oxygen time series from one monitoring
-station, offline**. Compare the current model with a simple prediction that uses
-the latest measured value, and report the errors. This replay is not implemented
-yet; [issue #3](https://github.com/atlas-devlab/terravoce/issues/3) is the place to
-suggest a dataset or help with the experiment. The result should be reproducible
-by another person. See the [validation criteria](CONTRIBUTING.md#validation-target-for-the-replay).
+The [real-data module](services/environmental-case/README.md) replays 673 approved
+USGS measurements from the Willamette River at Portland. Chronological 1-hour
+evaluation gives 335 pairs: current-model MAE 0.242 mg/L versus persistence
+0.205 mg/L. The simpler baseline performs better on this window. There are no
+low-oxygen events under the illustrative threshold, so alert detection remains
+unevaluated. This is one reproducible territorial module of the global mission.
+
+The path includes source hashes/quality flags, Oracle ingestion, TerraLex,
+the existing proposal bridge, community/youth voting, a committed follow-up
+report and two-review escrow payment. Governance, reviewers and funds are
+simulated; no physical sampling or independent field review has occurred.
+After `pnpm build`, run `pnpm case:replay`, `pnpm case:verify` and `pnpm case:e2e`.
+[Issue #3](https://github.com/atlas-devlab/terravoce/issues/3) remains a place to
+discuss methods and limitations. See the [validation criteria](CONTRIBUTING.md#validation-target-for-the-replay).
 
 ## Everyone can take part
 
@@ -71,6 +80,7 @@ traduzione o una prova della demo sono già contributi utili.
 | `services/oracle` | Sensor API, deterministic analysis, storage and policy evaluation |
 | `services/autonomy` | Replicated Oracle certification and 3-of-4 proposal bridge |
 | `services/ai-advisor` | Local observation-only language advisor with verified citations |
+| `services/environmental-case` | Real USGS data review, chronological replay and result reproduction |
 | `policies` | Demonstration policy for Po Delta water oxygen |
 | `docs` | Architecture, API, invariants, threat model, deployment and validation |
 
@@ -134,6 +144,8 @@ in modalità osservazione: seleziona fatti e citazioni verificabili per spiegare
 un assessment e suggerisce un campionamento aggiuntivo oppure si astiene.
 Qwen3 1.7B è stato selezionato su una piccola suite sintetica; il rapporto
 [di validazione](docs/AI_VALIDATION.md) include anche il modello scartato.
-L'advisor non presenta proposte sulla blockchain. La validazione dell'analisi
-numerica su dati reali e il collegamento dell'advisory al consenso restano da
-implementare, come descritto nel [progetto tecnico](docs/AI_DESIGN.md).
+L'advisor non presenta proposte sulla blockchain. Il primo replay numerico su
+dati USGS reali è disponibile nel modulo environmental-case e mostra che la
+regressione attuale non supera la baseline su quella finestra. Il collegamento
+dell'advisory al consenso resta da implementare, come descritto nel
+[progetto tecnico](docs/AI_DESIGN.md).

@@ -99,6 +99,11 @@ I criteri di verifica del primo incremento sono:
 In parallelo al lavoro linguistico, il replay di un dataset aperto resta la
 validazione dell'analisi numerica: split temporali, controllo dei dati mancanti,
 MAE/RMSE contro previsione basata sull'ultimo valore e risultati per orizzonte.
+Il [primo caso USGS](../services/environmental-case/README.md) ora implementa
+questo confronto su un archivio approvato e mostra una MAE peggiore della
+persistenza: 0,242 contro 0,205 mg/L a un'ora. Questo esito riguarda una sola
+stazione e finestra e non abilita interventi fisici. La disponibilità storica
+dei dati provvisori e la revisione indipendente restano da verificare.
 Un modello appreso entra nell'Oracle solo dopo una valutazione su periodi non
 usati per addestrarlo. Soglie operative richiedono revisione scientifica e civica.
 

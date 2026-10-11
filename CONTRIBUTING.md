@@ -7,10 +7,13 @@ share an idea, improve an explanation, translate a paragraph, or try the demo.
 
 ## One shared goal
 
-The first goal is an offline replay of one openly licensed dissolved-oxygen
-time series from one monitoring station, tracked in
-[issue #3](https://github.com/atlas-devlab/terravoce/issues/3). The replay is not
-implemented yet.
+The first real-data module now replays one public-domain USGS dissolved-oxygen
+time series. It compares the model with persistence and verifies a data-review
+deliverable through simulated civic governance and escrow settlement. See
+[the reproducible case](services/environmental-case/README.md) and
+[issue #3](https://github.com/atlas-devlab/terravoce/issues/3) for method discussion.
+It is one validation step towards TerraVoce's global environmental mission;
+independent field review and physical sampling remain pending.
 
 Compare the current model with a simple prediction based on the latest measured
 value, and report the errors. You can help by suggesting a public dataset or
