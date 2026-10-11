@@ -1,0 +1,36 @@
+{
+  "version": "multiseason-test-capture-v1",
+  "protocolHash": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4",
+  "frozenModelHash": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+  "frozenAtCommit": "b895049c1711118c1c397e5d1a0f7a432a6d3fab",
+  "window": {
+    "id": "summer-2025",
+    "start": "2025-07-15T00:00:00Z",
+    "end": "2025-07-29T00:00:00Z"
+  },
+  "status": "captured",
+  "license": "US Government work; public domain",
+  "sources": {
+    "oxygen": {
+      "file": "oxygen.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00300&time=2025-07-15T00%3A00%3A00Z%2F2025-07-29T00%3A00%3A00Z&limit=10000",
+      "rawSha256": "0x9a01dc4577e0f9984892eb633d45b9518cf11e79beeb4a40781711ce284c60e2",
+      "capturedAt": "2026-10-11T22:44:28.941Z",
+      "records": 672
+    },
+    "temperature": {
+      "file": "temperature.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00010&time=2025-07-15T00%3A00%3A00Z%2F2025-07-29T00%3A00%3A00Z&limit=10000",
+      "rawSha256": "0xd4a61d54f1acd531857aae118c79a64ee783ead40cbd9cabc30b4113ec6ff2dc",
+      "capturedAt": "2026-10-11T22:44:28.933Z",
+      "records": 672
+    },
+    "discharge": {
+      "file": "discharge.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00060&time=2025-07-15T00%3A00%3A00Z%2F2025-07-29T00%3A00%3A00Z&limit=10000",
+      "rawSha256": "0xd40cd3917118fdd303731cd8a9f95ef2c7e4a399092403dcc2916c4c56349dd4",
+      "capturedAt": "2026-10-11T22:44:29.135Z",
+      "records": 4033
+    }
+  }
+}

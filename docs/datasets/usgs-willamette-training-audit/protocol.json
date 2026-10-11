@@ -1,0 +1,23 @@
+{
+  "version": "willamette-training-readiness-v1",
+  "purpose": "Source-readiness audit of four predeclared 2024 seasonal windows; no new fitting or forecast evaluation",
+  "stationId": "USGS-14211720",
+  "windows": [
+    { "id": "winter-2024", "start": "2024-01-01T00:00:00Z", "end": "2024-01-15T00:00:00Z" },
+    { "id": "spring-2024", "start": "2024-04-01T00:00:00Z", "end": "2024-04-15T00:00:00Z" },
+    { "id": "summer-2024", "start": "2024-07-01T00:00:00Z", "end": "2024-07-15T00:00:00Z" },
+    { "id": "autumn-2024", "start": "2024-10-01T00:00:00Z", "end": "2024-10-15T00:00:00Z" }
+  ],
+  "sources": {
+    "oxygen": { "parameterCode": "00300", "timeSeriesId": "1ccd1e712b6b4cb69fdcfbf407f7358b", "unit": "mg/l", "scale": 1 },
+    "temperature": { "parameterCode": "00010", "timeSeriesId": "78520072e15541dea31a430cc3a72b93", "unit": "degC", "scale": 1 },
+    "discharge": { "parameterCode": "00060", "timeSeriesId": "25161ce7dc08491389080de10c85fd9e", "unit": "ft^3/s", "scale": 0.028316846592 }
+  },
+  "quality": "Approved, unqualified, finite values; nonnegative oxygen; exact source series/statistic/units; preserve signed flow",
+  "alignment": "Twelve consecutive 30-minute UTC timestamps in all three series and exact oxygen target one hour later; no interpolation",
+  "preliminaryReadiness": { "minimumPairsPerWindow": 500, "maximumSkippedOriginFraction": 0.05 },
+  "readinessMeaning": "Practical data-availability screen only; no proof of representativeness, forecast accuracy or ecological validity",
+  "fallbackIfDataUnavailable": "Retain the specified window and report unavailable or insufficient; no substitutions after inspecting values",
+  "nextExperiment": "Still requires a distinct declared fit/selection/calibration/holdout protocol. These inspected values are training exploration, not an untouched final test.",
+  "operationalModelChanged": false
+}

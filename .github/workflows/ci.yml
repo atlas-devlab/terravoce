@@ -64,11 +64,23 @@ jobs:
           pnpm case:verify
           pnpm case:e2e
 
+      - name: Replay and reproduce the observation-only multivariate experiment
+        # The new numerical experiment stays separate from the certified operational assessment.
+        run: |
+          pnpm forecast:replay
+          pnpm forecast:verify
+          pnpm forecast:verify "$PWD/docs/evidence/willamette-forecast"
+
       - name: Validate Oracle bridge digest interoperability
         run: |
           python3 -m venv services/autonomy/.venv
           services/autonomy/.venv/bin/python -m pip install -r services/autonomy/requirements.txt
           services/autonomy/.venv/bin/python -m pytest services/autonomy/tests -q
+          python3 -m unittest discover -s scripts -p 'test_*.py'
+          python3 scripts/audit_willamette.py --external --summary --verify-artifacts docs/evidence/willamette-forecast
+          python3 scripts/audit_training_readiness.py --summary --verify docs/evidence/willamette-forecast/training-readiness.json
+          python3 scripts/experiment_multiseason.py verify-fit
+          python3 scripts/experiment_multiseason.py verify
 
       - name: Test four replicas with node outages
         if: github.event_name == 'workflow_dispatch'

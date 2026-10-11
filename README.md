@@ -39,6 +39,43 @@ After `pnpm build`, run `pnpm case:replay`, `pnpm case:verify` and `pnpm case:e2
 [Issue #3](https://github.com/atlas-devlab/terravoce/issues/3) remains a place to
 discuss methods and limitations. See the [validation criteria](CONTRIBUTING.md#validation-target-for-the-replay).
 
+## Observation-only multivariate forecasting experiment
+
+A separate [Willamette experiment](docs/WILLAMETTE_FORECAST_EXPERIMENT.md) joins
+real oxygen, temperature and signed instantaneous discharge measurements.
+Training, selection, interval calibration and final evaluation use separate
+chronological phases. The small summer improvement does not transfer to the
+predeclared autumn and winter windows: frozen-model MAE is 0.306 versus 0.102
+mg/L in autumn, and 1.279 versus 0.012 mg/L in winter. Its unchanged empirical
+interval has zero winter coverage. An independent Python implementation checks
+the numerical calculations against the TypeScript implementation; this is a
+code cross-check by the same project, not an independent scientific audit.
+The experiment is unsuitable for operational promotion. No operational Oracle,
+governance or funding behavior changes. Run `pnpm forecast:replay` and
+`pnpm forecast:verify` after building. This remains a reusable part of the
+environmental coordination mission. Run
+`python3 scripts/audit_willamette.py --external --summary`
+to reproduce the seasonal check offline. See the executed
+[audit notebook](docs/notebooks/willamette-forecast-audit.ipynb).
+
+A subsequent [training-source readiness audit](docs/WILLAMETTE_TRAINING_READINESS.md)
+archives four 2024 seasonal windows with 2,559 complete one-hour pairs. It also
+exposes missing forecast origins: autumn has only 90.15% expected-grid coverage.
+That readiness audit itself does not fit a model or claim forecast skill.
+
+The subsequent [fixed four-season test](docs/WILLAMETTE_MULTISEASON_EXPERIMENT.md)
+learns the same eight-feature ridge recipe on those 2,559 training pairs and
+freezes the weights before acquiring four later 2025 windows. On 2,591 test pairs,
+equal-season mean MAE is 0.109945 versus persistence 0.110874 mg/L: a 0.84%
+point gain, with losses in winter, spring and autumn. The predeclared 48-hour
+block-bootstrap interval for the absolute gain spans -0.003821 to 0.005414 mg/L;
+24/72-hour checks also include zero. The result fails the declared improvement
+rule. Two archived summer targets below the illustrative 5 mg/L threshold are
+not anticipated. The 10% aspiration is not an acceptance gate. No model promotion
+or operational behavior changes. Reproduce offline with
+`python scripts/experiment_multiseason.py verify-fit` and `verify`.
+See the executed [four-season notebook](docs/notebooks/willamette-multiseason.ipynb).
+
 ## Everyone can take part
 
 You do not need coding experience or an environmental qualification to ask a

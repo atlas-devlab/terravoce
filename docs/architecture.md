@@ -1,13 +1,17 @@
 # TerraVoce architecture
 
 This document describes the intended architecture. The current research MVP
-uses synthetic sensor data and a deterministic mathematical risk model. A real
+uses synthetic observations and pinned real USGS measurements with a
+deterministic mathematical risk model. A separate multivariate oxygen forecast
+experiment has failed frozen autumn/winter transfer tests and is observation
+only; it is not exported through the operational case/Oracle interface. A real
 Open Autonomy service now runs four Oracle/agent/validator replicas locally and
 certifies one immutable job with a 3-of-4 quorum. Treasury operations use a local
 simulated blockchain; independently operated replicas, a public deployment and
 a field pilot are future work. A separate local language advisor selects grounded
 facts and citations in observation-only mode; it is not wired into the bridge.
-See [bridge validation](AUTONOMY_VALIDATION.md) and [AI validation](AI_VALIDATION.md).
+See [bridge validation](AUTONOMY_VALIDATION.md), [AI validation](AI_VALIDATION.md)
+and [forecast limitations](WILLAMETTE_FORECAST_EXPERIMENT.md).
 
 ## Design decision
 

@@ -1,8 +1,10 @@
 # AI per TerraVoce: decisione tecnica e prossimo incremento
 
-Architettura aggiornata l'11 ottobre 2026. Il primo advisor in modalità
+Architettura aggiornata il 12 ottobre 2026. Il primo advisor in modalità
 osservazione è implementato e provato con un modello locale; la validazione
-scientifica su dati reali e il collegamento al bridge restano da implementare.
+numerica su dati reali comprende un primo replay e un esperimento multivariabile
+in osservazione. La validazione scientifica indipendente e il collegamento
+dell'advisory linguistico al bridge restano da implementare.
 
 La missione resta il coordinamento ambientale globale: analisi distribuita,
 evidenze pubbliche resilienti, finanziamento di interventi verificabili e diritti
@@ -20,7 +22,35 @@ primo banco di verifica di componenti riutilizzabili, non il limite del progetto
 - `services/ai-advisor` usa un LLM locale per selezionare fatti e citazioni da
   un corpus pubblico fissato nel codice. Produce spiegazioni controllate e
   suggerimenti senza inoltro alla blockchain. Non sono presenti addestramento
-  ambientale, retrieval generale, validazione su dati reali o esecuzione continua.
+  ambientale, retrieval generale o esecuzione continua dell'advisor. Il modulo
+  numerico separato `environmental-case` usa dati reali USGS; il replay mostra
+  limiti della regressione attuale e il nuovo esperimento rimane in osservazione.
+
+Il [test multivariabile sul Willamette](WILLAMETTE_FORECAST_EXPERIMENT.md) confronta
+ossigeno, temperatura e portata con split temporali. Il piccolo miglioramento
+estivo non si trasferisce alle finestre autunnale e invernale dichiarate prima
+del download: il modello congelato è molto peggiore della persistenza e la
+copertura invernale dell'intervallo è zero. Un secondo calcolo in Python verifica
+la riproducibilità numerica, non l'efficacia scientifica. Il modello resta un
+esperimento isolato; non sostituisce l'Oracle e non modifica i finanziamenti.
+
+In questi test "modello" indica la regressione numerica, non il LLM. Il LLM
+locale non è stato chiamato, riaddestrato o cambiato durante l'esperimento.
+
+Il successivo [controllo dei dati di quattro stagioni](WILLAMETTE_TRAINING_READINESS.md)
+prepara la nuova prova a un'ora. Espone anche gli orari completamente mancanti:
+2559 coppie sono disponibili, con copertura autunnale della griglia del 90.15%.
+Non introduce un nuovo fit, una previsione migliore o un collegamento dell'LLM.
+
+La [prova successiva a un'ora](WILLAMETTE_MULTISEASON_EXPERIMENT.md) apprende i
+pesi sui 2.559 esempi del 2024 e li congela prima di scaricare i quattro periodi
+2025. Sulle 2.591 coppie di verifica il vantaggio medio, con stagioni pesate allo
+stesso modo, è soltanto 0,84%; tre stagioni peggiorano e tutti gli intervalli a
+blocchi includono zero. Due valori estivi sotto la soglia illustrativa non sono
+anticipati. Il criterio dichiarato non è superato: nessuna promozione operativa.
+Il 10% è indicativo e il bootstrap è esplorativo, non una garanzia ambientale.
+Prima di passare alle 24 ore serve un nuovo esperimento separato da concordare;
+questi risultati non autorizzano una previsione a tre mesi.
 
 ## Due ruoli, un percorso verificabile
 

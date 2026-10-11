@@ -1,0 +1,101 @@
+{
+  "version": "independent-willamette-audit-v1",
+  "scope": "independent code/solver; same source measurements",
+  "reportFileHash": "0x786ea6c17bec5e55238875cf02b55a9b6bd65985b78ac1a56851b1b150a5bd29",
+  "reportCommitment": "0xe631f0492ebbca40fa7e76b05578b0aac40a8c21690d405bfb82f41200a98dde",
+  "passed": true,
+  "solver": "Python stdlib Decimal Cholesky, 50 digits; no TypeScript imports",
+  "numericTolerance": 1e-09,
+  "largestCoefficientOrMetricDifference": 2.842170943040401e-14,
+  "checkedCandidates": 14,
+  "checkedHoldoutRows": 143,
+  "sourceQuality": {
+    "oxygen": {
+      "total": 673,
+      "accepted": 673,
+      "excluded": []
+    },
+    "temperature": {
+      "total": 673,
+      "accepted": 673,
+      "excluded": []
+    },
+    "discharge": {
+      "total": 4034,
+      "accepted": 4034,
+      "excluded": []
+    }
+  },
+  "alignment": {
+    "eligibleOrigins": 660,
+    "acceptedPairs": 660,
+    "skipped": 0
+  },
+  "phaseCounts": {
+    "training": 324,
+    "selection": 95,
+    "calibration": 95,
+    "holdout": 143
+  },
+  "selected": "oxygen-clock-temperature:ridge-100",
+  "daily": [
+    {
+      "originDayUTC": "2025-08-12",
+      "model": {
+        "pairs": 48,
+        "maeMgL": 0.2274426645183674,
+        "rmseMgL": 0.2977047701441336,
+        "biasMgL": -0.09782647804593132
+      },
+      "persistence": {
+        "pairs": 48,
+        "maeMgL": 0.23541666666666664,
+        "rmseMgL": 0.31391347003062275,
+        "biasMgL": -0.014583333333333356
+      },
+      "maeImprovementPercent": 3.387186753259852,
+      "coverage": 0.8125
+    },
+    {
+      "originDayUTC": "2025-08-13",
+      "model": {
+        "pairs": 48,
+        "maeMgL": 0.28778724802992445,
+        "rmseMgL": 0.35652132816910337,
+        "biasMgL": -0.1041472813336889
+      },
+      "persistence": {
+        "pairs": 48,
+        "maeMgL": 0.28124999999999994,
+        "rmseMgL": 0.40078048854703485,
+        "biasMgL": 0.014583333333333356
+      },
+      "maeImprovementPercent": -2.324354855084265,
+      "coverage": 0.7083333333333334
+    },
+    {
+      "originDayUTC": "2025-08-14",
+      "model": {
+        "pairs": 47,
+        "maeMgL": 0.2760717565481745,
+        "rmseMgL": 0.34882125922296336,
+        "biasMgL": -0.050447845107426025
+      },
+      "persistence": {
+        "pairs": 47,
+        "maeMgL": 0.28723404255319135,
+        "rmseMgL": 0.3975991780461558,
+        "biasMgL": 0.010638297872340425
+      },
+      "maeImprovementPercent": 3.886129201746602,
+      "coverage": 0.7872340425531915
+    }
+  ],
+  "readiness": "share with caveats as a research result; not eligible for operational promotion",
+  "reasons": [
+    "Three held-out days are insufficient for generalization",
+    "Selected model loses against persistence on one of three days",
+    "Empirical 90% interval covers only 76.92% in the holdout",
+    "Finalized archive does not establish historical real-time data availability"
+  ]
+}
