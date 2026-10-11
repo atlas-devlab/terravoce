@@ -18,6 +18,8 @@ class IndependentAuditTests(unittest.TestCase):
         self.assertEqual(model["coefficients"][1], 0)
 
     def test_quality_checks_timestamps_and_signed_discharge(self):
+        with self.assertRaisesRegex(ValueError, "explicit UTC offset"):
+            audit.instant("2025-08-01T00:00:00")
         extra = audit.ROOT / "docs/datasets/usgs-willamette-multivariate"
         raw = json.loads(audit.compressed_body(extra / "discharge.json.gz"))
         raw["features"] = [raw["features"][0]]
@@ -67,6 +69,21 @@ class IndependentAuditTests(unittest.TestCase):
         for window in report["windows"]:
             self.assertGreater(window["selectedModel"]["maeMgL"], window["persistence"]["maeMgL"])
             self.assertEqual(window["featureExtrapolation"]["fraction"], 1.0)
+
+    def test_saved_artifact_portability_has_bounded_float_tolerance_and_exact_lineage(self):
+        report = audit.frozen_validation()
+        verified = audit.verify_saved_seasonal(report, audit.ROOT / "docs/evidence/willamette-forecast")
+        self.assertTrue(verified["verified"])
+        self.assertLessEqual(verified["largestNumericDifference"], audit.TOLERANCE)
+        self.assertLess(audit.compare_saved({"value": 1.0}, {"value": 1.0 + 1e-12}), audit.TOLERANCE)
+        with self.assertRaises(AssertionError):
+            audit.compare_saved({"value": 1.0}, {"value": 1.0 + 1e-6})
+        with self.assertRaises(AssertionError):
+            audit.compare_saved({"ids": ["a", "b"]}, {"ids": ["a"]})
+        with self.assertRaises(AssertionError):
+            audit.compare_saved({"hash": "original"}, {"hash": "changed"})
+        with self.assertRaises(AssertionError):
+            audit.compare_saved({"pairs": 660}, {"pairs": 659})
 
     def test_frozen_commitment_and_capture_hash_tampering_are_rejected(self):
         work = (audit.ROOT / "work").resolve()

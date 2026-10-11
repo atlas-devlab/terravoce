@@ -207,13 +207,22 @@ sono impegni del nostro importatore e del rapporto, non firme USGS.
 Per verificare anche gli artefatti stagionali salvati, senza rete:
 
 ```sh
-python3 scripts/audit_willamette.py --external --summary --output docs/evidence/willamette-forecast/seasonal-validation.json.gz --summary-output docs/evidence/willamette-forecast/seasonal-summary.json
+python3 scripts/audit_willamette.py --external --summary --verify-artifacts docs/evidence/willamette-forecast
 ```
 
 Su Windows si può sostituire `python3` con il percorso del Python disponibile.
 La cattura opzionale `node scripts/capture-willamette-validation.mjs` richiede
 rete e rifiuta cartelle già esistenti; non è necessaria per la riproduzione e
 non viene eseguita dalla CI.
+
+La verifica degli artefatti rifiuta campi, conteggi, ordine delle righe,
+identificativi e hash diversi. Per i numeri floating point usa una tolleranza
+assoluta dichiarata di `1e-9`, mentre il riepilogo deve essere coerente con
+l'hash esatto del rapporto salvato. Non riscrive i file. La prima esecuzione
+Linux della CI ha respinto il confronto testuale del rapporto generato su
+Windows: quel confronto era più rigido del criterio numerico dell'audit.
+Il controllo strutturale/numerico permette di distinguere una differenza di
+precisione da dati, risultati o provenienza realmente alterati.
 
 L'esperimento è su una branch e una PR dedicate, impilate sul primo caso reale.
 Per rinunciarvi basta non integrare questa PR. I comandi `case:replay`,
@@ -230,10 +239,11 @@ le misure future della verifica finale e accerta che coefficienti, scelta,
 intervallo calibrato e previsione precedente restino invariati.
 
 Build/check, 83 test TypeScript/Solidity e 7 test Python sono passati localmente.
-Sette ulteriori test Python dell'audit verificano la soluzione nota, qualità e
+Otto ulteriori test Python dell'audit verificano la soluzione nota, qualità e
 duplicati UTC, numero completo delle previsioni, ricostruzione dei candidati,
 assenza di nuovo fit stagionale, vettori incompleti/valori non finiti e rifiuto
-di hash alterati. La CI ripete questi
+di hash alterati. Un ulteriore caso controlla tolleranza numerica e uguaglianza
+esatta di struttura, conteggi, hash e provenienza. La CI ripete questi
 controlli e la valutazione stagionale sui dati archiviati, senza chiamare USGS.
 Il caso reale sulla blockchain locale riproduce i precedenti caseHash/resultHash
 e verifica ancora il blocco del pagamento prima delle due revisioni. Le identità,

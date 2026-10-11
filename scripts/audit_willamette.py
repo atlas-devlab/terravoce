@@ -20,7 +20,10 @@ TOLERANCE = 1e-9
 
 
 def instant(value):
-    return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+    parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        raise ValueError("Timestamp requires an explicit UTC offset")
+    return parsed.astimezone(timezone.utc)
 
 
 def iso(value):
@@ -339,6 +342,37 @@ def frozen_validation(root=ROOT):
             "scope": "Later archival windows, frozen model/interval; correlation and finalized-data limitations remain"}
 
 
+def compare_saved(actual, saved, path="report"):
+    """Exact structure/text/counts, explicit absolute tolerance for finite floats."""
+    if isinstance(actual, dict) and isinstance(saved, dict):
+        if actual.keys() != saved.keys():
+            raise AssertionError(f"{path}: different fields")
+        return max((compare_saved(actual[k], saved[k], f"{path}.{k}") for k in actual), default=0.0)
+    if isinstance(actual, list) and isinstance(saved, list):
+        if len(actual) != len(saved):
+            raise AssertionError(f"{path}: different row/vector counts")
+        return max((compare_saved(a, b, f"{path}[{i}]") for i, (a, b) in enumerate(zip(actual, saved))), default=0.0)
+    if type(actual) is float and type(saved) is float:
+        return close(actual, saved, path)
+    if type(actual) is not type(saved) or actual != saved:
+        raise AssertionError(f"{path}: different exact value")
+    return 0.0
+
+
+def verify_saved_seasonal(result, folder):
+    raw = compressed_body(folder / "seasonal-validation.json.gz")
+    saved = json.loads(raw)
+    largest = compare_saved(result, saved)
+    brief = {k: v for k, v in saved.items() if k != "windows"}
+    brief["fullDecompressedReportSha256"] = digest(raw)
+    brief["windows"] = [{k: v for k, v in w.items() if k != "rows"} for w in saved["windows"]]
+    summary = json.loads((folder / "seasonal-summary.json").read_text(encoding="utf-8"))
+    compare_saved(brief, summary, "saved summary")
+    return {"verified": True, "fullSavedReportSha256": digest(raw), "numericTolerance": TOLERANCE,
+            "largestNumericDifference": largest, "structureAndSourceHashes": "exact",
+            "scope": "offline reproduction; floating-point portability check, not scientific validation"}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
@@ -346,9 +380,15 @@ def main():
     parser.add_argument("--external", action="store_true", help="Evaluate the predeclared later seasonal windows with a frozen model")
     parser.add_argument("--summary", action="store_true", help="Print a compact summary while saving the full report")
     parser.add_argument("--summary-output", type=Path, help="Save a compact report with the full decompressed report hash")
+    parser.add_argument("--verify-artifacts", type=Path, help="Verify saved full seasonal report and summary without overwriting them")
     args = parser.parse_args()
     checked = original_audit(args.root)
     result = frozen_validation(args.root) if args.external else checked
+    artifact_check = None
+    if args.verify_artifacts:
+        if not args.external:
+            raise ValueError("Seasonal artifact verification requires --external")
+        artifact_check = verify_saved_seasonal(result, args.verify_artifacts)
     content = json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
     def save(path, text):
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -368,7 +408,8 @@ def main():
         brief["windows"] = [{k: v for k, v in w.items() if k != "rows"} for w in result["windows"]]
         save(args.summary_output, json.dumps(brief, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
     if args.summary and args.external:
-        print(json.dumps({"decision": result["decision"], "windows": [{k: v for k, v in w.items() if k not in ("rows", "daily")}
+        print(json.dumps({"decision": result["decision"], "artifactVerification": artifact_check,
+              "windows": [{k: v for k, v in w.items() if k not in ("rows", "daily")}
               for w in result["windows"]]}, indent=2, allow_nan=False))
     else:
         print(content)

@@ -77,7 +77,7 @@ jobs:
           services/autonomy/.venv/bin/python -m pip install -r services/autonomy/requirements.txt
           services/autonomy/.venv/bin/python -m pytest services/autonomy/tests -q
           python3 -m unittest discover -s scripts -p 'test_*.py'
-          python3 scripts/audit_willamette.py --external --summary --output docs/evidence/willamette-forecast/seasonal-validation.json.gz --summary-output docs/evidence/willamette-forecast/seasonal-summary.json
+          python3 scripts/audit_willamette.py --external --summary --verify-artifacts docs/evidence/willamette-forecast
 
       - name: Test four replicas with node outages
         if: github.event_name == 'workflow_dispatch'

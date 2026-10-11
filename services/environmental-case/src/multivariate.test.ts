@@ -48,6 +48,10 @@ describe("transparent multivariate experiment", () => {
     const manifest = structuredClone(data.manifest);
     manifest.sources.discharge.sourceUrl = "https://example.com/data";
     expect(() => validateCovariate(flowRaw, manifest, "discharge")).toThrow("query mismatch");
+    manifest.sources.discharge.sourceUrl = data.manifest.sources.discharge.sourceUrl + "&parameter_code=00010";
+    expect(() => validateCovariate(flowRaw, manifest, "discharge")).toThrow("query mismatch");
+    manifest.sources.discharge.sourceUrl = data.manifest.sources.discharge.sourceUrl + "&extra=unsupported";
+    expect(() => validateCovariate(flowRaw, manifest, "discharge")).toThrow("query mismatch");
     manifest.sources.discharge.file = "../other.json.gz";
     expect(() => validateCovariate(flowRaw, manifest, "discharge")).toThrow("specification");
   });

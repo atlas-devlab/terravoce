@@ -46,6 +46,7 @@ export function validateCovariate(raw: string, manifest: MultivariateManifest, k
   if (sha256Hex(raw) !== source.rawSha256) throw new Error("Covariate snapshot hash mismatch");
   const url = new URL(source.sourceUrl);
   if (url.origin !== "https://api.waterdata.usgs.gov" || url.username || url.password ||
+      url.hash || url.searchParams.size !== 5 ||
       url.pathname !== "/ogcapi/v1/collections/continuous/items" || url.searchParams.get("f") !== "json" ||
       url.searchParams.get("monitoring_location_id") !== manifest.stationId ||
       url.searchParams.get("parameter_code") !== spec.code || url.searchParams.get("limit") !== "10000" ||
