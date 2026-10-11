@@ -8,12 +8,14 @@
     "check": "hardhat compile",
     "test": "hardhat test",
     "e2e": "hardhat run scripts/e2e.ts",
-    "autonomy:e2e": "hardhat run scripts/autonomy-e2e.ts"
+    "autonomy:e2e": "hardhat run scripts/autonomy-e2e.ts",
+    "case:e2e": "hardhat run scripts/real-case-e2e.ts"
   },
   "dependencies": {
     "@openzeppelin/contracts": "5.6.1"
   },
   "devDependencies": {
+    "@terravoce/environmental-case": "workspace:*",
     "@nomicfoundation/hardhat-toolbox-mocha-ethers": "3.0.7",
     "@terravoce/oracle": "workspace:*",
     "@terravoce/protocol": "workspace:*",

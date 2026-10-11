@@ -1,0 +1,28 @@
+{
+  "name": "@terravoce/environmental-case",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run src",
+    "replay": "tsx src/cli.ts replay",
+    "verify": "tsx src/cli.ts verify",
+    "verify-live": "tsx src/cli.ts verify-live",
+    "fetch": "tsx src/cli.ts fetch"
+  },
+  "dependencies": {
+    "@terravoce/oracle": "workspace:*",
+    "@terravoce/protocol": "workspace:*",
+    "@terravoce/terralex": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "tsx": "4.23.1",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}
