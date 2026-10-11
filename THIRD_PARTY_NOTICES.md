@@ -62,3 +62,9 @@ The four seasonal source captures under `docs/datasets/usgs-willamette-training-
 are from the same USGS public-domain service. Their manifests preserve source
 URLs, exact decompressed-body hashes and retrieval timestamps. They are data
 readiness evidence, not new measurements or USGS validation of a forecast.
+
+The four later captures under `docs/datasets/usgs-willamette-multiseason` are
+from the same USGS public-domain service. Every manifest additionally binds the
+raw protocol hash, exact frozen research-model file hash, and pre-capture Git
+commit. Low archived oxygen values remain source observations, not proof of
+an independently observed ecological event or USGS endorsement of an alert.

@@ -28,6 +28,15 @@ class MultiseasonTests(unittest.TestCase):
         # Repeated measurements inside one calendar block do not become extra independent blocks.
         self.assertEqual(len(trial.calendar_blocks(self.toy(.2)[0]["window"], [rows[0]] * 50 + [rows[-1]], 48)), 2)
 
+    def test_macro_bootstrap_keeps_equal_season_weights_despite_unequal_counts(self):
+        p, _ = trial.protocol(trial.ROOT)
+        windows = self.toy(0)
+        windows[3] = self.toy(.4)[3]
+        windows[3]["rows"] *= 10
+        band = trial.bootstrap(windows, 48, p["uncertainty"] | {"iterations": 100})
+        self.assertAlmostEqual(band["lowerGainMgL"], .1)
+        self.assertAlmostEqual(band["upperGainMgL"], .1)
+
     def test_ten_percent_is_not_a_gate_and_seasonal_loss_is_retained(self):
         p, _ = trial.protocol(trial.ROOT)
         windows = [{"dataScreenPassed": True, "negativePredictions": 0,
@@ -74,6 +83,20 @@ class MultiseasonTests(unittest.TestCase):
             (root / trial.EVIDENCE / "frozen-model.json").write_bytes(trial.encoded(model))
             with self.assertRaisesRegex(ValueError, "Frozen model/protocol mismatch"):
                 trial.evaluate(root)
+
+    def test_capture_cannot_be_scored_with_different_frozen_weights(self):
+        p, ph = trial.protocol(trial.ROOT)
+        window = p["testWindows"][0]
+        work = trial.ROOT / "work"
+        work.mkdir(exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="capture-commitment-", dir=work) as temporary:
+            folder = Path(temporary)
+            (folder / window["id"]).mkdir()
+            (folder / window["id"] / "manifest.json").write_bytes(trial.encoded({
+                "version": "multiseason-test-capture-v1", "protocolHash": ph, "window": window,
+                "frozenModelHash": "0xdifferent", "status": "unavailable", "error": "fixed request failed"}))
+            with self.assertRaisesRegex(ValueError, "Capture protocol/model commitment mismatch"):
+                trial.read_window(folder, window, p, ph, "multiseason-test-capture-v1", "0xexpected")
 
 
 if __name__ == "__main__":

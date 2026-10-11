@@ -1,6 +1,6 @@
 # AI per TerraVoce: decisione tecnica e prossimo incremento
 
-Architettura aggiornata l'11 ottobre 2026. Il primo advisor in modalità
+Architettura aggiornata il 12 ottobre 2026. Il primo advisor in modalità
 osservazione è implementato e provato con un modello locale; la validazione
 numerica su dati reali comprende un primo replay e un esperimento multivariabile
 in osservazione. La validazione scientifica indipendente e il collegamento
@@ -41,6 +41,16 @@ Il successivo [controllo dei dati di quattro stagioni](WILLAMETTE_TRAINING_READI
 prepara la nuova prova a un'ora. Espone anche gli orari completamente mancanti:
 2559 coppie sono disponibili, con copertura autunnale della griglia del 90.15%.
 Non introduce un nuovo fit, una previsione migliore o un collegamento dell'LLM.
+
+La [prova successiva a un'ora](WILLAMETTE_MULTISEASON_EXPERIMENT.md) apprende i
+pesi sui 2.559 esempi del 2024 e li congela prima di scaricare i quattro periodi
+2025. Sulle 2.591 coppie di verifica il vantaggio medio, con stagioni pesate allo
+stesso modo, è soltanto 0,84%; tre stagioni peggiorano e tutti gli intervalli a
+blocchi includono zero. Due valori estivi sotto la soglia illustrativa non sono
+anticipati. Il criterio dichiarato non è superato: nessuna promozione operativa.
+Il 10% è indicativo e il bootstrap è esplorativo, non una garanzia ambientale.
+Prima di passare alle 24 ore serve un nuovo esperimento separato da concordare;
+questi risultati non autorizzano una previsione a tre mesi.
 
 ## Due ruoli, un percorso verificabile
 

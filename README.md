@@ -61,7 +61,20 @@ to reproduce the seasonal check offline. See the executed
 A subsequent [training-source readiness audit](docs/WILLAMETTE_TRAINING_READINESS.md)
 archives four 2024 seasonal windows with 2,559 complete one-hour pairs. It also
 exposes missing forecast origins: autumn has only 90.15% expected-grid coverage.
-This prepares a new experiment; no new model is fitted or forecast skill claimed.
+That readiness audit itself does not fit a model or claim forecast skill.
+
+The subsequent [fixed four-season test](docs/WILLAMETTE_MULTISEASON_EXPERIMENT.md)
+learns the same eight-feature ridge recipe on those 2,559 training pairs and
+freezes the weights before acquiring four later 2025 windows. On 2,591 test pairs,
+equal-season mean MAE is 0.109945 versus persistence 0.110874 mg/L: a 0.84%
+point gain, with losses in winter, spring and autumn. The predeclared 48-hour
+block-bootstrap interval for the absolute gain spans -0.003821 to 0.005414 mg/L;
+24/72-hour checks also include zero. The result fails the declared improvement
+rule. Two archived summer targets below the illustrative 5 mg/L threshold are
+not anticipated. The 10% aspiration is not an acceptance gate. No model promotion
+or operational behavior changes. Reproduce offline with
+`python scripts/experiment_multiseason.py verify-fit` and `verify`.
+See the executed [four-season notebook](docs/notebooks/willamette-multiseason.ipynb).
 
 ## Everyone can take part
 
