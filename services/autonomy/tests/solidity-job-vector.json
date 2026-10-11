@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "jobId": "0xcab91340811cc550514a1774e0186c9285e3b56ecc43e101eb548cec971c7015",
+  "validUntil": 1791729323,
+  "digest": "0xe88005e40e56fa3098a5a82b1ca26b41b146736a6c0e92b08aa7bf497659275c",
+  "chainId": 31337,
+  "bridge": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+  "governor": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+  "operators": [
+    "0x477358F2E9697a37E2858fdf0C1e941b5D3f230f",
+    "0x729C0de0AB8d81511Fdb12B2dBa97c9dED69DBad",
+    "0xAaA8564db50aDA616e42FD3E74AC1750b33E21DD",
+    "0xc8CBbeD30d4D8c5bE296596F427954e03571268e"
+  ],
+  "input": {
+    "regionId": "IT-PO-DELTA",
+    "metric": "water.oxygen.mg_l",
+    "forecastHorizonHours": 24,
+    "requestedAction": "EXTRA_SAMPLING",
+    "requestedAmount": 40,
+    "asset": "USDC"
+  },
+  "expectedAssessment": {
+    "assessmentId": "0x08b32df20913083e739bb2969667b813a27154d2a8b07742ca1dc2772392b8bb",
+    "regionId": "IT-PO-DELTA",
+    "metric": "water.oxygen.mg_l",
+    "modelVersion": "terravoce-linear-risk-v1",
+    "generatedAt": "2026-10-11T13:35:08.696Z",
+    "observationCount": 12,
+    "currentValue": 3.7,
+    "forecastValue": 0,
+    "forecastHorizonSeconds": 86400,
+    "slopePerHour": -0.3,
+    "anomalyScore": 0.59527,
+    "confidence": 1,
+    "risk": 1,
+    "evidenceHash": "0x314bb9b3a775997f802f01664adb93602971c546ec8ffabc2080b6382fe5fd4b"
+  },
+  "expectedDraft": {
+    "regionId": "IT-PO-DELTA",
+    "evidenceHash": "0x314bb9b3a775997f802f01664adb93602971c546ec8ffabc2080b6382fe5fd4b",
+    "policyHash": "0x16fcda4dd4e94a5493f0ebbc756d40ed37095a44ea69d0a691c230610196a114",
+    "action": "EXTRA_SAMPLING",
+    "reversible": true,
+    "requestedAmount": 40,
+    "asset": "USDC",
+    "challengeSeconds": 86400
+  },
+  "assetDecimals": 6,
+  "request": {
+    "regionId": "0xb3e09ee35e44a06d22ea709f887e4ba75db1ad5b0adc47077cf1c0cec201e9e0",
+    "evidenceHash": "0x314bb9b3a775997f802f01664adb93602971c546ec8ffabc2080b6382fe5fd4b",
+    "policyHash": "0x16fcda4dd4e94a5493f0ebbc756d40ed37095a44ea69d0a691c230610196a114",
+    "actionHash": "0xc404cde8c22a775a52d78603b22d4df0b57de93e8d455640d73ed7cd2475fac4",
+    "recipient": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "amount": "40000000",
+    "riskTier": 0,
+    "requestAutonomy": true,
+    "metadataURI": "urn:terravoce:synthetic:extra-sampling"
+  }
+}

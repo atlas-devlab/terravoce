@@ -1,0 +1,7 @@
+The runtime preparation uses pinned packages from Valory Open Autonomy and Open AEA,
+licensed under Apache-2.0. Their license notices are retained in the generated
+runtime. The skill configuration is adapted from Valory's register_reset_abci
+configuration; the handlers and dialogues use the public abstract_round_abci API.
+
+Open Autonomy: 62033a2b371d2be43c25abf800f206b2f679aca2 (v0.21.29)
+Open AEA: 5c2d4b9cb9c2336835dbdde551d79aae7aa99686 (v2.2.9)

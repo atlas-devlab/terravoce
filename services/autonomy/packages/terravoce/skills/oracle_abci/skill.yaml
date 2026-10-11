@@ -1,0 +1,143 @@
+name: oracle_abci
+author: terravoce
+version: 0.1.0
+type: skill
+description: Independent Oracle evaluation and 3-of-4 action certification
+license: Apache-2.0
+aea_version: '>=2.0.0, <3.0.0'
+fingerprint:
+  __init__.py: bafybeieozq5praer7rncsrmafftqphhn7hrmj2sz5fp7rd3inpdr3rg3uu
+  behaviours.py: bafybeifvkrzolm3enllvbhars6tuiucoyxtexrmzgugl6htyi3fm22pxde
+  dialogues.py: bafybeicwc6ipxw3i3usvullrqomymxotpluqp2fl53f6qkz3qxivzturui
+  handlers.py: bafybeieu2vfxwlhuolrf7hrdjgvcsmdeqgaofpxisp2gmijvcagli5jura
+  models.py: bafybeib4wxtj6uekvjuyuz2xt6u353eupkcraujl7uy6gp5qe6olmejphy
+  payloads.py: bafybeice4l53uqsksxllrbblg2uzhgsobulhsnpeqaponwx5p27foarwg4
+  rounds.py: bafybeihdzzrsxvt7l7x7uydbyvszge7yvtibk2k4335j3qitkbo2a3hvlm
+  validation.py: bafybeibhah4sbscvh4ssz65vlpjkqwcqhbbekqq3poqgyrnmswtdz3yfje
+fingerprint_ignore_patterns: []
+connections: []
+contracts: []
+protocols: []
+skills:
+- valory/abstract_round_abci:0.1.0:bafybeifkxnvvgsldkb4rgejsoon2mvrmrnl7asy2nhenwss7hpwg3myflu
+behaviours:
+  main:
+    args: {}
+    class_name: OracleRoundBehaviour
+handlers:
+  abci:
+    args: {}
+    class_name: ABCIHandler
+  contract_api:
+    args: {}
+    class_name: ContractApiHandler
+  http:
+    args: {}
+    class_name: HttpHandler
+  ipfs:
+    args: {}
+    class_name: IpfsHandler
+  ledger_api:
+    args: {}
+    class_name: LedgerApiHandler
+  signing:
+    args: {}
+    class_name: SigningHandler
+  tendermint:
+    args: {}
+    class_name: TendermintHandler
+models:
+  abci_dialogues:
+    args: {}
+    class_name: AbciDialogues
+  benchmark_tool:
+    args:
+      log_dir: /logs
+    class_name: BenchmarkTool
+  contract_api_dialogues:
+    args: {}
+    class_name: ContractApiDialogues
+  http_dialogues:
+    args: {}
+    class_name: HttpDialogues
+  ipfs_dialogues:
+    args: {}
+    class_name: IpfsDialogues
+  ledger_api_dialogues:
+    args: {}
+    class_name: LedgerApiDialogues
+  params:
+    args:
+      certificate_path: /out/certificate.json
+      cleanup_history_depth: 1
+      cleanup_history_depth_current: null
+      drand_public_key: 868f005eb8e6e4ca0a47c8a77ceaa5309a47978a7c71bc5cce96366b5d7a569937c529eeda66c7293784a9402801af31
+      genesis_config:
+        genesis_time: '2022-05-20T16:00:21.735122717Z'
+        chain_id: chain-c4daS1
+        consensus_params:
+          block:
+            max_bytes: '22020096'
+            max_gas: '-1'
+            time_iota_ms: '1000'
+          evidence:
+            max_age_num_blocks: '100000'
+            max_age_duration: '172800000000000'
+            max_bytes: '1048576'
+          validator:
+            pub_key_types:
+            - ed25519
+          version: {}
+        voting_power: '10'
+      ipfs_domain_name: null
+      job_path: /job/job.json
+      keeper_timeout: 30.0
+      light_slash_unit_amount: 5000000000000000
+      max_attempts: 10
+      max_healthcheck: 120
+      on_chain_service_id: null
+      oracle_token: local-fixture-oracle
+      oracle_url: http://oracle0:3000
+      request_retry_delay: 1.0
+      request_timeout: 10.0
+      reset_pause_duration: 15
+      reset_tendermint_after: 1
+      retry_attempts: 400
+      retry_timeout: 3
+      round_timeout_seconds: 60.0
+      serious_slash_unit_amount: 8000000000000000
+      service_id: terravoce_oracle
+      service_registry_address: null
+      setup:
+        all_participants:
+        - '0x0000000000000000000000000000000000000000'
+        safe_contract_address: '0x0000000000000000000000000000000000000000'
+        consensus_threshold: null
+      share_tm_config_on_startup: false
+      slash_cooldown_hours: 3
+      slash_threshold_amount: 10000000000000000
+      sleep_time: 1
+      tendermint_check_sleep_delay: 3
+      tendermint_com_url: http://localhost:8080
+      tendermint_max_retries: 5
+      tendermint_p2p_url: localhost:26656
+      tendermint_url: http://localhost:26657
+      tx_timeout: 10.0
+      use_slashing: false
+      use_termination: false
+    class_name: Params
+  requests:
+    args: {}
+    class_name: Requests
+  signing_dialogues:
+    args: {}
+    class_name: SigningDialogues
+  state:
+    args: {}
+    class_name: SharedState
+  tendermint_dialogues:
+    args: {}
+    class_name: TendermintDialogues
+dependencies: {}
+is_abstract: false
+customs: []

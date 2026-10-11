@@ -16,3 +16,10 @@ in this repository.
 The MIT SPDX headers in the project Solidity contracts have been preserved.
 The recovered philosophical research downloads, build outputs, local runtime
 data and tooling archives are excluded from this source publication.
+
+The Oracle bridge uses Open Autonomy 0.21.29 and Open AEA 2.2.9 (Apache-2.0).
+The generated runtime retains both upstream LICENSE files and the bridge
+[NOTICE](services/autonomy/NOTICE). The skill configuration is adapted from
+Valory's `register_reset_abci` configuration and declares Apache-2.0. Upstream
+source is fetched at the immutable revisions recorded by `prepare.py`; it is
+excluded from Git alongside generated local identities and Tendermint state.
