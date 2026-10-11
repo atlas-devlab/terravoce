@@ -37,7 +37,33 @@ LLM, governance delle comunità e dei giovani e contratti restano quelli attuali
 
 Il protocollo completo è in
 [`datasets/usgs-willamette-multiseason/protocol.json`](datasets/usgs-willamette-multiseason/protocol.json).
-I risultati e i comandi saranno aggiunti dopo il fit congelato e la verifica.
+Il protocollo è stato pubblicato nel commit `eaebc10` prima del fit.
+Il modello congelato è in
+[`evidence/willamette-multiseason/frozen-model.json`](evidence/willamette-multiseason/frozen-model.json).
+È stato appreso da 2.559 coppie complete del 2024. Il solver TypeScript già
+presente è controllato con Cholesky Decimal a 50 cifre in Python: differenza
+massima tra parametri 5,51e-14, sotto la tolleranza 1e-9. Questo è un controllo
+aritmetico fra due implementazioni, non una validazione scientifica esterna.
+
+Il comando di fit rifiuta orari del test, duplicati, ingressi non finiti,
+ricette modificate e orizzonti diversi da un'ora. La valutazione usa i pesi
+salvati e non chiama nessuno dei due solver. Il comando di acquisizione richiede
+che protocollo e file dei pesi coincidano esattamente con quelli già nel commit
+locale; ogni manifest lega i dati al loro hash e a quel commit.
+
+I risultati saranno aggiunti dopo la verifica. Comandi dalla radice del repo,
+dopo aver installato le dipendenze Node con `pnpm install --frozen-lockfile`:
+
+```text
+python scripts/experiment_multiseason.py verify-fit
+node scripts/capture-willamette-multiseason.mjs
+python scripts/experiment_multiseason.py evaluate
+python scripts/experiment_multiseason.py verify
+```
+
+`fit` è disponibile per una nuova copia senza il file congelato. I comandi
+di fit, acquisizione e valutazione rifiutano di sovrascrivere gli artefatti.
+Per il normale controllo offline si usano soltanto `verify-fit` e `verify`.
 
 Riferimenti metodologici:
 [ridge](https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification),

@@ -4,4 +4,6 @@ docs/datasets/usgs-willamette/station.json -text
 docs/datasets/usgs-willamette-multivariate/*.gz -text
 docs/datasets/usgs-willamette-validation/*/*.gz -text
 docs/datasets/usgs-willamette-training-audit/*/*.gz -text
+docs/datasets/usgs-willamette-multiseason/*/*.gz -text
 docs/evidence/willamette-forecast/*.gz -text
+docs/evidence/willamette-multiseason/*.gz -text

@@ -1,0 +1,289 @@
+{
+  "version": "willamette-multiseason-frozen-model-v1",
+  "createdAtUTC": "2026-10-11T22:43:32.573Z",
+  "protocolHash": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4",
+  "stationId": "USGS-14211720",
+  "recipe": {
+    "name": "oxygen-clock-temperature:ridge-100",
+    "alpha": 100,
+    "featureWidth": 8,
+    "horizonSeconds": 3600,
+    "historySamples": 12,
+    "sampleSpacingSeconds": 1800,
+    "features": [
+      "oxygenNow",
+      "oxygenDelta30m",
+      "oxygenDelta2h",
+      "oxygenDelta5h30m",
+      "clockSinUTC",
+      "clockCosUTC",
+      "temperatureNow",
+      "temperatureDelta2h"
+    ],
+    "target": "future oxygen minus current oxygen",
+    "objective": "sum squared residual error plus alpha times sum squared standardized coefficients; intercept unpenalized",
+    "preprocessing": "center and scale from 2024 training rows only",
+    "selection": "one recipe fixed before training and before test capture; no candidate search, refit or tuning on the test",
+    "note": "With sum-loss and fixed alpha the relative penalty also depends on training size; this evaluates the whole new fit, not a causal effect of seasonal diversity"
+  },
+  "training": {
+    "protocolHash": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b",
+    "pairs": 2559,
+    "windows": [
+      {
+        "window": {
+          "id": "winter-2024",
+          "start": "2024-01-01T00:00:00Z",
+          "end": "2024-01-15T00:00:00Z"
+        },
+        "status": "audited",
+        "sourceHashes": {
+          "oxygen": "0xf88847fa183d3d6e4a4e44d7332d2af0e801e5ebca9681fbed6e4249ebd35149",
+          "temperature": "0x14554095e79d2c9ed0e6698ed4cc7e876b82c8a911abc4773c6369e6091cfc8f",
+          "discharge": "0x6308536a336141989a921e899592bdfd94120631c700c6a5bd72a0cc27741254"
+        },
+        "quality": {
+          "oxygen": {
+            "total": 673,
+            "accepted": 673,
+            "excluded": []
+          },
+          "temperature": {
+            "total": 673,
+            "accepted": 673,
+            "excluded": []
+          },
+          "discharge": {
+            "total": 4033,
+            "accepted": 4033,
+            "excluded": []
+          }
+        },
+        "alignment": {
+          "eligibleOrigins": 660,
+          "acceptedPairs": 660,
+          "skipped": 0
+        },
+        "fullExpectedGrid": {
+          "expectedOrigins": 660,
+          "acceptedExactGridPairs": 660,
+          "missingApprovedOxygenOrigins": 0,
+          "presentOriginsWithIncompleteHistoryOrTarget": 0,
+          "acceptedGridFraction": 1.0
+        }
+      },
+      {
+        "window": {
+          "id": "spring-2024",
+          "start": "2024-04-01T00:00:00Z",
+          "end": "2024-04-15T00:00:00Z"
+        },
+        "status": "audited",
+        "sourceHashes": {
+          "oxygen": "0xed4aa8331ca0e3b941cef7280ecfa380859197c55eaa77a46544d7866171aabb",
+          "temperature": "0xa946a31d0788d970c6877ec1fd4090c835dc4df8435112964bc6e6c26ceaf1cf",
+          "discharge": "0x4ee896eee86460ba2df2c4b591e62b26b0e4aaebc7ef4a49fe184957b2e4db46"
+        },
+        "quality": {
+          "oxygen": {
+            "total": 670,
+            "accepted": 670,
+            "excluded": []
+          },
+          "temperature": {
+            "total": 668,
+            "accepted": 668,
+            "excluded": []
+          },
+          "discharge": {
+            "total": 4033,
+            "accepted": 4033,
+            "excluded": []
+          }
+        },
+        "alignment": {
+          "eligibleOrigins": 657,
+          "acceptedPairs": 644,
+          "skipped": 13
+        },
+        "fullExpectedGrid": {
+          "expectedOrigins": 660,
+          "acceptedExactGridPairs": 644,
+          "missingApprovedOxygenOrigins": 3,
+          "presentOriginsWithIncompleteHistoryOrTarget": 13,
+          "acceptedGridFraction": 0.9757575757575757
+        }
+      },
+      {
+        "window": {
+          "id": "summer-2024",
+          "start": "2024-07-01T00:00:00Z",
+          "end": "2024-07-15T00:00:00Z"
+        },
+        "status": "audited",
+        "sourceHashes": {
+          "oxygen": "0x60226924a5ba8c627443eb6c7e22dc76b3667a2b76537c1641c94eeae1fa2736",
+          "temperature": "0x574a229edb9c5188561b019c752ff2d0e7134f440d6770f5bf4ec684fbdbc74d",
+          "discharge": "0x7e5b557639d2acc4e54ef266d750407e37a3f18a0a909372a5c839162952b799"
+        },
+        "quality": {
+          "oxygen": {
+            "total": 673,
+            "accepted": 673,
+            "excluded": []
+          },
+          "temperature": {
+            "total": 673,
+            "accepted": 673,
+            "excluded": []
+          },
+          "discharge": {
+            "total": 4033,
+            "accepted": 4033,
+            "excluded": []
+          }
+        },
+        "alignment": {
+          "eligibleOrigins": 660,
+          "acceptedPairs": 660,
+          "skipped": 0
+        },
+        "fullExpectedGrid": {
+          "expectedOrigins": 660,
+          "acceptedExactGridPairs": 660,
+          "missingApprovedOxygenOrigins": 0,
+          "presentOriginsWithIncompleteHistoryOrTarget": 0,
+          "acceptedGridFraction": 1.0
+        }
+      },
+      {
+        "window": {
+          "id": "autumn-2024",
+          "start": "2024-10-01T00:00:00Z",
+          "end": "2024-10-15T00:00:00Z"
+        },
+        "status": "audited",
+        "sourceHashes": {
+          "oxygen": "0xec99765814b5a25fb900eb9ffcae481ff32d47a1c4eee035c6ba632036a09c74",
+          "temperature": "0x667a2b86f5efd8c933eadfcc7145af4f21bc162e27f6ab1f79f62e2a8733db54",
+          "discharge": "0x7bb0070541585bc799ad5c60ca41527b465bf28d51123a21263447d77ed58f53"
+        },
+        "quality": {
+          "oxygen": {
+            "total": 621,
+            "accepted": 621,
+            "excluded": []
+          },
+          "temperature": {
+            "total": 622,
+            "accepted": 622,
+            "excluded": []
+          },
+          "discharge": {
+            "total": 4033,
+            "accepted": 4033,
+            "excluded": []
+          }
+        },
+        "alignment": {
+          "eligibleOrigins": 608,
+          "acceptedPairs": 595,
+          "skipped": 13
+        },
+        "fullExpectedGrid": {
+          "expectedOrigins": 660,
+          "acceptedExactGridPairs": 595,
+          "missingApprovedOxygenOrigins": 52,
+          "presentOriginsWithIncompleteHistoryOrTarget": 13,
+          "acceptedGridFraction": 0.9015151515151515
+        }
+      }
+    ],
+    "featureRanges": [
+      {
+        "feature": "oxygenNow",
+        "min": 7.4,
+        "max": 14.6
+      },
+      {
+        "feature": "oxygenDelta30m",
+        "min": -0.6999999999999993,
+        "max": 0.7999999999999989
+      },
+      {
+        "feature": "oxygenDelta2h",
+        "min": -1.0999999999999996,
+        "max": 1.0999999999999996
+      },
+      {
+        "feature": "oxygenDelta5h30m",
+        "min": -1.0,
+        "max": 1.1999999999999993
+      },
+      {
+        "feature": "clockSinUTC",
+        "min": -1.0,
+        "max": 1.0
+      },
+      {
+        "feature": "clockCosUTC",
+        "min": -1.0,
+        "max": 1.0
+      },
+      {
+        "feature": "temperatureNow",
+        "min": 5.1,
+        "max": 24.9
+      },
+      {
+        "feature": "temperatureDelta2h",
+        "min": -0.5,
+        "max": 0.6000000000000014
+      }
+    ]
+  },
+  "model": {
+    "alpha": 100,
+    "mean": [
+      10.926455646736951,
+      0.000703399765533411,
+      0.002579132473622507,
+      0.005392731535756154,
+      -0.0033111257105264942,
+      -0.02248148918159852,
+      14.17205939820241,
+      0.0007033997655334028
+    ],
+    "scale": [
+      1.8539649380942111,
+      0.07469812604968709,
+      0.10609222345284501,
+      0.145353432306354,
+      0.7092740143440891,
+      0.704566527495399,
+      5.864618686963569,
+      0.09623375434305499
+    ],
+    "coefficients": [
+      -0.0075763075153736335,
+      -0.01616437653887998,
+      -0.02166637875544989,
+      -0.00020061274865761065,
+      -0.013498744343527366,
+      -0.0006043002817674856,
+      -0.009985151955512372,
+      0.0021878685702452477
+    ],
+    "residualIntercept": 0.0015240328253223903
+  },
+  "originalSummerReportHash": "0x786ea6c17bec5e55238875cf02b55a9b6bd65985b78ac1a56851b1b150a5bd29",
+  "solverCheck": {
+    "primary": "existing TypeScript centered ridge, partial-pivot elimination",
+    "independent": "Python Decimal 50-digit Cholesky on the same prepared source rows",
+    "maximumParameterDifference": 5.5067062021407764e-14,
+    "tolerance": 1e-09,
+    "meaning": "Independent arithmetic implementation, not external scientific or field validation"
+  },
+  "operationalModelChanged": false,
+  "testValuesUsed": false
+}
