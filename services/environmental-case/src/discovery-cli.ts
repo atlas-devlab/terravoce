@@ -44,8 +44,21 @@ if(command==="capture"){
     chain.chain.chainId!=="31337" || chain.chain.quorum!==3 || chain.chain.accepted!==true || chain.chain.attestationCount!==3 ||
     chain.chain.attestations.length!==3 || new Set(chain.chain.attestations.map((a:{operator:string})=>a.operator)).size!==3 ||
     chain.operationalEligible!==false || chain.fundingRelease!==false || chain.ecologicalImprovementVerified!==false)throw new Error("Pinned local chain report commitment mismatch");
-  const expectedFiles=["services/environmental-case/src/discovery.ts","services/environmental-case/src/discovery-replica.ts","packages/contracts/contracts/TerraEvidenceRegistry.sol"];
+  const expectedFiles=[
+    "services/environmental-case/src/discovery.ts",
+    "services/environmental-case/src/discovery-replica.ts",
+    "packages/contracts/contracts/TerraEvidenceRegistry.sol",
+    "services/environmental-case/dist/discovery.js",
+    "services/environmental-case/dist/discovery-replica.js",
+    "packages/protocol/dist/index.js",
+    "packages/protocol/dist/crypto.js",
+    "packages/protocol/dist/schemas.js",
+    "pnpm-lock.yaml",
+    "tsconfig.base.json",
+    "services/environmental-case/tsconfig.json",
+    "packages/protocol/tsconfig.json"
+  ];
   if(canonicalJson(chain.metadata.verificationArtifacts.map((a:{file:string})=>a.file))!==canonicalJson(expectedFiles))throw new Error("Unexpected verification artifact set");
-  for(const a of chain.metadata.verificationArtifacts)if(sha256Hex(await readFile(resolve(root,a.file)))!==a.rawSha256)throw new Error("Verifier source differs from pinned chain metadata");
+  for(const a of chain.metadata.verificationArtifacts)if(sha256Hex(await readFile(resolve(root,a.file)))!==a.rawSha256)throw new Error("Verification artifact differs from pinned chain metadata");
   console.log(JSON.stringify({verified:true,evidenceHash:evidence.evidenceHash,selected:evidence.reproduction.selected,observations:evidence.reproduction.observations.length,chainReportInternallyConsistent:true,publicChainReceiptVerified:false,physicalTruthVerified:false,operationalEligible:false}));
 }else throw new Error("Use capture or verify");

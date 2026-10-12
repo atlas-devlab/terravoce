@@ -1,0 +1,1016 @@
+{
+  "version": "autonomous-source-local-chain-test-v1",
+  "executedAt": "2026-10-12T20:27:22.768Z",
+  "source": {
+    "stationId": "USGS-14182500",
+    "stationName": "LITTLE NORTH SANTIAM RIVER NEAR MEHAMA, OR",
+    "seriesId": "3f0bf45ec4454119a93f0aa935c88336",
+    "records": 97,
+    "publisher": "USGS",
+    "newStationWithinExistingPublisher": true
+  },
+  "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
+  "metadataHash": "0xceddfd8e7ec328c2750a0c701093eace188c6f5b9bcf907b2999136ec8352c9a",
+  "metadata": {
+    "version": "autonomous-source-chain-metadata-v1",
+    "evidence": {
+      "version": "autonomous-source-evidence-v1",
+      "protocolHash": "0x2f29ea2275c9b896242c219f7011e2f7f188fdc352548da73fc3daeda80db891",
+      "archiveHash": "0x6eb027818c38b3eca6a258b4e268ba2e484c2dd7d3dffd0774239e0334c7a12f",
+      "reproduction": {
+        "selected": {
+          "stationId": "USGS-14182500",
+          "seriesId": "3f0bf45ec4454119a93f0aa935c88336"
+        },
+        "station": {
+          "name": "LITTLE NORTH SANTIAM RIVER NEAR MEHAMA, OR",
+          "hydrologicUnit": "170900050505",
+          "coordinates": [
+            -122.578973849527,
+            44.7915108355795
+          ]
+        },
+        "observations": [
+          {
+            "id": "b282810b-2fbb-407a-9605-1358c6dce598",
+            "time": "2025-07-01T00:00:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "8493b993-ad31-44b8-a8ea-644ca08ffd29",
+            "time": "2025-07-01T00:15:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "3d9a685e-a9e1-428f-8716-4cd939af5107",
+            "time": "2025-07-01T00:30:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "0d3f30a9-8f0c-40a6-b925-069361982357",
+            "time": "2025-07-01T00:45:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "f2d8f0b5-c127-4b32-b368-fa19553facff",
+            "time": "2025-07-01T01:00:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "50f89dc0-d944-4acb-9b8a-2bae787ccd53",
+            "time": "2025-07-01T01:15:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "22199358-8ac4-423d-b2ad-a24d18e72f50",
+            "time": "2025-07-01T01:30:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "73748bd1-b666-4d11-a9c3-e834feda1433",
+            "time": "2025-07-01T01:45:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "4116a9ff-6a23-474a-8c7d-ab42fdab65e7",
+            "time": "2025-07-01T02:00:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "2d5acb84-4c6d-45c6-999e-c2450c6c0737",
+            "time": "2025-07-01T02:15:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "4e7b74a3-54c5-43d4-99aa-f89ec306fb9e",
+            "time": "2025-07-01T02:30:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "28f5127d-60aa-4a27-a380-9823f2250967",
+            "time": "2025-07-01T02:45:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "842eaf2e-22fb-49a7-9248-420a5cc4a70b",
+            "time": "2025-07-01T03:00:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "b85cfeb3-1809-4518-9d5b-ec7516301e1e",
+            "time": "2025-07-01T03:15:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "7c556ca1-2e86-4801-8bd1-0efee999364b",
+            "time": "2025-07-01T03:30:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "7c80da16-2d3d-4fa5-ad44-09173847a6d1",
+            "time": "2025-07-01T03:45:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "786ee577-d268-44c0-961c-068866aac958",
+            "time": "2025-07-01T04:00:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "a70befe1-6f47-45f9-90b1-2f71bd9c8140",
+            "time": "2025-07-01T04:15:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "d2dfb9d5-3ac9-4445-a577-36121db744ac",
+            "time": "2025-07-01T04:30:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "1e797e9c-4ea7-4aa0-bb9c-02579171b7f2",
+            "time": "2025-07-01T04:45:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "0793e347-7b84-49d9-b29e-a3a34873a3ee",
+            "time": "2025-07-01T05:00:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "8696695c-8173-471a-9df9-29820dd1d6c3",
+            "time": "2025-07-01T05:15:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "aac89920-5f53-43ad-85e0-39c2cbb4805b",
+            "time": "2025-07-01T05:30:00.000Z",
+            "value": 7.9,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "5f6e6226-1ccc-490a-9d28-f5babfda0937",
+            "time": "2025-07-01T05:45:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "04fc41d9-76bf-445c-b216-5bb08070744a",
+            "time": "2025-07-01T06:00:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "f055f3fd-9760-480e-b434-cbdc5796a261",
+            "time": "2025-07-01T06:15:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "c40695f9-b0b1-435c-853b-4591648046a3",
+            "time": "2025-07-01T06:30:00.000Z",
+            "value": 8,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "0325f550-4c4d-4942-bc53-61dba835b895",
+            "time": "2025-07-01T06:45:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "2ebb8de7-18fc-4053-a9c6-f1c64660642f",
+            "time": "2025-07-01T07:00:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "16079ce7-65c8-499a-a533-3d602423b6e6",
+            "time": "2025-07-01T07:15:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "9d8741bd-5316-4e75-86c2-b66cad315357",
+            "time": "2025-07-01T07:30:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "c032f67f-ba77-4790-84cb-c93ed31af9a4",
+            "time": "2025-07-01T07:45:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "120d9bff-8ac4-4e7b-a48e-8b7fe2d4a1da",
+            "time": "2025-07-01T08:00:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "d47cbfb7-a9cf-4868-aec3-331303101b40",
+            "time": "2025-07-01T08:15:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "d91dffc0-f212-4830-b982-6b8d8cdc5e1f",
+            "time": "2025-07-01T08:30:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "52b54ed7-ce9e-4390-9b9d-6b0f9c33595f",
+            "time": "2025-07-01T08:45:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "7ae571d4-fc52-45e6-8561-3d8c1d61953d",
+            "time": "2025-07-01T09:00:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "47bac092-c88f-423d-9cef-01d3649c5cc9",
+            "time": "2025-07-01T09:15:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "0898f855-7b2e-4927-bda1-d482b3d0f5c5",
+            "time": "2025-07-01T09:30:00.000Z",
+            "value": 8.1,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "a62dd92b-9cf9-4992-b899-ea1963d1224f",
+            "time": "2025-07-01T09:45:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "ca1a545f-12de-413b-a1a4-1e1fb67089cb",
+            "time": "2025-07-01T10:00:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "65660622-8f5d-4178-adce-44948f6b0fb0",
+            "time": "2025-07-01T10:15:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "57a36de5-6443-411e-a2a0-271471dabe35",
+            "time": "2025-07-01T10:30:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "8dd8510d-b77f-4bba-a31f-d34e3e60e609",
+            "time": "2025-07-01T10:45:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "5a9681f9-1ba3-44be-8710-1deaf6b9cb96",
+            "time": "2025-07-01T11:00:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "0686c91c-04da-4ebc-bd08-fc4563bfd831",
+            "time": "2025-07-01T11:15:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "5efd5066-f038-491f-8b64-ff741251f4cc",
+            "time": "2025-07-01T11:30:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "3d12033f-2764-47af-be62-cb8182efec63",
+            "time": "2025-07-01T11:45:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "3645cadb-dddd-4d74-9b16-58747d695e02",
+            "time": "2025-07-01T12:00:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "7ea1a23b-90b9-455b-aa42-b2000e4b20d5",
+            "time": "2025-07-01T12:15:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "1aa861f5-0d5e-4c9f-a5ad-4deb8c4e729f",
+            "time": "2025-07-01T12:30:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "a8f43d2a-30a9-4fb3-b986-135793cf690e",
+            "time": "2025-07-01T12:45:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "4b23b200-7264-4ad8-bec7-0071766253d9",
+            "time": "2025-07-01T13:00:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "2eccc8c3-e9fd-4a13-994a-aa5457c49aa7",
+            "time": "2025-07-01T13:15:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "3b249a00-b1dc-46ea-9805-42aa3e1c5c6b",
+            "time": "2025-07-01T13:30:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "23c5c8a7-9bc4-4640-aa49-3e6fa1901c3f",
+            "time": "2025-07-01T13:45:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "d6ebfa45-e6f3-47ef-897a-292527e41ed4",
+            "time": "2025-07-01T14:00:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "7064a836-1cab-40ce-9dca-f074d7c522b8",
+            "time": "2025-07-01T14:15:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "124f13ce-1922-4674-b268-c3e47cb890da",
+            "time": "2025-07-01T14:30:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "d2edf37b-70e8-49fb-b6b0-4ec0c21512f0",
+            "time": "2025-07-01T14:45:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "f93befde-ae52-4cb7-95c9-5943e33e2725",
+            "time": "2025-07-01T15:00:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "956b0378-b9b7-46ba-b0a7-6ecc384ed4e2",
+            "time": "2025-07-01T15:15:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "cf601125-f80a-4068-8870-775e7ff25602",
+            "time": "2025-07-01T15:30:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "9e3cc2a3-c63d-4bef-9e09-1b4a92110e12",
+            "time": "2025-07-01T15:45:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "9938a773-c87b-48b8-8f88-44c2bb8c742d",
+            "time": "2025-07-01T16:00:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "192aaa29-86b2-4cd7-8c95-42ba8280e72e",
+            "time": "2025-07-01T16:15:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "9765d0cf-a85f-4806-938b-ebf3653f0f7e",
+            "time": "2025-07-01T16:30:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "fe0554d6-9f47-43d0-998a-92b5b0b3c631",
+            "time": "2025-07-01T16:45:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "45714cb3-f127-4a1c-9264-f1d15055c72f",
+            "time": "2025-07-01T17:00:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "16b47a95-8b5c-473c-9e45-f3846e72f427",
+            "time": "2025-07-01T17:15:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "3be8d3e6-f916-4e4c-98a8-1153146d1ecd",
+            "time": "2025-07-01T17:30:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "59032290-ce86-4013-9673-054f66d463a6",
+            "time": "2025-07-01T17:45:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "c991bb18-9a5f-484e-a4e7-529526aad2df",
+            "time": "2025-07-01T18:00:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "8477691a-293e-4268-bdc9-f18e2f06954d",
+            "time": "2025-07-01T18:15:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "418504c7-c394-441e-9f70-1d19e917add7",
+            "time": "2025-07-01T18:30:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "c1d4a9bd-5cc6-4c99-b8d6-0bc9b8ae3c15",
+            "time": "2025-07-01T18:45:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "392b4a34-9db6-49b2-ae52-2ff885ee9b4b",
+            "time": "2025-07-01T19:00:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "5ac235a1-8ef8-4568-80d6-319eb0a4436c",
+            "time": "2025-07-01T19:15:00.000Z",
+            "value": 8.6,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "36db18cb-1467-40a2-90bd-87a6433b6c98",
+            "time": "2025-07-01T19:30:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "b2a3426c-1a83-462d-a798-0adad73af22c",
+            "time": "2025-07-01T19:45:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "57d11efd-64a3-4938-997d-b040a9ad1ec6",
+            "time": "2025-07-01T20:00:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "5a80651f-7ec1-478a-807b-9eacc27318d9",
+            "time": "2025-07-01T20:15:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "b8426c36-dd5d-49d0-bcdf-b8954e372e35",
+            "time": "2025-07-01T20:30:00.000Z",
+            "value": 8.5,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "a42c834e-0b3a-4195-bab5-15a4dcde20df",
+            "time": "2025-07-01T20:45:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "be1bcf84-8fbd-4c6c-80e5-55f499c31f7f",
+            "time": "2025-07-01T21:00:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "c688c4fd-3245-4f3a-89d2-418cfd0e107b",
+            "time": "2025-07-01T21:15:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "5d2074cc-5b95-4f47-94d0-526d50e9ef8d",
+            "time": "2025-07-01T21:30:00.000Z",
+            "value": 8.4,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "2d5e96d0-c524-4ce1-a8de-8fb164fb9b8f",
+            "time": "2025-07-01T21:45:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "fb6390e5-115a-4ada-9003-1d19e40246a3",
+            "time": "2025-07-01T22:00:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "51577363-627a-43f8-bf80-1029e6a544ef",
+            "time": "2025-07-01T22:15:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "8c8fc8f5-93eb-44a5-aea9-89446d244ee6",
+            "time": "2025-07-01T22:30:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "6dd6c125-ccf8-4c0a-a3c8-d4c3ecf35135",
+            "time": "2025-07-01T22:45:00.000Z",
+            "value": 8.3,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "9215d3c4-2ab9-4b26-a8f9-d6b33d989be3",
+            "time": "2025-07-01T23:00:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "fa676b18-00c5-47b2-908c-b747077e30a5",
+            "time": "2025-07-01T23:15:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "cf76116e-e3ca-4815-b1fb-3cb7d75a071e",
+            "time": "2025-07-01T23:30:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "d38166ad-6fb3-4c5e-8130-71f9e8d83649",
+            "time": "2025-07-01T23:45:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          },
+          {
+            "id": "3a5670d0-5712-445a-acac-f1db0976de99",
+            "time": "2025-07-02T00:00:00.000Z",
+            "value": 8.2,
+            "unit": "mg/L",
+            "approval": "Approved",
+            "lastModified": "2026-04-14T00:56:18.182Z"
+          }
+        ],
+        "quality": {
+          "total": 97,
+          "accepted": 97,
+          "excluded": []
+        },
+        "discovery": {
+          "catalogPages": 1,
+          "catalogRecords": 34,
+          "eligibleCandidates": 16,
+          "attempts": []
+        },
+        "publisher": "USGS",
+        "sourceSignature": "none; HTTPS publisher retrieval only",
+        "independentPublishers": 1,
+        "physicalTruthVerified": false,
+        "ecologicalImprovementVerified": false,
+        "operationalEligible": false,
+        "fundingRelease": false
+      },
+      "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df"
+    },
+    "verificationArtifacts": [
+      {
+        "file": "services/environmental-case/src/discovery.ts",
+        "rawSha256": "0x9bcebbad15ee728bd40d5939bd3361fdf4b4d14fbfc0af1c5fdce719ecd3078d"
+      },
+      {
+        "file": "services/environmental-case/src/discovery-replica.ts",
+        "rawSha256": "0x69e03d283f66b73464d0a5da39be1abf774f2a1494632905fe9c1a3ec747aa4a"
+      },
+      {
+        "file": "packages/contracts/contracts/TerraEvidenceRegistry.sol",
+        "rawSha256": "0x11baeed84d87ca89d0cebc0a68b417a0d2efdad795de7f4fa011c66476f35c2f"
+      }
+    ],
+    "scope": "Reproducibility acceptance only; no physical-truth attestation"
+  },
+  "regionId": "US-WILLAMETTE-DISCOVERY",
+  "chain": {
+    "mode": "local ephemeral Hardhat EVM; state ends with this command",
+    "chainId": "31337",
+    "registry": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "quorum": 3,
+    "registeredTestOperators": [
+      "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65"
+    ],
+    "accepted": true,
+    "attestationCount": 3,
+    "observedAt": 1751414400,
+    "uri": "urn:terravoce:source:0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
+    "attestations": [
+      {
+        "hash": "0xe8ae6e33a7aa0202d224f83eb7c5bd9f0235a87dec1203970025b690207411ae",
+        "blockNumber": 7,
+        "blockHash": "0x1b80dbb20ee0d7d5ffe6f90c39a308711e9cb2dae13c1c54a6101fc07945cdde",
+        "operator": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+      },
+      {
+        "hash": "0xde8715125cec5e8a6c1962000f5ba39cf52ccf73d85153b98a3ed7ab502d2299",
+        "blockNumber": 8,
+        "blockHash": "0x284c30f1d41499899e36de078aca95b23618e18f075355dda2d2845a447f5814",
+        "operator": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+      },
+      {
+        "hash": "0x45f2286b46ea301a22d2f086a60f4f4098a15d2ec355f51ce8b5516a2989f5a4",
+        "blockNumber": 9,
+        "blockHash": "0xa4c993e6c4108a7b9496c1205338e5627ed7addbd146b188474d6ab647005d1a",
+        "operator": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
+      }
+    ],
+    "finalBlock": {
+      "number": 42,
+      "hash": "0x1c967bdc5bf6bcedfd93334a98646bd0c63a36ae8e4663b41031e8d6640d0533"
+    }
+  },
+  "verificationProcesses": {
+    "mode": "three separate local Node processes plus adversarial replay; one host/operator controls all",
+    "honestReplicas": [
+      {
+        "id": 0,
+        "verified": true,
+        "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
+        "records": 97,
+        "scope": "snapshot reproducibility; physical truth unverified"
+      },
+      {
+        "id": 1,
+        "verified": true,
+        "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
+        "records": 97,
+        "scope": "snapshot reproducibility; physical truth unverified"
+      },
+      {
+        "id": 2,
+        "verified": true,
+        "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
+        "records": 97,
+        "scope": "snapshot reproducibility; physical truth unverified"
+      }
+    ],
+    "alteredReplica": {
+      "id": 3,
+      "verified": false,
+      "error": "Archived response hash mismatch"
+    },
+    "coherentAgainstOriginal": {
+      "id": 3,
+      "verified": false,
+      "error": "External evidence commitment mismatch"
+    },
+    "falseInitialSnapshot": {
+      "id": 3,
+      "verified": true,
+      "evidenceHash": "0xffbdea8dacb320dfc0d71dd6b478ad476fdb2f20c53759d230763677f0846539",
+      "records": 97,
+      "scope": "snapshot reproducibility; physical truth unverified"
+    }
+  },
+  "scenarios": {
+    "threeOnlineOneNotStarted": {
+      "accepted": true,
+      "offlineIdentity": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "actualNetworkedABCICluster": false
+    },
+    "oneAlteredArchive": {
+      "detected": true,
+      "error": "Archived response hash mismatch"
+    },
+    "rawAndManifestRewritten": {
+      "detectedAgainstOriginalCommitment": true,
+      "error": "External evidence commitment mismatch"
+    },
+    "unauthorizedIdentity": {
+      "rejected": true
+    },
+    "duplicateIdentity": {
+      "rejected": true
+    },
+    "metadataSubstitutionAfterHonestFirstAttestation": {
+      "rejected": true
+    },
+    "twoCompromisedAttestors": {
+      "accepted": false
+    },
+    "twoUnavailable": {
+      "required": 3,
+      "available": 2,
+      "registry": "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+      "onChainAccepted": false,
+      "onChainAttestationCount": 2,
+      "progressPossible": false
+    },
+    "threeCompromisedAttestors": {
+      "accepted": true,
+      "transaction": "0x71839661248e1659362a457dc69479da03c7fc802d200f2c5b90ae448ad0488d",
+      "outcome": "demonstrated failure of truthful evidence under authorized majority capture"
+    },
+    "coherentlyFalseInitialPublisher": {
+      "reproducibilityAccepted": true,
+      "physicalTruthVerified": false,
+      "firstRealValue": 8.2,
+      "simulatedFalseValue": 9.9,
+      "outcome": "demonstrated upstream trust gap; not an accusation against USGS"
+    },
+    "capturedEnrollmentAdministrator": {
+      "registry": "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
+      "addedIdentities": [
+        "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+        "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+        "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f"
+      ],
+      "falseEvidenceAccepted": true,
+      "outcome": "role-enrollment administrator can manufacture an authorized quorum; independently governed admission remains necessary"
+    },
+    "firstAttestorMetadataPoisoning": {
+      "registry": "0x59b670e9fA9D0A427751Af201D676719a970857b",
+      "attestationCount": 1,
+      "accepted": false,
+      "honestCorrectMetadataRejected": true,
+      "outcome": "demonstrated censorship risk: one authorized first attestor locks mismatched metadata for the hash"
+    },
+    "revocationAfterFalseAcceptance": {
+      "acceptedRemains": true,
+      "newAttestationRejected": true,
+      "outcome": "role revocation prevents future attestations but does not erase prior accepted evidence; correction/challenge lifecycle remains future work"
+    }
+  },
+  "residualRisks": [
+    "Initial publisher falsification or selective omission cannot be ruled out by hashes/quorum",
+    "All local identities and storage remain under one host administrator",
+    "Registry administrator can change ORACLE_ROLE membership; production needs governed enrollment and key isolation",
+    "Evidence acceptance is not environmental truth, forecast validation, policy/action authorization or funding approval",
+    "One preconfigured catalog is not global source discovery or multiple independent publishers",
+    "Archive and chain are local; no independent mirror or public-chain publication was established"
+  ],
+  "ecologicalImprovementVerified": false,
+  "operationalEligible": false,
+  "fundingRelease": false,
+  "fundsTransferred": "none",
+  "LLMUsed": false,
+  "totalAcquisitionBytes": 138252,
+  "acquisitionRequests": 3
+}

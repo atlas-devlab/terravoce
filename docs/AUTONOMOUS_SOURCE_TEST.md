@@ -83,8 +83,8 @@ raccoglitore attesterebbe ciò che ha ricevuto, non la calibrazione sul campo.
 
 Il commit `655c694` conserva acquisizione, manifesto e
 [sigillo](evidence/autonomous-source/seal.json). La verifica offline riceve
-l'impegno atteso da una fonte esterna al file modificabile: nella CLI è il
-sigillo della revisione Git; nei processi di verifica è un argomento separato.
+l'impegno atteso da una fonte esterna al file modificabile: nella CLI e nel
+test EVM è il sigillo della revisione Git; nei processi di verifica è un argomento separato.
 Se l'attaccante controlla anche quel riferimento iniziale, manca la protezione
 contro una riscrittura coerente dell'intero archivio.
 
@@ -96,7 +96,12 @@ Impegno dell'evidenza:
 
 Esso lega protocollo, manifesto, selezione, osservazioni normalizzate e limiti
 delle affermazioni. I metadati registrati in blockchain legano anche le impronte
-del codice di verifica e del contratto. I dati completi restano fuori dalla
+del codice di verifica e del contratto, dei moduli JavaScript compilati usati
+dal worker, del blocco delle dipendenze e delle configurazioni di compilazione.
+La compilazione di questi moduli usa terminatori di riga LF per una riproduzione
+identica su Windows e Linux. Non sono impronte dell'intero sistema operativo,
+del runtime Node, delle librerie installate o dell'hardware: un verificatore
+compromesso sul proprio host può mentire sull'esito. I dati completi restano fuori dalla
 blockchain; questo campione usa un impegno SHA-256 dell'intero lotto, senza
 implementare ancora prove Merkle per singole osservazioni.
 

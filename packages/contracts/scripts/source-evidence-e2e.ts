@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { cp, mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
-import { execFile } from "node:child_process";
+import { execFile, execFileSync } from "node:child_process";
 import { promisify } from "node:util";
 import { resolve } from "node:path";
 import { canonicalJson, sha256Hex } from "@terravoce/protocol";
@@ -9,7 +9,11 @@ import { network } from "hardhat";
 
 const run=promisify(execFile), root=resolve("../.."), source=resolve(root,"docs/datasets/autonomous-source");
 const output=resolve(process.env.TERRAVOCE_SOURCE_OUTPUT??resolve(root,"outputs/autonomous-source"));
-const seal=JSON.parse(await readFile(resolve(root,"docs/evidence/autonomous-source/seal.json"),"utf8"));
+const sealPath="docs/evidence/autonomous-source/seal.json";
+const committedSeal=JSON.parse(execFileSync("git",["show",`HEAD:${sealPath}`],{cwd:root,encoding:"utf8"}));
+const localSeal=JSON.parse(await readFile(resolve(root,sealPath),"utf8"));
+assert.equal(canonicalJson(localSeal),canonicalJson(committedSeal),"Local seal differs from committed external checkpoint");
+const seal=committedSeal;
 const honest=await verifyDiscovery(source,seal.evidenceHash);
 const scratchRoot=resolve(root,"work/source-chain-runs");await mkdir(scratchRoot,{recursive:true});
 const scratch=await mkdtemp(resolve(scratchRoot,"run-"));
@@ -56,7 +60,16 @@ await (await registry.revokeRole(role,admin.address)).wait();
 const verificationArtifacts=await Promise.all([
   "services/environmental-case/src/discovery.ts",
   "services/environmental-case/src/discovery-replica.ts",
-  "packages/contracts/contracts/TerraEvidenceRegistry.sol"
+  "packages/contracts/contracts/TerraEvidenceRegistry.sol",
+  "services/environmental-case/dist/discovery.js",
+  "services/environmental-case/dist/discovery-replica.js",
+  "packages/protocol/dist/index.js",
+  "packages/protocol/dist/crypto.js",
+  "packages/protocol/dist/schemas.js",
+  "pnpm-lock.yaml",
+  "tsconfig.base.json",
+  "services/environmental-case/tsconfig.json",
+  "packages/protocol/tsconfig.json"
 ].map(async file=>({file,rawSha256:sha256Hex(await readFile(resolve(root,file)))})));
 const metadata={version:"autonomous-source-chain-metadata-v1",evidence:honest,verificationArtifacts,scope:"Reproducibility acceptance only; no physical-truth attestation"};
 const region=ethers.id(protocol.territory.regionId), metadataHash=sha256Hex(canonicalJson(metadata));

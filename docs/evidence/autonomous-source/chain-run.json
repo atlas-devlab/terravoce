@@ -1,6 +1,6 @@
 {
   "version": "autonomous-source-local-chain-test-v1",
-  "executedAt": "2026-10-12T20:27:22.768Z",
+  "executedAt": "2026-10-12T20:34:40.870Z",
   "source": {
     "stationId": "USGS-14182500",
     "stationName": "LITTLE NORTH SANTIAM RIVER NEAR MEHAMA, OR",
@@ -10,7 +10,7 @@
     "newStationWithinExistingPublisher": true
   },
   "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
-  "metadataHash": "0xceddfd8e7ec328c2750a0c701093eace188c6f5b9bcf907b2999136ec8352c9a",
+  "metadataHash": "0xc776542caa99adee194ffed69972354de06b0685fb446381ec9e79eea1b30e09",
   "metadata": {
     "version": "autonomous-source-chain-metadata-v1",
     "evidence": {
@@ -841,6 +841,42 @@
       {
         "file": "packages/contracts/contracts/TerraEvidenceRegistry.sol",
         "rawSha256": "0x11baeed84d87ca89d0cebc0a68b417a0d2efdad795de7f4fa011c66476f35c2f"
+      },
+      {
+        "file": "services/environmental-case/dist/discovery.js",
+        "rawSha256": "0xfcad4194c5aed61a0be6441837b00c7d8cc78ff4018309a18d62ff2e1115c4ae"
+      },
+      {
+        "file": "services/environmental-case/dist/discovery-replica.js",
+        "rawSha256": "0x60dc82487ac9a2f38e830901e2c65f6aebf7a6d2accf314d5166b2c624ae2e98"
+      },
+      {
+        "file": "packages/protocol/dist/index.js",
+        "rawSha256": "0xe0f9f9eea94413acd2894ff4bcff696b7ba7e52d1c5d4bf7e5454e536d079b27"
+      },
+      {
+        "file": "packages/protocol/dist/crypto.js",
+        "rawSha256": "0xaaad8fbd0735de48c78911b5604dc53e6a2164ebe69fde2ae1e4ad9c5e9c9092"
+      },
+      {
+        "file": "packages/protocol/dist/schemas.js",
+        "rawSha256": "0xe10fbed5fe94bd8b67f417b97018b738302a2ee582c5879129198462191f503b"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "rawSha256": "0x339814ae2e66cc7372801dbfa11d8fde3b5dada8193759ab70d6ec37f163bf5d"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "rawSha256": "0x47c153501737b0968147794de36f40604a2843ad8247eb8842806629f6d1c033"
+      },
+      {
+        "file": "services/environmental-case/tsconfig.json",
+        "rawSha256": "0xff2cca38430ab18000f63e410bf96947f20cf692bd79e6762b371351bc2146b4"
+      },
+      {
+        "file": "packages/protocol/tsconfig.json",
+        "rawSha256": "0x67dd03cc171775dd9294ac92726ff9942e391ad76d78e1cdab8f4f9100f48a2f"
       }
     ],
     "scope": "Reproducibility acceptance only; no physical-truth attestation"
@@ -863,27 +899,27 @@
     "uri": "urn:terravoce:source:0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
     "attestations": [
       {
-        "hash": "0xe8ae6e33a7aa0202d224f83eb7c5bd9f0235a87dec1203970025b690207411ae",
+        "hash": "0x51daaf85bfa53f6967a12f0ef455a5cdad7049dd50ee66487fd2fb9e81b97fa5",
         "blockNumber": 7,
-        "blockHash": "0x1b80dbb20ee0d7d5ffe6f90c39a308711e9cb2dae13c1c54a6101fc07945cdde",
+        "blockHash": "0xd1e2863cb2c884f4dd4bbb1e72b0f014da1e6bb99f6521eea2bfc26ef7220638",
         "operator": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
       },
       {
-        "hash": "0xde8715125cec5e8a6c1962000f5ba39cf52ccf73d85153b98a3ed7ab502d2299",
+        "hash": "0x8c26fc607bb300cc8dd0dbea05c1ff8de3d7385eef917063fde4e6dfb6bb588c",
         "blockNumber": 8,
-        "blockHash": "0x284c30f1d41499899e36de078aca95b23618e18f075355dda2d2845a447f5814",
+        "blockHash": "0x95615451e9a06c46d109a03a5f17398be082d72d55df2507ecbc5759929f1192",
         "operator": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
       },
       {
-        "hash": "0x45f2286b46ea301a22d2f086a60f4f4098a15d2ec355f51ce8b5516a2989f5a4",
+        "hash": "0xe3fd09552b802fc4bec99fecb6e2d94dd6d4592bd047b58b67815d0d0135a6c7",
         "blockNumber": 9,
-        "blockHash": "0xa4c993e6c4108a7b9496c1205338e5627ed7addbd146b188474d6ab647005d1a",
+        "blockHash": "0xcbf59aa21e1d193db10f691eb23f80b0cbb18c8395c7a568226e056ed6a90516",
         "operator": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
       }
     ],
     "finalBlock": {
       "number": 42,
-      "hash": "0x1c967bdc5bf6bcedfd93334a98646bd0c63a36ae8e4663b41031e8d6640d0533"
+      "hash": "0x298a15f4e5a44dfcf3f4d62cf227c2b359b4ea36e52a02a1ff10c74779a17f97"
     }
   },
   "verificationProcesses": {
