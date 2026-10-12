@@ -1,0 +1,27 @@
+{
+  "version": "autonomous-source-archive-v1",
+  "protocolHash": "0x2f29ea2275c9b896242c219f7011e2f7f188fdc352548da73fc3daeda80db891",
+  "responses": [
+    {
+      "file": "response-00.json",
+      "url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/time-series-metadata/items?f=json&bbox=-123.2%2C44.5%2C-122.4%2C45.7&parameter_code=00300&statistic_id=00011&limit=100",
+      "rawSha256": "0xb232db84129a2ba5e8e1f5eb46d416df292714858f5a6943a3e00dab751e7a1d",
+      "capturedAt": "2026-10-12T20:08:26.367Z",
+      "bytes": 63573
+    },
+    {
+      "file": "response-01.json",
+      "url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/monitoring-locations/items/USGS-14182500?f=json",
+      "rawSha256": "0x2fadcbaa0ff0ac68a6fa20623f6a32dc879aec95cc7abfa85986ec0771a8099f",
+      "capturedAt": "2026-10-12T20:08:26.621Z",
+      "bytes": 3679
+    },
+    {
+      "file": "response-02.json",
+      "url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14182500&time_series_id=3f0bf45ec4454119a93f0aa935c88336&parameter_code=00300&statistic_id=00011&time=2025-07-01T00%3A00%3A00Z%2F2025-07-02T00%3A00%3A00Z&limit=500",
+      "rawSha256": "0xeaeda763f3a4ada19b7bed59b4ec2407e14bc896f0fde5a93f70c8bce1e8a30a",
+      "capturedAt": "2026-10-12T20:08:26.888Z",
+      "bytes": 71000
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "version": "autonomous-source-seal-v1",
+  "protocolCommit": "8de9b64af94907b5de0fc6a303fa2972a025308a",
+  "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
+  "scope": "Research-only discovery of a new station within one preconfigured publisher; no sensor signature or independent physical validation"
+}

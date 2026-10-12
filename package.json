@@ -22,7 +22,10 @@
     "forecast:replay": "pnpm --filter @terravoce/environmental-case forecast:replay",
     "forecast:verify": "pnpm --filter @terravoce/environmental-case forecast:verify",
     "irrigation:replay": "python scripts/awash_irrigation.py verify && pnpm --filter @terravoce/environmental-case irrigation:replay",
-    "irrigation:verify": "python scripts/awash_irrigation.py verify && pnpm --filter @terravoce/environmental-case irrigation:verify"
+    "irrigation:verify": "python scripts/awash_irrigation.py verify && pnpm --filter @terravoce/environmental-case irrigation:verify",
+    "source:capture": "pnpm --filter @terravoce/environmental-case source:capture",
+    "source:verify": "pnpm --filter @terravoce/environmental-case source:verify",
+    "source:e2e": "pnpm --filter @terravoce/contracts source:e2e"
   },
   "devDependencies": {
     "@types/node": "24.13.3",
