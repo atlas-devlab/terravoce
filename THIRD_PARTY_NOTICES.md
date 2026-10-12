@@ -69,6 +69,15 @@ raw protocol hash, exact frozen research-model file hash, and pre-capture Git
 commit. Low archived oxygen values remain source observations, not proof of
 an independently observed ecological event or USGS endorsement of an alert.
 
+## USGS autonomous source discovery snapshot
+
+The response files under `docs/datasets/autonomous-source` also contain USGS
+Water Data for the Nation public-domain catalog, station metadata and continuous
+oxygen observations. The algorithm discovered station USGS-14182500; exact URLs,
+retrieval timestamps and byte hashes are retained in the manifest. Attack data
+are created in local disposable copies and are not USGS observations or evidence
+of misconduct by the publisher. USGS does not endorse the prototype.
+
 ## FAO WaPOR native window extracts
 
 `docs/datasets/awash-irrigation` retains FAO WaPOR v3 catalog/mapset/raster

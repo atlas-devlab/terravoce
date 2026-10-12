@@ -59,6 +59,20 @@ Raw data and model artifacts may be mirrored through object storage and
 content-addressed networks. Only hashes, concise metadata, votes, and treasury
 state belong on-chain.
 
+## Research source discovery extension
+
+The bounded collector in `services/environmental-case/src/discovery.ts` searches
+one preconfigured USGS catalog by territory and metric and deterministically
+selects a previously unconnected station. It archives exact responses and
+reproduces a research-only ObservationBatch commitment. Separate local Node
+processes verify it, and `source:e2e` attests the batch in the existing registry
+with a three-of-four local identity fixture. It does not register physical sensor
+keys, run an operational assessment or bridge action, or release funding.
+The test deliberately demonstrates coherent false publisher input and captured
+attestor/enrollment authority. See [the test and trust limits](AUTONOMOUS_SOURCE_TEST.md).
+Global discovery, independent operators, replicated archives, recurring jobs
+and evidence correction/dispute lifecycle remain future work.
+
 ## Deployment target
 
 The contracts are EVM portable. The first deployment should use a low-cost

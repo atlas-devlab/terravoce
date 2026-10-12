@@ -76,6 +76,11 @@ jobs:
           python3 scripts/awash_irrigation.py verify
           pnpm --filter @terravoce/environmental-case irrigation:verify
 
+      - name: Reproduce autonomous discovery and adversarial local-chain evidence offline
+        run: |
+          pnpm source:verify
+          pnpm source:e2e
+
       - name: Validate Oracle bridge digest interoperability
         run: |
           python3 -m venv services/autonomy/.venv

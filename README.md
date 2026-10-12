@@ -89,6 +89,24 @@ The research evidence envelope cannot claim verified withdrawals, ecological
 improvement or funding eligibility. Run `pnpm irrigation:verify` offline.
 The Willamette forecast and operational Oracle/governance remain separate.
 
+## Bounded autonomous source discovery and adversarial evidence
+
+The [autonomous source test](docs/AUTONOMOUS_SOURCE_TEST.md) searches a public
+USGS catalog using territory and metric rules, excluding the already-connected
+station. It discovers USGS-14182500 without hardcoding that selected identifier,
+archives 97 approved oxygen observations, and reproduces the commitment in
+separate local verification processes. The existing evidence contract registers
+the batch with three of four local test identities; no action or funding follows.
+
+Tampered archives and two isolated malicious attestations are rejected. The
+test also demonstrates residual failures: coherent initial publisher falsification,
+three colluding authorized attestors, and capture of the enrollment administrator.
+One malicious first attestor can also lock incorrect metadata and block later
+honest attestations for the same hash; the test preserves this censorship failure.
+It does not establish independent operators, physical truth, public-chain
+publication, a networked ABCI outage run, or globally autonomous discovery.
+After building, run `pnpm source:verify` and `pnpm source:e2e` offline.
+
 ## Everyone can take part
 
 You do not need coding experience or an environmental qualification to ask a

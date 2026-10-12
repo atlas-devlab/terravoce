@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { TextDecoder } from "node:util";
 import { canonicalJson, sha256Hex } from "@terravoce/protocol";
 import { z } from "zod";
 
@@ -155,7 +156,10 @@ export async function fetchPublicResponse(url: string, p: DiscoveryProtocol): Pr
   const signal=AbortSignal.timeout(p.limits.timeoutMs);
   const response=await fetch(u,{redirect:"error",signal,headers:{"User-Agent":"TerraVoce-research-discovery/1.0"}});
   if(!response.ok || !response.body) throw new Error(`Public source unavailable: HTTP ${response.status}`);
+  if(!response.headers.get("content-type")?.toLowerCase().includes("json"))throw new Error("Publisher response is not JSON");
   const chunks:Uint8Array[]=[];let bytes=0;
   for await(const chunk of response.body){bytes+=chunk.length;if(bytes>p.limits.maxResponseBytes){await response.body.cancel().catch(()=>{});throw new Error("Response exceeds byte budget");}chunks.push(chunk);}
-  return Buffer.concat(chunks).toString("utf8");
+  const raw=Buffer.concat(chunks);
+  new TextDecoder("utf-8",{fatal:true}).decode(raw); // Reject replacement decoding: preserve exact UTF-8 response bytes.
+  return raw.toString("utf8");
 }
