@@ -81,6 +81,7 @@ jobs:
           pnpm source:verify
           pnpm source:e2e
           python3 scripts/explore_evidence_quorum.py
+          python3 scripts/audit_autonomous_source.py
 
       - name: Validate Oracle bridge digest interoperability
         run: |

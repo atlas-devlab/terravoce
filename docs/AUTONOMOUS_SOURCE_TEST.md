@@ -230,6 +230,8 @@ pnpm install --frozen-lockfile
 pnpm build
 pnpm source:verify
 pnpm source:e2e
+python scripts/audit_autonomous_source.py
+python scripts/explore_evidence_quorum.py
 ```
 
 Non servono API key, wallet reali, Docker o un LLM per riprodurre l'esperimento.
@@ -237,6 +239,18 @@ Il comando `source:e2e` usa l'archivio, senza richieste ambientali nuove, e scri
 `outputs/autonomous-source/chain-run.json`. La CI ripete entrambe le verifiche
 offline. Il report di ogni dimostrazione locale viene sostituito; il resoconto
 pubblicato in `docs/evidence` è una copia conservata di una specifica esecuzione.
+
+Il controllo Python usa soltanto la libreria standard, senza importare o
+eseguire il verificatore JavaScript. Ricostruisce selezione, qualità e tutte le
+97 osservazioni dalle tre risposte originali, ricalcola protocollo/manifesto/
+impegno finale e confronta la riproduzione conservata. Il riferimento iniziale
+predefinito arriva dal sigillo in Git. Sei test controllano il campione valido,
+modifiche a dati grezzi, manifesto, dati normalizzati, riferimento e unità.
+È un controllo del campione fissato, con una pagina di catalogo e il primo
+candidato ammissibile: non è un secondo raccoglitore generale o una libreria
+universale di JSON canonico. La concordanza di due implementazioni dello stesso
+progetto riduce errori comuni di codice, senza costituire un audit scientifico
+indipendente o la conferma fisica di quelle misure.
 
 La cattura iniziale usa `pnpm source:capture`; richiede che il protocollo sia
 già in Git e rifiuta di sovrascrivere un'acquisizione esistente. Questo è un
