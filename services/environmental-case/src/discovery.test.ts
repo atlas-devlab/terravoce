@@ -2,7 +2,7 @@ import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve, sep } from "node:path";
 import { sha256Hex } from "@terravoce/protocol";
-import { assertCatalogUrl, catalogUrl, discoverAndCollect, discoveryProtocolSchema, evidenceCommitment, fetchPublicResponse, verifyDiscovery, type DiscoveryArchive } from "./discovery.js";
+import { assertCatalogUrl, catalogUrl, discoverAndCollect, discoveryProtocolSchema, evidenceCommitment, fetchPublicResponse, readBoundedArchiveFile, verifyDiscovery, type DiscoveryArchive } from "./discovery.js";
 
 const folder=resolve("../../docs/datasets/autonomous-source"), scratch=resolve("../../work/discovery-tests");
 let protocolRaw:string, protocol:ReturnType<typeof discoveryProtocolSchema.parse>, archive:DiscoveryArchive, expectedHash:string;
@@ -137,5 +137,16 @@ describe("Autonomous source discovery and adversarial evidence",()=>{
   it("does not accept a successful HTML page as environmental data",async()=>{
     vi.stubGlobal("fetch",async()=>new Response("<html>propaganda</html>",{headers:{"content-type":"text/html"}}));
     await expect(fetchPublicResponse(catalogUrl(protocol),protocol)).rejects.toThrow("not JSON");
+  });
+  it("bounds offline peer files before buffering an oversized archive",async()=>{
+    const copy=await copyArchive();await writeFile(resolve(copy,archive.responses[2]!.file),"x".repeat(protocol.limits.maxResponseBytes+1));
+    await expect(verifyDiscovery(copy,expectedHash)).rejects.toThrow("Archive entry exceeds byte budget");
+  });
+  it("does not read a directory as an archived response",async()=>{
+    await expect(readBoundedArchiveFile(folder,1000)).rejects.toThrow("not a regular file");
+  });
+  it("bounds the protocol and manifest as well as individual observations",async()=>{
+    const copy=await copyArchive();await writeFile(resolve(copy,"manifest.json"),"x".repeat(65537));
+    await expect(verifyDiscovery(copy,expectedHash)).rejects.toThrow("Archive entry exceeds byte budget");
   });
 });

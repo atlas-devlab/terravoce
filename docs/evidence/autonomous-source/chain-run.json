@@ -1,5 +1,6 @@
 {
   "version": "autonomous-source-local-chain-test-v1",
+  "executedAt": "2026-10-12T20:27:22.768Z",
   "source": {
     "stationId": "USGS-14182500",
     "stationName": "LITTLE NORTH SANTIAM RIVER NEAR MEHAMA, OR",
@@ -9,7 +10,7 @@
     "newStationWithinExistingPublisher": true
   },
   "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
-  "metadataHash": "0xa2de6b8f05bd39c62cafcd3576f65d43c1a8d0b64792029f0661c2e47bb32873",
+  "metadataHash": "0xceddfd8e7ec328c2750a0c701093eace188c6f5b9bcf907b2999136ec8352c9a",
   "metadata": {
     "version": "autonomous-source-chain-metadata-v1",
     "evidence": {
@@ -831,7 +832,7 @@
     "verificationArtifacts": [
       {
         "file": "services/environmental-case/src/discovery.ts",
-        "rawSha256": "0x3414b2497cb40140ccea0c497b1bedcf95d9255580698d77e0e06357b909d0cd"
+        "rawSha256": "0x9bcebbad15ee728bd40d5939bd3361fdf4b4d14fbfc0af1c5fdce719ecd3078d"
       },
       {
         "file": "services/environmental-case/src/discovery-replica.ts",
@@ -862,27 +863,27 @@
     "uri": "urn:terravoce:source:0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
     "attestations": [
       {
-        "hash": "0x58444801e9c169d643f059a58973008cf02a418928882fd78bd409b0ddd1907a",
+        "hash": "0xe8ae6e33a7aa0202d224f83eb7c5bd9f0235a87dec1203970025b690207411ae",
         "blockNumber": 7,
-        "blockHash": "0xce1765bcde0641d8015166f907fa6749eeca9b2650dda10d227ae7b434956a2e",
+        "blockHash": "0x1b80dbb20ee0d7d5ffe6f90c39a308711e9cb2dae13c1c54a6101fc07945cdde",
         "operator": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
       },
       {
-        "hash": "0x9c695836babb8a4f1ddf983dfa2c71b91f083e1f5d2528f6570c3c855de0c16a",
+        "hash": "0xde8715125cec5e8a6c1962000f5ba39cf52ccf73d85153b98a3ed7ab502d2299",
         "blockNumber": 8,
-        "blockHash": "0x333ad01599a4445b7862ff635a3d025d0c9385b1ce19065222a8b075234f2511",
+        "blockHash": "0x284c30f1d41499899e36de078aca95b23618e18f075355dda2d2845a447f5814",
         "operator": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
       },
       {
-        "hash": "0x8df45aadb85180c73188afd7c3507bfd13b6d85bcd51c0c40757998f6bfe7fdf",
+        "hash": "0x45f2286b46ea301a22d2f086a60f4f4098a15d2ec355f51ce8b5516a2989f5a4",
         "blockNumber": 9,
-        "blockHash": "0x42ad8f28d830ccb4bd24e7ce9d9fbae3c3ec12c804e0d7f271f8ab93a2798eb9",
+        "blockHash": "0xa4c993e6c4108a7b9496c1205338e5627ed7addbd146b188474d6ab647005d1a",
         "operator": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
       }
     ],
     "finalBlock": {
       "number": 42,
-      "hash": "0xf52fc6c7d9f2c45833c7b5ff81029c7f171eff30277b37ba636c68ea15a50c80"
+      "hash": "0x1c967bdc5bf6bcedfd93334a98646bd0c63a36ae8e4663b41031e8d6640d0533"
     }
   },
   "verificationProcesses": {

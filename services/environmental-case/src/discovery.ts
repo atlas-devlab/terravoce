@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { lstat, open } from "node:fs/promises";
 import { resolve } from "node:path";
 import { TextDecoder } from "node:util";
 import { canonicalJson, sha256Hex } from "@terravoce/protocol";
@@ -131,15 +131,15 @@ export function evidenceCommitment<T>(protocolRaw: string, archive: DiscoveryArc
 
 export async function verifyDiscovery(folder: string, expectedEvidenceHash: string) {
   hashSchema.parse(expectedEvidenceHash);
-  const protocolRaw = await readFile(resolve(folder,"protocol.json"),"utf8"), p = discoveryProtocolSchema.parse(JSON.parse(protocolRaw));
-  const archive = z.object({ version:z.literal("autonomous-source-archive-v1"), protocolHash:hashSchema, responses:z.array(z.object({file:z.string().regex(/^[a-z][a-z0-9-]*\.json$/),url:z.url(),rawSha256:hashSchema,capturedAt:dateSchema,bytes:z.number().int().positive().max(p.limits.maxResponseBytes)}).strict()).max(p.limits.maxCatalogPages+p.limits.maxCandidates*2) }).strict().parse(JSON.parse(await readFile(resolve(folder,"manifest.json"),"utf8")));
+  const protocolRaw = (await readBoundedArchiveFile(resolve(folder,"protocol.json"),65536)).toString("utf8"), p = discoveryProtocolSchema.parse(JSON.parse(protocolRaw));
+  const archive = z.object({ version:z.literal("autonomous-source-archive-v1"), protocolHash:hashSchema, responses:z.array(z.object({file:z.string().regex(/^[a-z][a-z0-9-]*\.json$/),url:z.url(),rawSha256:hashSchema,capturedAt:dateSchema,bytes:z.number().int().positive().max(p.limits.maxResponseBytes)}).strict()).max(p.limits.maxCatalogPages+p.limits.maxCandidates*2) }).strict().parse(JSON.parse((await readBoundedArchiveFile(resolve(folder,"manifest.json"),65536)).toString("utf8")));
   const files = new Set<string>(), urls = new Set<string>();
   for (const a of archive.responses) { if (files.has(a.file)||urls.has(a.url)) throw new Error("Duplicate archived request"); files.add(a.file);urls.add(a.url); }
   let cursor=0;
   const reproduction=await discoverAndCollect(p,async(url)=>{
     const a=archive.responses[cursor++];
     if (!a || a.url!==url) throw new Error("Archive does not reproduce exact discovery request order");
-    const raw=await readFile(resolve(folder,a.file));
+    const raw=await readBoundedArchiveFile(resolve(folder,a.file),p.limits.maxResponseBytes);
     if (raw.length!==a.bytes || sha256Hex(raw)!==a.rawSha256) throw new Error("Archived response hash mismatch");
     return raw.toString("utf8");
   });
@@ -162,4 +162,26 @@ export async function fetchPublicResponse(url: string, p: DiscoveryProtocol): Pr
   const raw=Buffer.concat(chunks);
   new TextDecoder("utf-8",{fatal:true}).decode(raw); // Reject replacement decoding: preserve exact UTF-8 response bytes.
   return raw.toString("utf8");
+}
+
+/** Shared peer archives have the same byte boundary as live acquisition. */
+export async function readBoundedArchiveFile(path: string, maxBytes: number): Promise<Buffer> {
+  if(!Number.isSafeInteger(maxBytes)||maxBytes<1)throw new Error("Invalid archive byte budget");
+  const entry=await lstat(path);
+  if(!entry.isFile()||entry.isSymbolicLink())throw new Error("Archive entry is not a regular file");
+  if(entry.size>maxBytes)throw new Error("Archive entry exceeds byte budget");
+  const handle=await open(path,"r"),chunks:Buffer[]=[];
+  try{
+    const opened=await handle.stat();
+    if(!opened.isFile()||opened.size>maxBytes)throw new Error("Opened archive entry exceeds byte budget");
+    let total=0;
+    for(;;){
+      const chunk=Buffer.alloc(Math.min(65536,maxBytes+1-total));
+      const {bytesRead}=await handle.read(chunk,0,chunk.length,null);
+      if(bytesRead===0)break;
+      total+=bytesRead;if(total>maxBytes)throw new Error("Growing archive entry exceeds byte budget");
+      chunks.push(chunk.subarray(0,bytesRead));
+    }
+    return Buffer.concat(chunks);
+  }finally{await handle.close();}
 }

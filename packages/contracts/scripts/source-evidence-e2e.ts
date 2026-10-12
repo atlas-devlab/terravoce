@@ -110,7 +110,7 @@ const acceptedAfterRevocation=await registry.isAcceptedForRegion(falseEvidence.e
 await mustRevert(()=>registry.connect(operator0).attestEvidence(ethers.id("new-evidence-after-revocation"),region,metadataHash,observedAt,0,uri),"AccessControlUnauthorizedAccount");
 const finalBlock=await ethers.provider.getBlock("latest"),chainId=(await ethers.provider.getNetwork()).chainId.toString();
 const report={
-  version:"autonomous-source-local-chain-test-v1",source:{stationId:honest.reproduction.selected.stationId,stationName:honest.reproduction.station.name,seriesId:honest.reproduction.selected.seriesId,records:honest.reproduction.observations.length,publisher:"USGS",newStationWithinExistingPublisher:true},
+  version:"autonomous-source-local-chain-test-v1",executedAt:new Date().toISOString(),source:{stationId:honest.reproduction.selected.stationId,stationName:honest.reproduction.station.name,seriesId:honest.reproduction.selected.seriesId,records:honest.reproduction.observations.length,publisher:"USGS",newStationWithinExistingPublisher:true},
   evidenceHash:honest.evidenceHash,metadataHash,metadata,regionId:protocol.territory.regionId,
   chain:{mode:"local ephemeral Hardhat EVM; state ends with this command",chainId,registry:await registry.getAddress(),quorum:3,registeredTestOperators:operators.map(s=>s.address),accepted:honestState.accepted,attestationCount:Number(honestState.attestationCount),observedAt,uri,attestations:acceptedTransactions,finalBlock:{number:finalBlock!.number,hash:finalBlock!.hash}},
   verificationProcesses:{mode:"three separate local Node processes plus adversarial replay; one host/operator controls all",honestReplicas,alteredReplica,coherentAgainstOriginal,falseInitialSnapshot},

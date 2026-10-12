@@ -69,6 +69,10 @@ Sono ammessi soltanto gli endpoint HTTPS USGS previsti, senza reindirizzamenti.
 Ogni risposta ha un limite di byte e tempo; ricerca e tentativi hanno un limite
 di pagine/candidati. Un catalogo incompleto, un errore di rete o l'assenza di una
 fonte ammissibile fermano il percorso, senza produrre un giudizio di buona salute.
+Anche la lettura degli archivi ricevuti da altri nodi ha limiti prima del
+caricamento completo: protocollo e manifesto al massimo 64 KiB, ogni risposta
+al massimo 2.000.000 di byte. File non regolari e link simbolici sono rifiutati.
+Questi limiti non isolano il processo da un amministratore del sistema operativo.
 Non c'è un LLM che interpreta istruzioni inserite nei metadati.
 
 HTTPS identifica l'endpoint del pubblicatore nel modello di fiducia adottato.
