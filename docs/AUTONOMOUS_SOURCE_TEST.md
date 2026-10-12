@@ -276,6 +276,9 @@ candidato ammissibile: non è un secondo raccoglitore generale o una libreria
 universale di JSON canonico. La concordanza di due implementazioni dello stesso
 progetto riduce errori comuni di codice, senza costituire un audit scientifico
 indipendente o la conferma fisica di quelle misure.
+Il controllo Python presume un campione locale affidabile: legge con un limite
+di byte, ma non applica l'isolamento dei percorsi o un timeout per file ostili.
+Non deve essere usato come lettore di archivi inviati direttamente da peer.
 
 La cattura iniziale usa `pnpm source:capture`; richiede che il protocollo sia
 già in Git e rifiuta di sovrascrivere un'acquisizione esistente. Questo è un
