@@ -80,6 +80,7 @@ jobs:
         run: |
           pnpm source:verify
           pnpm source:e2e
+          python3 scripts/explore_evidence_quorum.py
 
       - name: Validate Oracle bridge digest interoperability
         run: |

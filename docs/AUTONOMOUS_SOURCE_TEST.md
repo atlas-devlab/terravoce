@@ -72,6 +72,8 @@ fonte ammissibile fermano il percorso, senza produrre un giudizio di buona salut
 Anche la lettura degli archivi ricevuti da altri nodi ha limiti prima del
 caricamento completo: protocollo e manifesto al massimo 64 KiB, ogni risposta
 al massimo 2.000.000 di byte. File non regolari e link simbolici sono rifiutati.
+Il rifiuto riguarda i link simbolici rilevati; la verifica e l'apertura del
+percorso non sono un'operazione atomica contro sostituzioni concorrenti del file.
 Questi limiti non isolano il processo da un amministratore del sistema operativo.
 Non c'è un LLM che interpreta istruzioni inserite nei metadati.
 
@@ -182,6 +184,36 @@ parte del primo attestatore: un futuro registro dovrà legare crittograficamente
 l'identificativo a tutta la busta dei metadati, o finalizzarla soltanto con un
 quorum coerente, senza assegnare quell'autorità al primo nodo. Questo test
 conserva il contratto originale e ne rende riproducibile il limite.
+
+### Il prossimo test proposto: togliere autorità al primo voto
+
+Una piccola esplorazione separata, `python scripts/explore_evidence_quorum.py`,
+esamina tutti i 24 ordini di arrivo di quattro voti distinti, per ciascun numero
+di identità compromesse da zero a quattro: 120 sequenze in totale. Non è una
+nuova implementazione Solidity, una prova di consenso distribuito o un modello
+probabilistico dello Stato. Confronta soltanto due regole astratte:
+
+- **Regola attuale:** il primo voto fissa la busta dei metadati; quelli diversi
+  vengono rifiutati, anche se corretti.
+- **Regola candidata:** ogni busta completa raccoglie voti separati; tre voti
+  concordi la finalizzano. Ogni identità può votare una sola volta per quel lotto.
+
+Con una identità malevola e tre oneste, la prima regola registra la busta onesta
+in 18 ordini e si blocca nei sei ordini in cui il malevolo arriva per primo.
+La candidata registra la busta onesta in tutti i 24 ordini. Il malevolo può
+scegliere deliberatamente di arrivare per primo: **6/24 non è una probabilità
+di attacco del 25%**. Con due identità per ciascuna busta, la candidata non
+finalizza nulla; con tre identità malevole finalizza la busta dell'attaccante.
+Essa affronta dunque il blocco del primo voto, senza risolvere la cattura
+del quorum o la falsità del pubblicatore.
+
+Prima di cambiare il contratto, i criteri della prova saranno: un voto falso
+iniziale non blocca i tre corretti; nessuna busta passa con meno di tre identità;
+un'identità ripetuta non moltiplica i voti; tutti i campi finalizzati appartengono
+alla stessa busta. Occorre poi definire come quella busta venga codificata e
+legata a registro/rete/versione, come gli altri moduli la referenzino, e come
+contestare prove già accettate. I dati raccolti e i diritti delle comunità
+non vengono modificati da questa esplorazione.
 
 Questi requisiti non sono già implementati da questo test. Non introduciamo
 un punteggio arbitrario che trasformi una misura plausibile in verità.
