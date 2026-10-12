@@ -1,5 +1,7 @@
 # Correzione del blocco causato dal primo attestatore
 
+[English version for international contributors](FIRST_ATTESTOR_FIX_EN.md).
+
 Il contratto di TerraVoce ora permette a tre attestatori concordi di registrare
 la propria prova anche quando una quarta identità autorizzata arriva per prima
 con metadati diversi. È una correzione del registro delle evidenze, verificata
