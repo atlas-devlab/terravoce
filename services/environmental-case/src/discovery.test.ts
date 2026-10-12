@@ -66,6 +66,26 @@ describe("Autonomous source discovery and adversarial evidence",()=>{
     expect(forged.evidenceHash).not.toBe(expectedHash);
   });
   it("rejects mixed series identities",async()=>{await expect(replayWith((r,k)=>{if(k===2)r.features[0].properties.time_series_id="wrong";})).rejects.toThrow("identity or unit mismatch");});
+  it("demonstrates that selective initial omission can improve apparent oxygen without falsifying retained values",async()=>{
+    const copy=await copyArchive(), a=structuredClone(archive), entry=a.responses[2]!;
+    const raw=JSON.parse(await readFile(resolve(copy,entry.file),"utf8"));
+    const originalFeatures=structuredClone(raw.features), values=raw.features.map((f:any)=>Number(f.properties.value)).sort((x:number,y:number)=>x-y);
+    const median=values[Math.floor(values.length/2)]!;
+    raw.features=raw.features.filter((f:any)=>Number(f.properties.value)>=median);
+    raw.numberReturned=raw.features.length;
+    if(typeof raw.numberMatched==="number")raw.numberMatched=raw.features.length;
+    const text=JSON.stringify(raw);entry.rawSha256=sha256Hex(text);entry.bytes=Buffer.byteLength(text);
+    await writeFile(resolve(copy,entry.file),text);await writeFile(resolve(copy,"manifest.json"),JSON.stringify(a));
+    const map=await sourceMap();map.set(entry.url,text);
+    const reproduction=await discoverAndCollect(protocol,async u=>map.get(u)!);
+    const forged=evidenceCommitment(protocolRaw,a,reproduction), replay=await verifyDiscovery(copy,forged.evidenceHash);
+    const mean=(v:number[])=>v.reduce((sum,x)=>sum+x,0)/v.length;
+    expect(replay.reproduction.observations.length).toBeLessThan(97);
+    expect(mean(replay.reproduction.observations.map(o=>o.value))).toBeGreaterThan(mean(values));
+    expect(raw.features.every((f:any)=>originalFeatures.some((o:any)=>o.id===f.id&&o.properties.value===f.properties.value))).toBe(true);
+    expect(replay.reproduction.physicalTruthVerified).toBe(false);
+    await expect(verifyDiscovery(copy,expectedHash)).rejects.toThrow("External evidence commitment mismatch");
+  });
   it("rejects substituted units",async()=>{await expect(replayWith((r,k)=>{if(k===2)r.features[0].properties.unit_of_measure="ppm";})).rejects.toThrow("identity or unit mismatch");});
   it("rejects observations outside the precommitted window",async()=>{await expect(replayWith((r,k)=>{if(k===2)r.features[0].properties.time="2024-01-01T00:00:00Z";})).rejects.toThrow("outside frozen window");});
   it("rejects duplicate observation IDs and times",async()=>{await expect(replayWith((r,k)=>{if(k===2)r.features[1]=r.features[0];})).rejects.toThrow("Duplicate observation");});

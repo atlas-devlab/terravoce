@@ -142,6 +142,7 @@ attribuiamo a USGS alcun comportamento malevolo.
 | Sostituire unità, serie, date o URL | Test negativi del raccoglitore e dell'archivio | Verifica rifiutata |
 | Essere il primo attestatore di un impegno noto | Prima attestazione con metadati sbagliati, poi attestazione onesta | Il registro blocca i metadati corretti: rischio di censura dimostrato anche con una sola identità autorizzata |
 | Pubblicare falsità coerenti fin dall'inizio | Tutte le 97 misure impostate a 9,9 con un nuovo impegno iniziale | Riproducibilità accettata; verità fisica non dimostrata |
+| Nascondere inizialmente le misure meno favorevoli | Il test conserva soltanto valori pari o superiori alla mediana, senza modificarli, e fornisce un nuovo impegno | Archivio riproducibile e media apparente più alta; completezza iniziale non dimostrata. Il confronto con il vecchio impegno riconosce invece la riscrittura |
 | Votare molte volte con la stessa identità | Doppia attestazione | Contratto rifiuta il duplicato |
 | Usare un'identità non autorizzata | Tentativo di attestazione esterna | Contratto rifiuta il ruolo mancante |
 | Controllare soltanto due attestatori | Due attestazioni alla prova falsa | Il quorum di tre non viene raggiunto |
