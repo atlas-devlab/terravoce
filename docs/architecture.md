@@ -70,6 +70,10 @@ with a three-of-four local identity fixture. It does not register physical senso
 keys, run an operational assessment or bridge action, or release funding.
 The test deliberately demonstrates coherent false publisher input and captured
 attestor/enrollment authority. See [the test and trust limits](AUTONOMOUS_SOURCE_TEST.md).
+The evidence registry counts complete envelopes separately, retains one vote
+per authorized identity/content root, and freezes the envelope reaching quorum.
+This removes the first-attestor lock demonstrated by the initial source test;
+pending legacy getter values remain provisional. See [the correction](FIRST_ATTESTOR_FIX.md).
 Global discovery, independent operators, replicated archives, recurring jobs
 and evidence correction/dispute lifecycle remain future work.
 

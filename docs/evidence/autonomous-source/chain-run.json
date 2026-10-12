@@ -1,6 +1,6 @@
 {
-  "version": "autonomous-source-local-chain-test-v1",
-  "executedAt": "2026-10-12T20:34:40.870Z",
+  "version": "autonomous-source-local-chain-test-v2",
+  "executedAt": "2026-10-12T22:11:06.054Z",
   "source": {
     "stationId": "USGS-14182500",
     "stationName": "LITTLE NORTH SANTIAM RIVER NEAR MEHAMA, OR",
@@ -10,9 +10,10 @@
     "newStationWithinExistingPublisher": true
   },
   "evidenceHash": "0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
-  "metadataHash": "0xc776542caa99adee194ffed69972354de06b0685fb446381ec9e79eea1b30e09",
+  "metadataHash": "0x276b02f5fe2e8acf32811df235f4226d3bd580cee0e00d1cfc3a6c2e1092110e",
   "metadata": {
-    "version": "autonomous-source-chain-metadata-v1",
+    "version": "autonomous-source-chain-metadata-v2",
+    "registryRule": "TerraVoce.EvidenceCandidate.v1",
     "evidence": {
       "version": "autonomous-source-evidence-v1",
       "protocolHash": "0x2f29ea2275c9b896242c219f7011e2f7f188fdc352548da73fc3daeda80db891",
@@ -840,7 +841,11 @@
       },
       {
         "file": "packages/contracts/contracts/TerraEvidenceRegistry.sol",
-        "rawSha256": "0x11baeed84d87ca89d0cebc0a68b417a0d2efdad795de7f4fa011c66476f35c2f"
+        "rawSha256": "0xb06809fb36453c7f13c7431bcd0fe684bd617773ed5b986a6f69692148dc3dd7"
+      },
+      {
+        "file": "packages/contracts/scripts/source-evidence-e2e.ts",
+        "rawSha256": "0xa92ce04606943447c315ecf8c955ec09db74cc5eaadcf565e522fbf5764beacc"
       },
       {
         "file": "services/environmental-case/dist/discovery.js",
@@ -895,31 +900,32 @@
     ],
     "accepted": true,
     "attestationCount": 3,
+    "acceptedCandidateId": "0xfe036930259846c63b068695c0bfdd1558eae6e73a3eced01a57d7d9de6af37d",
     "observedAt": 1751414400,
     "uri": "urn:terravoce:source:0x51eb495031dc75a12e4de5d1fe69165aaaf900b30d2d1d019ea88a0af21ba5df",
     "attestations": [
       {
-        "hash": "0x51daaf85bfa53f6967a12f0ef455a5cdad7049dd50ee66487fd2fb9e81b97fa5",
+        "hash": "0xa46632ef5dd15d22e6bb63f8c4169b339f087b21a4ff2b5079925f299b02fbea",
         "blockNumber": 7,
-        "blockHash": "0xd1e2863cb2c884f4dd4bbb1e72b0f014da1e6bb99f6521eea2bfc26ef7220638",
+        "blockHash": "0x32345709e3542cbcaedab7da9064da40cc25de341a39741967d0ba24e30a84df",
         "operator": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
       },
       {
-        "hash": "0x8c26fc607bb300cc8dd0dbea05c1ff8de3d7385eef917063fde4e6dfb6bb588c",
+        "hash": "0x16fc3ebb04228f172ab5ac14be17c46e1c84fc684832a45c10244de135549e8f",
         "blockNumber": 8,
-        "blockHash": "0x95615451e9a06c46d109a03a5f17398be082d72d55df2507ecbc5759929f1192",
+        "blockHash": "0xe401b22b394086f9bcae3189d473166ec5fbb9fe2d0eeaf15160777ec70c7a26",
         "operator": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
       },
       {
-        "hash": "0xe3fd09552b802fc4bec99fecb6e2d94dd6d4592bd047b58b67815d0d0135a6c7",
+        "hash": "0x9a8f19c9201197f8154e01a0ddb6306d37f50cc0f927e2385cfa62f5dbe9d03f",
         "blockNumber": 9,
-        "blockHash": "0xcbf59aa21e1d193db10f691eb23f80b0cbb18c8395c7a568226e056ed6a90516",
+        "blockHash": "0xcabc6eebba13138841d09d839243e91945ad0e6bba49ff302927967cd3630ea5",
         "operator": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
       }
     ],
     "finalBlock": {
-      "number": 42,
-      "hash": "0x298a15f4e5a44dfcf3f4d62cf227c2b359b4ea36e52a02a1ff10c74779a17f97"
+      "number": 45,
+      "hash": "0xfff98bb7bdaf101e648910c990e8ea17638072c1bd2f9c803d734717959a78d8"
     }
   },
   "verificationProcesses": {
@@ -985,7 +991,7 @@
     "duplicateIdentity": {
       "rejected": true
     },
-    "metadataSubstitutionAfterHonestFirstAttestation": {
+    "metadataSubstitutionAfterFinalization": {
       "rejected": true
     },
     "twoCompromisedAttestors": {
@@ -1001,7 +1007,7 @@
     },
     "threeCompromisedAttestors": {
       "accepted": true,
-      "transaction": "0x71839661248e1659362a457dc69479da03c7fc802d200f2c5b90ae448ad0488d",
+      "transaction": "0x9ce61a91eb55f20de95c5070d8c2046dfab621586e67ceb86d9ece7cc2d3ddc9",
       "outcome": "demonstrated failure of truthful evidence under authorized majority capture"
     },
     "coherentlyFalseInitialPublisher": {
@@ -1023,10 +1029,43 @@
     },
     "firstAttestorMetadataPoisoning": {
       "registry": "0x59b670e9fA9D0A427751Af201D676719a970857b",
-      "attestationCount": 1,
-      "accepted": false,
-      "honestCorrectMetadataRejected": true,
-      "outcome": "demonstrated censorship risk: one authorized first attestor locks mismatched metadata for the hash"
+      "maliciousIdentity": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "maliciousCandidateId": "0x09f58fef27729a7c2a9220d9b27619c2b0d31edde11217d349db461115276fb2",
+      "honestCandidateId": "0xe5c026ff11f2561863c81651e95afd598a0c0089d477720733ed682926cb24bc",
+      "maliciousAttestationCount": 1,
+      "maliciousCandidateAccepted": false,
+      "maliciousRegionAccepted": false,
+      "maliciousTransaction": {
+        "hash": "0x064dc4d75fba6064993c3384c9b77714e24400459dca483b73d43e223ff42305",
+        "blockNumber": 39,
+        "blockHash": "0x29b4306d553c4e196afdb5622cd080b4ba721e62a83befbc552932802c000e08"
+      },
+      "honestTransactions": [
+        {
+          "hash": "0xae12876b56611f8794b328bc0bc878b86a762c6183b8d4c172f352aa872f68fe",
+          "blockNumber": 40,
+          "blockHash": "0xc31c2b3f869e347f813c80910857e845309f88bffbb92f6360090c749adb8ea7",
+          "operator": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+        },
+        {
+          "hash": "0x9f4e5008d863495f0b5ee9a6258648f0183cfab13bc353fe35368db7db63aa0d",
+          "blockNumber": 41,
+          "blockHash": "0x5bb1de71ce0ce924acfb0b409f1f269f6f579bf0581dedb5dd35356c7ad900eb",
+          "operator": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+        },
+        {
+          "hash": "0xd25af11f16597dc56738c4138378d00a1d9284ce18c46b8124f6fd04f5eed9de",
+          "blockNumber": 42,
+          "blockHash": "0xd7f1129bdc3313b83e2a45805192bc2cec4144b767c2598b4bc6c49f39cf7259",
+          "operator": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
+        }
+      ],
+      "attestationCount": 3,
+      "accepted": true,
+      "honestCorrectMetadataRejected": false,
+      "allFinalizedFieldsMatchHonestEnvelope": true,
+      "maliciousSecondVoteRejected": true,
+      "outcome": "first-attestor censorship no longer reproduces: one false candidate remains at one vote; three honest votes finalize their complete envelope"
     },
     "revocationAfterFalseAcceptance": {
       "acceptedRemains": true,

@@ -39,15 +39,23 @@ if(command==="capture"){
   const committedChain=execFileSync("git",["show",`HEAD:${chainPath}`],{cwd:root,encoding:"utf8"});
   const chain=JSON.parse(await readFile(resolve(root,chainPath),"utf8"));
   if(canonicalJson(chain)!==canonicalJson(JSON.parse(committedChain)))throw new Error("Local chain report differs from committed checkpoint");
-  if(chain.version!=="autonomous-source-local-chain-test-v1" || chain.evidenceHash!==evidence.evidenceHash ||
+  const recovery=chain.scenarios.firstAttestorMetadataPoisoning;
+  if(chain.version!=="autonomous-source-local-chain-test-v2" || chain.evidenceHash!==evidence.evidenceHash ||
+    chain.metadata.registryRule!=="TerraVoce.EvidenceCandidate.v1" ||
     canonicalJson(chain.metadata.evidence)!==canonicalJson(evidence) || sha256Hex(canonicalJson(chain.metadata))!==chain.metadataHash ||
     chain.chain.chainId!=="31337" || chain.chain.quorum!==3 || chain.chain.accepted!==true || chain.chain.attestationCount!==3 ||
     chain.chain.attestations.length!==3 || new Set(chain.chain.attestations.map((a:{operator:string})=>a.operator)).size!==3 ||
+    recovery.accepted!==true || recovery.attestationCount!==3 || recovery.maliciousAttestationCount!==1 ||
+    recovery.maliciousCandidateAccepted!==false || recovery.maliciousRegionAccepted!==false ||
+    recovery.honestCorrectMetadataRejected!==false || recovery.allFinalizedFieldsMatchHonestEnvelope!==true ||
+    recovery.maliciousSecondVoteRejected!==true || recovery.honestCandidateId===recovery.maliciousCandidateId ||
+    recovery.honestTransactions.length!==3 || new Set(recovery.honestTransactions.map((a:{operator:string})=>a.operator)).size!==3 ||
     chain.operationalEligible!==false || chain.fundingRelease!==false || chain.ecologicalImprovementVerified!==false)throw new Error("Pinned local chain report commitment mismatch");
   const expectedFiles=[
     "services/environmental-case/src/discovery.ts",
     "services/environmental-case/src/discovery-replica.ts",
     "packages/contracts/contracts/TerraEvidenceRegistry.sol",
+    "packages/contracts/scripts/source-evidence-e2e.ts",
     "services/environmental-case/dist/discovery.js",
     "services/environmental-case/dist/discovery-replica.js",
     "packages/protocol/dist/index.js",

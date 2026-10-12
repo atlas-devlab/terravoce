@@ -17,7 +17,7 @@ FALSE = "attacker-envelope"
 
 
 def first_writer(votes):
-    """Model only the existing first-envelope lock and duplicate restriction."""
+    """Model the legacy first-envelope lock and duplicate restriction."""
     locked = None
     counted = set()
     for signer, envelope in votes:
@@ -34,7 +34,7 @@ def first_writer(votes):
 
 
 def candidate_quorum(votes):
-    """Proposed rule: one vote per identity/root, separate complete envelopes."""
+    """Candidate rule: one vote per identity/root, separate complete envelopes."""
     seen = set()
     counts = {}
     for signer, envelope in votes:
@@ -71,7 +71,7 @@ def explore():
     assert candidate_quorum([(0, FALSE), (1, HONEST), (2, HONEST), (3, HONEST)]) == HONEST
     return {
         "version": "evidence-quorum-design-model-v1",
-        "scope": "abstract finite arrival-order model; proposed rule is not implemented in Solidity",
+        "scope": "abstract finite comparison with the legacy rule; Solidity candidate voting is tested separately",
         "identities": 4,
         "quorum": QUORUM,
         "examinedArrivalOrders": 120,
@@ -85,7 +85,7 @@ def explore():
             "One-node outage and one malicious node simultaneously leave only two honest signers",
             "A captured three-identity quorum can approve a false envelope under either design",
             "An honest quorum can reproduce false initial publisher data",
-            "Production requires explicit envelope encoding, domain separation, interfaces and correction lifecycle",
+            "The Solidity encoding is tested separately; correction lifecycle and independent operators remain future work",
         ],
     }
 

@@ -26,7 +26,12 @@ contract TerraEvidenceRegistry is AccessControlDefaultAdminRules, ITerraEvidence
 
     uint8 public immutable oracleQuorum;
     mapping(bytes32 evidenceHash => Evidence) private _evidence;
+    mapping(bytes32 evidenceHash => mapping(bytes32 candidateId => Evidence)) private _candidates;
+    mapping(bytes32 evidenceHash => bytes32 candidateId) private _firstCandidateId;
+    mapping(bytes32 evidenceHash => bytes32 candidateId) public acceptedCandidateId;
     mapping(bytes32 evidenceHash => mapping(address oracle => bool)) public hasAttested;
+
+    bytes32 private constant CANDIDATE_DOMAIN = keccak256("TerraVoce.EvidenceCandidate.v1");
 
     error InvalidEvidence();
     error EvidenceMismatch();
@@ -39,6 +44,12 @@ contract TerraEvidenceRegistry is AccessControlDefaultAdminRules, ITerraEvidence
         uint32 attestationCount
     );
     event EvidenceAccepted(bytes32 indexed evidenceHash, bytes32 indexed regionId);
+    event EvidenceCandidateAttested(
+        bytes32 indexed evidenceHash,
+        bytes32 indexed candidateId,
+        address indexed oracle,
+        uint32 attestationCount
+    );
 
     constructor(uint8 oracleQuorum_, uint48 adminDelay, address initialAdmin)
         AccessControlDefaultAdminRules(adminDelay, initialAdmin)
@@ -62,33 +73,70 @@ contract TerraEvidenceRegistry is AccessControlDefaultAdminRules, ITerraEvidence
         ) revert InvalidEvidence();
         if (hasAttested[evidenceHash][msg.sender]) revert DuplicateAttestation();
 
-        Evidence storage item = _evidence[evidenceHash];
+        bytes32 candidateId = evidenceCandidateId(
+            evidenceHash, regionId, metadataHash, observedAt, kind, uri
+        );
+        // Before quorum, another complete envelope is a separate candidate, not a mismatch.
+        // Once accepted, the winner is immutable even if more identities are enrolled later.
+        if (_evidence[evidenceHash].accepted && acceptedCandidateId[evidenceHash] != candidateId) {
+            revert EvidenceMismatch();
+        }
+
+        Evidence storage item = _candidates[evidenceHash][candidateId];
         if (item.observedAt == 0) {
             item.regionId = regionId;
             item.metadataHash = metadataHash;
             item.observedAt = observedAt;
             item.kind = kind;
             item.uri = uri;
-        } else if (
-            item.regionId != regionId || item.metadataHash != metadataHash
-                || item.observedAt != observedAt || item.kind != kind
-                || keccak256(bytes(item.uri)) != keccak256(bytes(uri))
-        ) {
-            revert EvidenceMismatch();
         }
 
         hasAttested[evidenceHash][msg.sender] = true;
         item.attestationCount += 1;
         emit EvidenceAttested(evidenceHash, regionId, msg.sender, item.attestationCount);
+        emit EvidenceCandidateAttested(evidenceHash, candidateId, msg.sender, item.attestationCount);
 
         if (!item.accepted && item.attestationCount >= oracleQuorum) {
             item.accepted = true;
+            acceptedCandidateId[evidenceHash] = candidateId;
             emit EvidenceAccepted(evidenceHash, regionId);
+        }
+
+        // Pending data is read from its candidate instead of copied into final storage.
+        // A malicious first URI must not make honest finalization pay to clear that string.
+        if (_firstCandidateId[evidenceHash] == bytes32(0)) _firstCandidateId[evidenceHash] = candidateId;
+        if (item.accepted) {
+            _evidence[evidenceHash] = item;
         }
     }
 
+    function evidenceCandidateId(
+        bytes32 evidenceHash,
+        bytes32 regionId,
+        bytes32 metadataHash,
+        uint64 observedAt,
+        EvidenceKind kind,
+        string memory uri
+    ) public view returns (bytes32) {
+        return keccak256(
+            abi.encode(
+                CANDIDATE_DOMAIN, block.chainid, address(this), evidenceHash,
+                regionId, metadataHash, observedAt, kind, uri
+            )
+        );
+    }
+
+    function candidate(bytes32 evidenceHash, bytes32 candidateId)
+        external
+        view
+        returns (Evidence memory)
+    {
+        return _candidates[evidenceHash][candidateId];
+    }
+
     function evidence(bytes32 evidenceHash) external view returns (Evidence memory) {
-        return _evidence[evidenceHash];
+        if (_evidence[evidenceHash].accepted) return _evidence[evidenceHash];
+        return _candidates[evidenceHash][_firstCandidateId[evidenceHash]];
     }
 
     function isAcceptedForRegion(bytes32 evidenceHash, bytes32 regionId)

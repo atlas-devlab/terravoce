@@ -15,7 +15,7 @@ const localSeal=JSON.parse(await readFile(resolve(root,sealPath),"utf8"));
 assert.equal(canonicalJson(localSeal),canonicalJson(committedSeal),"Local seal differs from committed external checkpoint");
 const seal=committedSeal;
 const honest=await verifyDiscovery(source,seal.evidenceHash);
-const scratchRoot=resolve(root,"work/source-chain-runs");await mkdir(scratchRoot,{recursive:true});
+const scratchRoot=resolve(process.env.TERRAVOCE_SOURCE_SCRATCH??resolve(root,"work/source-chain-runs"));await mkdir(scratchRoot,{recursive:true});
 const scratch=await mkdtemp(resolve(scratchRoot,"run-"));
 const altered=resolve(scratch,"altered"), coherent=resolve(scratch,"coherent-false-publisher");
 await cp(source,altered,{recursive:true});await cp(source,coherent,{recursive:true});
@@ -61,6 +61,7 @@ const verificationArtifacts=await Promise.all([
   "services/environmental-case/src/discovery.ts",
   "services/environmental-case/src/discovery-replica.ts",
   "packages/contracts/contracts/TerraEvidenceRegistry.sol",
+  "packages/contracts/scripts/source-evidence-e2e.ts",
   "services/environmental-case/dist/discovery.js",
   "services/environmental-case/dist/discovery-replica.js",
   "packages/protocol/dist/index.js",
@@ -71,7 +72,7 @@ const verificationArtifacts=await Promise.all([
   "services/environmental-case/tsconfig.json",
   "packages/protocol/tsconfig.json"
 ].map(async file=>({file,rawSha256:sha256Hex(await readFile(resolve(root,file)))})));
-const metadata={version:"autonomous-source-chain-metadata-v1",evidence:honest,verificationArtifacts,scope:"Reproducibility acceptance only; no physical-truth attestation"};
+const metadata={version:"autonomous-source-chain-metadata-v2",registryRule:"TerraVoce.EvidenceCandidate.v1",evidence:honest,verificationArtifacts,scope:"Reproducibility acceptance only; no physical-truth attestation"};
 const region=ethers.id(protocol.territory.regionId), metadataHash=sha256Hex(canonicalJson(metadata));
 const observedAt=Math.floor(Date.parse(honest.reproduction.observations.at(-1)!.time)/1000), uri=`urn:terravoce:source:${honest.evidenceHash}`;
 const args=[honest.evidenceHash,region,metadataHash,observedAt,0,uri] as const;
@@ -84,11 +85,13 @@ for(let i=0;i<3;i++){
   assert.equal(await registry.isAcceptedForRegion(honest.evidenceHash,region),i===2);
   if(i===0){
     await mustRevert(()=>registry.connect(operator0).attestEvidence(...args),"DuplicateAttestation");
-    await mustRevert(()=>registry.connect(operator1).attestEvidence(honest.evidenceHash,region,ethers.id("altered-metadata"),observedAt,0,uri),"EvidenceMismatch");
   }
 }
 const honestState=await registry.evidence(honest.evidenceHash);
 assert.equal(honestState.attestationCount,3n);assert.equal(await registry.hasAttested(honest.evidenceHash,operator3.address),false);
+await mustRevert(()=>registry.connect(operator3).attestEvidence(honest.evidenceHash,region,ethers.id("altered-metadata"),observedAt,0,uri),"EvidenceMismatch");
+const acceptedCandidateId=await registry.acceptedCandidateId(honest.evidenceHash);
+assert.equal(acceptedCandidateId,await registry.evidenceCandidateId(...args));
 const falseArgs=[falseEvidence.evidenceHash,region,sha256Hex(canonicalJson(falseEvidence)),observedAt,0,`urn:terravoce:source:${falseEvidence.evidenceHash}`] as const;
 await (await registry.connect(operator0).attestEvidence(...falseArgs)).wait();
 await (await registry.connect(operator1).attestEvidence(...falseArgs)).wait();
@@ -110,24 +113,62 @@ await(await capturedAdminRegistry.revokeRole(role,admin.address)).wait();
 const sybils=[sybil0,sybil1,sybil2];
 for(const s of sybils){await(await capturedAdminRegistry.grantRole(role,s.address)).wait();await(await capturedAdminRegistry.connect(s).attestEvidence(...falseArgs)).wait();}
 const enrollmentCapture=await capturedAdminRegistry.isAcceptedForRegion(falseEvidence.evidenceHash,region);assert.equal(enrollmentCapture,true);
-// A single authorized attacker can poison the FIRST metadata for a known evidence hash.
-// This does not reach quorum, but honest later attestations with correct metadata are blocked.
+// A single authorized attacker arrives first and substitutes the complete envelope.
+// Its candidate must remain separate while three honest verifier results reach quorum.
 const poisonedRegistry=await ethers.deployContract("TerraEvidenceRegistry",[3,0,admin.address]);await poisonedRegistry.waitForDeployment();
 for(const s of operators)await(await poisonedRegistry.grantRole(role,s.address)).wait();
 await(await poisonedRegistry.revokeRole(role,admin.address)).wait();
-await(await poisonedRegistry.connect(operator3).attestEvidence(honest.evidenceHash,region,ethers.id("first-attestor-false-metadata"),observedAt,0,uri)).wait();
-await mustRevert(()=>poisonedRegistry.connect(operator0).attestEvidence(...args),"EvidenceMismatch");
-const poisoned=await poisonedRegistry.evidence(honest.evidenceHash);assert.equal(poisoned.accepted,false);assert.equal(poisoned.attestationCount,1n);
+const poisonedArgs=[honest.evidenceHash,ethers.id("attacker-selected-region"),ethers.id("first-attestor-false-metadata"),observedAt+1,1,"urn:attacker:favorable-narrative"] as const;
+const maliciousCandidateId=await poisonedRegistry.evidenceCandidateId(...poisonedArgs);
+const honestCandidateId=await poisonedRegistry.evidenceCandidateId(...args);
+const maliciousReceipt=await(await poisonedRegistry.connect(operator3).attestEvidence(...poisonedArgs)).wait();
+assert.equal(await poisonedRegistry.isAcceptedForRegion(honest.evidenceHash,region),false);
+const recoveryTransactions:{hash:string;blockNumber:number;blockHash:string;operator:string}[]=[];
+for(let i=0;i<3;i++){
+  const receipt=await(await poisonedRegistry.connect(operators[i]!).attestEvidence(...args)).wait();
+  recoveryTransactions.push({hash:receipt!.hash,blockNumber:receipt!.blockNumber,blockHash:receipt!.blockHash,operator:operators[i]!.address});
+  assert.equal(await poisonedRegistry.isAcceptedForRegion(honest.evidenceHash,region),i===2);
+}
+const recovered=await poisonedRegistry.evidence(honest.evidenceHash);
+const maliciousCandidate=await poisonedRegistry.candidate(honest.evidenceHash,maliciousCandidateId);
+assert.equal(maliciousCandidate.attestationCount,1n);assert.equal(maliciousCandidate.accepted,false);
+assert.equal(recovered.accepted,true);assert.equal(recovered.attestationCount,3n);
+assert.deepEqual([recovered.regionId,recovered.metadataHash,Number(recovered.observedAt),Number(recovered.kind),recovered.uri],[region,metadataHash,observedAt,0,uri]);
+assert.equal(await poisonedRegistry.acceptedCandidateId(honest.evidenceHash),honestCandidateId);
+assert.equal(await poisonedRegistry.isAcceptedForRegion(honest.evidenceHash,poisonedArgs[1]),false);
+await mustRevert(()=>poisonedRegistry.connect(operator3).attestEvidence(...args),"DuplicateAttestation");
 for(const s of operators.slice(0,3))await(await registry.revokeRole(role,s.address)).wait();
 const acceptedAfterRevocation=await registry.isAcceptedForRegion(falseEvidence.evidenceHash,region);assert.equal(acceptedAfterRevocation,true);
 await mustRevert(()=>registry.connect(operator0).attestEvidence(ethers.id("new-evidence-after-revocation"),region,metadataHash,observedAt,0,uri),"AccessControlUnauthorizedAccount");
 const finalBlock=await ethers.provider.getBlock("latest"),chainId=(await ethers.provider.getNetwork()).chainId.toString();
 const report={
-  version:"autonomous-source-local-chain-test-v1",executedAt:new Date().toISOString(),source:{stationId:honest.reproduction.selected.stationId,stationName:honest.reproduction.station.name,seriesId:honest.reproduction.selected.seriesId,records:honest.reproduction.observations.length,publisher:"USGS",newStationWithinExistingPublisher:true},
+  version:"autonomous-source-local-chain-test-v2",executedAt:new Date().toISOString(),source:{stationId:honest.reproduction.selected.stationId,stationName:honest.reproduction.station.name,seriesId:honest.reproduction.selected.seriesId,records:honest.reproduction.observations.length,publisher:"USGS",newStationWithinExistingPublisher:true},
   evidenceHash:honest.evidenceHash,metadataHash,metadata,regionId:protocol.territory.regionId,
-  chain:{mode:"local ephemeral Hardhat EVM; state ends with this command",chainId,registry:await registry.getAddress(),quorum:3,registeredTestOperators:operators.map(s=>s.address),accepted:honestState.accepted,attestationCount:Number(honestState.attestationCount),observedAt,uri,attestations:acceptedTransactions,finalBlock:{number:finalBlock!.number,hash:finalBlock!.hash}},
+  chain:{mode:"local ephemeral Hardhat EVM; state ends with this command",chainId,registry:await registry.getAddress(),quorum:3,registeredTestOperators:operators.map(s=>s.address),accepted:honestState.accepted,attestationCount:Number(honestState.attestationCount),acceptedCandidateId,observedAt,uri,attestations:acceptedTransactions,finalBlock:{number:finalBlock!.number,hash:finalBlock!.hash}},
   verificationProcesses:{mode:"three separate local Node processes plus adversarial replay; one host/operator controls all",honestReplicas,alteredReplica,coherentAgainstOriginal,falseInitialSnapshot},
-  scenarios:{threeOnlineOneNotStarted:{accepted:true,offlineIdentity:operator3.address,actualNetworkedABCICluster:false},oneAlteredArchive:{detected:true,error:alteredReplica.error},rawAndManifestRewritten:{detectedAgainstOriginalCommitment:true,error:coherentAgainstOriginal.error},unauthorizedIdentity:{rejected:true},duplicateIdentity:{rejected:true},metadataSubstitutionAfterHonestFirstAttestation:{rejected:true},twoCompromisedAttestors:{accepted:twoCompromised},twoUnavailable:{required:3,available:twoOnline.length,registry:await stalledRegistry.getAddress(),onChainAccepted:stalled.accepted,onChainAttestationCount:Number(stalled.attestationCount),progressPossible:false},threeCompromisedAttestors:{accepted:threeCompromised,transaction:collusionReceipt!.hash,outcome:"demonstrated failure of truthful evidence under authorized majority capture"},coherentlyFalseInitialPublisher:{reproducibilityAccepted:true,physicalTruthVerified:false,firstRealValue:originalValue,simulatedFalseValue:9.9,outcome:"demonstrated upstream trust gap; not an accusation against USGS"},capturedEnrollmentAdministrator:{registry:await capturedAdminRegistry.getAddress(),addedIdentities:sybils.map(s=>s.address),falseEvidenceAccepted:enrollmentCapture,outcome:"role-enrollment administrator can manufacture an authorized quorum; independently governed admission remains necessary"},firstAttestorMetadataPoisoning:{registry:await poisonedRegistry.getAddress(),attestationCount:Number(poisoned.attestationCount),accepted:poisoned.accepted,honestCorrectMetadataRejected:true,outcome:"demonstrated censorship risk: one authorized first attestor locks mismatched metadata for the hash"},revocationAfterFalseAcceptance:{acceptedRemains:acceptedAfterRevocation,newAttestationRejected:true,outcome:"role revocation prevents future attestations but does not erase prior accepted evidence; correction/challenge lifecycle remains future work"}},
+  scenarios:{
+    threeOnlineOneNotStarted:{accepted:true,offlineIdentity:operator3.address,actualNetworkedABCICluster:false},
+    oneAlteredArchive:{detected:true,error:alteredReplica.error},
+    rawAndManifestRewritten:{detectedAgainstOriginalCommitment:true,error:coherentAgainstOriginal.error},
+    unauthorizedIdentity:{rejected:true},duplicateIdentity:{rejected:true},
+    metadataSubstitutionAfterFinalization:{rejected:true},
+    twoCompromisedAttestors:{accepted:twoCompromised},
+    twoUnavailable:{required:3,available:twoOnline.length,registry:await stalledRegistry.getAddress(),onChainAccepted:stalled.accepted,onChainAttestationCount:Number(stalled.attestationCount),progressPossible:false},
+    threeCompromisedAttestors:{accepted:threeCompromised,transaction:collusionReceipt!.hash,outcome:"demonstrated failure of truthful evidence under authorized majority capture"},
+    coherentlyFalseInitialPublisher:{reproducibilityAccepted:true,physicalTruthVerified:false,firstRealValue:originalValue,simulatedFalseValue:9.9,outcome:"demonstrated upstream trust gap; not an accusation against USGS"},
+    capturedEnrollmentAdministrator:{registry:await capturedAdminRegistry.getAddress(),addedIdentities:sybils.map(s=>s.address),falseEvidenceAccepted:enrollmentCapture,outcome:"role-enrollment administrator can manufacture an authorized quorum; independently governed admission remains necessary"},
+    firstAttestorMetadataPoisoning:{
+      registry:await poisonedRegistry.getAddress(),maliciousIdentity:operator3.address,
+      maliciousCandidateId,honestCandidateId,maliciousAttestationCount:Number(maliciousCandidate.attestationCount),
+      maliciousCandidateAccepted:maliciousCandidate.accepted,maliciousRegionAccepted:false,
+      maliciousTransaction:{hash:maliciousReceipt!.hash,blockNumber:maliciousReceipt!.blockNumber,blockHash:maliciousReceipt!.blockHash},
+      honestTransactions:recoveryTransactions,attestationCount:Number(recovered.attestationCount),accepted:recovered.accepted,
+      honestCorrectMetadataRejected:false,allFinalizedFieldsMatchHonestEnvelope:true,
+      maliciousSecondVoteRejected:true,
+      outcome:"first-attestor censorship no longer reproduces: one false candidate remains at one vote; three honest votes finalize their complete envelope"
+    },
+    revocationAfterFalseAcceptance:{acceptedRemains:acceptedAfterRevocation,newAttestationRejected:true,outcome:"role revocation prevents future attestations but does not erase prior accepted evidence; correction/challenge lifecycle remains future work"}
+  },
   residualRisks:["Initial publisher falsification or selective omission cannot be ruled out by hashes/quorum","All local identities and storage remain under one host administrator","Registry administrator can change ORACLE_ROLE membership; production needs governed enrollment and key isolation","Evidence acceptance is not environmental truth, forecast validation, policy/action authorization or funding approval","One preconfigured catalog is not global source discovery or multiple independent publishers","Archive and chain are local; no independent mirror or public-chain publication was established"],
   ecologicalImprovementVerified:false,operationalEligible:false,fundingRelease:false,fundsTransferred:"none",LLMUsed:false,
   totalAcquisitionBytes:archive.responses.reduce((sum,r)=>sum+r.bytes,0),acquisitionRequests:archive.responses.length

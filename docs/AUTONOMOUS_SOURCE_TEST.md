@@ -7,6 +7,12 @@ su una blockchain EVM locale. Il test dimostra anche due fallimenti importanti:
 una fonte inizialmente falsa può essere perfettamente riproducibile, e un quorum
 di identità autorizzate controllate dall'attaccante può accettare prove false.
 
+Il blocco causato dal primo attestatore, scoperto nel primo esperimento, è ora
+corretto mediante voti separati per buste complete. La
+[spiegazione della correzione](FIRST_ATTESTOR_FIX.md) mostra le modifiche e i test.
+Il [resoconto precedente](evidence/autonomous-source/chain-run-before-first-attestor-fix.json)
+rimane conservato; `chain-run.json` documenta il contratto corretto.
+
 Questo è un primo componente della missione originale: evidenze ambientali
 tracciabili, coordinamento distribuito e potere delle comunità. Una registrazione
 di dati non è un miglioramento ecologico, un diritto di spesa o una previsione
@@ -131,7 +137,8 @@ la stessa evidenza. Quattro indirizzi sono autorizzati nel registro; il quorum
 è tre. La quarta identità non partecipa alla registrazione autentica.
 L'identità amministrativa viene rimossa dal ruolo di attestatore ordinario.
 
-Il contratto è quello esistente, senza modifiche Solidity. Riceve l'impegno,
+Il contratto ora conta separatamente le buste complete dei metadati, con un
+solo voto per identità/lotto. Riceve l'impegno,
 territorio, metadati, ultima data osservata, tipo di evidenza e URI. Le tre
 attestazioni producono transazioni e stato `accepted = true`.
 Il [resoconto della catena](evidence/autonomous-source/chain-run.json) conserva
@@ -159,7 +166,7 @@ attribuiamo a USGS alcun comportamento malevolo.
 | Modificare una misura dopo la raccolta | Sostituzione di un valore con 9,9 mg/L | L'impronta della risposta non coincide: verifica rifiutata |
 | Riscrivere dati e relativo manifesto | Ricalcolo degli hash locali dei dati falsi | Il riferimento esterno originale non coincide: verifica rifiutata |
 | Sostituire unità, serie, date o URL | Test negativi del raccoglitore e dell'archivio | Verifica rifiutata |
-| Essere il primo attestatore di un impegno noto | Prima attestazione con metadati sbagliati, poi attestazione onesta | Il registro blocca i metadati corretti: rischio di censura dimostrato anche con una sola identità autorizzata |
+| Essere il primo attestatore di un impegno noto | Prima attestazione con busta sbagliata, poi tre attestazioni oneste | Prima della correzione bloccava i metadati corretti; ora la candidata malevola resta a uno e la busta onesta viene accettata con tre |
 | Pubblicare falsità coerenti fin dall'inizio | Tutte le 97 misure impostate a 9,9 con un nuovo impegno iniziale | Riproducibilità accettata; verità fisica non dimostrata |
 | Nascondere inizialmente le misure meno favorevoli | Il test conserva soltanto valori pari o superiori alla mediana, senza modificarli, e fornisce un nuovo impegno | Archivio riproducibile e media apparente più alta; completezza iniziale non dimostrata. Il confronto con il vecchio impegno riconosce invece la riscrittura |
 | Votare molte volte con la stessa identità | Doppia attestazione | Contratto rifiuta il duplicato |
@@ -177,9 +184,10 @@ Anche un attaccante senza tre chiavi può ingannare verificatori onesti se tutti
 dipendono dalla stessa fonte iniziale falsificata. Il risultato "due chiavi
 non bastano" riguarda due attestazioni isolate, non una garanzia universale
 contro due nodi bizantini o contro la falsificazione del pubblicatore.
-La prova con una quarta identità assente non dimostra la resistenza a una
-quarta identità che agisce malevolmente per prima: il registro attuale conserva
-i metadati della prima attestazione e può bloccare quelle corrette successive.
+La prova con una quarta identità assente è distinta dal nuovo test con una
+quarta identità malevola che arriva per prima. Il contratto corretto isola la
+sua busta e permette alle tre oneste di finalizzare. Entrambe restano prove
+locali, senza dimostrare la resistenza di operatori indipendenti su una rete reale.
 
 ## Passo 7: le conseguenze per TerraVoce
 
@@ -196,23 +204,23 @@ I risultati suggeriscono quattro requisiti prima di una rete reale:
 4. Copie indipendenti delle evidenze, gestione delle revisioni, contestazioni e
    conservazione dei dati mancanti/indisponibili come tali.
 
-La prima correzione tecnica da discutere riguarda il blocco dei metadati da
-parte del primo attestatore: un futuro registro dovrà legare crittograficamente
-l'identificativo a tutta la busta dei metadati, o finalizzarla soltanto con un
-quorum coerente, senza assegnare quell'autorità al primo nodo. Questo test
-conserva il contratto originale e ne rende riproducibile il limite.
+La prima correzione tecnica è ora implementata: il registro lega ciascuna
+candidata a tutta la busta dei metadati e la finalizza soltanto con un quorum
+coerente. Il primo nodo non decide più la busta obbligatoria per gli altri.
+La [correzione](FIRST_ATTESTOR_FIX.md) conserva la prova precedente e verifica
+le nuove regole sul contratto Solidity.
 
-### Il prossimo test proposto: togliere autorità al primo voto
+### Il confronto fra la regola precedente e quella corretta
 
 Una piccola esplorazione separata, `python scripts/explore_evidence_quorum.py`,
 esamina tutti i 24 ordini di arrivo di quattro voti distinti, per ciascun numero
 di identità compromesse da zero a quattro: 120 sequenze in totale. Non è una
-nuova implementazione Solidity, una prova di consenso distribuito o un modello
+esecuzione Solidity, una prova di consenso distribuito o un modello
 probabilistico dello Stato. Confronta soltanto due regole astratte:
 
-- **Regola attuale:** il primo voto fissa la busta dei metadati; quelli diversi
+- **Regola precedente:** il primo voto fissa la busta dei metadati; quelli diversi
   vengono rifiutati, anche se corretti.
-- **Regola candidata:** ogni busta completa raccoglie voti separati; tre voti
+- **Regola corretta:** ogni busta completa raccoglie voti separati; tre voti
   concordi la finalizzano. Ogni identità può votare una sola volta per quel lotto.
 
 Con una identità malevola e tre oneste, la prima regola registra la busta onesta
@@ -232,15 +240,15 @@ busta per lotto, due buste diverse non possono entrambe ricevere tre voti.
 disponibilità della rete. Un nodo spento più uno malevolo che non vota lasciano
 solo due onesti: non dobbiamo promettere il progresso in quel caso.
 
-Prima di cambiare il contratto, i criteri della prova saranno: un voto falso
+I criteri sono ora verificati anche nei 15 nuovi test del registro: un voto falso
 iniziale non blocca i tre corretti; nessuna busta passa con meno di tre identità;
 un'identità ripetuta non moltiplica i voti; tutti i campi finalizzati appartengono
-alla stessa busta. Occorre poi definire come quella busta venga codificata e
-legata a registro/rete/versione, come gli altri moduli la referenzino, e come
-contestare prove già accettate. I dati raccolti e i diritti delle comunità
-non vengono modificati da questa esplorazione.
+alla stessa busta. Il contratto esegue inoltre tutte le 24 sequenze con una
+identità malevola e tre oneste. Codifica ABI e legame a registro/rete/versione
+sono descritti nella correzione; contestare prove già accettate resta lavoro
+successivo. I dati raccolti e i diritti delle comunità non cambiano.
 
-Questi requisiti non sono già implementati da questo test. Non introduciamo
+I requisiti di distribuzione e indipendenza non sono implementati da questo test. Non introduciamo
 un punteggio arbitrario che trasformi una misura plausibile in verità.
 Il registro non recupera i file né esamina la realtà fisica: controlla ruoli,
 coerenza dei metadati e quorum. L'accettazione di un lotto non attiva il ponte

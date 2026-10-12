@@ -101,8 +101,10 @@ the batch with three of four local test identities; no action or funding follows
 Tampered archives and two isolated malicious attestations are rejected. The
 test also demonstrates residual failures: coherent initial publisher falsification,
 three colluding authorized attestors, and capture of the enrollment administrator.
-One malicious first attestor can also lock incorrect metadata and block later
-honest attestations for the same hash; the test preserves this censorship failure.
+The registry now isolates complete candidate envelopes: one malicious first
+attestor cannot lock incorrect metadata and block three later concordant votes.
+The [contract correction and adversarial test](docs/FIRST_ATTESTOR_FIX.md) preserve
+the original failing report and verify the corrected local behavior.
 It does not establish independent operators, physical truth, public-chain
 publication, a networked ABCI outage run, or globally autonomous discovery.
 After building, run `pnpm source:verify` and `pnpm source:e2e` offline.
