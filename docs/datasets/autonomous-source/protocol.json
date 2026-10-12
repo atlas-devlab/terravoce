@@ -1,0 +1,32 @@
+{
+  "version": "autonomous-source-protocol-v1",
+  "purpose": "Discover a previously unconnected monitoring station, archive actual observations and attest reproducibility on a local blockchain; not physical truth or ecological improvement.",
+  "catalogOrigin": "https://api.waterdata.usgs.gov",
+  "catalogPath": "/ogcapi/v1/collections/time-series-metadata/items",
+  "territory": {
+    "regionId": "US-WILLAMETTE-DISCOVERY",
+    "bbox": [-123.2, 44.5, -122.4, 45.7],
+    "hydrologicUnitPrefix": "170900"
+  },
+  "metric": { "parameterCode": "00300", "unit": "mg/L", "statisticId": "00011" },
+  "window": { "start": "2025-07-01T00:00:00Z", "end": "2025-07-02T00:00:00Z" },
+  "alreadyConnectedStationIds": ["USGS-14211720"],
+  "selectionRule": "Sort eligible catalog entries by station ID and then series ID; choose the first with matching station metadata and at least two approved unqualified observations in the frozen window.",
+  "limits": { "pageSize": 100, "maxCatalogPages": 4, "maxCandidates": 8, "maxObservationRecords": 500, "maxResponseBytes": 2000000, "timeoutMs": 30000 },
+  "publication": { "mode": "local-ephemeral-EVM", "quorum": 3, "registeredOperators": 4, "realFunding": false, "operationalEligible": false },
+  "successCriteria": [
+    "A station ID absent from alreadyConnectedStationIds is selected from archived catalog responses without hardcoding the selected ID.",
+    "Raw response hashes, selection, normalization and evidence commitment can be reproduced offline.",
+    "The existing evidence registry accepts the honest commitment with three of four registered local test identities and one unavailable identity.",
+    "Altered raw data or metadata fail verification against the original external commitment.",
+    "Two compromised identities cannot reach quorum; duplicated and unauthorized attestations fail.",
+    "A false but internally consistent upstream snapshot and three colluding authorized identities are demonstrated as residual vulnerabilities, not claimed to be detected."
+  ],
+  "trustAssumptions": [
+    "The initial catalog origin, territory and rules are configured once by an operator; new station IDs are discovered automatically within this provider.",
+    "HTTPS binds acquisition to the publisher endpoint. USGS responses are not sensor-signed, and collector signatures would not become USGS signatures.",
+    "All local test identities share one test host and are not independent real operators.",
+    "Publisher approval is preserved as a publisher claim, not independent field validation.",
+    "Cryptographic commitments protect a retained snapshot; they cannot prove calibration, physical truth, undisclosed omissions or honest initial publication."
+  ]
+}
