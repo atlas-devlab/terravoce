@@ -12,6 +12,23 @@ tracciabili, coordinamento distribuito e potere delle comunità. Una registrazio
 di dati non è un miglioramento ecologico, un diritto di spesa o una previsione
 validata. I modelli Willamette e il caso Awash non sono modificati.
 
+```mermaid
+flowchart LR
+    P[Regole fissate in Git] --> C[Catalogo pubblico USGS]
+    C --> S[Nuova stazione selezionata]
+    S --> D[Risposte originali e manifesto]
+    D --> V[Verifica in tre processi Node]
+    D --> R[Controllo separato in Python]
+    V --> E[Registro EVM locale: tre attestazioni]
+    E --> T[Prova di ricerca conservata]
+    T -. integrazione futura da validare .-> O[Oracle e modello numerico]
+    O -. regole e diritti civici .-> G[TerraLex e decisione delle comunità]
+```
+
+Le frecce continue descrivono questo esperimento; quelle tratteggiate indicano
+passaggi futuri per questa nuova fonte. Il percorso originale Oracle/Open
+Autonomy/TerraAct resta un modulo separato, con le sue prove già esistenti.
+
 ## Passo 1: le regole sono state fissate prima della ricerca
 
 Il commit `8de9b64af94907b5de0fc6a303fa2972a025308a` contiene il
@@ -206,6 +223,14 @@ di attacco del 25%**. Con due identità per ciascuna busta, la candidata non
 finalizza nulla; con tre identità malevole finalizza la busta dell'attaccante.
 Essa affronta dunque il blocco del primo voto, senza risolvere la cattura
 del quorum o la falsità del pubblicatore.
+
+Per capire la soglia, due gruppi di tre persone presi dalle stesse quattro
+condividono almeno due persone: `3 + 3 - 4 = 2`. Se al massimo una è malevola,
+tra quelle condivise ce n'è almeno una onesta. Se ogni onesto vota una sola
+busta per lotto, due buste diverse non possono entrambe ricevere tre voti.
+È un argomento sulla coerenza del voto, non sulla verità delle misure o sulla
+disponibilità della rete. Un nodo spento più uno malevolo che non vota lasciano
+solo due onesti: non dobbiamo promettere il progresso in quel caso.
 
 Prima di cambiare il contratto, i criteri della prova saranno: un voto falso
 iniziale non blocca i tre corretti; nessuna busta passa con meno di tre identità;

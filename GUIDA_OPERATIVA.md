@@ -17,6 +17,13 @@ Il principio più importante è semplice: **il software attuale è un prototipo 
 ricerca funzionante, non un sistema pronto per governare fondi o interventi
 fisici nel mondo reale**.
 
+Il 12 ottobre 2026 è stato aggiunto un [primo test di scoperta autonoma](docs/AUTONOMOUS_SOURCE_TEST.md):
+una nuova stazione in un catalogo USGS, 97 misure di ossigeno, archivio
+riproducibile, controllo Node/Python e attestazioni su EVM locale. La spiegazione
+segue otto passi e mostra anche i tentativi di falsificazione e censura riusciti.
+Questo modulo produce prove di ricerca; la nuova fonte non attiva interventi
+o finanziamenti. La missione e i diritti civici descritti qui restano invariati.
+
 ## Se devi iniziare domani
 
 Le prime azioni del nuovo responsabile sono queste:
