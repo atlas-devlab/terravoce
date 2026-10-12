@@ -135,6 +135,96 @@ a sale.
 [Article 4](https://www.esma.europa.eu/publications-and-data/interactive-single-rulebook/mica/article-4-offers-public-crypto-assets-other),
 [Article 6](https://www.esma.europa.eu/publications-and-data/interactive-single-rulebook/mica/article-6-content-and-form-crypto-asset).
 
+## Compensi ai contributori e benefici alle comunità / contributor compensation and community benefits
+
+Il modello economico proposto vuole creare reddito per chi fornisce dati,
+sensori o lavoro e risorse per le comunità interessate. Non è ancora un sistema
+di pagamento implementato: domanda commerciale, prezzi, contratti e quote
+rimangono da validare e concordare.
+
+The proposed economic model aims to generate income for people contributing
+data, sensors or work, and resources for affected communities. It is not an
+implemented payment system: commercial demand, prices, agreements and
+allocation shares still need validation and agreement.
+
+```mermaid
+flowchart TD
+    C[Clienti di servizi opzionali / Optional-service customers] --> R[Ricavi incassati / Collected revenue]
+    R --> K[Costi e compensi contrattuali / Costs and agreed compensation]
+    K --> M[Eventuale margine disponibile / Any available margin]
+    M --> B[Premi a contributi verificati / Verified-contribution bonuses]
+    M --> F[Fondo delle comunità / Community fund]
+    M --> S[Sviluppo e riserva / Development and reserve]
+```
+
+### Cosa remunera il sistema / what compensation recognizes
+
+| Contributo / contribution | Verifica da predisporre / verification to establish |
+| --- | --- |
+| Dati originali / original data | Provenienza, metodo, qualità e completezza dichiarata; misure fisiche richiedono controlli indipendenti / provenance, method, quality and declared completeness; physical measurements require independent checks |
+| Sensori e manutenzione / sensors and maintenance | Installazione, calibrazione, funzionamento e manutenzione documentati / documented installation, calibration, operation and maintenance |
+| Lavoro tecnico o scientifico / technical or scientific work | Deliverable concordato, revisione e risultati riproducibili / agreed deliverable, review and reproducible results |
+
+Regole da mantenere nel primo esperimento:
+
+1. Compensi e criteri sono concordati prima del lavoro, entro un budget finanziato.
+2. I pagamenti base per lavoro svolto sono costi contrattuali; eventuali premi
+   aggiuntivi e fondi comunitari provengono soltanto da risorse disponibili.
+3. Un contributo duplicato non genera una nuova ricompensa. Scaricare di nuovo
+   lo stesso archivio pubblico o creare un altro indirizzo non prova nuovo lavoro.
+4. Il premio non dipende da valori di ossigeno più alti, inquinamento più basso
+   o conclusioni favorevoli al finanziatore. Anche risultati scomodi e dati
+   mancanti dichiarati correttamente possono essere contributi utili.
+5. La sola accettazione on-chain del campione di ricerca attesta riproducibilità,
+   non verità fisica: `accepted = true` non autorizza automaticamente un compenso.
+6. Il fondo comunitario segue decisioni verificabili delle comunità interessate;
+   possedere ENV non attribuisce loro potere ambientale né sostituisce tali diritti.
+
+Rules to preserve in the first experiment:
+
+1. Agree compensation and criteria before work, within a funded budget.
+2. Base compensation for completed work is a contractual cost; additional
+   bonuses and community funds use only available resources.
+3. Duplicate contributions do not earn another reward. Downloading the same
+   public archive again or creating another address does not prove new work.
+4. Rewards do not depend on higher oxygen, lower pollution or conclusions
+   favorable to the payer. Inconvenient findings and correctly declared missing
+   data can also be useful contributions.
+5. On-chain acceptance of the research fixture establishes reproducibility,
+   not physical truth: `accepted = true` does not automatically authorize payment.
+6. Community funds follow verifiable decisions by affected communities. ENV
+   ownership grants no environmental decision power and does not replace civic rights.
+
+Un primo test economico futuro potrà usare contributi sintetici e un budget
+di test, con prezzo/quantità decisi prima della prova. Criteri osservabili:
+contributo verificato riconosciuto una sola volta; duplicato e lavoro non
+verificato rifiutati; un risultato ambientale sfavorevole non perde il compenso
+per quel motivo; somma delle allocazioni entro budget; nessun pagamento reale.
+Questa scheda definisce la prova; non afferma che sia già stata eseguita.
+
+A future first economic test can use synthetic contributions and a test budget,
+with compensation/quantity agreed before execution. Observable criteria:
+verified contribution credited once; duplicate and unverified work rejected;
+an unfavorable environmental result does not lose compensation for that reason;
+allocations remain within budget; no real payment. This document defines that
+test and does not claim it has already been executed.
+
+### ENV in questo modello / ENV in this model
+
+La vendita proposta di ENV sarebbe un finanziamento iniziale da strutturare,
+mentre i servizi pagati dovrebbero sostenere la continuità dei compensi.
+Un token sperimentale non stabilisce un reddito in euro per un contributore:
+eventuali compensi reali richiedono accordi e mezzi di pagamento definiti.
+Questa proposta non introduce percentuali approvate, distribuzioni, diritti
+agli utili o promesse di rivalutazione di ENV.
+
+The proposed ENV sale would be initial financing requiring a defined structure,
+while paid services would need to sustain ongoing compensation. An experimental
+token does not establish a contributor's income in euros: real compensation
+requires defined agreements and payment arrangements. This proposal introduces
+no approved allocation percentages, distributions, profit rights or promises
+of ENV price appreciation.
+
 ## Documenti e collaborazione / documentation and contributions
 
 - [README e stato del progetto / README and project status](../README.md).
