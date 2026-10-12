@@ -108,6 +108,10 @@ territorio, metadati, ultima data osservata, tipo di evidenza e URI. Le tre
 attestazioni producono transazioni e stato `accepted = true`.
 Il [resoconto della catena](evidence/autonomous-source/chain-run.json) conserva
 indirizzi, hash delle transazioni, blocchi, risultati e scenari avversari.
+La verifica offline controlla anche il resoconto conservato: deve corrispondere
+alla revisione Git, al lotto riprodotto, all'impronta dei metadati e alle impronte
+dei file di verifica. È una verifica di coerenza delle prove conservate; non
+interroga un explorer né dimostra da sola le ricevute di una rete pubblica.
 
 È una vera esecuzione del contratto su una EVM locale **effimera**. Lo stato della
 catena termina con il comando; gli hash non sono link a un explorer pubblico.

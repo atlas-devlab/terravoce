@@ -35,5 +35,17 @@ if(command==="capture"){
   const seal=JSON.parse(committed), evidence=await verifyDiscovery(folder,seal.evidenceHash);
   const saved=JSON.parse(await readFile(resolve(output,"reproduction.json"),"utf8"));
   if(canonicalJson(saved)!==canonicalJson(evidence))throw new Error("Saved reproduction mismatch");
-  console.log(JSON.stringify({verified:true,evidenceHash:evidence.evidenceHash,selected:evidence.reproduction.selected,observations:evidence.reproduction.observations.length,physicalTruthVerified:false,operationalEligible:false}));
+  const chainPath="docs/evidence/autonomous-source/chain-run.json";
+  const committedChain=execFileSync("git",["show",`HEAD:${chainPath}`],{cwd:root,encoding:"utf8"});
+  const chain=JSON.parse(await readFile(resolve(root,chainPath),"utf8"));
+  if(canonicalJson(chain)!==canonicalJson(JSON.parse(committedChain)))throw new Error("Local chain report differs from committed checkpoint");
+  if(chain.version!=="autonomous-source-local-chain-test-v1" || chain.evidenceHash!==evidence.evidenceHash ||
+    canonicalJson(chain.metadata.evidence)!==canonicalJson(evidence) || sha256Hex(canonicalJson(chain.metadata))!==chain.metadataHash ||
+    chain.chain.chainId!=="31337" || chain.chain.quorum!==3 || chain.chain.accepted!==true || chain.chain.attestationCount!==3 ||
+    chain.chain.attestations.length!==3 || new Set(chain.chain.attestations.map((a:{operator:string})=>a.operator)).size!==3 ||
+    chain.operationalEligible!==false || chain.fundingRelease!==false || chain.ecologicalImprovementVerified!==false)throw new Error("Pinned local chain report commitment mismatch");
+  const expectedFiles=["services/environmental-case/src/discovery.ts","services/environmental-case/src/discovery-replica.ts","packages/contracts/contracts/TerraEvidenceRegistry.sol"];
+  if(canonicalJson(chain.metadata.verificationArtifacts.map((a:{file:string})=>a.file))!==canonicalJson(expectedFiles))throw new Error("Unexpected verification artifact set");
+  for(const a of chain.metadata.verificationArtifacts)if(sha256Hex(await readFile(resolve(root,a.file)))!==a.rawSha256)throw new Error("Verifier source differs from pinned chain metadata");
+  console.log(JSON.stringify({verified:true,evidenceHash:evidence.evidenceHash,selected:evidence.reproduction.selected,observations:evidence.reproduction.observations.length,chainReportInternallyConsistent:true,publicChainReceiptVerified:false,physicalTruthVerified:false,operationalEligible:false}));
 }else throw new Error("Use capture or verify");
