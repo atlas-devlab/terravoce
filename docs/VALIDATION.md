@@ -1,6 +1,10 @@
+> Historical source-publication record for 10 October 2026. The MIT license
+> described below applied to that publication. Current terms are in
+> [LICENSE_POLICY.md](../LICENSE_POLICY.md); the adopted name is Virdacora.
+
 # Source publication validation
 
-The source was recovered on 10 October 2026 from the existing TerraVoce research
+The source was recovered on 10 October 2026 from the existing Virdacora research
 workspace. Project implementation, policy, database schema, configuration and
 dependency lockfile were preserved. Publication adds a root MIT license,
 contribution guidance and repository documentation.

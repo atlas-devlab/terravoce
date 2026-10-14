@@ -1,6 +1,6 @@
 # Third-party notices
 
-TerraVoce uses external packages installed by pnpm. Their license and copyright
+Virdacora uses external packages installed by pnpm. Their license and copyright
 notices remain applicable. The exact dependency versions and integrity hashes
 are recorded in `pnpm-lock.yaml`.
 
@@ -14,5 +14,7 @@ respective licenses. These images and dependency source trees are not vendored
 in this repository.
 
 The MIT SPDX headers in the project Solidity contracts have been preserved.
+The original project MIT notice is retained in [LICENSES/MIT-legacy.txt](LICENSES/MIT-legacy.txt);
+those permissions are not revoked by the new default AGPL source license.
 The recovered philosophical research downloads, build outputs, local runtime
 data and tooling archives are excluded from this source publication.

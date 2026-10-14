@@ -1,14 +1,15 @@
-# TerraVoce: guida operativa per chi prende in mano il progetto
+# Virdacora: guida operativa per chi prende in mano il progetto
 
-> **Pubblicazione del codice - 10 ottobre 2026.** Il repository pubblico è
-> disponibile su [GitHub: atlas-devlab/terravoce](https://github.com/atlas-devlab/terravoce)
-> con [licenza MIT](LICENSE). Per avvio e stato del progetto consultare il
-> [README](README.md); per collaborare, leggere [CONTRIBUTING](CONTRIBUTING.md).
-> Il progetto mantiene lo stato di prototipo di ricerca descritto in questa guida.
+> **Identità e licenza - 14 ottobre 2026.** Il progetto adotta il nome Virdacora.
+> La repository [atlas-devlab/virdacora](https://github.com/atlas-devlab/virdacora)
+> è pubblica. I termini correnti sono AGPLv3 con le eccezioni
+> documentate in [LICENSE_POLICY.md](LICENSE_POLICY.md); i permessi MIT precedenti
+> restano validi. Consulta [README](README.md) e [CONTRIBUTING](CONTRIBUTING.md).
+> È un prototipo di ricerca.
 
 ## A chi serve questa guida
 
-Questa guida è pensata per una persona che deve dirigere TerraVoce senza essere
+Questa guida è pensata per una persona che deve dirigere Virdacora senza essere
 uno sviluppatore. Spiega che cosa abbiamo costruito, quale problema affronta,
 che cosa si può dimostrare oggi e quali passi sono necessari prima di coinvolgere
 comunità, denaro o infrastrutture reali.
@@ -21,7 +22,7 @@ fisici nel mondo reale**.
 
 Le prime azioni del nuovo responsabile sono queste:
 
-1. Leggere le sezioni "TerraVoce in una frase", "Che cosa abbiamo costruito" e
+1. Leggere le sezioni "Virdacora in una frase", "Che cosa abbiamo costruito" e
    "Che cosa non abbiamo ancora costruito".
 2. Chiedere a un tecnico di mostrare dal vivo il controllo di salute, la demo e
    i test descritti in questa guida.
@@ -35,9 +36,9 @@ Le prime azioni del nuovo responsabile sono queste:
 7. Non avanzare alla fase successiva finché i criteri di sicurezza e governance
    elencati nella guida non sono soddisfatti.
 
-## TerraVoce in una frase
+## Virdacora in una frase
 
-TerraVoce è un sistema pubblico per trasformare dati ambientali verificabili in
+Virdacora è un sistema pubblico per trasformare dati ambientali verificabili in
 decisioni controllate, finanziabili e contestabili dalle comunità coinvolte.
 
 Il progetto combina:
@@ -61,7 +62,7 @@ Oggi molte decisioni ambientali falliscono per una combinazione di problemi:
 - i fondi arrivano tardi o non è trasparente come vengono spesi;
 - un algoritmo può suggerire un intervento senza avere limiti comprensibili.
 
-TerraVoce prova a creare una catena di responsabilità completa:
+Virdacora prova a creare una catena di responsabilità completa:
 
 **osservazione -> prova -> valutazione -> regola pubblica -> possibilità di
 contestazione -> decisione -> eventuale finanziamento**.
@@ -212,7 +213,7 @@ progressivo della misurazione.
 
 È il servizio che riceve i dati, verifica le firme, conserva le osservazioni,
 calcola il rischio e applica TerraLex. Espone un'API, cioè una porta controllata
-attraverso la quale altri sistemi possono comunicare con TerraVoce.
+attraverso la quale altri sistemi possono comunicare con Virdacora.
 
 In questo MVP il modello è intenzionalmente semplice e deterministico. Non c'è
 un modello linguistico che decide liberamente lungo il percorso di esecuzione.
@@ -273,11 +274,11 @@ abbiamo ancora:
   credenziali civiche.
 
 Questi punti non sono dettagli: sono condizioni necessarie prima di dichiarare
-TerraVoce operativo nel mondo reale.
+Virdacora operativo nel mondo reale.
 
 ## Come è distribuito il potere
 
-TerraVoce separa deliberatamente capacità diverse.
+Virdacora separa deliberatamente capacità diverse.
 
 ### L'AI e gli Oracle
 
@@ -490,7 +491,7 @@ In questa fase il sistema osserva e simula, ma non sposta fondi reali.
 
 ### Giorni 61-90: lavorare in modalità ombra
 
-La modalità ombra significa che TerraVoce produce valutazioni e proposte, ma le
+La modalità ombra significa che Virdacora produce valutazioni e proposte, ma le
 decisioni reali continuano a essere prese fuori dal sistema.
 
 Il gruppo deve:
@@ -592,7 +593,7 @@ Il successo non è il prezzo di ENV. Un pilot deve essere valutato almeno su:
 
 Il nuovo responsabile può considerare ricevuto il progetto quando sa indicare:
 
-- [ ] il problema ambientale che TerraVoce vuole affrontare;
+- [ ] il problema ambientale che Virdacora vuole affrontare;
 - [ ] la differenza tra osservazione, valutazione, proposta ed esecuzione;
 - [ ] dove si trova la politica TerraLex attiva;
 - [ ] chi controlla dati, Oracle, comunità, tesoreria e pausa;
@@ -637,8 +638,9 @@ Le risposte che cerchiamo sono soprattutto:
 - competenze su governance, blockchain, AI, cloud e sicurezza;
 - disponibilità a partecipare a un piccolo pilot in modalità ombra.
 
-Per il primo test è consigliato un post di solo testo. In questo modo misuriamo
-la forza dell'idea senza confonderla con logo, grafica o promozione finanziaria.
+Il post può accompagnare il [logo completo](docs/assets/virdacora-logo-v1.png).
+Il testo deve rendere comprensibili lo scopo, la prova effettuata e il contributo
+richiesto, senza promesse economiche.
 
 ### Affermazioni che possiamo sostenere
 
@@ -648,7 +650,7 @@ Nel post possiamo dire che:
 - è stato creato un linguaggio sperimentale per policy ambientali;
 - osservazioni firmate possono alimentare una valutazione riproducibile;
 - smart contract locali applicano quorum, budget e governance;
-- esistono 16 test automatici e una dimostrazione completa;
+- esistono test riproducibili e dimostrazioni locali; i risultati dipendono dal ramo e dal commit verificati;
 - il sistema non è collegato a sensori, fondi o attuatori reali;
 - stiamo cercando critica e possibili partner per un pilot.
 
@@ -659,7 +661,7 @@ Non dobbiamo ancora dire che:
 - il sistema prevede correttamente crisi ambientali reali;
 - il modello è stato validato scientificamente;
 - il progetto è approvato da ARPAE, enti pubblici o comunità;
-- TerraVoce è già decentralizzato o resistente a ogni censura;
+- Virdacora è già decentralizzato o resistente a ogni censura;
 - gli smart contract sono sicuri per fondi reali;
 - ENV è un investimento oppure avrà un determinato valore;
 - esiste già un pilot ufficiale nel Delta del Po;
@@ -668,55 +670,47 @@ Non dobbiamo ancora dire che:
 
 ### Testo pronto per la prima pubblicazione
 
-Il testo seguente è scritto in prima persona, perché viene pubblicato dal profilo
-personale del promotore.
+Bozza aggiornata al nuovo nome. La versione inglese e i canali suggeriti sono
+in [LINKEDIN_POST_IT_EN.md](docs/LINKEDIN_POST_IT_EN.md). Non è ancora una prova
+di pubblicazione su LinkedIn.
 
 ```text
-Può un sistema di intelligenza artificiale contribuire a proteggere l'ambiente
-senza sottrarre potere alle comunità che vivono sul territorio?
+Chi controlla i dati ambientali può influenzare il racconto di un territorio.
+Chi vive lì deve poter controllare le prove.
 
-Negli ultimi giorni ho lavorato, con il supporto dell'AI, a un esperimento che
-per ora chiamo TerraVoce.
+Sto costruendo Virdacora.
+Le prove dell’ambiente, la voce delle comunità.
 
-L'idea è costruire una catena verificabile:
+L'obiettivo è collegare osservazioni ambientali, analisi verificabili e decisioni
+delle comunità: sapere da dove arriva un dato, come viene interpretato e chi
+può decidere un eventuale intervento.
 
-dato ambientale -> prova -> valutazione -> regola pubblica -> contestazione ->
-decisione -> eventuale finanziamento.
+Abbiamo già una demo riproducibile su dati reali USGS: il prototipo scopre una
+stazione in un catalogo configurato, conserva le misure e registra le prove su
+una blockchain locale. Abbiamo provato anche dati alterati e un primo
+attestatore malevolo: tre identità concordi possono registrare la busta corretta
+senza farsi bloccare dalla prima attestazione falsa.
 
-Il cuore del progetto è un piccolo linguaggio sperimentale per scrivere policy
-ambientali. Una regola può indicare territorio, metrica, soglie di rischio,
-azioni reversibili consentite, budget massimo e tempo disponibile alla comunità
-per contestare.
+Il progetto tiene al centro due regole: l'AI propone, le comunità mantengono
+diritti decisionali; il token non compra il voto ambientale. Vogliamo inoltre
+costruire un modello che riconosca il lavoro di chi porta dati, sensori e
+competenze e produca benefici per le comunità.
 
-Ho costruito un primo MVP locale con:
+È un prototipo di ricerca. I test sono locali, non una rete di operatori
+indipendenti. Non abbiamo ancora dimostrato previsioni affidabili sul campo,
+resistenza generale alla censura o miglioramenti ecologici.
 
-• osservazioni firmate digitalmente;
-• valutazione riproducibile di rischio e confidenza;
-• regole deterministiche e verificabili;
-• smart contract per prove, proposte, contestazioni e tesoreria;
-• rappresentanza separata della comunità e dei giovani;
-• 16 test automatici e una simulazione completa.
+Cerco persone con cui verificare il prossimo passo: idrologia, dati ambientali,
+sensori, sistemi distribuiti, sicurezza e governance delle comunità.
+Anche una critica ben motivata, una fonte dati o una prova della demo è utile.
 
-L'AI può osservare e proporre. Non può votare, superare il budget o prelevare
-liberamente denaro. Il possesso del token sperimentale non attribuisce potere di
-voto ambientale.
+Codice, guide e prove: https://github.com/atlas-devlab/virdacora
+Per le demo più recenti: ramo feat/autonomous-source-evidence.
+Chi vuole contribuire può aprire una proposta o scrivermi per un primo compito.
 
-È importante essere chiari: non è ancora un prodotto, non usa fondi reali, non
-controlla dispositivi e non possiede una validazione scientifica sul campo.
+Qual è il dato ambientale che vorresti poter verificare nel tuo territorio?
 
-La prima ipotesi di studio riguarda il monitoraggio dell'ossigeno disciolto
-nelle acque del Delta del Po, inizialmente soltanto in modalità ombra.
-
-In questa fase non cerco investitori. Cerco critiche, esperienze e confronto con
-scienziati ambientali, comunità, gestori di dati e sensori, sviluppatori e
-studiosi di governance.
-
-La domanda che voglio lasciare aperta è questa:
-
-quali regole dobbiamo rendere impossibile violare a un sistema autonomo?
-
-#ClimateTech #EnvironmentalMonitoring #ArtificialIntelligence #Blockchain
-#Governance
+#ClimateTech #EnvironmentalData #OpenScience #CommunityGovernance
 ```
 
 ### Controllo prima di premere Pubblica
@@ -753,11 +747,10 @@ probabili sono:
 6. **Timore verso AI o blockchain.** Si spiega il confine: AI fuori dalla
    tesoreria, azioni reversibili limitate, possibilità di contestazione e nessun
    attuatore fisico.
-7. **Richiesta del codice.** Si indica il repository pubblico
-   [atlas-devlab/terravoce](https://github.com/atlas-devlab/terravoce), disponibile
-   con [licenza MIT](LICENSE), e si rimanda al [README](README.md) e alle
-   [indicazioni per contribuire](CONTRIBUTING.md). Il codice pubblicato resta un
-   prototipo di ricerca.
+7. **Richiesta del codice.** Si indica [atlas-devlab/virdacora](https://github.com/atlas-devlab/virdacora),
+   pubblico, e si propone un primo contributo concreto. Le
+   condizioni sono in [LICENSE_POLICY.md](LICENSE_POLICY.md); il progetto resta
+   un prototipo di ricerca.
 
 ### Come rispondere ai commenti
 
