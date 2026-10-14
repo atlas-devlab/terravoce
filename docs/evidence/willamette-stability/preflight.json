@@ -1,0 +1,40 @@
+{
+  "protocolVerified": true,
+  "protocolHash": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522",
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "previouslyInspectedWindowsChecked": 11,
+  "newWindows": [
+    {
+      "id": "winter-february-2025",
+      "season": "winter",
+      "start": "2025-02-01T00:00:00Z",
+      "end": "2025-03-01T00:00:00Z"
+    },
+    {
+      "id": "spring-may-2025",
+      "season": "spring",
+      "start": "2025-05-01T00:00:00Z",
+      "end": "2025-05-29T00:00:00Z"
+    },
+    {
+      "id": "summer-june-2025",
+      "season": "summer",
+      "start": "2025-06-01T00:00:00Z",
+      "end": "2025-06-29T00:00:00Z"
+    },
+    {
+      "id": "autumn-november-2025",
+      "season": "autumn",
+      "start": "2025-11-01T00:00:00Z",
+      "end": "2025-11-29T00:00:00Z"
+    }
+  ],
+  "expectedOriginsPerWindow": 1332,
+  "frozenModelHash": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+  "newModelFitted": false,
+  "newTestValuesAcquired": false,
+  "forecastSkillEvaluated": false,
+  "captureAndEvaluationRunnerImplemented": false,
+  "scope": "Protocol and synthetic rule checks only; new-window source quality remains unknown"
+}

@@ -92,6 +92,14 @@ record-level context for the two low summer targets. Future context is marked
 explicitly; no model is fitted or promoted. Run `pnpm forecast:diagnose:verify`
 to reproduce the committed diagnosis using local archives.
 
+The [next one-hour stability protocol](docs/WILLAMETTE_STABILITY_PROTOCOL.md)
+([English](docs/WILLAMETTE_STABILITY_PROTOCOL_EN.md)) fixes a single past-only
+persistence fallback, four unacquired 28-day verification windows and success
+criteria against persistence and the same frozen ridge. No new model is fitted
+or scored by this protocol step. `pnpm forecast:stability:preflight` checks its
+calendar and model commitments; capture and evaluation of the new windows follow
+as a separate increment.
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small

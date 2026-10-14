@@ -23,6 +23,7 @@
     "forecast:verify": "pnpm --filter @terravoce/environmental-case forecast:verify",
     "forecast:diagnose": "python scripts/forecast_diagnostics.py run --output outputs/willamette-hourly-diagnostics/report.json",
     "forecast:diagnose:verify": "python scripts/forecast_diagnostics.py verify",
+    "forecast:stability:preflight": "python scripts/stability_protocol.py",
     "irrigation:replay": "python scripts/awash_irrigation.py verify && pnpm --filter @terravoce/environmental-case irrigation:replay",
     "irrigation:verify": "python scripts/awash_irrigation.py verify && pnpm --filter @terravoce/environmental-case irrigation:verify",
     "source:capture": "pnpm --filter @terravoce/environmental-case source:capture",

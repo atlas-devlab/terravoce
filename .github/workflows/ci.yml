@@ -94,6 +94,7 @@ jobs:
           python3 scripts/experiment_multiseason.py verify-fit
           python3 scripts/experiment_multiseason.py verify
           python3 scripts/forecast_diagnostics.py verify
+          python3 scripts/stability_protocol.py
 
       - name: Test four replicas with node outages
         if: github.event_name == 'workflow_dispatch'
