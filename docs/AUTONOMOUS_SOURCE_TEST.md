@@ -1,6 +1,6 @@
 # Primo test di scoperta autonoma e prove ambientali
 
-TerraVoce ha trovato una stazione prima non collegata, acquisito le risposte
+Virdacora ha trovato una stazione prima non collegata, acquisito le risposte
 pubbliche USGS, riprodotto le osservazioni in processi locali separati e
 registrato il loro impegno crittografico nel contratto `TerraEvidenceRegistry`
 su una blockchain EVM locale. Il test dimostra anche due fallimenti importanti:
@@ -189,7 +189,7 @@ quarta identità malevola che arriva per prima. Il contratto corretto isola la
 sua busta e permette alle tre oneste di finalizzare. Entrambe restano prove
 locali, senza dimostrare la resistenza di operatori indipendenti su una rete reale.
 
-## Passo 7: le conseguenze per TerraVoce
+## Passo 7: le conseguenze per Virdacora
 
 I risultati suggeriscono quattro requisiti prima di una rete reale:
 

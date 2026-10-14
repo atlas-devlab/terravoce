@@ -1,4 +1,4 @@
-# TerraVoce AI advisor
+# Virdacora AI advisor
 
 Assistente locale in **modalità osservazione**. Legge uno snapshot firmato e un
 assessment dell'Oracle, seleziona fatti e citazioni con un vero modello

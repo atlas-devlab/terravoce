@@ -2,7 +2,7 @@
 
 [English version for international contributors](FIRST_ATTESTOR_FIX_EN.md).
 
-Il contratto di TerraVoce ora permette a tre attestatori concordi di registrare
+Il contratto di Virdacora ora permette a tre attestatori concordi di registrare
 la propria prova anche quando una quarta identità autorizzata arriva per prima
 con metadati diversi. È una correzione del registro delle evidenze, verificata
 sulla EVM locale; non è una dimostrazione di resistenza generale a uno Stato.
@@ -165,7 +165,7 @@ impronte; non riaccede alla blockchain effimera ormai terminata.
   non ripara automaticamente un contratto già distribuito. Una migrazione reale
   richiederebbe un piano separato e la verifica delle autorizzazioni.
 
-Questa modifica serve alla missione originale di TerraVoce: ridurre il potere
+Questa modifica serve alla missione originale di Virdacora: ridurre il potere
 di una singola identità di censurare le prove ambientali. Non modifica il modello
 Willamette, il caso Awash, TerraLex, le camere civiche o i limiti della tesoreria.
 Non attiva un intervento, un LLM, una spesa reale o una pubblicazione su rete pubblica.

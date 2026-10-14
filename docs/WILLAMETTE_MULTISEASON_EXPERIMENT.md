@@ -182,7 +182,7 @@ Le modifiche implementano un esperimento numerico isolato e reversibile.
 La regressione non è un LLM e non apprende da notizie, bandi o inquinanti.
 Non sono stati introdotti nuovi collegamenti dell'advisor, modifiche a
 TerraLex, quorum, voto, budget, escrow o autorizzazioni di spesa. Il percorso
-originale di TerraVoce conserva il controllo delle comunità e dei giovani
+originale di Virdacora conserva il controllo delle comunità e dei giovani
 e la richiesta di risultati verificabili prima dei finanziamenti.
 
 Non passiamo automaticamente alle 24 ore o ai tre mesi. Il passo da discutere

@@ -1,4 +1,4 @@
-# TerraVoce architecture
+# Virdacora architecture
 
 This document describes the intended architecture. The current research MVP
 uses synthetic observations and pinned real USGS measurements with a

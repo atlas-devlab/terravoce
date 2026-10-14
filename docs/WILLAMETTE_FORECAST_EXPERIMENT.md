@@ -7,7 +7,7 @@ stagioni e non è adatto a essere promosso nel percorso operativo.**
 Il percorso operativo dell'Oracle, il bridge, TerraLex, la governance delle
 comunità e dei giovani e i finanziamenti rimangono quelli precedenti.
 
-TerraVoce conserva la missione di coordinamento ambientale globale: analisi
+Virdacora conserva la missione di coordinamento ambientale globale: analisi
 distribuita, evidenze pubbliche resilienti e interventi finanziati e verificabili.
 Il Willamette è un banco di prova di un componente riutilizzabile. Il modello
 numerico sperimentale non autorizza proposte, pagamenti o attuatori fisici.

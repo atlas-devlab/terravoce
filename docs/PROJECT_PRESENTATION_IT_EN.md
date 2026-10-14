@@ -1,11 +1,11 @@
-# TerraVoce: presentazione del progetto / project presentation
+# Virdacora: presentazione del progetto / project presentation
 
 Scheda per spiegare il prototipo e cercare contributi tecnici e scientifici.
 Project introduction for technical and scientific contributors.
 
 ## Italiano: cosa fa
 
-TerraVoce è un progetto open source che rende tracciabili e riproducibili le
+Virdacora è un progetto open source che rende tracciabili e riproducibili le
 prove ambientali. L'obiettivo originale è aiutare le comunità a capire e
 proteggere il proprio territorio attraverso osservazioni, analisi verificabili,
 coordinamento distribuito e interventi con risultati controllabili.
@@ -31,7 +31,7 @@ previsioni ambientali affidabili, miglioramenti ecologici o interventi reali.
 
 ### Testo breve da adattare per presentazioni
 
-> Stiamo sviluppando TerraVoce, un progetto open source per rendere verificabili
+> Stiamo sviluppando Virdacora, un progetto open source per rendere verificabili
 > i dati ambientali e dare alle comunità strumenti per controllare le decisioni
 > sul proprio territorio. Abbiamo una demo riproducibile su misure reali USGS:
 > scoperta di una nuova stazione, conservazione delle prove e test di
@@ -41,7 +41,7 @@ previsioni ambientali affidabili, miglioramenti ecologici o interventi reali.
 
 ## English: what it does
 
-TerraVoce is an open source project that makes environmental evidence traceable
+Virdacora is an open source project that makes environmental evidence traceable
 and reproducible. Its original mission is to help communities understand and
 protect their territories through observations, verifiable analysis, distributed
 coordination and interventions whose outcomes can be checked.
@@ -68,7 +68,7 @@ not established by the present demonstrations.
 
 ### Short introduction to adapt for outreach
 
-> We are developing TerraVoce, an open source project for verifiable environmental
+> We are developing Virdacora, an open source project for verifiable environmental
 > evidence and community oversight of decisions affecting their territories.
 > Our reproducible demo uses real USGS measurements: discovery of a new station,
 > retained evidence and tampering tests on a local blockchain. We welcome

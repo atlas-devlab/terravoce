@@ -2,7 +2,7 @@
 
 [Versione italiana](FIRST_ATTESTOR_FIX.md).
 
-TerraVoce's evidence registry now allows three agreeing attestors to publish
+Virdacora's evidence registry now allows three agreeing attestors to publish
 their evidence even when a fourth authorized identity submits different
 metadata first. This is a registry correction tested on a local EVM. It does
 not establish general resistance to a state-level adversary.
@@ -163,7 +163,7 @@ not query the ephemeral blockchain after that chain has ended.
   This patch affects new instances; it does not repair an already deployed
   registry. A real migration needs a separate plan and authorization review.
 
-The correction supports TerraVoce's original mission: reduce a single identity's
+The correction supports Virdacora's original mission: reduce a single identity's
 power to censor environmental evidence. It does not change the Willamette model,
 the Awash case, TerraLex, civic chambers or treasury limits. It does not activate
 physical intervention, an LLM, real spending or public-chain publication.
