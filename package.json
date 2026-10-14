@@ -21,6 +21,8 @@
     "case:e2e": "pnpm --filter @terravoce/contracts case:e2e",
     "forecast:replay": "pnpm --filter @terravoce/environmental-case forecast:replay",
     "forecast:verify": "pnpm --filter @terravoce/environmental-case forecast:verify",
+    "forecast:diagnose": "python scripts/forecast_diagnostics.py run --output outputs/willamette-hourly-diagnostics/report.json",
+    "forecast:diagnose:verify": "python scripts/forecast_diagnostics.py verify",
     "irrigation:replay": "python scripts/awash_irrigation.py verify && pnpm --filter @terravoce/environmental-case irrigation:replay",
     "irrigation:verify": "python scripts/awash_irrigation.py verify && pnpm --filter @terravoce/environmental-case irrigation:verify",
     "source:capture": "pnpm --filter @terravoce/environmental-case source:capture",

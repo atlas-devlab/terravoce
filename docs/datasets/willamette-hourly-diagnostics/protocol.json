@@ -1,0 +1,170 @@
+{
+  "version": "willamette-hourly-diagnostics-v1",
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "contextBeforeOriginMinutes": 330,
+  "contextAfterTargetMinutes": 180,
+  "sampleSpacingMinutes": 30,
+  "illustrativeLowTargetMgL": 5,
+  "diagnosticOnly": true,
+  "testWindowsAlreadyObserved": true,
+  "newFinalValidation": false,
+  "declaration": "Fixed retrospective diagnostic specification after inspection of the 2025 results; not preregistration or an unseen final validation",
+  "historyFlatRule": "All twelve archived oxygen values at or before origin exactly equal; no tolerance tuned on observed errors",
+  "targetUnchangedRule": "Actual future target equals persistence exactly; retrospective grouping only",
+  "contextRoleRule": "Timestamps <= origin are archived history; any timestamp > origin is future-diagnostic-only",
+  "inputs": [
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+      "rawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+      "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/evaluation.json.gz",
+      "rawSha256": "0x5e75eaf8e3436952ef50084031e5835209836e3b340698f3368af91594f4b6c6"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/summary.json",
+      "rawSha256": "0xc257154aac0ed45a72c804bae14d5b9075e4b7e96c8e41dfb6327a3d25db933f"
+    },
+    {
+      "file": "docs/evidence/willamette-forecast/forecast.json",
+      "rawSha256": "0x786ea6c17bec5e55238875cf02b55a9b6bd65985b78ac1a56851b1b150a5bd29"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/protocol.json",
+      "rawSha256": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/manifest.json",
+      "rawSha256": "0x669ce6a3fdfc99899fcc701e1be1ee63f589016453c28514f0fdf354042e7909"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/oxygen.json.gz",
+      "rawSha256": "0xac178d028c965161cdf4c7a64d129655662f995293386f58df0bbad716ab250c"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/temperature.json.gz",
+      "rawSha256": "0x14ee318f25b452959df83b0f8c814f8f2463f4a363447b4c9cbf857f767597d8"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/discharge.json.gz",
+      "rawSha256": "0xad94c5b3649a3844bd35edb3d3d36293bfc33ae9d26ed9ac01e93352faf92a39"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/manifest.json",
+      "rawSha256": "0x5d87cce4fb7020d5c93117456eaa461ef1f81384e863ba714cb576db9046a9c7"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/oxygen.json.gz",
+      "rawSha256": "0x64fd71b074a0b1148c23f7baf27d767cb18f11adc15acd4ba0bab965fbd6d561"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/temperature.json.gz",
+      "rawSha256": "0x514b7f71fd1c2de1ecf0de60754b651e54fe16145a81d31b216407584903c3ad"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/discharge.json.gz",
+      "rawSha256": "0xdcb96175fa094f8305125b692ff5111b448d58c3c7e6580cba1d99da4cf667f8"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/manifest.json",
+      "rawSha256": "0x47055e5eb539fa4e3377ac2eccace6c86f17596fc55ee1e3fef30c1a9a014ef1"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/oxygen.json.gz",
+      "rawSha256": "0xf2a29a43c4eb49136cbcbb0f854cd604e45bdcd1c1adac7873010f19350c9762"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/temperature.json.gz",
+      "rawSha256": "0xc623d7b45f26e03f5237c8bdfe12a0cc37528bc446f5f0f7f7ac5f60adae7c46"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/discharge.json.gz",
+      "rawSha256": "0x47d80c101470108a47c53e8e8ff31b1bc5619d11b8fff471c479261ce0464294"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/manifest.json",
+      "rawSha256": "0x8045dcae39482823922b2b51058b0dcdbfd0db70f142e60bb66b6103ac2c5eb7"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/oxygen.json.gz",
+      "rawSha256": "0xb8c7efdf39a51e17707380af114a5c85fe214210b85b9143beffbafb32d8dc89"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/temperature.json.gz",
+      "rawSha256": "0xd36ae3ff828c5c5207ef26cae55f2752672cdee8977bb02b6c5558d1a7c7b115"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/discharge.json.gz",
+      "rawSha256": "0x8d234229b595b467ef2906402604d56c4c32bdc9eccefc14e112c3bff99d3740"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/manifest.json",
+      "rawSha256": "0xb65a2e9b9dbf3447121b3c67eb1d39f599572f448a13a69f474055525d9f2d21"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/oxygen.json.gz",
+      "rawSha256": "0xfbda0087fa22cc61d2b6c5a1a80bffb1fe1dbffa789f9c47187100966b38d47d"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/temperature.json.gz",
+      "rawSha256": "0x7e9f68509faafc6729b61d262cee5f52e3d691ab61373377d73e18ae1b477ee9"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/discharge.json.gz",
+      "rawSha256": "0x91e00e3b9d43c9273c1d7941068b92e447f5651f7f25b2b528d7067e25c45186"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/manifest.json",
+      "rawSha256": "0x4f3931de63973bf295c376eec8a4a01605ada884aa18396552d83c741d81b350"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/oxygen.json.gz",
+      "rawSha256": "0x511aa5b4b0e3126363f54e8eefd6155222deee47216449d1bbaadfa47ddb307f"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/temperature.json.gz",
+      "rawSha256": "0x12aab42171cb1c8c9d9786570d98db6117cb0ccd9d5e3e4447042a815eb39779"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/discharge.json.gz",
+      "rawSha256": "0x20591b4aefe12f1ba01013f0fb2c7633ce38a041cd1633aed72e963c4239023c"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/manifest.json",
+      "rawSha256": "0xc0db9c6a8b81c7b7a622a0da46a4dc22c73bb2b471947c1fd1f285c10e38f627"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/oxygen.json.gz",
+      "rawSha256": "0x0612f9e52a6fc8dc20e8ad40179d823629c95b3fb1199f6cc09cadec186d63b7"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/temperature.json.gz",
+      "rawSha256": "0x9bb696db326ac916631d78ce3b3953d86cb7a11a9bd962e294fbb40917a39298"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/discharge.json.gz",
+      "rawSha256": "0xb28b2028025dfaf3e15ffffd43e87f077ebd60a18cb0c3446b756269e9fad500"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/manifest.json",
+      "rawSha256": "0x71bb81772f540c87145237b4e6c4ab41789a4eab0dd77aa5c45ddf4eedcd8b8f"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/oxygen.json.gz",
+      "rawSha256": "0x61a11991f2466d143506122661c56f3b0d489633712e25482a6ad52f8d7da757"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/temperature.json.gz",
+      "rawSha256": "0xf87bfd307e5a97761d635755f8a4d750e08634d0096c09ac3f964cb876ad230a"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/discharge.json.gz",
+      "rawSha256": "0x7eb5d8930c0a821ae54750cbb7bfd99164b9dd96374b48cee69ced9a4a280ff2"
+    }
+  ]
+}
