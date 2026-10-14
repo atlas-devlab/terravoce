@@ -1,4 +1,4 @@
-# AI per TerraVoce: decisione tecnica e prossimo incremento
+# AI per Virdacora: decisione tecnica e prossimo incremento
 
 Architettura aggiornata il 12 ottobre 2026. Il primo advisor in modalità
 osservazione è implementato e provato con un modello locale; la validazione

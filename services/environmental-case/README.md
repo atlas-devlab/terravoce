@@ -1,7 +1,7 @@
 # First real-data environmental case
 
 This module delivers a reproducible oxygen **data review**, using real USGS
-measurements. It is a territorial module of TerraVoce's global mission:
+measurements. It is a territorial module of Virdacora's global mission:
 distributed analysis, resilient evidence, verifiable intervention funding,
 and decision rights for affected communities and young people.
 
@@ -140,7 +140,7 @@ site-specific measurement protocol and decision rights; then submit a new case
 with sampling evidence, calibration records and explicit acceptance criteria.
 Do not treat archival target measurements as a commissioned field action.
 
-Portland is an accessible validation source, not a claim that TerraVoce already
+Portland is an accessible validation source, not a claim that Virdacora already
 represents that community. The Po example and global mission remain intact.
 Other territories need their own source adapters, methods, civic registrations
 and policies; token ownership continues to confer no environmental voting rights.
@@ -155,4 +155,4 @@ and policies; token ownership continues to confer no environmental voting rights
 Attribution: U.S. Geological Survey, Water Data for the Nation, continuous oxygen
 measurements for USGS-14211720, 2025-08-01–2025-08-15 UTC; access date and exact
 URLs/hashes are recorded in `manifest.json`. Snapshot content is US Government
-work in the public domain; TerraVoce source code remains MIT licensed.
+work in the public domain; Source terms follow [LICENSE_POLICY.md](../../LICENSE_POLICY.md); external data retain their own terms.

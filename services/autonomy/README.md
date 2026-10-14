@@ -1,6 +1,6 @@
 # Ponte Oracle → Open Autonomy → TerraAct
 
-TerraVoce mantiene la missione di coordinare analisi ambientale, interventi e finanziamento attraverso nodi distribuiti, con potere decisionale delle comunità coinvolte e dei giovani. Questo incremento realizza il primo collegamento verificabile tra gli Oracle e il consenso degli agenti. La prova locale non dimostra ancora resistenza alla censura su scala globale: tutti i container condividono un computer.
+Virdacora mantiene la missione di coordinare analisi ambientale, interventi e finanziamento attraverso nodi distribuiti, con potere decisionale delle comunità coinvolte e dei giovani. Questo incremento realizza il primo collegamento verificabile tra gli Oracle e il consenso degli agenti. La prova locale non dimostra ancora resistenza alla censura su scala globale: tutti i container condividono un computer.
 
 ## Funzionamento
 
