@@ -1,4 +1,4 @@
-# TerraVoce architecture
+# Virdacora architecture
 
 This document describes the intended architecture. The current research MVP
 uses synthetic sensor data and a deterministic mathematical risk model. Oracle

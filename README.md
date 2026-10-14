@@ -1,4 +1,13 @@
-# TerraVoce
+# Virdacora
+
+<p align="center"><img src="docs/assets/virdacora-logo-v1.png" alt="Virdacora — Le prove dell’ambiente, la voce delle comunità" width="560"></p>
+
+**Le prove dell’ambiente, la voce delle comunità.**
+
+Formerly TerraVoce. Virdacora is the adopted project name; trademark registration
+has not been completed. The repository is public.
+See the [identity and compatibility notes](docs/BRAND_IT_EN.md),
+[source terms](LICENSE_POLICY.md) and [Italian/English introduction](docs/LINKEDIN_POST_IT_EN.md).
 
 An open source research prototype for making environmental data and decisions
 traceable and reproducible.
@@ -10,18 +19,29 @@ simulated blockchain.
 **Status: research MVP.** There is no public-chain deployment, live environmental
 pilot, real treasury funding, connected physical actuator, or independent audit.
 The risk model and its risk/confidence scores are demonstration heuristics,
-without field validation. TerraVoce and TerraLex are working names; TerraLex
+without field validation. Virdacora is the adopted name; TerraLex remains a working name and
 refers here to the experimental policy language in this repository.
 
 > Per una spiegazione completa in italiano, leggi la
 > [guida operativa](GUIDA_OPERATIVA.md).
+
+## Research branches and original mission
+
+The mission is to combine verifiable environmental analysis, distributed
+coordination, checkable interventions and decision rights for affected
+communities and young people. Token ownership does not buy environmental votes.
+The current `main` demonstration remains the synthetic prototype described below.
+Later real-data, forecasting, source-discovery and first-attestor experiments
+are on [the research branch](https://github.com/atlas-devlab/virdacora/tree/feat/autonomous-source-evidence)
+and the stacked pull requests; they have not all been merged into `main`.
+[Current research presentation](https://github.com/atlas-devlab/virdacora/blob/feat/autonomous-source-evidence/docs/PROJECT_PRESENTATION_IT_EN.md).
 
 ## First goal: replay one open oxygen dataset
 
 Replay **one openly licensed dissolved-oxygen time series from one monitoring
 station, offline**. Compare the current model with a simple prediction that uses
 the latest measured value, and report the errors. This replay is not implemented
-yet; [issue #3](https://github.com/atlas-devlab/terravoce/issues/3) is the place to
+yet; [issue #3](https://github.com/atlas-devlab/virdacora/issues/3) is the place to
 suggest a dataset or help with the experiment. The result should be reproducible
 by another person. See the [validation criteria](CONTRIBUTING.md#validation-target-for-the-replay).
 
@@ -33,9 +53,9 @@ what happened when you tried the demo. Questions about what is unclear are usefu
 
 | Small first step | Where to start |
 | --- | --- |
-| Ask a question, try the demo, or clarify or translate one part of the walkthrough. | [Issue #1](https://github.com/atlas-devlab/terravoce/issues/1) |
-| Suggest a public oxygen dataset, or ask about a demonstration threshold. | [Issue #3](https://github.com/atlas-devlab/terravoce/issues/3) |
-| If you want to contribute code, add one negative test for an existing policy rule. | [Issue #2](https://github.com/atlas-devlab/terravoce/issues/2) |
+| Ask a question, try the demo, or clarify or translate one part of the walkthrough. | [Issue #1](https://github.com/atlas-devlab/virdacora/issues/1) |
+| Suggest a public oxygen dataset, or ask about a demonstration threshold. | [Issue #3](https://github.com/atlas-devlab/virdacora/issues/3) |
+| If you want to contribute code, add one negative test for an existing policy rule. | [Issue #2](https://github.com/atlas-devlab/virdacora/issues/2) |
 
 For a small change, fork the repository and open a pull request without waiting
 for an assignment. A short issue comment can help avoid duplicate work. Larger
@@ -108,7 +128,8 @@ and the boundaries of that verification.
 
 ## License
 
-Project source is published under the [MIT License](LICENSE), consistent with
-the MIT SPDX headers already present in the recovered Solidity contracts.
-External dependencies retain their own licenses; see
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Default source terms are [AGPLv3, version 3 only](LICENSE). Earlier MIT
+permissions and explicit MIT/Apache notices are retained; see
+[LICENSE_POLICY.md](LICENSE_POLICY.md). External data and dependencies retain
+their own terms in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The name and logo follow [TRADEMARK_POLICY.md](TRADEMARK_POLICY.md).
