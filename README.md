@@ -85,6 +85,13 @@ or operational behavior changes. Reproduce offline with
 `python scripts/experiment_multiseason.py verify-fit` and `verify`.
 See the executed [four-season notebook](docs/notebooks/willamette-multiseason.ipynb).
 
+A subsequent [hourly error diagnosis](docs/WILLAMETTE_HOURLY_DIAGNOSTICS.md)
+([English](docs/WILLAMETTE_HOURLY_DIAGNOSTICS_EN.md)) reconstructs all 2,591 pairs,
+separates past-history groups from retrospective target groups, and retains
+record-level context for the two low summer targets. Future context is marked
+explicitly; no model is fitted or promoted. Run `pnpm forecast:diagnose:verify`
+to reproduce the committed diagnosis using local archives.
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small

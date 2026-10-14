@@ -1,0 +1,2394 @@
+{
+  "version": "willamette-hourly-diagnostics-v1",
+  "diagnosticProtocolHash": "0x1609f831bfa47bf629a12f4bab53ee1f9cd7e25adbc09c4376cf3be9c1259852",
+  "inputs": [
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+      "rawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+      "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/evaluation.json.gz",
+      "rawSha256": "0x5e75eaf8e3436952ef50084031e5835209836e3b340698f3368af91594f4b6c6"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/summary.json",
+      "rawSha256": "0xc257154aac0ed45a72c804bae14d5b9075e4b7e96c8e41dfb6327a3d25db933f"
+    },
+    {
+      "file": "docs/evidence/willamette-forecast/forecast.json",
+      "rawSha256": "0x786ea6c17bec5e55238875cf02b55a9b6bd65985b78ac1a56851b1b150a5bd29"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/protocol.json",
+      "rawSha256": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/manifest.json",
+      "rawSha256": "0x669ce6a3fdfc99899fcc701e1be1ee63f589016453c28514f0fdf354042e7909"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/oxygen.json.gz",
+      "rawSha256": "0xac178d028c965161cdf4c7a64d129655662f995293386f58df0bbad716ab250c"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/temperature.json.gz",
+      "rawSha256": "0x14ee318f25b452959df83b0f8c814f8f2463f4a363447b4c9cbf857f767597d8"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/winter-2025/discharge.json.gz",
+      "rawSha256": "0xad94c5b3649a3844bd35edb3d3d36293bfc33ae9d26ed9ac01e93352faf92a39"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/manifest.json",
+      "rawSha256": "0x5d87cce4fb7020d5c93117456eaa461ef1f81384e863ba714cb576db9046a9c7"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/oxygen.json.gz",
+      "rawSha256": "0x64fd71b074a0b1148c23f7baf27d767cb18f11adc15acd4ba0bab965fbd6d561"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/temperature.json.gz",
+      "rawSha256": "0x514b7f71fd1c2de1ecf0de60754b651e54fe16145a81d31b216407584903c3ad"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/spring-2025/discharge.json.gz",
+      "rawSha256": "0xdcb96175fa094f8305125b692ff5111b448d58c3c7e6580cba1d99da4cf667f8"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/manifest.json",
+      "rawSha256": "0x47055e5eb539fa4e3377ac2eccace6c86f17596fc55ee1e3fef30c1a9a014ef1"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/oxygen.json.gz",
+      "rawSha256": "0xf2a29a43c4eb49136cbcbb0f854cd604e45bdcd1c1adac7873010f19350c9762"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/temperature.json.gz",
+      "rawSha256": "0xc623d7b45f26e03f5237c8bdfe12a0cc37528bc446f5f0f7f7ac5f60adae7c46"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/summer-2025/discharge.json.gz",
+      "rawSha256": "0x47d80c101470108a47c53e8e8ff31b1bc5619d11b8fff471c479261ce0464294"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/manifest.json",
+      "rawSha256": "0x8045dcae39482823922b2b51058b0dcdbfd0db70f142e60bb66b6103ac2c5eb7"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/oxygen.json.gz",
+      "rawSha256": "0xb8c7efdf39a51e17707380af114a5c85fe214210b85b9143beffbafb32d8dc89"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/temperature.json.gz",
+      "rawSha256": "0xd36ae3ff828c5c5207ef26cae55f2752672cdee8977bb02b6c5558d1a7c7b115"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/autumn-2025/discharge.json.gz",
+      "rawSha256": "0x8d234229b595b467ef2906402604d56c4c32bdc9eccefc14e112c3bff99d3740"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/manifest.json",
+      "rawSha256": "0xb65a2e9b9dbf3447121b3c67eb1d39f599572f448a13a69f474055525d9f2d21"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/oxygen.json.gz",
+      "rawSha256": "0xfbda0087fa22cc61d2b6c5a1a80bffb1fe1dbffa789f9c47187100966b38d47d"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/temperature.json.gz",
+      "rawSha256": "0x7e9f68509faafc6729b61d262cee5f52e3d691ab61373377d73e18ae1b477ee9"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/winter-2024/discharge.json.gz",
+      "rawSha256": "0x91e00e3b9d43c9273c1d7941068b92e447f5651f7f25b2b528d7067e25c45186"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/manifest.json",
+      "rawSha256": "0x4f3931de63973bf295c376eec8a4a01605ada884aa18396552d83c741d81b350"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/oxygen.json.gz",
+      "rawSha256": "0x511aa5b4b0e3126363f54e8eefd6155222deee47216449d1bbaadfa47ddb307f"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/temperature.json.gz",
+      "rawSha256": "0x12aab42171cb1c8c9d9786570d98db6117cb0ccd9d5e3e4447042a815eb39779"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/spring-2024/discharge.json.gz",
+      "rawSha256": "0x20591b4aefe12f1ba01013f0fb2c7633ce38a041cd1633aed72e963c4239023c"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/manifest.json",
+      "rawSha256": "0xc0db9c6a8b81c7b7a622a0da46a4dc22c73bb2b471947c1fd1f285c10e38f627"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/oxygen.json.gz",
+      "rawSha256": "0x0612f9e52a6fc8dc20e8ad40179d823629c95b3fb1199f6cc09cadec186d63b7"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/temperature.json.gz",
+      "rawSha256": "0x9bb696db326ac916631d78ce3b3953d86cb7a11a9bd962e294fbb40917a39298"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/summer-2024/discharge.json.gz",
+      "rawSha256": "0xb28b2028025dfaf3e15ffffd43e87f077ebd60a18cb0c3446b756269e9fad500"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/manifest.json",
+      "rawSha256": "0x71bb81772f540c87145237b4e6c4ab41789a4eab0dd77aa5c45ddf4eedcd8b8f"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/oxygen.json.gz",
+      "rawSha256": "0x61a11991f2466d143506122661c56f3b0d489633712e25482a6ad52f8d7da757"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/temperature.json.gz",
+      "rawSha256": "0xf87bfd307e5a97761d635755f8a4d750e08634d0096c09ac3f964cb876ad230a"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/autumn-2024/discharge.json.gz",
+      "rawSha256": "0x7eb5d8930c0a821ae54750cbb7bfd99164b9dd96374b48cee69ced9a4a280ff2"
+    }
+  ],
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "sourceReplayMaximumDifference": 0.0,
+  "originalDecision": "observed-seasonal-tradeoff",
+  "macro": {
+    "seasonalMeanMAEMgL": {
+      "new": 0.10994522779435503,
+      "persistence": 0.11087417495288986,
+      "existingLinear": 0.1377598129808634,
+      "oldSummer": 0.8045967174013783
+    },
+    "gainMgL": 0.0009289471585348236,
+    "relativeGainPercent": 0.8378390720197294
+  },
+  "windows": [
+    {
+      "window": {
+        "id": "winter-2025",
+        "start": "2025-01-15T00:00:00Z",
+        "end": "2025-01-29T00:00:00Z"
+      },
+      "groups": {
+        "pairs": 637,
+        "byTarget": {
+          "unchanged": {
+            "pairs": 555,
+            "model": {
+              "pairs": 555,
+              "maeMgL": 0.01553180921779815,
+              "rmseMgL": 0.019038163612364933,
+              "biasMgL": 0.003543565085403786
+            },
+            "persistence": {
+              "pairs": 555,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changed": {
+            "pairs": 82,
+            "model": {
+              "pairs": 82,
+              "maeMgL": 0.08347835920251917,
+              "rmseMgL": 0.08623471458232705,
+              "biasMgL": 0.005985767916538113
+            },
+            "persistence": {
+              "pairs": 82,
+              "maeMgL": 0.09999999999999973,
+              "rmseMgL": 0.09999999999999973,
+              "biasMgL": -0.0024390243902438938
+            }
+          }
+        },
+        "byHistory": {
+          "flat": {
+            "pairs": 371,
+            "model": {
+              "pairs": 371,
+              "maeMgL": 0.01750440999859536,
+              "rmseMgL": 0.02840735512356768,
+              "biasMgL": 0.0054418961674810055
+            },
+            "persistence": {
+              "pairs": 371,
+              "maeMgL": 0.00512129380053907,
+              "rmseMgL": 0.02263027573967904,
+              "biasMgL": 0.000808625336927216
+            }
+          },
+          "changing": {
+            "pairs": 266,
+            "model": {
+              "pairs": 266,
+              "maeMgL": 0.03372647917671303,
+              "rmseMgL": 0.04385377435631708,
+              "biasMgL": 0.0016487523060893729
+            },
+            "persistence": {
+              "pairs": 266,
+              "maeMgL": 0.023684210526315724,
+              "rmseMgL": 0.04866642633922863,
+              "biasMgL": -0.0018796992481202874
+            }
+          }
+        },
+        "byHistoryAndTarget": {
+          "flatUnchanged": {
+            "pairs": 352,
+            "model": {
+              "pairs": 352,
+              "maeMgL": 0.01261458501351233,
+              "rmseMgL": 0.01433812700041043,
+              "biasMgL": 0.004289476385162441
+            },
+            "persistence": {
+              "pairs": 352,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "flatChanged": {
+            "pairs": 19,
+            "model": {
+              "pairs": 19,
+              "maeMgL": 0.10809485182750204,
+              "rmseMgL": 0.10930978414543069,
+              "biasMgL": 0.026791988976751252
+            },
+            "persistence": {
+              "pairs": 19,
+              "maeMgL": 0.09999999999999974,
+              "rmseMgL": 0.09999999999999974,
+              "biasMgL": 0.015789473684210378
+            }
+          },
+          "changingUnchanged": {
+            "pairs": 203,
+            "model": {
+              "pairs": 203,
+              "maeMgL": 0.0205902472469046,
+              "rmseMgL": 0.025188535891356216,
+              "biasMgL": 0.002250162240502077
+            },
+            "persistence": {
+              "pairs": 203,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changingChanged": {
+            "pairs": 63,
+            "model": {
+              "pairs": 63,
+              "maeMgL": 0.07605433761720688,
+              "rmseMgL": 0.07794615384356855,
+              "biasMgL": -0.00028912414924045195
+            },
+            "persistence": {
+              "pairs": 63,
+              "maeMgL": 0.09999999999999973,
+              "rmseMgL": 0.09999999999999973,
+              "biasMgL": -0.00793650793650788
+            }
+          }
+        }
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 637,
+        "missingApprovedOxygenOrigins": 12,
+        "presentOriginsWithIncompleteHistoryOrTarget": 11,
+        "acceptedGridFraction": 0.9651515151515152
+      },
+      "scores": {
+        "new": {
+          "pairs": 637,
+          "maeMgL": 0.02427846086418296,
+          "rmseMgL": 0.03568015095881299,
+          "biasMgL": 0.003857945983603181,
+          "p95AbsoluteErrorMgL": 0.08657916303577365
+        },
+        "persistence": {
+          "pairs": 637,
+          "maeMgL": 0.012872841444269981,
+          "rmseMgL": 0.035878742235855965,
+          "biasMgL": -0.00031397174254317,
+          "p95AbsoluteErrorMgL": 0.09999999999999964
+        }
+      },
+      "meanAbsoluteContributionsMgL": {
+        "oxygenNow": 0.012398505847978294,
+        "oxygenDelta30m": 0.0026144218968098772,
+        "oxygenDelta2h": 0.003459321500005898,
+        "oxygenDelta5h30m": 3.985996479004592e-05,
+        "clockSinUTC": 0.01215051215264003,
+        "clockCosUTC": 0.0005439626634181877,
+        "temperatureNow": 0.014644579709953164,
+        "temperatureDelta2h": 0.0006667204517366918
+      },
+      "residualInterceptMgL": 0.0015240328253223903,
+      "pairsOutsideTrainingRange": 247
+    },
+    {
+      "window": {
+        "id": "spring-2025",
+        "start": "2025-04-15T00:00:00Z",
+        "end": "2025-04-29T00:00:00Z"
+      },
+      "groups": {
+        "pairs": 647,
+        "byTarget": {
+          "unchanged": {
+            "pairs": 482,
+            "model": {
+              "pairs": 482,
+              "maeMgL": 0.017100025702823908,
+              "rmseMgL": 0.022167326965842993,
+              "biasMgL": 0.0034583435968871183
+            },
+            "persistence": {
+              "pairs": 482,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changed": {
+            "pairs": 165,
+            "model": {
+              "pairs": 165,
+              "maeMgL": 0.09574717167040754,
+              "rmseMgL": 0.10088921826797147,
+              "biasMgL": 0.022642905909388843
+            },
+            "persistence": {
+              "pairs": 165,
+              "maeMgL": 0.10848484848484835,
+              "rmseMgL": 0.11254628677422746,
+              "biasMgL": 0.016363636363636348
+            }
+          }
+        },
+        "byHistory": {
+          "flat": {
+            "pairs": 124,
+            "model": {
+              "pairs": 124,
+              "maeMgL": 0.03134003855312084,
+              "rmseMgL": 0.04902555536351689,
+              "biasMgL": -0.00939022741665086
+            },
+            "persistence": {
+              "pairs": 124,
+              "maeMgL": 0.020967741935483824,
+              "rmseMgL": 0.04579054698896245,
+              "biasMgL": -0.008064516129032258
+            }
+          },
+          "changing": {
+            "pairs": 523,
+            "model": {
+              "pairs": 523,
+              "maeMgL": 0.03853600560954376,
+              "rmseMgL": 0.05562593940717815,
+              "biasMgL": 0.012557149691039115
+            },
+            "persistence": {
+              "pairs": 523,
+              "maeMgL": 0.02925430210325045,
+              "rmseMgL": 0.05915271741057586,
+              "biasMgL": 0.007074569789674947
+            }
+          }
+        },
+        "byHistoryAndTarget": {
+          "flatUnchanged": {
+            "pairs": 98,
+            "model": {
+              "pairs": 98,
+              "maeMgL": 0.012555112843494257,
+              "rmseMgL": 0.014285777466940415,
+              "biasMgL": -0.0028763744051343797
+            },
+            "persistence": {
+              "pairs": 98,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "flatChanged": {
+            "pairs": 26,
+            "model": {
+              "pairs": 26,
+              "maeMgL": 0.1021447585355595,
+              "rmseMgL": 0.10341002273458125,
+              "biasMgL": -0.03394244261390529
+            },
+            "persistence": {
+              "pairs": 26,
+              "maeMgL": 0.09999999999999978,
+              "rmseMgL": 0.09999999999999977,
+              "biasMgL": -0.038461538461538464
+            }
+          },
+          "changingUnchanged": {
+            "pairs": 384,
+            "model": {
+              "pairs": 384,
+              "maeMgL": 0.018259925338798663,
+              "rmseMgL": 0.023763701561485183,
+              "biasMgL": 0.005075016420319688
+            },
+            "persistence": {
+              "pairs": 384,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changingChanged": {
+            "pairs": 139,
+            "model": {
+              "pairs": 139,
+              "maeMgL": 0.09455050074599063,
+              "rmseMgL": 0.10041067532593592,
+              "biasMgL": 0.033227215705112924
+            },
+            "persistence": {
+              "pairs": 139,
+              "maeMgL": 0.11007194244604306,
+              "rmseMgL": 0.11474087164519566,
+              "biasMgL": 0.026618705035971205
+            }
+          }
+        }
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 647,
+        "missingApprovedOxygenOrigins": 1,
+        "presentOriginsWithIncompleteHistoryOrTarget": 12,
+        "acceptedGridFraction": 0.9803030303030303
+      },
+      "scores": {
+        "new": {
+          "pairs": 647,
+          "maeMgL": 0.03715687127415512,
+          "rmseMgL": 0.05442299318784111,
+          "biasMgL": 0.008350851760044437,
+          "p95AbsoluteErrorMgL": 0.1181177899001156
+        },
+        "persistence": {
+          "pairs": 647,
+          "maeMgL": 0.027666151468315265,
+          "rmseMgL": 0.05683567245190536,
+          "biasMgL": 0.004173106646058728,
+          "p95AbsoluteErrorMgL": 0.09999999999999964
+        }
+      },
+      "meanAbsoluteContributionsMgL": {
+        "oxygenNow": 0.0024179635482720527,
+        "oxygenDelta30m": 0.0046081064644974195,
+        "oxygenDelta2h": 0.008761675151456188,
+        "oxygenDelta5h30m": 0.00012387265155382573,
+        "clockSinUTC": 0.012093242480287664,
+        "clockCosUTC": 0.0005457871245785167,
+        "temperatureNow": 0.001891512100503846,
+        "temperatureDelta2h": 0.002241543390556671
+      },
+      "residualInterceptMgL": 0.0015240328253223903,
+      "pairsOutsideTrainingRange": 0
+    },
+    {
+      "window": {
+        "id": "summer-2025",
+        "start": "2025-07-15T00:00:00Z",
+        "end": "2025-07-29T00:00:00Z"
+      },
+      "groups": {
+        "pairs": 647,
+        "byTarget": {
+          "unchanged": {
+            "pairs": 149,
+            "model": {
+              "pairs": 149,
+              "maeMgL": 0.05310999938503634,
+              "rmseMgL": 0.0870836017832168,
+              "biasMgL": -0.029953833688757703
+            },
+            "persistence": {
+              "pairs": 149,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changed": {
+            "pairs": 498,
+            "model": {
+              "pairs": 498,
+              "maeMgL": 0.38427997190325114,
+              "rmseMgL": 0.6673638130498792,
+              "biasMgL": 0.007586588525077761
+            },
+            "persistence": {
+              "pairs": 498,
+              "maeMgL": 0.43493975903614457,
+              "rmseMgL": 0.7322463649317922,
+              "biasMgL": 0.0016064257028112429
+            }
+          }
+        },
+        "byHistory": {
+          "flat": {
+            "pairs": 0,
+            "model": null,
+            "persistence": null
+          },
+          "changing": {
+            "pairs": 647,
+            "model": {
+              "pairs": 647,
+              "maeMgL": 0.30801362583645975,
+              "rmseMgL": 0.5869872125861139,
+              "biasMgL": -0.0010587328193758468
+            },
+            "persistence": {
+              "pairs": 647,
+              "maeMgL": 0.3347758887171561,
+              "rmseMgL": 0.6424210389959747,
+              "biasMgL": 0.0012364760432766598
+            }
+          }
+        },
+        "byHistoryAndTarget": {
+          "flatUnchanged": {
+            "pairs": 0,
+            "model": null,
+            "persistence": null
+          },
+          "flatChanged": {
+            "pairs": 0,
+            "model": null,
+            "persistence": null
+          },
+          "changingUnchanged": {
+            "pairs": 149,
+            "model": {
+              "pairs": 149,
+              "maeMgL": 0.05310999938503634,
+              "rmseMgL": 0.0870836017832168,
+              "biasMgL": -0.029953833688757703
+            },
+            "persistence": {
+              "pairs": 149,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changingChanged": {
+            "pairs": 498,
+            "model": {
+              "pairs": 498,
+              "maeMgL": 0.38427997190325114,
+              "rmseMgL": 0.6673638130498792,
+              "biasMgL": 0.007586588525077761
+            },
+            "persistence": {
+              "pairs": 498,
+              "maeMgL": 0.43493975903614457,
+              "rmseMgL": 0.7322463649317922,
+              "biasMgL": 0.0016064257028112429
+            }
+          }
+        }
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 647,
+        "missingApprovedOxygenOrigins": 1,
+        "presentOriginsWithIncompleteHistoryOrTarget": 12,
+        "acceptedGridFraction": 0.9803030303030303
+      },
+      "scores": {
+        "new": {
+          "pairs": 647,
+          "maeMgL": 0.30801362583645975,
+          "rmseMgL": 0.5869872125861139,
+          "biasMgL": -0.0010587328193758468,
+          "p95AbsoluteErrorMgL": 1.228709321743577
+        },
+        "persistence": {
+          "pairs": 647,
+          "maeMgL": 0.3347758887171561,
+          "rmseMgL": 0.6424210389959747,
+          "biasMgL": 0.0012364760432766598,
+          "p95AbsoluteErrorMgL": 1.4000000000000004
+        }
+      },
+      "meanAbsoluteContributionsMgL": {
+        "oxygenNow": 0.012259103640755678,
+        "oxygenDelta30m": 0.04991724544350931,
+        "oxygenDelta2h": 0.08886982026162153,
+        "oxygenDelta5h30m": 0.0007149555497230835,
+        "clockSinUTC": 0.012170677758651277,
+        "clockCosUTC": 0.0005425670324086462,
+        "temperatureNow": 0.01796838581273301,
+        "temperatureDelta2h": 0.0021262231746631078
+      },
+      "residualInterceptMgL": 0.0015240328253223903,
+      "pairsOutsideTrainingRange": 266
+    },
+    {
+      "window": {
+        "id": "autumn-2025",
+        "start": "2025-10-15T00:00:00Z",
+        "end": "2025-10-29T00:00:00Z"
+      },
+      "groups": {
+        "pairs": 660,
+        "byTarget": {
+          "unchanged": {
+            "pairs": 354,
+            "model": {
+              "pairs": 354,
+              "maeMgL": 0.02164383069606829,
+              "rmseMgL": 0.029963995947614907,
+              "biasMgL": -0.004448284391450841
+            },
+            "persistence": {
+              "pairs": 354,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changed": {
+            "pairs": 306,
+            "model": {
+              "pairs": 306,
+              "maeMgL": 0.126657428259224,
+              "rmseMgL": 0.14745185803532107,
+              "biasMgL": 0.004790719220537024
+            },
+            "persistence": {
+              "pairs": 306,
+              "maeMgL": 0.14705882352941163,
+              "rmseMgL": 0.1684221276195482,
+              "biasMgL": -0.009150326797385623
+            }
+          }
+        },
+        "byHistory": {
+          "flat": {
+            "pairs": 30,
+            "model": {
+              "pairs": 30,
+              "maeMgL": 0.05227278795902031,
+              "rmseMgL": 0.08840412007327669,
+              "biasMgL": 0.029991474320212912
+            },
+            "persistence": {
+              "pairs": 30,
+              "maeMgL": 0.04666666666666662,
+              "rmseMgL": 0.08563488385776735,
+              "biasMgL": 0.0333333333333331
+            }
+          },
+          "changing": {
+            "pairs": 630,
+            "model": {
+              "pairs": 630,
+              "maeMgL": 0.07119191345231762,
+              "rmseMgL": 0.1034058463967337,
+              "biasMgL": -0.0016007568614216754
+            },
+            "persistence": {
+              "pairs": 630,
+              "maeMgL": 0.06920634920634915,
+              "rmseMgL": 0.1158817130895613,
+              "biasMgL": -0.006031746031746022
+            }
+          }
+        },
+        "byHistoryAndTarget": {
+          "flatUnchanged": {
+            "pairs": 19,
+            "model": {
+              "pairs": 19,
+              "maeMgL": 0.006615682684620825,
+              "rmseMgL": 0.007548837321763044,
+              "biasMgL": -0.005202764594944959
+            },
+            "persistence": {
+              "pairs": 19,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "flatChanged": {
+            "pairs": 11,
+            "model": {
+              "pairs": 11,
+              "maeMgL": 0.13113506070571032,
+              "rmseMgL": 0.14565711274478318,
+              "biasMgL": 0.0907815233554856
+            },
+            "persistence": {
+              "pairs": 11,
+              "maeMgL": 0.12727272727272715,
+              "rmseMgL": 0.14142135623730923,
+              "biasMgL": 0.09090909090909026
+            }
+          },
+          "changingUnchanged": {
+            "pairs": 335,
+            "model": {
+              "pairs": 335,
+              "maeMgL": 0.02249617341910561,
+              "rmseMgL": 0.03074949429805432,
+              "biasMgL": -0.004405492976924308
+            },
+            "persistence": {
+              "pairs": 335,
+              "maeMgL": 0.0,
+              "rmseMgL": 0.0,
+              "biasMgL": 0.0
+            }
+          },
+          "changingChanged": {
+            "pairs": 295,
+            "model": {
+              "pairs": 295,
+              "maeMgL": 0.1264904656934228,
+              "rmseMgL": 0.14751835846250577,
+              "biasMgL": 0.0015842824561830098
+            },
+            "persistence": {
+              "pairs": 295,
+              "maeMgL": 0.14779661016949142,
+              "rmseMgL": 0.1693456999799371,
+              "biasMgL": -0.012881355932203369
+            }
+          }
+        }
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 660,
+        "acceptedExactGridPairs": 660,
+        "missingApprovedOxygenOrigins": 0,
+        "presentOriginsWithIncompleteHistoryOrTarget": 0,
+        "acceptedGridFraction": 1.0
+      },
+      "scores": {
+        "new": {
+          "pairs": 660,
+          "maeMgL": 0.07033195320262228,
+          "rmseMgL": 0.102771467320691,
+          "biasMgL": -0.00016474635316555787,
+          "p95AbsoluteErrorMgL": 0.21976685151704217
+        },
+        "persistence": {
+          "pairs": 660,
+          "maeMgL": 0.06818181818181812,
+          "rmseMgL": 0.11468005559605876,
+          "biasMgL": -0.004242424242424244,
+          "p95AbsoluteErrorMgL": 0.29999999999999893
+        }
+      },
+      "meanAbsoluteContributionsMgL": {
+        "oxygenNow": 0.0032438998690867494,
+        "oxygenDelta30m": 0.010391605686110533,
+        "oxygenDelta2h": 0.017902572867277915,
+        "oxygenDelta5h30m": 0.00014021722627651726,
+        "clockSinUTC": 0.012139661869799985,
+        "clockCosUTC": 0.0005439419737703391,
+        "temperatureNow": 0.0013824676368476927,
+        "temperatureDelta2h": 0.0009827415601292037
+      },
+      "residualInterceptMgL": 0.0015240328253223903,
+      "pairsOutsideTrainingRange": 0
+    }
+  ],
+  "illustrativeLowTargetMgL": 5,
+  "events": [
+    {
+      "windowId": "summer-2025",
+      "targetRecordId": "c80b70af-704b-4edc-8636-d6cf49410efc",
+      "contributionBreakdown": {
+        "residualInterceptMgL": 0.0015240328253223903,
+        "contributions": [
+          {
+            "feature": "oxygenNow",
+            "inputValue": 8.5,
+            "standardizedValue": -1.3087926297199737,
+            "contributionMgL": 0.009915815436613058
+          },
+          {
+            "feature": "oxygenDelta30m",
+            "inputValue": -0.1999999999999993,
+            "standardizedValue": -2.686859903714726,
+            "contributionMgL": 0.04343141519086364
+          },
+          {
+            "feature": "oxygenDelta2h",
+            "inputValue": -0.09999999999999964,
+            "standardizedValue": -0.9668864421454574,
+            "contributionMgL": 0.020948927869032866
+          },
+          {
+            "feature": "oxygenDelta5h30m",
+            "inputValue": 0.3000000000000007,
+            "standardizedValue": 2.0268339301635194,
+            "contributionMgL": -0.0004066087258026113
+          },
+          {
+            "feature": "clockSinUTC",
+            "inputValue": 0.9659258262890683,
+            "standardizedValue": 1.366519754563277,
+            "contributionMgL": -0.018446300807229442
+          },
+          {
+            "feature": "clockCosUTC",
+            "inputValue": 0.25881904510252074,
+            "standardizedValue": 0.39925333280320535,
+            "contributionMgL": -0.00024126890150958472
+          },
+          {
+            "feature": "temperatureNow",
+            "inputValue": 25.2,
+            "standardizedValue": 1.8804190332632438,
+            "contributionMgL": -0.018776269787171163
+          },
+          {
+            "feature": "temperatureDelta2h",
+            "inputValue": -0.10000000000000142,
+            "standardizedValue": -1.0464457139076837,
+            "contributionMgL": -0.0022894856879264714
+          }
+        ],
+        "totalCorrectionMgL": 0.03566025741219268,
+        "reconstructedPredictionMgL": 8.535660257412193
+      },
+      "originUTC": "2025-07-18T05:00:00.000Z",
+      "targetUTC": "2025-07-18T06:00:00.000Z",
+      "observedTargetMgL": 3.5,
+      "forecastMgL": 8.535660257412193,
+      "persistenceMgL": 8.5,
+      "context": [
+        {
+          "timeUTC": "2025-07-17T23:30:00.000Z",
+          "minutesFromOrigin": -330,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "c280ea37-5a61-4a96-a6c2-e970bba937f0",
+            "value": 8.2,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.2",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "66957054-c149-4f6a-bc93-2de551058537",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "2c0e7259-4899-4852-a1ca-22fa8b5bbcf0",
+            "value": 424.75269888,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "15000",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T00:00:00.000Z",
+          "minutesFromOrigin": -300,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "c8b285d0-d41e-439e-990f-867e4d53b80f",
+            "value": 8.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "b8341c83-7d34-4604-81e4-80233b1b4620",
+            "value": 25.4,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.4",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "90bd6e85-854d-4527-92f0-46a595d628af",
+            "value": 433.2477528576,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "15300",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T00:30:00.000Z",
+          "minutesFromOrigin": -270,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "ba8e03b7-802a-4aa2-80cd-71bc18c4b97c",
+            "value": 8.3,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.3",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "02888121-1484-4794-8fab-6d80b4dfc193",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "fbe5eb54-6944-47ff-8534-0d15e326aae7",
+            "value": 385.1091136512,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "13600",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T01:00:00.000Z",
+          "minutesFromOrigin": -240,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "a66f1f15-47b3-4fb6-a6a2-e01cef1b719a",
+            "value": 8.8,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.8",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "d735100d-4197-48f2-a9d8-2ba389d30799",
+            "value": 25.4,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.4",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "bfe4992f-dd8d-43d6-aaee-b2cfbcaa1f77",
+            "value": 311.485312512,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "11000",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T01:30:00.000Z",
+          "minutesFromOrigin": -210,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "0f095d9c-c750-45d0-89eb-2a5e7cf35114",
+            "value": 8.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "f0617ee2-12ae-4925-a622-c3a207d96e13",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "e058fe46-d51b-426c-bd01-6ca90f6ef1a6",
+            "value": 305.8219431936,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "10800",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T02:00:00.000Z",
+          "minutesFromOrigin": -180,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "4be85836-dab2-4d04-bda7-388217b3649f",
+            "value": 9.0,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "9.0",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "6a84f62a-5adc-409a-bdc0-fb97f4e7e746",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "28f9e2b1-b9ff-4aa5-9cca-87c80c8430c8",
+            "value": 242.67537529344,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8570",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T02:30:00.000Z",
+          "minutesFromOrigin": -150,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "6ede3da7-e1a3-43d0-a3e8-4017b57363a0",
+            "value": 7.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "7.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "5fe79d48-9a48-4b00-804a-6b614454c7fd",
+            "value": 25.4,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.4",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "54fd37cc-a449-41e5-8469-a52a8e579ee2",
+            "value": 77.02182273024,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "2720",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T03:00:00.000Z",
+          "minutesFromOrigin": -120,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "0c5846d1-7c7a-477d-b2cc-a27c7f6e8c30",
+            "value": 8.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "6491f74a-9986-4d27-bbbc-710ec98daf5b",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "bfc69f25-71b7-4113-a52c-03160689910b",
+            "value": -353.9605824,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-12500",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T03:30:00.000Z",
+          "minutesFromOrigin": -90,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "1c6f9e3d-ab8e-49c4-9141-79b0f2da7712",
+            "value": 9.3,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "9.3",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "1a0b1920-2a40-4c69-82cf-1b1615886183",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "0293ded8-f396-43b5-8640-c89002f9afa4",
+            "value": -798.5350738944,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-28200",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T04:00:00.000Z",
+          "minutesFromOrigin": -60,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "a9e2813a-c065-4c6d-beee-4cebf20ac388",
+            "value": 8.9,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.9",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "597ec9cd-6d75-4402-b4a8-616af0cfc077",
+            "value": 25.2,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.2",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "a6fa107f-0535-4739-8f51-47e00357655b",
+            "value": -1095.8619631104,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-38700",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T04:30:00.000Z",
+          "minutesFromOrigin": -30,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "0f0d55a6-6433-42f9-b4e8-f017aaf0c55b",
+            "value": 8.7,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.7",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "ec028454-26cf-42e1-bc55-3b33b4881f6b",
+            "value": 25.1,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.1",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "1935d261-d648-47c5-8bd9-a1aeb44e30b4",
+            "value": -937.2876221952,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-33100",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T05:00:00.000Z",
+          "minutesFromOrigin": 0,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "8f549f2b-f9ca-4bef-bb68-6db41c51d6fc",
+            "value": 8.5,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.5",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "46e001d1-ca1a-4b89-b77f-efcbf522e4a5",
+            "value": 25.2,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.2",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "9eace6c7-8385-40bf-bdbd-2a3a885823ae",
+            "value": -515.3666079744,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-18200",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T05:30:00.000Z",
+          "minutesFromOrigin": 30,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "0416110b-eaf9-4678-963c-1e0e2d7d826d",
+            "value": 8.1,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.1",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "23f34519-7fae-44c5-a49d-316dd6280711",
+            "value": 25.2,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.2",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "74aed0c3-9237-4e40-83b4-fbd36e851a67",
+            "value": -144.69908608512,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-5110",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T06:00:00.000Z",
+          "minutesFromOrigin": 60,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "c80b70af-704b-4edc-8636-d6cf49410efc",
+            "value": 3.5,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "3.5",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "c77276bc-a8ce-4e2d-afbe-d392a08cd96d",
+            "value": 25.2,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.2",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "82fd2319-bfab-4a54-84d8-fa4c4eee94e7",
+            "value": 80.13667585536,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "2830",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T06:30:00.000Z",
+          "minutesFromOrigin": 90,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "6fd26233-eeaa-4abd-bd38-c3e89e2a9b8c",
+            "value": 6.4,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "6.4",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "bfcb89ae-e424-4df5-b635-1df7eb0bde5e",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "9a72489f-0847-4b32-94f7-ab4b6f36b99a",
+            "value": 191.98821989376,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "6780",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T07:00:00.000Z",
+          "minutesFromOrigin": 120,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "0378dcb6-f80c-4a73-9536-8c7a5da86c12",
+            "value": 6.9,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "6.9",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "dfa823f0-a2f4-4478-a3a0-9bac947e262e",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "11056167-eda0-49be-aeb8-1a3a2094767b",
+            "value": 195.10307301888,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "6890",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T07:30:00.000Z",
+          "minutesFromOrigin": 150,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "d091dba5-7902-47fb-8850-74f94bc0483a",
+            "value": 7.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "7.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "a09257f5-9f2c-4131-a276-a3e695da08d0",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "c519dea9-da8e-457e-b837-a829cab173ab",
+            "value": 319.9803664896,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "11300",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T08:00:00.000Z",
+          "minutesFromOrigin": 180,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "5212dbd9-7e85-4a10-a9ab-98e26d38dc45",
+            "value": 7.9,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "7.9",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "68fbbb39-0443-4192-8517-519429c984a4",
+            "value": 24.9,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "24.9",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "034d04eb-122a-4db0-804f-8aa0255784db",
+            "value": 518.1982926336,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "18300",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T08:30:00.000Z",
+          "minutesFromOrigin": 210,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "9a042f99-5335-4aef-89e3-429d254be923",
+            "value": 8.0,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.0",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "035e8f52-c3dc-4955-9c33-f5863c0560e1",
+            "value": 24.9,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "24.9",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "5a330eee-d793-4c74-b725-26d6f757d8ac",
+            "value": 676.7726335488001,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "23900",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-18T09:00:00.000Z",
+          "minutesFromOrigin": 240,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "12f3cd98-8c58-4635-8282-18c1fd811f02",
+            "value": 8.0,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.0",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "71f0a700-2b7b-48c3-b41d-bc8c55851cfc",
+            "value": 24.8,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "24.8",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "a6d55c62-fa96-4f3a-9514-0f342e1cc090",
+            "value": 625.8023096832001,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "22100",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        }
+      ],
+      "contextExceedsArchiveWindow": false,
+      "historicalLiveAvailabilityEstablished": false,
+      "physicalCauseEstablished": false
+    },
+    {
+      "windowId": "summer-2025",
+      "targetRecordId": "fba3b442-adce-4f3e-86ba-090b56f550f9",
+      "contributionBreakdown": {
+        "residualInterceptMgL": 0.0015240328253223903,
+        "contributions": [
+          {
+            "feature": "oxygenNow",
+            "inputValue": 8.3,
+            "standardizedValue": -1.4166695349896008,
+            "contributionMgL": 0.010733124044742583
+          },
+          {
+            "feature": "oxygenDelta30m",
+            "inputValue": -0.09999999999999964,
+            "standardizedValue": -1.348138234398919,
+            "contributionMgL": 0.021791814047284964
+          },
+          {
+            "feature": "oxygenDelta2h",
+            "inputValue": 0.0,
+            "standardizedValue": -0.02431028768822871,
+            "contributionMgL": 0.0005267159007071136
+          },
+          {
+            "feature": "oxygenDelta5h30m",
+            "inputValue": -0.29999999999999893,
+            "standardizedValue": -2.1010355702649965,
+            "contributionMgL": 0.0004214945207782714
+          },
+          {
+            "feature": "clockSinUTC",
+            "inputValue": 0.9914448613738105,
+            "standardizedValue": 1.4024988466611896,
+            "contributionMgL": -0.018931973373171387
+          },
+          {
+            "feature": "clockCosUTC",
+            "inputValue": -0.13052619222005138,
+            "standardizedValue": -0.15334918538144493,
+            "contributionMgL": 9.266895593482156e-05
+          },
+          {
+            "feature": "temperatureNow",
+            "inputValue": 25.0,
+            "standardizedValue": 1.8463162193079943,
+            "contributionMgL": -0.01843574800771743
+          },
+          {
+            "feature": "temperatureDelta2h",
+            "inputValue": -0.1999999999999993,
+            "standardizedValue": -2.08558214459828,
+            "contributionMgL": -0.004562979624831256
+          }
+        ],
+        "totalCorrectionMgL": -0.00684085071094993,
+        "reconstructedPredictionMgL": 8.293159149289052
+      },
+      "originUTC": "2025-07-20T06:30:00.000Z",
+      "targetUTC": "2025-07-20T07:30:00.000Z",
+      "observedTargetMgL": 3.8,
+      "forecastMgL": 8.293159149289052,
+      "persistenceMgL": 8.3,
+      "context": [
+        {
+          "timeUTC": "2025-07-20T01:00:00.000Z",
+          "minutesFromOrigin": -330,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "6b67af7e-059f-42d6-b5c9-b062c2840750",
+            "value": 8.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "64eeaa78-27f0-4fd9-ac56-7805b455255c",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "d6fd32fd-4dd6-484e-b7fa-477cdfa1dd6f",
+            "value": 458.7329147904,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "16200",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T01:30:00.000Z",
+          "minutesFromOrigin": -300,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "ee8aa987-38aa-4b5e-8ace-9e0ae1771dd6",
+            "value": 8.9,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.9",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "99efc201-8c32-43ec-ac71-2118ea52a30f",
+            "value": 25.4,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.4",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "26246a48-0b59-48f0-a3b0-e9176ce5c4c3",
+            "value": 419.08932956160004,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "14800",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T02:00:00.000Z",
+          "minutesFromOrigin": -270,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "605991a6-028a-4f0f-b02a-ee60fe700166",
+            "value": 8.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "867e5289-68fc-404c-a440-d1bc334c928d",
+            "value": 25.4,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.4",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "519e57a6-9d9c-4a5b-9ea5-e183e452b2cf",
+            "value": 438.911122176,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "15500",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T02:30:00.000Z",
+          "minutesFromOrigin": -240,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "c1163413-7ae2-4774-8a09-2c44e8f58940",
+            "value": 8.4,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.4",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "205de9d9-2c96-4cd0-9b4d-efcff6ef9e64",
+            "value": 25.2,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.2",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "265652d0-d4b3-42ca-868f-c159d77a54b7",
+            "value": 339.802159104,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "12000",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T03:00:00.000Z",
+          "minutesFromOrigin": -210,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "c65d5824-aefc-4561-b2b8-482f8ef062db",
+            "value": 8.7,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.7",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "75984bd3-bf93-4000-b0e0-a4f3314fbf86",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "c815bbec-eff4-4772-87f2-7448051a63b1",
+            "value": 265.89518949888003,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "9390",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T03:30:00.000Z",
+          "minutesFromOrigin": -180,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "b82dc913-ffe1-491d-a692-c010be6124b0",
+            "value": 7.7,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "7.7",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "3d885eff-0ce7-41a2-8274-5b3de4ee855b",
+            "value": 25.3,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.3",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "3353d25a-4688-4660-9733-aca7c7fee3b5",
+            "value": 132.52284205056,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "4680",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T04:00:00.000Z",
+          "minutesFromOrigin": -150,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "6b7b10ac-dcfc-46d1-b8c3-b3b833639008",
+            "value": 7.7,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "7.7",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "8e4b613a-1a62-456d-9227-b9c6e6f966d5",
+            "value": 25.2,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.2",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "42aea854-94cd-453e-9e67-309efd891025",
+            "value": -113.55055483392,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-4010",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T04:30:00.000Z",
+          "minutesFromOrigin": -120,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "c80527d9-9adc-46f6-825c-1bf84029da95",
+            "value": 8.3,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.3",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "6a9acdd7-4d8f-42fb-93a8-5fde8be38c42",
+            "value": 25.2,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.2",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "513a9f39-92e0-4d87-997b-dbe01ec02d59",
+            "value": -433.2477528576,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-15300",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T05:00:00.000Z",
+          "minutesFromOrigin": -90,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "8b3badd9-77b6-4080-9a7c-95f1784810ed",
+            "value": 8.6,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.6",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "cdd704d0-a92b-4e41-9e2e-e762433f4156",
+            "value": 25.1,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.1",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "ac541642-235c-429b-891d-cd48a786a008",
+            "value": -730.5746420736,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-25800",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T05:30:00.000Z",
+          "minutesFromOrigin": -60,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "9f959403-49ed-42fe-b268-ebfb1fe47ab0",
+            "value": 8.7,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.7",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "eb507db1-76d9-4a27-a44f-b525adbdcf2c",
+            "value": 25.1,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.1",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "372c49c3-555b-4eaf-a150-5d53b032c084",
+            "value": -945.7826761728,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-33400",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T06:00:00.000Z",
+          "minutesFromOrigin": -30,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "2299f9f4-37de-4e4e-8d25-0a03581906b7",
+            "value": 8.4,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.4",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "6f90ce0e-67fe-455f-b3d7-091314d21df2",
+            "value": 25.1,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.1",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "0539b2ee-8bc2-4c90-a9f9-4c71d538b310",
+            "value": -846.6737131008,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-29900",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T06:30:00.000Z",
+          "minutesFromOrigin": 0,
+          "temporalRole": "history",
+          "oxygen": {
+            "id": "eafac873-9d7e-4afa-bf86-a0ca2fc5c816",
+            "value": 8.3,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.3",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "2e83e86a-b3ca-4e1a-bb28-9dc660413d28",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "bde7830b-d465-49c1-b09f-b9fae314190e",
+            "value": -461.5645994496,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-16300",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T07:00:00.000Z",
+          "minutesFromOrigin": 30,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "8d51718a-7250-433e-b38c-850d0f96a024",
+            "value": 7.2,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "7.2",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "a9c7caef-35e6-4bc8-9c0c-d507dc4567ce",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "753324cb-5d71-4cc1-8f42-61454d413d37",
+            "value": -133.65551591424,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "-4720",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T07:30:00.000Z",
+          "minutesFromOrigin": 60,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "fba3b442-adce-4f3e-86ba-090b56f550f9",
+            "value": 3.8,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "3.8",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "d3f9b52e-28f9-41fc-b53d-00429bb82871",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "87b3132b-d576-4c6f-8bcf-c1395980dc8b",
+            "value": 109.0198593792,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "3850",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T08:00:00.000Z",
+          "minutesFromOrigin": 90,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "de45bac7-1f3e-464e-ab98-faea0794091f",
+            "value": 5.7,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "5.7",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "dc600e54-48c9-4be8-8838-d154794be8cf",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "b5bbe080-d413-49ef-ba01-ae6c6135bd30",
+            "value": 109.30302784512,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "3860",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T08:30:00.000Z",
+          "minutesFromOrigin": 120,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "a15dd71f-17dc-458a-873b-184b8e419647",
+            "value": 5.2,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "5.2",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "e4570133-9510-4feb-8847-11c060afe4ba",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "a7cb34c9-faaf-4143-b373-a251a99e596a",
+            "value": 69.37627415040001,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "2450",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T09:00:00.000Z",
+          "minutesFromOrigin": 150,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "16a09a26-e84f-4484-8191-6c74e4812bdd",
+            "value": 5.8,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "5.8",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "25da6885-5588-4d71-b32a-b26354f4f995",
+            "value": 25.0,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "25.0",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "4f7a7722-50f3-4d4f-b7ae-2f28cca602d6",
+            "value": 227.38427813376,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8030",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T09:30:00.000Z",
+          "minutesFromOrigin": 180,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "057c1fbe-3ced-42f5-bc9b-15ebc2186d60",
+            "value": 7.4,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "7.4",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "565815e7-81b8-429f-b249-1c6e668f4127",
+            "value": 24.9,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "24.9",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "69a61b69-15f3-4424-a2d9-f8cd6c197765",
+            "value": 421.92101422080003,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "14900",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T10:00:00.000Z",
+          "minutesFromOrigin": 210,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "4d5b5ed0-6bda-4be8-98b2-bd2682456ad1",
+            "value": 8.1,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.1",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "30d682a4-b396-4aba-846b-0af836f76d18",
+            "value": 24.9,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "24.9",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "274296f9-d071-4203-b84d-9fe37a2bb1a1",
+            "value": 821.188551168,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "29000",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        },
+        {
+          "timeUTC": "2025-07-20T10:30:00.000Z",
+          "minutesFromOrigin": 240,
+          "temporalRole": "future-diagnostic-only",
+          "oxygen": {
+            "id": "9e339d6b-7cd6-4ddf-8d2f-b4a50cf61dea",
+            "value": 8.1,
+            "lastModified": "2026-04-29T21:15:15.518161+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "8.1",
+            "sourceUnit": "mg/l",
+            "valueUnit": "mg/l"
+          },
+          "temperature": {
+            "id": "36799452-0ccc-4900-8dab-0e4eed4a37a2",
+            "value": 24.9,
+            "lastModified": "2026-04-27T19:35:20.275156+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "24.9",
+            "sourceUnit": "degC",
+            "valueUnit": "degC"
+          },
+          "discharge": {
+            "id": "84250e00-4d2d-4f7f-afbf-8a0b79a2f31f",
+            "value": 801.3667585536,
+            "lastModified": "2026-03-24T22:41:03.595685+00:00",
+            "approvalStatus": "Approved",
+            "qualifier": null,
+            "sourceValue": "28300",
+            "sourceUnit": "ft^3/s",
+            "valueUnit": "m3/s"
+          }
+        }
+      ],
+      "contextExceedsArchiveWindow": false,
+      "historicalLiveAvailabilityEstablished": false,
+      "physicalCauseEstablished": false
+    }
+  ],
+  "allScoredPairsRetained": 2591,
+  "contributionMeaning": "Additive terms in the frozen linear model; not physical causal effects",
+  "contextUnits": {
+    "oxygen": "mg/L",
+    "temperature": "degC",
+    "discharge": "m3/s; signed instantaneous flow retained"
+  },
+  "targetUsesFutureInformation": true,
+  "targetGroupingMeaning": "Observed future target is used only for retrospective diagnosis, never for prediction or a selection gate",
+  "historyGroupingMeaning": "Twelve archived oxygen values identical at/before origin; does not establish physical constancy or historical live availability",
+  "modelFitted": false,
+  "forecastSkillEstablished": false,
+  "newFinalValidation": false,
+  "operationalModelChanged": false,
+  "fundingRelease": false,
+  "limitations": [
+    "Previously inspected 2025 windows are diagnostic/development data, not an unseen final test",
+    "No record is removed or corrected to improve the score",
+    "Future context is explanatory only and cannot be used at forecast origin",
+    "Approved finalized source values and record modification times do not establish historical live availability or physical truth",
+    "A signed flow reversal near an oxygen fall is a temporal association, not an established cause",
+    "No wind, clouds, humidity, pollutant or human activity measurement enters this model",
+    "The illustrative 5 mg/L filter selects examples; it is not a calibrated ecological/legal alert threshold",
+    "This is a point-forecast diagnosis; no calibrated predictive interval or new model is produced"
+  ]
+}
