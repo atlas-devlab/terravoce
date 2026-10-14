@@ -15,4 +15,10 @@ code or deployment configuration.
 9. The treasury exposes no administrator withdrawal function.
 10. A TerraLex program has no loops, recursion, network access, clock access, or
     arbitrary calls. Equal inputs and compiler versions produce equal output.
+11. An oracle address can attest once per evidence hash across all candidate
+    envelopes; revocation and re-enrollment do not reset that vote.
+12. Evidence acceptance requires the configured quorum on one complete envelope,
+    never a sum of conflicting candidate votes. Before quorum the first displayed
+    envelope is provisional; it cannot prevent another candidate from finalizing.
+13. Finalized evidence fields cannot be replaced by a different envelope.
 

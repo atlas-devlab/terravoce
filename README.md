@@ -1,9 +1,18 @@
-# TerraVoce
+# Virdacora
+
+<p align="center"><img src="docs/assets/virdacora-logo-v1.png" alt="Virdacora — Le prove dell’ambiente, la voce delle comunità" width="560"></p>
+
+**Le prove dell’ambiente, la voce delle comunità.**
+
+Formerly TerraVoce. Virdacora is the adopted project name; trademark registration
+has not been completed. The repository is public.
+See the [identity and compatibility notes](docs/BRAND_IT_EN.md),
+[source terms](LICENSE_POLICY.md) and [Italian/English introduction](docs/LINKEDIN_POST_IT_EN.md).
 
 An open source research prototype for making environmental data and decisions
 traceable and reproducible.
 
-TerraVoce's long-term mission is a global environmental coordination system:
+Virdacora's long-term mission is a global environmental coordination system:
 distributed AI analysis, resilient public evidence, blockchain funding for
 verifiable interventions, and decision rights for affected communities and young
 people. The local prototypes below test individual parts of that mission.
@@ -16,7 +25,7 @@ data-review report and gates payment on two result reviews.
 **Status: research MVP.** There is no public-chain deployment, live environmental
 pilot, real treasury funding, connected physical actuator, or independent audit.
 The risk model and its risk/confidence scores are demonstration heuristics,
-without field validation. TerraVoce and TerraLex are working names; TerraLex
+without field validation. Virdacora is the adopted name; TerraLex remains a working name and
 refers here to the experimental policy language in this repository.
 
 > Per una spiegazione completa in italiano, leggi la
@@ -36,7 +45,7 @@ the existing proposal bridge, community/youth voting, a committed follow-up
 report and two-review escrow payment. Governance, reviewers and funds are
 simulated; no physical sampling or independent field review has occurred.
 After `pnpm build`, run `pnpm case:replay`, `pnpm case:verify` and `pnpm case:e2e`.
-[Issue #3](https://github.com/atlas-devlab/terravoce/issues/3) remains a place to
+[Issue #3](https://github.com/atlas-devlab/virdacora/issues/3) remains a place to
 discuss methods and limitations. See the [validation criteria](CONTRIBUTING.md#validation-target-for-the-replay).
 
 ## Observation-only multivariate forecasting experiment
@@ -89,6 +98,27 @@ The research evidence envelope cannot claim verified withdrawals, ecological
 improvement or funding eligibility. Run `pnpm irrigation:verify` offline.
 The Willamette forecast and operational Oracle/governance remain separate.
 
+## Bounded autonomous source discovery and adversarial evidence
+
+The [autonomous source test](docs/AUTONOMOUS_SOURCE_TEST.md) searches a public
+USGS catalog using territory and metric rules, excluding the already-connected
+station. It discovers USGS-14182500 without hardcoding that selected identifier,
+archives 97 approved oxygen observations, and reproduces the commitment in
+separate local verification processes. The existing evidence contract registers
+the batch with three of four local test identities; no action or funding follows.
+
+Tampered archives and two isolated malicious attestations are rejected. The
+test also demonstrates residual failures: coherent initial publisher falsification,
+three colluding authorized attestors, and capture of the enrollment administrator.
+The registry now isolates complete candidate envelopes: one malicious first
+attestor cannot lock incorrect metadata and block three later concordant votes.
+The [contract correction and adversarial test in English](docs/FIRST_ATTESTOR_FIX_EN.md)
+and [Italian](docs/FIRST_ATTESTOR_FIX.md) preserve
+the original failing report and verify the corrected local behavior.
+It does not establish independent operators, physical truth, public-chain
+publication, a networked ABCI outage run, or globally autonomous discovery.
+After building, run `pnpm source:verify` and `pnpm source:e2e` offline.
+
 ## Everyone can take part
 
 You do not need coding experience or an environmental qualification to ask a
@@ -97,9 +127,9 @@ what happened when you tried the demo. Questions about what is unclear are usefu
 
 | Small first step | Where to start |
 | --- | --- |
-| Ask a question, try the demo, or clarify or translate one part of the walkthrough. | [Issue #1](https://github.com/atlas-devlab/terravoce/issues/1) |
-| Suggest a public oxygen dataset, or ask about a demonstration threshold. | [Issue #3](https://github.com/atlas-devlab/terravoce/issues/3) |
-| If you want to contribute code, add one negative test for an existing policy rule. | [Issue #2](https://github.com/atlas-devlab/terravoce/issues/2) |
+| Ask a question, try the demo, or clarify or translate one part of the walkthrough. | [Issue #1](https://github.com/atlas-devlab/virdacora/issues/1) |
+| Suggest a public oxygen dataset, or ask about a demonstration threshold. | [Issue #3](https://github.com/atlas-devlab/virdacora/issues/3) |
+| If you want to contribute code, add one negative test for an existing policy rule. | [Issue #2](https://github.com/atlas-devlab/virdacora/issues/2) |
 
 For a small change, fork the repository and open a pull request without waiting
 for an assignment. A short issue comment can help avoid duplicate work. Larger
@@ -175,10 +205,11 @@ and the boundaries of that verification.
 
 ## License
 
-Project source is published under the [MIT License](LICENSE), consistent with
-the MIT SPDX headers already present in the recovered Solidity contracts.
-External dependencies retain their own licenses; see
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Default source terms are [AGPLv3, version 3 only](LICENSE). Earlier MIT
+permissions and explicit MIT/Apache notices are retained; see
+[LICENSE_POLICY.md](LICENSE_POLICY.md). External data and dependencies retain
+their own terms in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The name and logo follow [TRADEMARK_POLICY.md](TRADEMARK_POLICY.md).
 
 ## Replica del servizio Oracle
 

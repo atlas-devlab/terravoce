@@ -1,6 +1,7 @@
 * text=auto eol=lf
 docs/datasets/usgs-willamette/continuous.json -text
 docs/datasets/usgs-willamette/station.json -text
+docs/datasets/autonomous-source/*.json -text
 docs/datasets/usgs-willamette-multivariate/*.gz -text
 docs/datasets/usgs-willamette-validation/*/*.gz -text
 docs/datasets/usgs-willamette-training-audit/*/*.gz -text

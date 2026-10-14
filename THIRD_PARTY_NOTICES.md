@@ -1,6 +1,6 @@
 # Third-party notices
 
-TerraVoce uses external packages installed by pnpm. Their license and copyright
+Virdacora uses external packages installed by pnpm. Their license and copyright
 notices remain applicable. The exact dependency versions and integrity hashes
 are recorded in `pnpm-lock.yaml`.
 
@@ -14,6 +14,8 @@ respective licenses. These images and dependency source trees are not vendored
 in this repository.
 
 The MIT SPDX headers in the project Solidity contracts have been preserved.
+The original project MIT notice is retained in [LICENSES/MIT-legacy.txt](LICENSES/MIT-legacy.txt);
+those permissions are not revoked by the new default AGPL source license.
 The recovered philosophical research downloads, build outputs, local runtime
 data and tooling archives are excluded from this source publication.
 
@@ -42,7 +44,7 @@ as US Government work in the public domain:
 https://api.waterdata.usgs.gov/ogcapi/v1/
 The accompanying manifest records station, time interval, retrieval date,
 source URLs, quality protocol and exact body hashes. These data are not relicensed
-as TerraVoce-generated measurements and USGS does not endorse this prototype.
+as Virdacora-generated measurements and USGS does not endorse this prototype.
 
 The temperature and instantaneous discharge snapshots under
 `docs/datasets/usgs-willamette-multivariate` come from the same public-domain
@@ -69,6 +71,15 @@ raw protocol hash, exact frozen research-model file hash, and pre-capture Git
 commit. Low archived oxygen values remain source observations, not proof of
 an independently observed ecological event or USGS endorsement of an alert.
 
+## USGS autonomous source discovery snapshot
+
+The response files under `docs/datasets/autonomous-source` also contain USGS
+Water Data for the Nation public-domain catalog, station metadata and continuous
+oxygen observations. The algorithm discovered station USGS-14182500; exact URLs,
+retrieval timestamps and byte hashes are retained in the manifest. Attack data
+are created in local disposable copies and are not USGS observations or evidence
+of misconduct by the publisher. USGS does not endorse the prototype.
+
 ## FAO WaPOR native window extracts
 
 `docs/datasets/awash-irrigation` retains FAO WaPOR v3 catalog/mapset/raster
@@ -78,7 +89,7 @@ complete original continental GeoTIFFs. Attribution: FAO WaPOR database,
 accessed 12 October 2026 in Europe/Rome; precipitation is distributed from
 CHIRPS. See https://www.fao.org/in-action/remote-sensing-for-water-productivity/wapor-data-access/en.
 
-Publisher data terms apply separately from TerraVoce's MIT code license.
+Publisher data terms apply separately from the source terms in [LICENSE_POLICY.md](LICENSE_POLICY.md).
 The archived L1-PCP-D mapset explicitly declares CC BY-NC-SA 4.0 in
 `additionalInfo.Citation`; retain that attribution and source notice with its
 extracts and derived data. The L2-AETI-D response has no explicit license in

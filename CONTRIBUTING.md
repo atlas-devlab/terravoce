@@ -1,6 +1,6 @@
-# Contributing to TerraVoce
+# Contributing to Virdacora
 
-TerraVoce is a research prototype for making environmental data and decisions
+Virdacora is a research prototype for making environmental data and decisions
 traceable and reproducible. Everyone can contribute, in English or Italian.
 You do not need to code or be an environmental specialist to ask a question,
 share an idea, improve an explanation, translate a paragraph, or try the demo.
@@ -11,8 +11,8 @@ The first real-data module now replays one public-domain USGS dissolved-oxygen
 time series. It compares the model with persistence and verifies a data-review
 deliverable through simulated civic governance and escrow settlement. See
 [the reproducible case](services/environmental-case/README.md) and
-[issue #3](https://github.com/atlas-devlab/terravoce/issues/3) for method discussion.
-It is one validation step towards TerraVoce's global environmental mission;
+[issue #3](https://github.com/atlas-devlab/virdacora/issues/3) for method discussion.
+It is one validation step towards Virdacora's global environmental mission;
 independent field review and physical sampling remain pending.
 
 Compare the current model with a simple prediction based on the latest measured
@@ -24,11 +24,12 @@ the experiment's conclusions, not to whether you are allowed to take part.
 
 | Task | A useful first result |
 | --- | --- |
-| [Ask a question, try the demo, or improve the walkthrough (#1)](https://github.com/atlas-devlab/terravoce/issues/1) | One unclear step reported, a short explanation or translation, or a reproducible run. |
-| [Suggest a dataset or discuss a threshold (#3)](https://github.com/atlas-devlab/terravoce/issues/3) | A link to a public station series, a question about its meaning, or a sourced review of one assumption. |
-| [Add a negative policy test (#2)](https://github.com/atlas-devlab/terravoce/issues/2) | For code contributors: one existing rejection rule covered by a meaningful test, preserving the valid demo policy hash. |
+| [Ask a question, try the demo, or improve the walkthrough (#1)](https://github.com/atlas-devlab/virdacora/issues/1) | One unclear step reported, a short explanation or translation, or a reproducible run. |
+| [Suggest a dataset or discuss a threshold (#3)](https://github.com/atlas-devlab/virdacora/issues/3) | A link to a public station series, a question about its meaning, or a sourced review of one assumption. |
+| [Add a negative policy test (#2)](https://github.com/atlas-devlab/virdacora/issues/2) | For code contributors: one existing rejection rule covered by a meaningful test, preserving the valid demo policy hash. |
 
-Check the issue for ongoing work. You can fork the repository, create a branch,
+The repository is public. Agree access with the maintainer first.
+Once access is available, check the issue for ongoing work. You can fork the repository, create a branch,
 and open a focused pull request without being assigned first. An issue comment
 is helpful for coordination, but assignment is not a prerequisite for a small
 contribution. Open a proposal before a substantial architecture or grammar
@@ -91,6 +92,8 @@ private channel with the maintainer before sharing sensitive details.
 
 ## License
 
-Contributions submitted for inclusion are under the MIT License in [LICENSE](LICENSE),
-unless explicitly agreed otherwise. Submit only material you can license compatibly
-and preserve third-party attribution.
+New contributions use AGPL-3.0-only unless the affected file has a specific
+MIT, Apache-2.0 or other notice. Preserve those terms and attribution; discuss
+a change to an existing file license explicitly. Submit only material you
+can license compatibly. No copyright assignment is required. See
+[LICENSE_POLICY.md](LICENSE_POLICY.md) and [TRADEMARK_POLICY.md](TRADEMARK_POLICY.md).

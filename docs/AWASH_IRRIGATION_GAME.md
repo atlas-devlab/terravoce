@@ -1,6 +1,6 @@
 # Awash: primo test osservativo e gioco delle previsioni
 
-Il primo turno storico è completato: TerraVoce ha previsto **2,98 mm/giorno** di
+Il primo turno storico è completato: Virdacora ha previsto **2,98 mm/giorno** di
 evapotraspirazione e intercettazione; FAO WaPOR stima **3,04 mm/giorno** per il
 periodo 1–10 marzo 2024. L'errore assoluto è **0,0603 mm/giorno**, circa il 2% del
 valore FAO di riferimento. Il metodo è la persistenza: ripetere l'ultimo valore.
@@ -79,7 +79,7 @@ di una previsione emessa davvero in quelle date. Un solo turno non consente
 di valutare stagioni, eventi estremi, intervalli d'incertezza o abilità generale.
 La vicinanza al riferimento riguarda una stima FAO, non una verità misurata sul campo.
 
-## Collegamento con TerraVoce
+## Collegamento con Virdacora
 
 ```mermaid
 flowchart LR

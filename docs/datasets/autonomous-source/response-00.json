@@ -1,0 +1,1830 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1ccd1e712b6b4cb69fdcfbf407f7358b",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T09:42:35.836603",
+        "begin": "2009-01-22T08:00:00+00:00",
+        "end": "2026-10-12T09:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-04-05T11:55:00.0000000-08:00",
+                "AppliedTime": "2018-11-02T20:18:04.6364014Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-04-05T11:55:00.0000000-08:00",
+                "AppliedTime": "2018-11-02T20:17:42.8812957Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14211720",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "1ccd1e712b6b4cb69fdcfbf407f7358b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.669166666667,
+          45.5175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2a1069688c36456ea970f304ca7873cf",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T07:14:37.664774",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2026-10-12T07:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-03-21T10:10:00.0000000-08:00",
+                "AppliedTime": "2018-10-26T00:10:22.0136213Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-03-21T10:10:00.0000000-08:00",
+                "AppliedTime": "2018-10-26T00:10:55.0181789Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14206950",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "2a1069688c36456ea970f304ca7873cf",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.754818493538,
+          45.4034520206329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "300ae77a19864e7397ee629eba4b69c5",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-01-29T19:45:51.704080",
+        "begin": "2016-05-27T02:00:00+00:00",
+        "end": "2016-10-25T19:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-450808123004200",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "300ae77a19864e7397ee629eba4b69c5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.01175,
+          45.1355361111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "338aaea783634e76a816f4230356fcc1",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-01-26T00:21:34.341477",
+        "begin": "2016-05-26T18:00:00+00:00",
+        "end": "2016-10-25T16:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-450332123040800",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "338aaea783634e76a816f4230356fcc1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.068763888889,
+          45.0588111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "345eaa1210084a049cf2d28ed83c3c43",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T07:53:01.065640",
+        "begin": "2020-02-19T19:15:00+00:00",
+        "end": "2026-10-12T07:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very high",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2020-02-20T18:55:14.4348458Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2020-02-20T18:55:33.7738351Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14203500",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "345eaa1210084a049cf2d28ed83c3c43",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.124273987822,
+          45.4748365069704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "373a7bcba79a4d7b90502dfb25468dd5",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T07:43:12.961705",
+        "begin": "2019-04-18T23:00:00+00:00",
+        "end": "2026-10-12T07:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2019-04-26T23:06:25.8530358Z",
+                "SuppressData": true,
+                "ReferenceValue": 0
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2019-04-26T23:06:11.2933052Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14206241",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "373a7bcba79a4d7b90502dfb25468dd5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.99094444444445,
+          45.50038888888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3bf134386cab4e55ab407ebe0d0bbd93",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T10:03:13.764657",
+        "begin": "2024-08-06T21:45:00+00:00",
+        "end": "2026-10-12T09:45:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2024-07-29T20:30:30.0774374Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2024-07-29T20:30:46.1739421Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": "WQ MONITOR",
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14185900",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "3bf134386cab4e55ab407ebe0d0bbd93",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.43591547938,
+          44.5401235699613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3cbede49330b4de289ddb5497807cd58",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-03-30T20:43:55.767444",
+        "begin": "2016-05-20T07:00:00+00:00",
+        "end": "2017-11-29T20:30:53+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453312122485800",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT2H",
+        "statistics_begin": null
+      },
+      "id": "3cbede49330b4de289ddb5497807cd58",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.816227777778,
+          45.5533416666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3f0bf45ec4454119a93f0aa935c88336",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T09:11:41.117771",
+        "begin": "2009-01-17T08:00:00+00:00",
+        "end": "2026-10-12T09:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2021-03-29T00:00:00.0000000-08:00",
+                "AppliedTime": "2021-03-23T16:35:01.5187711Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2021-03-29T00:00:00.0000000-08:00",
+                "AppliedTime": "2021-03-23T16:35:45.9847598Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.5
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14182500",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "3f0bf45ec4454119a93f0aa935c88336",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.578973849527,
+          44.7915108355795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "444eae15abb940ffb6145a50adff683f",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T06:24:18.904768",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2026-10-12T06:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very HIgh",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-01-18T08:39:00.0000000-08:00",
+                "AppliedTime": "2018-10-31T18:11:49.3796359Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-01-18T08:39:00.0000000-08:00",
+                "AppliedTime": "2018-10-31T18:12:14.3839682Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453030122560101",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "444eae15abb940ffb6145a50adff683f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.9335,
+          45.5081944444444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "4ae382112b4e40cf9b2bf5f50ae2d578",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-03-29T01:26:37.292335",
+        "begin": "2016-07-13T07:00:00+00:00",
+        "end": "2017-11-29T19:30:54+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453302122491600",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT2H",
+        "statistics_begin": null
+      },
+      "id": "4ae382112b4e40cf9b2bf5f50ae2d578",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.821075,
+          45.5504861111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "54c745e4a4df4ae8a4614f6732f872b5",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-04-06T18:20:52.776833",
+        "begin": "2016-05-20T07:00:00+00:00",
+        "end": "2017-11-29T21:30:53+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453250122494501",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT2H",
+        "statistics_begin": null
+      },
+      "id": "54c745e4a4df4ae8a4614f6732f872b5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.829141666667,
+          45.5473472222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "55cd1d37e21f48f58fe3d20754878bcf",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2017-06-05T12:49:34.936217",
+        "begin": null,
+        "end": null,
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-452559122472401",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "55cd1d37e21f48f58fe3d20754878bcf",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.791161691001,
+          45.4328403803398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "5d3f792268a6489faf9703bb832f047b",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-01-26T00:56:05.663844",
+        "begin": "2016-05-25T23:00:00+00:00",
+        "end": "2016-10-24T18:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-444938123094900",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "5d3f792268a6489faf9703bb832f047b",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.163688888889,
+          44.8272638888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "60dc9f9b664c4097ab85f546bcdef9e6",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-07-24T17:33:29.574863",
+        "begin": "2016-05-19T07:00:00+00:00",
+        "end": "2017-11-29T17:00:51+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-452718122474700",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT4H",
+        "statistics_begin": null
+      },
+      "id": "60dc9f9b664c4097ab85f546bcdef9e6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.796305555556,
+          45.4551222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6e357e2fe35145dda070c76baf53b293",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T06:52:33.896033",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2026-10-12T06:45:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "VERY LOW",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2016-11-22T00:00:00.0000000-08:00",
+                "AppliedTime": "2017-03-13T01:45:03.3031074Z",
+                "SuppressData": true,
+                "ReferenceValue": 2
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#800000",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "VERY HIGH",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2016-11-22T00:00:00.0000000-08:00",
+                "AppliedTime": "2017-03-13T01:45:01.4937093Z",
+                "SuppressData": true,
+                "ReferenceValue": 19
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#FF0000",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14211010",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": "2002"
+      },
+      "id": "6e357e2fe35145dda070c76baf53b293",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.577313403107,
+          45.3792874273003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "72ce8807c1b14d3fa792ec00856cb96c",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-01-29T20:53:17.127246",
+        "begin": "2016-05-26T00:00:00+00:00",
+        "end": "2016-10-24T19:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-444945123095600",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "72ce8807c1b14d3fa792ec00856cb96c",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.165644444444,
+          44.8292972222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "73ac69ac652641cf800a95685d85f8f0",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-04-03T20:01:32.705638",
+        "begin": "2016-05-19T07:00:00+00:00",
+        "end": "2017-11-29T18:00:48+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-452727122474801",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT4H",
+        "statistics_begin": null
+      },
+      "id": "73ac69ac652641cf800a95685d85f8f0",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.796655555556,
+          45.4576722222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "7cb8e60d1a8e4caebdf81cbd5f9f86b8",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T06:33:47.691992",
+        "begin": "2020-09-22T20:00:00+00:00",
+        "end": "2026-10-12T06:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2020-11-12T17:22:50.0012897Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2020-11-12T17:23:04.3205023Z",
+                "SuppressData": true,
+                "ReferenceValue": 0
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14183020",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "7cb8e60d1a8e4caebdf81cbd5f9f86b8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.67772222222223,
+          44.77822222222222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "90da9debaece4b3ea043ddbaf5257bb5",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-03-24T19:12:54.520885",
+        "begin": "2023-06-06T20:30:00+00:00",
+        "end": "2025-11-21T19:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2023-06-01T18:46:46.2161744Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2023-06-01T18:47:01.2632902Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453027122400000",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "90da9debaece4b3ea043ddbaf5257bb5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.666614,
+          45.507481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "970f74e38582464bab17f1040d3bd6f9",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T04:14:12.851753",
+        "begin": "2010-04-13T07:00:00+00:00",
+        "end": "2026-10-12T04:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2020-05-01T00:00:00.0000000-08:00",
+                "AppliedTime": "2020-05-11T22:06:50.1193413Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2020-05-01T00:00:00.0000000-08:00",
+                "AppliedTime": "2020-05-11T22:07:25.2306472Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14202650",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "970f74e38582464bab17f1040d3bd6f9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.125,
+          45.4406416666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "b2fb9f7f225b450ea435979cbb1fd9bd",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2021-02-03T23:04:07.558738",
+        "begin": "2019-05-30T19:00:00+00:00",
+        "end": "2020-11-01T06:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2019-04-15T17:53:08.6262513Z",
+                "SuppressData": true,
+                "ReferenceValue": -1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2019-04-15T17:52:48.7836777Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453016123052400",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "b2fb9f7f225b450ea435979cbb1fd9bd",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.090055555556,
+          45.5043611111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "b5b3848612bd44d88b1babb8d452726d",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T06:42:57.884216",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2026-10-12T06:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-03-13T17:20:00.0000000-08:00",
+                "AppliedTime": "2018-10-31T18:35:11.639023Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-03-13T17:20:00.0000000-08:00",
+                "AppliedTime": "2018-10-31T18:35:42.4442205Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453040123065201",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT2H",
+        "statistics_begin": null
+      },
+      "id": "b5b3848612bd44d88b1babb8d452726d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.115665966442,
+          45.5108779981132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "b7974739f12b44fc887e41ff18e18c34",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T07:14:25.252091",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2026-10-12T07:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "VERY HIGH",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2016-11-18T00:00:00.0000000-08:00",
+                "AppliedTime": "2017-03-13T01:30:24.2305975Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#FF0000",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "VERY LOW",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2016-11-18T00:00:00.0000000-08:00",
+                "AppliedTime": "2017-03-13T01:30:24.87952Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#800000",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14206694",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "b7974739f12b44fc887e41ff18e18c34",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.895100277282,
+          45.401506594574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "b98422c981914c4d8a85b2e4e9ca31b4",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2017-03-13T03:29:14.173016",
+        "begin": "2010-02-26T08:00:00+00:00",
+        "end": "2015-12-21T07:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-444728122450000",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "b98422c981914c4d8a85b2e4e9ca31b4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.751198870978,
+          44.7909555643765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bbbc37402f674f32b7e49e54cc2aeb42",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2021-02-03T23:06:38.058353",
+        "begin": "2019-05-30T19:00:00+00:00",
+        "end": "2020-11-06T17:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2019-04-15T17:53:51.6489164Z",
+                "SuppressData": true,
+                "ReferenceValue": -1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2019-04-15T17:53:33.8537306Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": "post-aeration",
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453016123052400",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "bbbc37402f674f32b7e49e54cc2aeb42",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.090055555556,
+          45.5043611111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "be325e2c89bd486ba530b01325027928",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2018-07-24T17:38:48.772909",
+        "begin": "2016-05-20T07:00:00+00:00",
+        "end": "2017-11-29T18:30:47+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-452738122474100",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT4H",
+        "statistics_begin": null
+      },
+      "id": "be325e2c89bd486ba530b01325027928",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.794780555556,
+          45.4606083333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "c904265b5edd4cf1a88aff87254d6a61",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T07:14:05.077392",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2026-10-12T07:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "VERY LOW",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2016-10-12T00:00:00.0000000-08:00",
+                "AppliedTime": "2017-03-13T01:35:29.6623688Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#800000",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "VERY HIGH",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2016-10-12T00:00:00.0000000-08:00",
+                "AppliedTime": "2017-03-13T01:35:27.82752Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#FF0000",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-14207200",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "c904265b5edd4cf1a88aff87254d6a61",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.685093653075,
+          45.3565087677307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ca738c15161048438bfb63553d195689",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-03-31T15:42:55.612313",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2025-08-05T23:55:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-07-05T11:04:00.0000000-08:00",
+                "AppliedTime": "2018-10-26T00:20:05.295202Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "2018-07-05T11:04:00.0000000-08:00",
+                "AppliedTime": "2018-10-26T00:20:32.8711953Z",
+                "SuppressData": true,
+                "ReferenceValue": -0.1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453004122510301",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "ca738c15161048438bfb63553d195689",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.852045084429,
+          45.5009505004165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "d19357dd4304455f9afcc303bd00e86a",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2020-04-14T17:32:45.556063",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2012-05-04T06:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-453113123003501",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "d19357dd4304455f9afcc303bd00e86a",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.011024732601,
+          45.5202269949864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "daf8138104b44606b88b4ec2d0800d64",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2017-06-06T15:40:09.405152",
+        "begin": "2015-08-20T07:00:00+00:00",
+        "end": "2015-10-07T06:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-445053123105400",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "daf8138104b44606b88b4ec2d0800d64",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.181780555556,
+          44.8481138888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "e25536aed89d417aa8a456d684de60e2",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-10-12T08:46:24.195934",
+        "begin": "2020-08-06T22:30:00+00:00",
+        "end": "2026-10-12T08:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2020-06-25T20:28:58.9221099Z",
+                "SuppressData": true,
+                "ReferenceValue": 20
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2020-06-25T20:29:15.9403142Z",
+                "SuppressData": true,
+                "ReferenceValue": -1
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-452731123092100",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "e25536aed89d417aa8a456d684de60e2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.155916666667,
+          45.4586111111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "e81b422fdd034969954a48439a82974f",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2026-08-25T23:23:18.118508",
+        "begin": "2024-08-29T23:15:00+00:00",
+        "end": "2026-05-28T08:30:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [
+          {
+            "Name": "Very High",
+            "Type": "ThresholdAbove",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2025-03-27T16:38:31.7678893Z",
+                "SuppressData": true,
+                "ReferenceValue": 30
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          },
+          {
+            "Name": "Very Low",
+            "Type": "ThresholdBelow",
+            "Periods": [
+              {
+                "EndTime": "9999-12-31T23:59:59.9999999+00:00",
+                "StartTime": "0001-01-01T00:00:00.0000000+00:00",
+                "AppliedTime": "2025-03-27T16:39:00.2754172Z",
+                "SuppressData": true,
+                "ReferenceValue": 0
+              }
+            ],
+            "Severity": 0,
+            "Description": "Unspecified threshold value",
+            "DisplayColor": "#990600",
+            "ReferenceCode": "AQUARIUS only",
+            "ProcessingOrder": "Suppression"
+          }
+        ],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-142063398",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": null,
+        "statistics_begin": null
+      },
+      "id": "e81b422fdd034969954a48439a82974f",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.87371944444443,
+          45.55631388888889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "f748d83736704ff6a52659bebea1701d",
+        "unit_of_measure": "mg/l",
+        "parameter_name": "Dissolved oxygen",
+        "parameter_code": "00300",
+        "statistic_id": "00011",
+        "last_modified": "2017-03-13T03:34:05.614114",
+        "begin": "2007-10-01T08:00:00+00:00",
+        "end": "2011-12-12T07:00:00+00:00",
+        "computation_period_identifier": "Points",
+        "computation_identifier": "Instantaneous",
+        "thresholds": [],
+        "sublocation_identifier": null,
+        "primary": "Primary",
+        "monitoring_location_id": "USGS-452230122512201",
+        "web_description": null,
+        "parameter_description": "Dissolved oxygen, water, unfiltered, milligrams per liter",
+        "parent_time_series_id": null,
+        "data_gap_interval": "PT1H12M",
+        "statistics_begin": null
+      },
+      "id": "f748d83736704ff6a52659bebea1701d",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.857254312877,
+          45.3748654219495
+        ]
+      }
+    }
+  ],
+  "numberReturned": 34,
+  "links": [
+    {
+      "type": "application/geo+json",
+      "rel": "self",
+      "title": "This document as GeoJSON",
+      "href": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/time-series-metadata/items?f=json&bbox=-123.2,44.5,-122.4,45.7&parameter_code=00300&statistic_id=00011&limit=100"
+    },
+    {
+      "rel": "alternate",
+      "type": "application/ld+json",
+      "title": "This document as RDF (JSON-LD)",
+      "href": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/time-series-metadata/items?f=jsonld&bbox=-123.2,44.5,-122.4,45.7&parameter_code=00300&statistic_id=00011&limit=100"
+    },
+    {
+      "type": "text/html",
+      "rel": "alternate",
+      "title": "This document as HTML",
+      "href": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/time-series-metadata/items?f=html&bbox=-123.2,44.5,-122.4,45.7&parameter_code=00300&statistic_id=00011&limit=100"
+    },
+    {
+      "type": "text/csv; charset=utf-8",
+      "rel": "alternate",
+      "title": "This document as CSV",
+      "href": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/time-series-metadata/items?f=csv&bbox=-123.2,44.5,-122.4,45.7&parameter_code=00300&statistic_id=00011&limit=100"
+    },
+    {
+      "type": "application/json",
+      "title": "Time series metadata",
+      "rel": "collection",
+      "href": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/time-series-metadata"
+    }
+  ],
+  "timeStamp": "2026-10-12T20:08:26.381115Z"
+}

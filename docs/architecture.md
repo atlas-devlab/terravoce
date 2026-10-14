@@ -1,4 +1,4 @@
-# TerraVoce architecture
+# Virdacora architecture
 
 This document describes the intended architecture. The current research MVP
 uses synthetic observations and pinned real USGS measurements with a
@@ -58,6 +58,24 @@ community registry -> TerraAct governor -> locked treasury -> recipient
 Raw data and model artifacts may be mirrored through object storage and
 content-addressed networks. Only hashes, concise metadata, votes, and treasury
 state belong on-chain.
+
+## Research source discovery extension
+
+The bounded collector in `services/environmental-case/src/discovery.ts` searches
+one preconfigured USGS catalog by territory and metric and deterministically
+selects a previously unconnected station. It archives exact responses and
+reproduces a research-only ObservationBatch commitment. Separate local Node
+processes verify it, and `source:e2e` attests the batch in the existing registry
+with a three-of-four local identity fixture. It does not register physical sensor
+keys, run an operational assessment or bridge action, or release funding.
+The test deliberately demonstrates coherent false publisher input and captured
+attestor/enrollment authority. See [the test and trust limits](AUTONOMOUS_SOURCE_TEST.md).
+The evidence registry counts complete envelopes separately, retains one vote
+per authorized identity/content root, and freezes the envelope reaching quorum.
+This removes the first-attestor lock demonstrated by the initial source test;
+pending legacy getter values remain provisional. See [the correction](FIRST_ATTESTOR_FIX.md).
+Global discovery, independent operators, replicated archives, recurring jobs
+and evidence correction/dispute lifecycle remain future work.
 
 ## Deployment target
 
