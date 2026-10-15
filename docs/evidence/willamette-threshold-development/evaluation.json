@@ -1,0 +1,2008 @@
+{
+  "version": "willamette-threshold-development-evaluation-v1",
+  "planRawSHA256": "d68381c42e992e4328b6bb454642a51878bedcf4b1d1748aafdc7576bb335d9e",
+  "implementationCommitment": {
+    "frozenAtCommit": "c3a63d16973cd99bf53465f8c7bdd64164f0afc6",
+    "files": [
+      {
+        "file": "docs/datasets/willamette-threshold-development/protocol.json",
+        "rawSha256": "d68381c42e992e4328b6bb454642a51878bedcf4b1d1748aafdc7576bb335d9e"
+      },
+      {
+        "file": "docs/evidence/willamette-threshold-development/preflight.json",
+        "rawSha256": "10501cca464aa124d2af7791df937f605c52633038b408e5790b969ec78e63f7"
+      },
+      {
+        "file": "scripts/audit_stability_compare.py",
+        "rawSha256": "b08e369bfb7e75ecd931457387e0f2e8f41696b256e68c0cf191cdac3aa9d64a"
+      },
+      {
+        "file": "scripts/evaluate_threshold_development.py",
+        "rawSha256": "e0065e82d5eb7e2acbe3680c903a2c37370188b8133d2020877a0907764c73f7"
+      },
+      {
+        "file": "scripts/test_evaluate_threshold_development.py",
+        "rawSha256": "614550ef32b6d253e4f46ee9eb187af10a437d56bb28ababb97ce0e9f4c244cf"
+      },
+      {
+        "file": "scripts/test_threshold_development.py",
+        "rawSha256": "3c904d228a51b2ff90ca4705d4d969d62c6d50819228c0c076d41433e5d99099"
+      },
+      {
+        "file": "scripts/threshold_development.py",
+        "rawSha256": "153d614d06306add9fe55cc8b5d435edac15557b4ba493035ec083cebe7a5caf"
+      }
+    ],
+    "currentFilesMatchGitCommit": true
+  },
+  "pinnedInputs": [
+    {
+      "file": "docs/evidence/willamette-stability/evaluation.json.gz",
+      "rawSha256": "5295b0a92a3f6d7c6dbec2efce5cbe1f407cbc5307fa992c4b48d479f020545f"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+      "rawSha256": "72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+    }
+  ],
+  "completedStabilityReplayVerified": true,
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "developmentOnly": true,
+  "allWindowsPreviouslyInspected": true,
+  "newModelFit": false,
+  "newDataAcquisition": false,
+  "newUnseenTestLaunched": false,
+  "operationalModelChanged": false,
+  "laterCheckCanSelectThreshold": false,
+  "primaryMetric": "Equal-window mean of four MAEs in mg/L",
+  "status": "promising-in-development-only",
+  "selectedThresholdMgL": 0.1,
+  "windows": [
+    {
+      "window": {
+        "id": "winter-february-2025",
+        "season": "winter",
+        "start": "2025-02-01T00:00:00Z",
+        "end": "2025-03-01T00:00:00Z"
+      },
+      "split": {
+        "boundaryUTC": "2025-02-15T00:00:00Z",
+        "pairs": {
+          "selection": 619,
+          "laterCheck": 644,
+          "excludedBetween": 13
+        },
+        "latestSelectionTargetUTC": "2025-02-14T23:30:00Z",
+        "earliestLaterHistoryUTC": "2025-02-15T00:00:00Z",
+        "retainedOriginGapSeconds": 25200,
+        "noMechanicalOverlap": true
+      },
+      "gridByPart": {
+        "selection": {
+          "expectedOrigins": 659,
+          "acceptedPairs": 619,
+          "missingOrIncompleteOrigins": 40
+        },
+        "laterCheck": {
+          "expectedOrigins": 660,
+          "acceptedPairs": 644,
+          "missingOrIncompleteOrigins": 16
+        },
+        "excludedBetween": {
+          "expectedOrigins": 13,
+          "acceptedPairs": 13,
+          "missingOrIncompleteOrigins": 0
+        }
+      },
+      "wholeWindowSourceQuality": {
+        "oxygen": {
+          "total": 1328,
+          "accepted": 1328,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8065,
+          "accepted": 8065,
+          "excluded": []
+        }
+      },
+      "wholeWindowSourceQualityMeaning": "Archived source QA over the full 28-day query; not split-specific raw record counts"
+    },
+    {
+      "window": {
+        "id": "spring-may-2025",
+        "season": "spring",
+        "start": "2025-05-01T00:00:00Z",
+        "end": "2025-05-29T00:00:00Z"
+      },
+      "split": {
+        "boundaryUTC": "2025-05-15T00:00:00Z",
+        "pairs": {
+          "selection": 659,
+          "laterCheck": 648,
+          "excludedBetween": 13
+        },
+        "latestSelectionTargetUTC": "2025-05-14T23:30:00Z",
+        "earliestLaterHistoryUTC": "2025-05-15T00:00:00Z",
+        "retainedOriginGapSeconds": 25200,
+        "noMechanicalOverlap": true
+      },
+      "gridByPart": {
+        "selection": {
+          "expectedOrigins": 659,
+          "acceptedPairs": 659,
+          "missingOrIncompleteOrigins": 0
+        },
+        "laterCheck": {
+          "expectedOrigins": 660,
+          "acceptedPairs": 648,
+          "missingOrIncompleteOrigins": 12
+        },
+        "excludedBetween": {
+          "expectedOrigins": 13,
+          "acceptedPairs": 13,
+          "missingOrIncompleteOrigins": 0
+        }
+      },
+      "wholeWindowSourceQuality": {
+        "oxygen": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8049,
+          "accepted": 8049,
+          "excluded": []
+        }
+      },
+      "wholeWindowSourceQualityMeaning": "Archived source QA over the full 28-day query; not split-specific raw record counts"
+    },
+    {
+      "window": {
+        "id": "summer-june-2025",
+        "season": "summer",
+        "start": "2025-06-01T00:00:00Z",
+        "end": "2025-06-29T00:00:00Z"
+      },
+      "split": {
+        "boundaryUTC": "2025-06-15T00:00:00Z",
+        "pairs": {
+          "selection": 642,
+          "laterCheck": 643,
+          "excludedBetween": 13
+        },
+        "latestSelectionTargetUTC": "2025-06-14T23:30:00Z",
+        "earliestLaterHistoryUTC": "2025-06-15T00:00:00Z",
+        "retainedOriginGapSeconds": 25200,
+        "noMechanicalOverlap": true
+      },
+      "gridByPart": {
+        "selection": {
+          "expectedOrigins": 659,
+          "acceptedPairs": 642,
+          "missingOrIncompleteOrigins": 17
+        },
+        "laterCheck": {
+          "expectedOrigins": 660,
+          "acceptedPairs": 643,
+          "missingOrIncompleteOrigins": 17
+        },
+        "excludedBetween": {
+          "expectedOrigins": 13,
+          "acceptedPairs": 13,
+          "missingOrIncompleteOrigins": 0
+        }
+      },
+      "wholeWindowSourceQuality": {
+        "oxygen": {
+          "total": 1343,
+          "accepted": 1343,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8065,
+          "accepted": 8065,
+          "excluded": []
+        }
+      },
+      "wholeWindowSourceQualityMeaning": "Archived source QA over the full 28-day query; not split-specific raw record counts"
+    },
+    {
+      "window": {
+        "id": "autumn-november-2025",
+        "season": "autumn",
+        "start": "2025-11-01T00:00:00Z",
+        "end": "2025-11-29T00:00:00Z"
+      },
+      "split": {
+        "boundaryUTC": "2025-11-15T00:00:00Z",
+        "pairs": {
+          "selection": 659,
+          "laterCheck": 647,
+          "excludedBetween": 13
+        },
+        "latestSelectionTargetUTC": "2025-11-14T23:30:00Z",
+        "earliestLaterHistoryUTC": "2025-11-15T00:00:00Z",
+        "retainedOriginGapSeconds": 25200,
+        "noMechanicalOverlap": true
+      },
+      "gridByPart": {
+        "selection": {
+          "expectedOrigins": 659,
+          "acceptedPairs": 659,
+          "missingOrIncompleteOrigins": 0
+        },
+        "laterCheck": {
+          "expectedOrigins": 660,
+          "acceptedPairs": 647,
+          "missingOrIncompleteOrigins": 13
+        },
+        "excludedBetween": {
+          "expectedOrigins": 13,
+          "acceptedPairs": 13,
+          "missingOrIncompleteOrigins": 0
+        }
+      },
+      "wholeWindowSourceQuality": {
+        "oxygen": {
+          "total": 1344,
+          "accepted": 1344,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1344,
+          "accepted": 1344,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8065,
+          "accepted": 8065,
+          "excluded": []
+        }
+      },
+      "wholeWindowSourceQualityMeaning": "Archived source QA over the full 28-day query; not split-specific raw record counts"
+    }
+  ],
+  "selection": {
+    "comparators": {
+      "winter": {
+        "pairs": 619,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 619,
+              "maeMgL": 0.01873990306946685,
+              "rmseMgL": 0.0432896096880843,
+              "biasMgL": 0.0022617124394184204,
+              "p95AbsoluteErrorMgL": 0.09999999999999964,
+              "maximumAbsoluteErrorMgL": 0.10000000000000142
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 619,
+              "maeMgL": 0.028846643372908386,
+              "rmseMgL": 0.041678000057585866,
+              "biasMgL": 0.010641303042547675,
+              "p95AbsoluteErrorMgL": 0.0961146894378409,
+              "maximumAbsoluteErrorMgL": 0.12796099167562147
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 619
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 619,
+              "maeMgL": 0.025607080437540584,
+              "rmseMgL": 0.04104033592871239,
+              "biasMgL": 0.009161268914256952,
+              "p95AbsoluteErrorMgL": 0.09999999999999964,
+              "maximumAbsoluteErrorMgL": 0.12796099167562147
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 429
+          }
+        }
+      },
+      "spring": {
+        "pairs": 659,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 659,
+              "maeMgL": 0.07617602427921091,
+              "rmseMgL": 0.13904071957360098,
+              "biasMgL": 0.002124430955993928,
+              "p95AbsoluteErrorMgL": 0.3000000000000007,
+              "maximumAbsoluteErrorMgL": 1.0
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 659,
+              "maeMgL": 0.08459951401911865,
+              "rmseMgL": 0.13265606410115613,
+              "biasMgL": 0.004658339822624397,
+              "p95AbsoluteErrorMgL": 0.2887453736500602,
+              "maximumAbsoluteErrorMgL": 0.7761984173903951
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 659
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 659,
+              "maeMgL": 0.08445788502406766,
+              "rmseMgL": 0.132782309333903,
+              "biasMgL": 0.004136645743389807,
+              "p95AbsoluteErrorMgL": 0.2887453736500602,
+              "maximumAbsoluteErrorMgL": 0.7761984173903951
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 633
+          }
+        }
+      },
+      "summer": {
+        "pairs": 642,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 642,
+              "maeMgL": 0.18286604361370717,
+              "rmseMgL": 0.3250209674520847,
+              "biasMgL": 0.0006230529595015582,
+              "p95AbsoluteErrorMgL": 0.700000000000001,
+              "maximumAbsoluteErrorMgL": 2.5
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 642,
+              "maeMgL": 0.1797592170492558,
+              "rmseMgL": 0.29727800315272923,
+              "biasMgL": 0.001558439683119771,
+              "p95AbsoluteErrorMgL": 0.6583169486282634,
+              "maximumAbsoluteErrorMgL": 2.115653833322032
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 642
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 642,
+              "maeMgL": 0.1797592170492558,
+              "rmseMgL": 0.29727800315272923,
+              "biasMgL": 0.001558439683119771,
+              "p95AbsoluteErrorMgL": 0.6583169486282634,
+              "maximumAbsoluteErrorMgL": 2.115653833322032
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 642
+          }
+        }
+      },
+      "autumn": {
+        "pairs": 659,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 659,
+              "maeMgL": 0.0617602427921093,
+              "rmseMgL": 0.09954372385554425,
+              "biasMgL": 0.00015174506828528019,
+              "p95AbsoluteErrorMgL": 0.20000000000000107,
+              "maximumAbsoluteErrorMgL": 0.40000000000000036
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 659,
+              "maeMgL": 0.06939775873004013,
+              "rmseMgL": 0.0947330669998166,
+              "biasMgL": 0.005126666507497143,
+              "p95AbsoluteErrorMgL": 0.20892699604628825,
+              "maximumAbsoluteErrorMgL": 0.3332401000715546
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 659
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 659,
+              "maeMgL": 0.06908051682552704,
+              "rmseMgL": 0.09461482883616837,
+              "biasMgL": 0.004944371008578965,
+              "p95AbsoluteErrorMgL": 0.20833224343985074,
+              "maximumAbsoluteErrorMgL": 0.3332401000715546
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 640
+          }
+        }
+      }
+    },
+    "candidates": [
+      {
+        "thresholdMgL": 0,
+        "parts": {
+          "winter": {
+            "pairs": 619,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.01873990306946685,
+                  "rmseMgL": 0.0432896096880843,
+                  "biasMgL": 0.0022617124394184204,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.028846643372908386,
+                  "rmseMgL": 0.041678000057585866,
+                  "biasMgL": 0.010641303042547675,
+                  "p95AbsoluteErrorMgL": 0.0961146894378409,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 619
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.025607080437540584,
+                  "rmseMgL": 0.04104033592871239,
+                  "biasMgL": 0.009161268914256952,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 429
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.028846643372908386,
+                  "rmseMgL": 0.041678000057585866,
+                  "biasMgL": 0.010641303042547675,
+                  "p95AbsoluteErrorMgL": 0.0961146894378409,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 619
+              }
+            }
+          },
+          "spring": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07617602427921091,
+                  "rmseMgL": 0.13904071957360098,
+                  "biasMgL": 0.002124430955993928,
+                  "p95AbsoluteErrorMgL": 0.3000000000000007,
+                  "maximumAbsoluteErrorMgL": 1.0
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08459951401911865,
+                  "rmseMgL": 0.13265606410115613,
+                  "biasMgL": 0.004658339822624397,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08445788502406766,
+                  "rmseMgL": 0.132782309333903,
+                  "biasMgL": 0.004136645743389807,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 633
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08459951401911865,
+                  "rmseMgL": 0.13265606410115613,
+                  "biasMgL": 0.004658339822624397,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              }
+            }
+          },
+          "summer": {
+            "pairs": 642,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.18286604361370717,
+                  "rmseMgL": 0.3250209674520847,
+                  "biasMgL": 0.0006230529595015582,
+                  "p95AbsoluteErrorMgL": 0.700000000000001,
+                  "maximumAbsoluteErrorMgL": 2.5
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              }
+            }
+          },
+          "autumn": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.0617602427921093,
+                  "rmseMgL": 0.09954372385554425,
+                  "biasMgL": 0.00015174506828528019,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.40000000000000036
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06939775873004013,
+                  "rmseMgL": 0.0947330669998166,
+                  "biasMgL": 0.005126666507497143,
+                  "p95AbsoluteErrorMgL": 0.20892699604628825,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06908051682552704,
+                  "rmseMgL": 0.09461482883616837,
+                  "biasMgL": 0.004944371008578965,
+                  "p95AbsoluteErrorMgL": 0.20833224343985074,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 640
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06939775873004013,
+                  "rmseMgL": 0.0947330669998166,
+                  "biasMgL": 0.005126666507497143,
+                  "p95AbsoluteErrorMgL": 0.20892699604628825,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              }
+            }
+          }
+        },
+        "macroMAEMgL": 0.09065078329283074,
+        "selectionSummary": {
+          "thresholdMgL": 0,
+          "seasonalMAE": {
+            "winter": 0.028846643372908386,
+            "spring": 0.08459951401911865,
+            "summer": 0.1797592170492558,
+            "autumn": 0.06939775873004013
+          },
+          "nonzeroCorrections": 2579,
+          "invalidOrNegativePredictions": 0
+        },
+        "screen": {
+          "passed": false,
+          "macroGainOverPersistenceMgL": -0.005765229854207188,
+          "windowLossAgainstPersistenceMgL": {
+            "winter": 0.010106740303441535,
+            "spring": 0.008423489739907739,
+            "summer": -0.0031068265644513815,
+            "autumn": 0.007637515937930828
+          },
+          "invalidOrNegativePredictions": 0
+        }
+      },
+      {
+        "thresholdMgL": 0.025,
+        "parts": {
+          "winter": {
+            "pairs": 619,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.01873990306946685,
+                  "rmseMgL": 0.0432896096880843,
+                  "biasMgL": 0.0022617124394184204,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.028846643372908386,
+                  "rmseMgL": 0.041678000057585866,
+                  "biasMgL": 0.010641303042547675,
+                  "p95AbsoluteErrorMgL": 0.0961146894378409,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 619
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.025607080437540584,
+                  "rmseMgL": 0.04104033592871239,
+                  "biasMgL": 0.009161268914256952,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 429
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.021697480420670805,
+                  "rmseMgL": 0.04136755496973297,
+                  "biasMgL": 0.008076965067896617,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 138
+              }
+            }
+          },
+          "spring": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07617602427921091,
+                  "rmseMgL": 0.13904071957360098,
+                  "biasMgL": 0.002124430955993928,
+                  "p95AbsoluteErrorMgL": 0.3000000000000007,
+                  "maximumAbsoluteErrorMgL": 1.0
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08459951401911865,
+                  "rmseMgL": 0.13265606410115613,
+                  "biasMgL": 0.004658339822624397,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08445788502406766,
+                  "rmseMgL": 0.132782309333903,
+                  "biasMgL": 0.004136645743389807,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 633
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08047395240946095,
+                  "rmseMgL": 0.13280484397335035,
+                  "biasMgL": 0.00393844937102035,
+                  "p95AbsoluteErrorMgL": 0.29751654352395096,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 252
+              }
+            }
+          },
+          "summer": {
+            "pairs": 642,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.18286604361370717,
+                  "rmseMgL": 0.3250209674520847,
+                  "biasMgL": 0.0006230529595015582,
+                  "p95AbsoluteErrorMgL": 0.700000000000001,
+                  "maximumAbsoluteErrorMgL": 2.5
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1784057732606978,
+                  "rmseMgL": 0.2972536684502715,
+                  "biasMgL": 0.0012609364380125117,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 381
+              }
+            }
+          },
+          "autumn": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.0617602427921093,
+                  "rmseMgL": 0.09954372385554425,
+                  "biasMgL": 0.00015174506828528019,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.40000000000000036
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06939775873004013,
+                  "rmseMgL": 0.0947330669998166,
+                  "biasMgL": 0.005126666507497143,
+                  "p95AbsoluteErrorMgL": 0.20892699604628825,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06908051682552704,
+                  "rmseMgL": 0.09461482883616837,
+                  "biasMgL": 0.004944371008578965,
+                  "p95AbsoluteErrorMgL": 0.20833224343985074,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 640
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06557715102632551,
+                  "rmseMgL": 0.09416656947423119,
+                  "biasMgL": 0.0038055254961680282,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 286
+              }
+            }
+          }
+        },
+        "macroMAEMgL": 0.08653858927928876,
+        "selectionSummary": {
+          "thresholdMgL": 0.025,
+          "seasonalMAE": {
+            "winter": 0.021697480420670805,
+            "spring": 0.08047395240946095,
+            "summer": 0.1784057732606978,
+            "autumn": 0.06557715102632551
+          },
+          "nonzeroCorrections": 1057,
+          "invalidOrNegativePredictions": 0
+        },
+        "screen": {
+          "passed": false,
+          "macroGainOverPersistenceMgL": -0.0016530358406652013,
+          "windowLossAgainstPersistenceMgL": {
+            "winter": 0.0029575773512039542,
+            "spring": 0.004297928130250039,
+            "summer": -0.004460270353009388,
+            "autumn": 0.0038169082342162097
+          },
+          "invalidOrNegativePredictions": 0
+        }
+      },
+      {
+        "thresholdMgL": 0.05,
+        "parts": {
+          "winter": {
+            "pairs": 619,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.01873990306946685,
+                  "rmseMgL": 0.0432896096880843,
+                  "biasMgL": 0.0022617124394184204,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.028846643372908386,
+                  "rmseMgL": 0.041678000057585866,
+                  "biasMgL": 0.010641303042547675,
+                  "p95AbsoluteErrorMgL": 0.0961146894378409,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 619
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.025607080437540584,
+                  "rmseMgL": 0.04104033592871239,
+                  "biasMgL": 0.009161268914256952,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 429
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.018581315322822114,
+                  "rmseMgL": 0.04244283614265853,
+                  "biasMgL": 0.0034078315346522973,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 15
+              }
+            }
+          },
+          "spring": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07617602427921091,
+                  "rmseMgL": 0.13904071957360098,
+                  "biasMgL": 0.002124430955993928,
+                  "p95AbsoluteErrorMgL": 0.3000000000000007,
+                  "maximumAbsoluteErrorMgL": 1.0
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08459951401911865,
+                  "rmseMgL": 0.13265606410115613,
+                  "biasMgL": 0.004658339822624397,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08445788502406766,
+                  "rmseMgL": 0.132782309333903,
+                  "biasMgL": 0.004136645743389807,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 633
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07657578003900241,
+                  "rmseMgL": 0.1313998251217271,
+                  "biasMgL": 0.004334404756663365,
+                  "p95AbsoluteErrorMgL": 0.29999999999999893,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 120
+              }
+            }
+          },
+          "summer": {
+            "pairs": 642,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.18286604361370717,
+                  "rmseMgL": 0.3250209674520847,
+                  "biasMgL": 0.0006230529595015582,
+                  "p95AbsoluteErrorMgL": 0.700000000000001,
+                  "maximumAbsoluteErrorMgL": 2.5
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.17594395581697733,
+                  "rmseMgL": 0.2960969222097306,
+                  "biasMgL": 5.1632652649258763e-05,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 248
+              }
+            }
+          },
+          "autumn": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.0617602427921093,
+                  "rmseMgL": 0.09954372385554425,
+                  "biasMgL": 0.00015174506828528019,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.40000000000000036
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06939775873004013,
+                  "rmseMgL": 0.0947330669998166,
+                  "biasMgL": 0.005126666507497143,
+                  "p95AbsoluteErrorMgL": 0.20892699604628825,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06908051682552704,
+                  "rmseMgL": 0.09461482883616837,
+                  "biasMgL": 0.004944371008578965,
+                  "p95AbsoluteErrorMgL": 0.20833224343985074,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 640
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.0620173310595911,
+                  "rmseMgL": 0.09394954609213241,
+                  "biasMgL": 0.0030807354742888684,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.3000000000000007
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 119
+              }
+            }
+          }
+        },
+        "macroMAEMgL": 0.08327959555959824,
+        "selectionSummary": {
+          "thresholdMgL": 0.05,
+          "seasonalMAE": {
+            "winter": 0.018581315322822114,
+            "spring": 0.07657578003900241,
+            "summer": 0.17594395581697733,
+            "autumn": 0.0620173310595911
+          },
+          "nonzeroCorrections": 502,
+          "invalidOrNegativePredictions": 0
+        },
+        "screen": {
+          "passed": false,
+          "macroGainOverPersistenceMgL": 0.001605957879025316,
+          "windowLossAgainstPersistenceMgL": {
+            "winter": -0.00015858774664473732,
+            "spring": 0.00039975575979149525,
+            "summer": -0.006922087796729842,
+            "autumn": 0.0002570882674817962
+          },
+          "invalidOrNegativePredictions": 0
+        }
+      },
+      {
+        "thresholdMgL": 0.1,
+        "parts": {
+          "winter": {
+            "pairs": 619,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.01873990306946685,
+                  "rmseMgL": 0.0432896096880843,
+                  "biasMgL": 0.0022617124394184204,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.028846643372908386,
+                  "rmseMgL": 0.041678000057585866,
+                  "biasMgL": 0.010641303042547675,
+                  "p95AbsoluteErrorMgL": 0.0961146894378409,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 619
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.025607080437540584,
+                  "rmseMgL": 0.04104033592871239,
+                  "biasMgL": 0.009161268914256952,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 429
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.01873990306946685,
+                  "rmseMgL": 0.0432896096880843,
+                  "biasMgL": 0.0022617124394184204,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              }
+            }
+          },
+          "spring": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07617602427921091,
+                  "rmseMgL": 0.13904071957360098,
+                  "biasMgL": 0.002124430955993928,
+                  "p95AbsoluteErrorMgL": 0.3000000000000007,
+                  "maximumAbsoluteErrorMgL": 1.0
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08459951401911865,
+                  "rmseMgL": 0.13265606410115613,
+                  "biasMgL": 0.004658339822624397,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08445788502406766,
+                  "rmseMgL": 0.132782309333903,
+                  "biasMgL": 0.004136645743389807,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 633
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07408753043726914,
+                  "rmseMgL": 0.13011518398277927,
+                  "biasMgL": 0.004957567443179216,
+                  "p95AbsoluteErrorMgL": 0.29999999999999893,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 31
+              }
+            }
+          },
+          "summer": {
+            "pairs": 642,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.18286604361370717,
+                  "rmseMgL": 0.3250209674520847,
+                  "biasMgL": 0.0006230529595015582,
+                  "p95AbsoluteErrorMgL": 0.700000000000001,
+                  "maximumAbsoluteErrorMgL": 2.5
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.17413851922356471,
+                  "rmseMgL": 0.29259106125019707,
+                  "biasMgL": 0.001350472350238961,
+                  "p95AbsoluteErrorMgL": 0.6571360750099206,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 125
+              }
+            }
+          },
+          "autumn": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.0617602427921093,
+                  "rmseMgL": 0.09954372385554425,
+                  "biasMgL": 0.00015174506828528019,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.40000000000000036
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06939775873004013,
+                  "rmseMgL": 0.0947330669998166,
+                  "biasMgL": 0.005126666507497143,
+                  "p95AbsoluteErrorMgL": 0.20892699604628825,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06908051682552704,
+                  "rmseMgL": 0.09461482883616837,
+                  "biasMgL": 0.004944371008578965,
+                  "p95AbsoluteErrorMgL": 0.20833224343985074,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 640
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.060692079175314925,
+                  "rmseMgL": 0.09508111977084263,
+                  "biasMgL": 0.002046241979312172,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.3000000000000007
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 20
+              }
+            }
+          }
+        },
+        "macroMAEMgL": 0.0819145079764039,
+        "selectionSummary": {
+          "thresholdMgL": 0.1,
+          "seasonalMAE": {
+            "winter": 0.01873990306946685,
+            "spring": 0.07408753043726914,
+            "summer": 0.17413851922356471,
+            "autumn": 0.060692079175314925
+          },
+          "nonzeroCorrections": 176,
+          "invalidOrNegativePredictions": 0
+        },
+        "screen": {
+          "passed": true,
+          "macroGainOverPersistenceMgL": 0.002971045462219657,
+          "windowLossAgainstPersistenceMgL": {
+            "winter": 0.0,
+            "spring": -0.002088493841941777,
+            "summer": -0.00872752439014246,
+            "autumn": -0.0010681636167943764
+          },
+          "invalidOrNegativePredictions": 0
+        }
+      },
+      {
+        "thresholdMgL": 0.2,
+        "parts": {
+          "winter": {
+            "pairs": 619,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.01873990306946685,
+                  "rmseMgL": 0.0432896096880843,
+                  "biasMgL": 0.0022617124394184204,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.028846643372908386,
+                  "rmseMgL": 0.041678000057585866,
+                  "biasMgL": 0.010641303042547675,
+                  "p95AbsoluteErrorMgL": 0.0961146894378409,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 619
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.025607080437540584,
+                  "rmseMgL": 0.04104033592871239,
+                  "biasMgL": 0.009161268914256952,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.12796099167562147
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 429
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 619,
+                  "maeMgL": 0.01873990306946685,
+                  "rmseMgL": 0.0432896096880843,
+                  "biasMgL": 0.0022617124394184204,
+                  "p95AbsoluteErrorMgL": 0.09999999999999964,
+                  "maximumAbsoluteErrorMgL": 0.10000000000000142
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              }
+            }
+          },
+          "spring": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07617602427921091,
+                  "rmseMgL": 0.13904071957360098,
+                  "biasMgL": 0.002124430955993928,
+                  "p95AbsoluteErrorMgL": 0.3000000000000007,
+                  "maximumAbsoluteErrorMgL": 1.0
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08459951401911865,
+                  "rmseMgL": 0.13265606410115613,
+                  "biasMgL": 0.004658339822624397,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.08445788502406766,
+                  "rmseMgL": 0.132782309333903,
+                  "biasMgL": 0.004136645743389807,
+                  "p95AbsoluteErrorMgL": 0.2887453736500602,
+                  "maximumAbsoluteErrorMgL": 0.7761984173903951
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 633
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.07484652408087906,
+                  "rmseMgL": 0.13201429660726527,
+                  "biasMgL": 0.002846950881184668,
+                  "p95AbsoluteErrorMgL": 0.3000000000000007,
+                  "maximumAbsoluteErrorMgL": 0.6999999999999993
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 5
+              }
+            }
+          },
+          "summer": {
+            "pairs": 642,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.18286604361370717,
+                  "rmseMgL": 0.3250209674520847,
+                  "biasMgL": 0.0006230529595015582,
+                  "p95AbsoluteErrorMgL": 0.700000000000001,
+                  "maximumAbsoluteErrorMgL": 2.5
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.1797592170492558,
+                  "rmseMgL": 0.29727800315272923,
+                  "biasMgL": 0.001558439683119771,
+                  "p95AbsoluteErrorMgL": 0.6583169486282634,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 642
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 642,
+                  "maeMgL": 0.17436764496790982,
+                  "rmseMgL": 0.2928876259178086,
+                  "biasMgL": 0.0031950670972415354,
+                  "p95AbsoluteErrorMgL": 0.6582296463364142,
+                  "maximumAbsoluteErrorMgL": 2.115653833322032
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 53
+              }
+            }
+          },
+          "autumn": {
+            "pairs": 659,
+            "methods": {
+              "persistence": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.0617602427921093,
+                  "rmseMgL": 0.09954372385554425,
+                  "biasMgL": 0.00015174506828528019,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.40000000000000036
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              },
+              "same-frozen-ridge-without-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06939775873004013,
+                  "rmseMgL": 0.0947330669998166,
+                  "biasMgL": 0.005126666507497143,
+                  "p95AbsoluteErrorMgL": 0.20892699604628825,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 659
+              },
+              "same-frozen-ridge-with-fallback": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.06908051682552704,
+                  "rmseMgL": 0.09461482883616837,
+                  "biasMgL": 0.004944371008578965,
+                  "p95AbsoluteErrorMgL": 0.20833224343985074,
+                  "maximumAbsoluteErrorMgL": 0.3332401000715546
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 640
+              },
+              "small-correction-filter": {
+                "scores": {
+                  "pairs": 659,
+                  "maeMgL": 0.0617602427921093,
+                  "rmseMgL": 0.09954372385554425,
+                  "biasMgL": 0.00015174506828528019,
+                  "p95AbsoluteErrorMgL": 0.20000000000000107,
+                  "maximumAbsoluteErrorMgL": 0.40000000000000036
+                },
+                "nonfinitePredictions": 0,
+                "negativePredictions": 0,
+                "nonzeroCorrections": 0
+              }
+            }
+          }
+        },
+        "macroMAEMgL": 0.08242857872759127,
+        "selectionSummary": {
+          "thresholdMgL": 0.2,
+          "seasonalMAE": {
+            "winter": 0.01873990306946685,
+            "spring": 0.07484652408087906,
+            "summer": 0.17436764496790982,
+            "autumn": 0.0617602427921093
+          },
+          "nonzeroCorrections": 58,
+          "invalidOrNegativePredictions": 0
+        },
+        "screen": {
+          "passed": true,
+          "macroGainOverPersistenceMgL": 0.0024569747110322893,
+          "windowLossAgainstPersistenceMgL": {
+            "winter": 0.0,
+            "spring": -0.0013295001983318483,
+            "summer": -0.00849839864579735,
+            "autumn": 0.0
+          },
+          "invalidOrNegativePredictions": 0
+        }
+      }
+    ],
+    "choice": {
+      "decision": "candidate-for-later-development-check",
+      "thresholdMgL": 0.1,
+      "eligibleCandidates": 2,
+      "selectionMacroMAEMgL": 0.0819145079764039
+    }
+  },
+  "laterCheck": {
+    "thresholdMgL": 0.1,
+    "parts": {
+      "winter": {
+        "pairs": 644,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 644,
+              "maeMgL": 0.015217391304347832,
+              "rmseMgL": 0.03900947488027472,
+              "biasMgL": -0.0012422360248447216,
+              "p95AbsoluteErrorMgL": 0.09999999999999964,
+              "maximumAbsoluteErrorMgL": 0.10000000000000142
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 644,
+              "maeMgL": 0.028080765345879305,
+              "rmseMgL": 0.04137279087930782,
+              "biasMgL": 0.003104222283217733,
+              "p95AbsoluteErrorMgL": 0.10419849578591674,
+              "maximumAbsoluteErrorMgL": 0.13035360343203983
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 644
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 644,
+              "maeMgL": 0.02353293154117392,
+              "rmseMgL": 0.039810534359146464,
+              "biasMgL": 0.001020017959522012,
+              "p95AbsoluteErrorMgL": 0.09999999999999964,
+              "maximumAbsoluteErrorMgL": 0.13035360343203983
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 400
+          },
+          "small-correction-filter": {
+            "scores": {
+              "pairs": 644,
+              "maeMgL": 0.015217391304347832,
+              "rmseMgL": 0.03900947488027472,
+              "biasMgL": -0.0012422360248447216,
+              "p95AbsoluteErrorMgL": 0.09999999999999964,
+              "maximumAbsoluteErrorMgL": 0.10000000000000142
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          }
+        }
+      },
+      "spring": {
+        "pairs": 648,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 648,
+              "maeMgL": 0.09043209876543205,
+              "rmseMgL": 0.1606314699422329,
+              "biasMgL": 5.482582837655094e-18,
+              "p95AbsoluteErrorMgL": 0.3999999999999986,
+              "maximumAbsoluteErrorMgL": 1.0
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 648,
+              "maeMgL": 0.0947504347407909,
+              "rmseMgL": 0.14703136857578147,
+              "biasMgL": 0.002043507163974236,
+              "p95AbsoluteErrorMgL": 0.31874559721328655,
+              "maximumAbsoluteErrorMgL": 0.9651263836940256
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 648
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 648,
+              "maeMgL": 0.09471113245061479,
+              "rmseMgL": 0.1470830569781904,
+              "biasMgL": 0.0019029926094166,
+              "p95AbsoluteErrorMgL": 0.31874559721328655,
+              "maximumAbsoluteErrorMgL": 0.9651263836940256
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 632
+          },
+          "small-correction-filter": {
+            "scores": {
+              "pairs": 648,
+              "maeMgL": 0.0864195874566376,
+              "rmseMgL": 0.14534865596674568,
+              "biasMgL": 0.0029186307446388542,
+              "p95AbsoluteErrorMgL": 0.3000000000000007,
+              "maximumAbsoluteErrorMgL": 1.0
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 48
+          }
+        }
+      },
+      "summer": {
+        "pairs": 643,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 643,
+              "maeMgL": 0.22208398133748053,
+              "rmseMgL": 0.3548815323763311,
+              "biasMgL": -0.00653188180404355,
+              "p95AbsoluteErrorMgL": 0.8000000000000007,
+              "maximumAbsoluteErrorMgL": 2.0
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 643,
+              "maeMgL": 0.20938623158057387,
+              "rmseMgL": 0.31114765325263305,
+              "biasMgL": -0.00874465569892271,
+              "p95AbsoluteErrorMgL": 0.7037638584486855,
+              "maximumAbsoluteErrorMgL": 1.578844322365617
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 643
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 643,
+              "maeMgL": 0.20938623158057387,
+              "rmseMgL": 0.31114765325263305,
+              "biasMgL": -0.00874465569892271,
+              "p95AbsoluteErrorMgL": 0.7037638584486855,
+              "maximumAbsoluteErrorMgL": 1.578844322365617
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 643
+          },
+          "small-correction-filter": {
+            "scores": {
+              "pairs": 643,
+              "maeMgL": 0.2047662037173109,
+              "rmseMgL": 0.3103320658038521,
+              "biasMgL": -0.004974080574389751,
+              "p95AbsoluteErrorMgL": 0.7000000000000008,
+              "maximumAbsoluteErrorMgL": 1.5999999999999996
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 168
+          }
+        }
+      },
+      "autumn": {
+        "pairs": 647,
+        "methods": {
+          "persistence": {
+            "scores": {
+              "pairs": 647,
+              "maeMgL": 0.04621329211746529,
+              "rmseMgL": 0.0787263371872735,
+              "biasMgL": -0.0004636785162287464,
+              "p95AbsoluteErrorMgL": 0.1999999999999993,
+              "maximumAbsoluteErrorMgL": 0.3000000000000007
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "scores": {
+              "pairs": 647,
+              "maeMgL": 0.055386173960985295,
+              "rmseMgL": 0.07647267076963445,
+              "biasMgL": 0.006278314525378767,
+              "p95AbsoluteErrorMgL": 0.15107590664316092,
+              "maximumAbsoluteErrorMgL": 0.2896627329514505
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 647
+          },
+          "same-frozen-ridge-with-fallback": {
+            "scores": {
+              "pairs": 647,
+              "maeMgL": 0.05496551306144255,
+              "rmseMgL": 0.07637503818810898,
+              "biasMgL": 0.006360953474246672,
+              "p95AbsoluteErrorMgL": 0.15107590664316092,
+              "maximumAbsoluteErrorMgL": 0.2896627329514505
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 614
+          },
+          "small-correction-filter": {
+            "scores": {
+              "pairs": 647,
+              "maeMgL": 0.04568537968816321,
+              "rmseMgL": 0.07760216510222644,
+              "biasMgL": 6.42339130733335e-05,
+              "p95AbsoluteErrorMgL": 0.1999999999999993,
+              "maximumAbsoluteErrorMgL": 0.3000000000000007
+            },
+            "nonfinitePredictions": 0,
+            "negativePredictions": 0,
+            "nonzeroCorrections": 5
+          }
+        }
+      }
+    },
+    "macroMAEMgL": {
+      "persistence": 0.09348669088118143,
+      "same-frozen-ridge-without-fallback": 0.09690090140705734,
+      "same-frozen-ridge-with-fallback": 0.09564895215845129,
+      "small-correction-filter": 0.08802214054161489
+    },
+    "screen": {
+      "passed": true,
+      "macroGainOverPersistenceMgL": 0.00546455033956654,
+      "windowLossAgainstPersistenceMgL": {
+        "winter": 0.0,
+        "spring": -0.004012511308794459,
+        "summer": -0.017317777620169617,
+        "autumn": -0.0005279124293020784
+      },
+      "invalidOrNegativePredictions": 0
+    },
+    "otherThresholdsScored": false
+  },
+  "limitations": [
+    "Both temporal parts were previously inspected; the later check is development, not independent validation",
+    "No statistical confidence or practical environmental benefit is established by the arithmetic acceptance screen",
+    "Finalized archives do not prove historical as-of-origin availability or prospective forecast skill"
+  ],
+  "mission": "Verifiable environmental evidence supporting community and youth decision rights; no Oracle, governance, quorum, treasury, token or spending change"
+}

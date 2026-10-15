@@ -9,4 +9,5 @@ docs/datasets/usgs-willamette-multiseason/*/*.gz -text
 docs/evidence/willamette-forecast/*.gz -text
 docs/evidence/willamette-multiseason/*.gz -text
 docs/datasets/usgs-willamette-stability/*/*.gz -text
+docs/datasets/owasco-lake-transfer/*.gz -text
 docs/evidence/willamette-stability/*.gz -text

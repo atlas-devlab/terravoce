@@ -2,8 +2,9 @@
 
 [English explanation](WILLAMETTE_THRESHOLD_DEVELOPMENT_EN.md).
 
-**Prima fissiamo come scegliere la soglia; poi faremo i conti sui dati già
-studiati. Oggi nessuna soglia è stata scelta o dimostrata migliore.**
+**Questo documento conserva il piano fissato prima del confronto delle soglie.**
+La fase successiva ha selezionato 0,10 mg/L esclusivamente sullo sviluppo
+Willamette: [risultati e successiva prova lacustre](OWASCO_LAKE_TRANSFER.md).
 La MAE, cioè la media degli errori assoluti in mg/L, resta il criterio principale.
 
 ## 1. Un esempio semplice
@@ -96,10 +97,12 @@ Il [protocollo](datasets/willamette-threshold-development/protocol.json) e lo
 separazione temporale e criteri. I test sintetici controllano i casi limite.
 Il preflight può leggere l'archivio esistente per verificarne integrità e
 divisione temporale; non calcola gli errori reali delle cinque candidate.
-Il selettore viene provato su riepiloghi inventati nei test; il runner che
-calcola le MAE reali non è ancora implementato o eseguito. Questa fase non
-seleziona una soglia, non riaddestra, non acquisisce nuovi target e non
-definisce il calendario del nuovo test a un'ora. Dalla radice della repository:
+Al momento della pubblicazione del piano, il selettore era provato soltanto
+su riepiloghi inventati e il runner reale non era ancora eseguito. In seguito
+il [runner](../scripts/evaluate_threshold_development.py) è stato committato
+prima del confronto: il [risultato di sviluppo](evidence/willamette-threshold-development/evaluation.json)
+seleziona 0,10 mg/L, senza riaddestrare. Il protocollo originale rimane intatto.
+Dalla radice della repository:
 
 ```sh
 python scripts/threshold_development.py preflight
