@@ -148,9 +148,16 @@ Full replay reproduces the report with maximum difference 0.0. A separate
 arithmetic audit, written after evaluation, rebuilds all origins, features,
 forecasts and scores from original JSON without importing experiment modules;
 its observed difference is also 0.0, within 1e-9 tolerance. This is independent
-code verification, not an independent measurement of the river. All 63 Python
+code verification, not an independent measurement of the river. All 65 Python
 and 5 Node tests pass, including future-label separation, tamper rejection
 and exclusive capture reservation.
+
+The first full Linux CI run reproduced the forecast within 1.11e-16 mg/L,
+but stopped on exact equality of the additional Windows audit receipt. That
+post-evaluation check now applies the existing 1e-9 arithmetic tolerance to
+floats only. Counts, discrete types, hashes and timestamps remain exact. Two
+specific tests cover accepted platform roundoff and rejected altered metrics
+or discrete evidence. The frozen evaluation code and model recipe are unchanged.
 
 See the [JSON summary](evidence/willamette-stability/summary.json),
 [full compressed report](evidence/willamette-stability/evaluation.json.gz)

@@ -10,6 +10,8 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
+from audit_stability_compare import assert_same_receipt
+
 root = Path(sys.argv[1]).resolve()
 dataset = root / "docs/datasets/usgs-willamette-stability"
 report_path = root / "docs/evidence/willamette-stability/evaluation.json.gz"
@@ -132,7 +134,9 @@ result = {"verified": True, "networkUsed": False, "modelFitted": False,
           "windows": summaries}
 receipt = report_path.parent / "independent-check.json"
 if receipt.exists():
-    assert json.loads(receipt.read_text(encoding="utf-8-sig")) == result, "Saved independent audit differs"
+    # Linux and Windows libm may differ below the experiment's existing 1e-9
+    # tolerance. Hashes, counts, types, timestamps and field sets remain exact.
+    assert_same_receipt(result, json.loads(receipt.read_text(encoding="utf-8-sig")))
 brief = {k: v for k, v in report.items() if k != "windows"}
 brief["fullReportRawSha256"] = digest(report_bytes)
 brief["windows"] = [{k: v for k, v in w.items() if k != "rows"} for w in report["windows"]]

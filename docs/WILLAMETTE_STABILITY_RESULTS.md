@@ -155,8 +155,16 @@ ottenuto differenza massima 0,0. Un secondo programma, scritto dopo la valutazio
 per controllarne l'aritmetica, ricostruisce tutte le origini e le previsioni dai
 JSON originali senza importare i moduli dell'esperimento: coincide entro 1e-9,
 con differenza osservata 0,0. È un controllo indipendente del codice e del
-calcolo, non una seconda misura indipendente del fiume. La suite passa 63 test
+calcolo, non una seconda misura indipendente del fiume. La suite passa 65 test
 Python e 5 test Node, inclusi leakage temporale, manomissioni e doppio avvio.
+
+Il primo controllo CI completo ha riprodotto la previsione su Linux entro
+1,11e-16 mg/L, ma si è fermato sul confronto esatto della ricevuta aggiuntiva
+creata su Windows. Quel controllo ora usa la tolleranza aritmetica già fissata
+di 1e-9 soltanto per i float. Conteggi, tipi discreti, impronte e timestamp
+rimangono esatti. Due test specifici controllano sia le differenze di piattaforma
+ammesse sia il rifiuto di metriche o prove alterate. La modifica riguarda il
+controllo aggiuntivo scritto dopo il test, non la ricetta o il codice congelato.
 
 Il [riepilogo JSON](evidence/willamette-stability/summary.json) contiene
 conteggi, metriche e impronte; il [rapporto completo compresso](evidence/willamette-stability/evaluation.json.gz)
