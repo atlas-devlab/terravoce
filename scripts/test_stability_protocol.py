@@ -5,6 +5,7 @@ import math
 import shutil
 import tempfile
 import unittest
+from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
@@ -24,6 +25,21 @@ class StabilityProtocolTests(unittest.TestCase):
     def definition(self):
         spec = json.loads((trial.ROOT / trial.PROTOCOL).read_bytes())
         return spec, trial.previous_windows(trial.ROOT)
+
+    @contextmanager
+    def uncaptured_fixture(self):
+        """The pre-capture guard is tested in isolation, also after the real run."""
+        work = trial.ROOT / "work"
+        work.mkdir(exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="stability-preflight-", dir=work) as temporary:
+            root = Path(temporary).resolve()
+            self.assertTrue(root.is_relative_to(work.resolve()))
+            for filename in [*trial.PREVIOUS_FILES, str(trial.PROTOCOL),
+                             "docs/evidence/willamette-multiseason/frozen-model.json"]:
+                destination = root / filename
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(trial.ROOT / filename, destination)
+            yield root
 
     def test_flat_history_suppresses_the_entire_ridge_correction(self):
         history = self.history()
@@ -154,8 +170,9 @@ class StabilityProtocolTests(unittest.TestCase):
                         trial.validate_definition(spec, seen + [old])
 
     def test_preflight_checks_only_existing_metadata_and_keeps_experiment_unexecuted(self):
-        with patch.object(trial.shared, "decimal_ridge", side_effect=AssertionError("Unexpected training")):
-            result = trial.preflight(trial.ROOT)
+        with self.uncaptured_fixture() as root:
+            with patch.object(trial.shared, "decimal_ridge", side_effect=AssertionError("Unexpected training")):
+                result = trial.preflight(root)
         self.assertTrue(result["protocolVerified"])
         self.assertEqual(result["horizonSeconds"], 3600)
         self.assertEqual(result["previouslyInspectedWindowsChecked"], 11)
@@ -167,16 +184,8 @@ class StabilityProtocolTests(unittest.TestCase):
             self.assertFalse(result[key], key)
 
     def test_preflight_rejects_altered_weights_and_already_present_capture(self):
-        work = trial.ROOT / "work"
-        work.mkdir(exist_ok=True)
-        with tempfile.TemporaryDirectory(prefix="stability-preflight-", dir=work) as temporary:
-            root = Path(temporary).resolve()
-            self.assertTrue(root.is_relative_to(work.resolve()))
+        with self.uncaptured_fixture() as root:
             model_path = "docs/evidence/willamette-multiseason/frozen-model.json"
-            for filename in [*trial.PREVIOUS_FILES, str(trial.PROTOCOL), model_path]:
-                destination = root / filename
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(trial.ROOT / filename, destination)
             model = root / model_path
             original = model.read_bytes()
             model.write_bytes(original + b" ")

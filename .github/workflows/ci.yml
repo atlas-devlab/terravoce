@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0 # Offline stability replay checks the implementation's earlier Git commit.
 
       - name: Set up Node.js 24
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -94,7 +95,12 @@ jobs:
           python3 scripts/experiment_multiseason.py verify-fit
           python3 scripts/experiment_multiseason.py verify
           python3 scripts/forecast_diagnostics.py verify
-          python3 scripts/stability_protocol.py
+          node --test scripts/test-capture-stability.mjs
+          if [ -f docs/evidence/willamette-stability/evaluation.json.gz ]; then
+            python3 scripts/evaluate_stability.py verify --report docs/evidence/willamette-stability/evaluation.json.gz
+          else
+            python3 scripts/stability_protocol.py
+          fi
 
       - name: Test four replicas with node outages
         if: github.event_name == 'workflow_dispatch'
