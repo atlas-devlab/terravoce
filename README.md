@@ -108,6 +108,15 @@ promoted. Run `pnpm forecast:stability:verify` for offline replay and
 `python scripts/audit_stability_evidence.py .` for the separate arithmetic
 check. See the [executed notebook](docs/notebooks/willamette-stability.ipynb).
 
+The subsequent [error-mechanism diagnosis](docs/WILLAMETTE_ERROR_MECHANISMS_EN.md)
+([Italian](docs/WILLAMETTE_ERROR_MECHANISMS.md)) accounts for the same 5,213
+pairs: gains on changing published values do not offset corrections when the
+target stays unchanged. It includes two deterministic extreme examples and an
+[executed companion notebook](docs/notebooks/willamette-error-mechanisms.ipynb).
+Run `python scripts/diagnose_stability_errors.py verify` to reproduce it offline.
+This is post-hoc development evidence; a small-correction filter remains a
+proposal, with no new threshold, fit or final validation.
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small

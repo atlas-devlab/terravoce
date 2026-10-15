@@ -1,0 +1,1719 @@
+{
+  "version": "willamette-posthoc-error-mechanisms-v1",
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "inputs": [
+    {
+      "file": "docs/evidence/willamette-stability/evaluation.json.gz",
+      "rawSha256": "5295b0a92a3f6d7c6dbec2efce5cbe1f407cbc5307fa992c4b48d479f020545f"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+      "rawSha256": "72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+    }
+  ],
+  "completedProtocolHash": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522",
+  "pairs": 5213,
+  "methods": [
+    "persistence",
+    "same-frozen-ridge-without-fallback",
+    "same-frozen-ridge-with-fallback"
+  ],
+  "seasonal": [
+    {
+      "window": {
+        "id": "winter-february-2025",
+        "season": "winter",
+        "start": "2025-02-01T00:00:00Z",
+        "end": "2025-03-01T00:00:00Z"
+      },
+      "pairs": 1276,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.017084639498432592,
+          "mseMgL2": 0.0017084639498432586,
+          "rmseMgL": 0.041333569285064875,
+          "biasMgL": 0.0004702194357366782
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.028468608291398308,
+          "mseMgL2": 0.0017304829769996112,
+          "rmseMgL": 0.04159907423248276,
+          "biasMgL": 0.006686285348672729
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.024585993270819794,
+          "mseMgL2": 0.001638771752666651,
+          "rmseMgL": 0.04048174591919982,
+          "biasMgL": 0.004932173772781858
+        }
+      }
+    },
+    {
+      "window": {
+        "id": "spring-may-2025",
+        "season": "spring",
+        "start": "2025-05-01T00:00:00Z",
+        "end": "2025-05-29T00:00:00Z"
+      },
+      "pairs": 1320,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.08333333333333331,
+          "mseMgL2": 0.022454545454545446,
+          "rmseMgL": 0.14984840824828752,
+          "biasMgL": 0.0009090909090909113
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.08981268826469024,
+          "mseMgL2": 0.01953800347325193,
+          "rmseMgL": 0.1397784084658712,
+          "biasMgL": 0.0030100249938954855
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.08972268721031697,
+          "mseMgL2": 0.01956219620087641,
+          "rmseMgL": 0.139864921266472,
+          "biasMgL": 0.0026805933048281044
+        }
+      }
+    },
+    {
+      "window": {
+        "id": "summer-june-2025",
+        "season": "summer",
+        "start": "2025-06-01T00:00:00Z",
+        "end": "2025-06-29T00:00:00Z"
+      },
+      "pairs": 1298,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.2016949152542373,
+          "mseMgL2": 0.11489984591679506,
+          "rmseMgL": 0.33896879785135836,
+          "biasMgL": -0.0027734976887519285
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.19359997086351616,
+          "mseMgL2": 0.09184861236409074,
+          "rmseMgL": 0.3030653598880788,
+          "biasMgL": -0.0035510091434239432
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.19359997086351616,
+          "mseMgL2": 0.09184861236409074,
+          "rmseMgL": 0.3030653598880788,
+          "biasMgL": -0.0035510091434239432
+        }
+      }
+    },
+    {
+      "window": {
+        "id": "autumn-november-2025",
+        "season": "autumn",
+        "start": "2025-11-01T00:00:00Z",
+        "end": "2025-11-29T00:00:00Z"
+      },
+      "pairs": 1319,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.05398028809704327,
+          "mseMgL2": 0.008036391205458697,
+          "rmseMgL": 0.08964592129851028,
+          "biasMgL": -0.00015163002274450288
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.062337465506588224,
+          "mseMgL2": 0.007390036547663733,
+          "rmseMgL": 0.08596532177374626,
+          "biasMgL": 0.005574036016942192
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.061972620914413655,
+          "mseMgL2": 0.0073715309251365935,
+          "rmseMgL": 0.08585762007612716,
+          "biasMgL": 0.005523493686487647
+        }
+      }
+    }
+  ],
+  "macro": {
+    "persistence": {
+      "maeMgL": 0.08902329404576162,
+      "mseMgL2": 0.03677481163166062,
+      "rmseMgL": 0.15494917417080525
+    },
+    "same-frozen-ridge-without-fallback": {
+      "maeMgL": 0.09355468323154824,
+      "mseMgL2": 0.030126783840501502,
+      "rmseMgL": 0.14260204109004476
+    },
+    "same-frozen-ridge-with-fallback": {
+      "maeMgL": 0.09247031806476665,
+      "mseMgL2": 0.0301052778106926,
+      "rmseMgL": 0.14231741178746946
+    }
+  },
+  "comparisonsToPersistence": {
+    "same-frozen-ridge-without-fallback": {
+      "wins": 1435,
+      "ties": 0,
+      "losses": 3778,
+      "pairs": 5213
+    },
+    "same-frozen-ridge-with-fallback": {
+      "wins": 1381,
+      "ties": 533,
+      "losses": 3299,
+      "pairs": 5213
+    }
+  },
+  "byFutureOutcome": [
+    {
+      "group": "unchanged",
+      "pairs": 2796,
+      "pooledScores": {
+        "persistence": {
+          "maeMgL": 0.0,
+          "mseMgL2": 0.0,
+          "rmseMgL": 0.0,
+          "biasMgL": 0.0
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.022663736485954728,
+          "mseMgL2": 0.0012418913576575492,
+          "rmseMgL": 0.03524047896464447,
+          "biasMgL": -0.0014902018942731777
+        }
+      },
+      "macroMAEGainContributionMgL": -0.012135701052971317,
+      "macroMSEGainContributionMgL2": -0.0006646940918712692,
+      "bySeason": [
+        {
+          "season": "winter",
+          "pairs": 1058,
+          "seasonDenominator": 1276,
+          "maeGainContributionMgL": -0.009721011538316041
+        },
+        {
+          "season": "spring",
+          "pairs": 645,
+          "seasonDenominator": 1320,
+          "maeGainContributionMgL": -0.012868601852240551
+        },
+        {
+          "season": "summer",
+          "pairs": 346,
+          "seasonDenominator": 1298,
+          "maeGainContributionMgL": -0.012143649831042689
+        },
+        {
+          "season": "autumn",
+          "pairs": 747,
+          "seasonDenominator": 1319,
+          "maeGainContributionMgL": -0.013809540990285989
+        }
+      ]
+    },
+    {
+      "group": "rise",
+      "pairs": 1200,
+      "pooledScores": {
+        "persistence": {
+          "maeMgL": 0.1945,
+          "mseMgL2": 0.08451666666666667,
+          "rmseMgL": 0.2907175031996984,
+          "biasMgL": -0.1945
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.16581344909115836,
+          "mseMgL2": 0.054122798600193464,
+          "rmseMgL": 0.23264307124905625,
+          "biasMgL": -0.16521993857718395
+        }
+      },
+      "macroMAEGainContributionMgL": 0.006589290931546878,
+      "macroMSEGainContributionMgL2": 0.0070023230169489106,
+      "bySeason": [
+        {
+          "season": "winter",
+          "pairs": 106,
+          "seasonDenominator": 1276,
+          "maeGainContributionMgL": 0.0015570110383544534
+        },
+        {
+          "season": "spring",
+          "pairs": 332,
+          "seasonDenominator": 1320,
+          "maeGainContributionMgL": 0.005795381444260312
+        },
+        {
+          "season": "summer",
+          "pairs": 477,
+          "seasonDenominator": 1298,
+          "maeGainContributionMgL": 0.01333722719173129
+        },
+        {
+          "season": "autumn",
+          "pairs": 285,
+          "seasonDenominator": 1319,
+          "maeGainContributionMgL": 0.005667544051841456
+        }
+      ]
+    },
+    {
+      "group": "fall",
+      "pairs": 1217,
+      "pooledScores": {
+        "persistence": {
+          "maeMgL": 0.19013968775677897,
+          "mseMgL2": 0.07406737880032868,
+          "rmseMgL": 0.27215322669468517,
+          "biasMgL": 0.19013968775677897
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.18118026094825027,
+          "mseMgL2": 0.07266724184401133,
+          "rmseMgL": 0.26956862177191787,
+          "biasMgL": 0.17661351354951868
+        }
+      },
+      "macroMAEGainContributionMgL": 0.002099386102419409,
+      "macroMSEGainContributionMgL2": 0.0003319048958903779,
+      "bySeason": [
+        {
+          "season": "winter",
+          "pairs": 112,
+          "seasonDenominator": 1276,
+          "maeGainContributionMgL": 0.0006626467275743885
+        },
+        {
+          "season": "spring",
+          "pairs": 343,
+          "seasonDenominator": 1320,
+          "maeGainContributionMgL": 0.0006838665309965786
+        },
+        {
+          "season": "summer",
+          "pairs": 475,
+          "seasonDenominator": 1298,
+          "maeGainContributionMgL": 0.00690136703003252
+        },
+        {
+          "season": "autumn",
+          "pairs": 287,
+          "seasonDenominator": 1319,
+          "maeGainContributionMgL": 0.00014966412107414893
+        }
+      ]
+    }
+  ],
+  "byFutureChangeMagnitude": [
+    {
+      "group": "zero",
+      "pairs": 2796,
+      "pooledScores": {
+        "persistence": {
+          "maeMgL": 0.0,
+          "mseMgL2": 0.0,
+          "rmseMgL": 0.0,
+          "biasMgL": 0.0
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.022663736485954728,
+          "mseMgL2": 0.0012418913576575492,
+          "rmseMgL": 0.03524047896464447,
+          "biasMgL": -0.0014902018942731777
+        }
+      },
+      "macroMAEGainContributionMgL": -0.012135701052971317,
+      "macroMSEGainContributionMgL2": -0.0006646940918712692,
+      "bySeason": [
+        {
+          "season": "winter",
+          "pairs": 1058,
+          "seasonDenominator": 1276,
+          "maeGainContributionMgL": -0.009721011538316041
+        },
+        {
+          "season": "spring",
+          "pairs": 645,
+          "seasonDenominator": 1320,
+          "maeGainContributionMgL": -0.012868601852240551
+        },
+        {
+          "season": "summer",
+          "pairs": 346,
+          "seasonDenominator": 1298,
+          "maeGainContributionMgL": -0.012143649831042689
+        },
+        {
+          "season": "autumn",
+          "pairs": 747,
+          "seasonDenominator": 1319,
+          "maeGainContributionMgL": -0.013809540990285989
+        }
+      ]
+    },
+    {
+      "group": "(0,0.1]",
+      "pairs": 1600,
+      "pooledScores": {
+        "persistence": {
+          "maeMgL": 0.1,
+          "mseMgL2": 0.01,
+          "rmseMgL": 0.1,
+          "biasMgL": -0.0006250000000000066
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.0959471837164154,
+          "mseMgL2": 0.01138823031858043,
+          "rmseMgL": 0.10671565170386409,
+          "biasMgL": -0.004796929042168002
+        }
+      },
+      "macroMAEGainContributionMgL": 0.0012400691569932514,
+      "macroMSEGainContributionMgL2": -0.0004258879166273354,
+      "bySeason": [
+        {
+          "season": "winter",
+          "pairs": 218,
+          "seasonDenominator": 1276,
+          "maeGainContributionMgL": 0.002219657765928842
+        },
+        {
+          "season": "spring",
+          "pairs": 479,
+          "seasonDenominator": 1320,
+          "maeGainContributionMgL": 0.001399662294841063
+        },
+        {
+          "season": "summer",
+          "pairs": 440,
+          "seasonDenominator": 1298,
+          "maeGainContributionMgL": -0.0017117525275747478
+        },
+        {
+          "season": "autumn",
+          "pairs": 463,
+          "seasonDenominator": 1319,
+          "maeGainContributionMgL": 0.0030527090947778486
+        }
+      ]
+    },
+    {
+      "group": "(0.1,0.3]",
+      "pairs": 539,
+      "pooledScores": {
+        "persistence": {
+          "maeMgL": 0.22931354359925793,
+          "mseMgL2": 0.05465677179962896,
+          "rmseMgL": 0.23378787778588728,
+          "biasMgL": 0.012244897959183714
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.20979791895121275,
+          "mseMgL2": 0.05153704609108675,
+          "rmseMgL": 0.2270177219758113,
+          "biasMgL": 0.01782339964798021
+        }
+      },
+      "macroMAEGainContributionMgL": 0.00200980984715335,
+      "macroMSEGainContributionMgL2": 0.00031867162727661316,
+      "bySeason": [
+        {
+          "season": "winter",
+          "pairs": 0,
+          "seasonDenominator": 1276,
+          "maeGainContributionMgL": 0.0
+        },
+        {
+          "season": "spring",
+          "pairs": 134,
+          "seasonDenominator": 1320,
+          "maeGainContributionMgL": 0.0014906352682092646
+        },
+        {
+          "season": "summer",
+          "pairs": 299,
+          "seasonDenominator": 1298,
+          "maeGainContributionMgL": 0.004110747788234667
+        },
+        {
+          "season": "autumn",
+          "pairs": 106,
+          "seasonDenominator": 1319,
+          "maeGainContributionMgL": 0.0024378563321694685
+        }
+      ]
+    },
+    {
+      "group": ">0.3",
+      "pairs": 278,
+      "pooledScores": {
+        "persistence": {
+          "maeMgL": 0.6517985611510791,
+          "mseMgL2": 0.5255395683453237,
+          "rmseMgL": 0.7249410792232177,
+          "biasMgL": -0.02733812949640291
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.5499134684260515,
+          "mseMgL2": 0.3862725010488111,
+          "rmseMgL": 0.6215082469676578,
+          "biasMgL": 0.05303235163435594
+        }
+      },
+      "macroMAEGainContributionMgL": 0.005438798029819685,
+      "macroMSEGainContributionMgL2": 0.007441444202190011,
+      "bySeason": [
+        {
+          "season": "winter",
+          "pairs": 0,
+          "seasonDenominator": 1276,
+          "maeGainContributionMgL": 0.0
+        },
+        {
+          "season": "spring",
+          "pairs": 62,
+          "seasonDenominator": 1320,
+          "maeGainContributionMgL": 0.003588950412206563
+        },
+        {
+          "season": "summer",
+          "pairs": 213,
+          "seasonDenominator": 1298,
+          "maeGainContributionMgL": 0.01783959896110389
+        },
+        {
+          "season": "autumn",
+          "pairs": 3,
+          "seasonDenominator": 1319,
+          "maeGainContributionMgL": 0.0003266427459682877
+        }
+      ]
+    }
+  ],
+  "behavior": {
+    "same-frozen-ridge-without-fallback": [
+      {
+        "group": "no-correction-unchanged",
+        "pairs": 0,
+        "pooledScores": {
+          "persistence": null,
+          "same-frozen-ridge-without-fallback": null
+        },
+        "macroMAEGainContributionMgL": 0.0,
+        "macroMSEGainContributionMgL2": 0.0,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 0,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "summer",
+            "pairs": 0,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "autumn",
+            "pairs": 0,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      },
+      {
+        "group": "no-correction-changed",
+        "pairs": 0,
+        "pooledScores": {
+          "persistence": null,
+          "same-frozen-ridge-without-fallback": null
+        },
+        "macroMAEGainContributionMgL": 0.0,
+        "macroMSEGainContributionMgL2": 0.0,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 0,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "summer",
+            "pairs": 0,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "autumn",
+            "pairs": 0,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      },
+      {
+        "group": "corrected-unchanged",
+        "pairs": 2796,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.0,
+            "mseMgL2": 0.0,
+            "rmseMgL": 0.0,
+            "biasMgL": 0.0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "maeMgL": 0.02463985193036619,
+            "mseMgL2": 0.0012753299276603975,
+            "rmseMgL": 0.03571176175520325,
+            "biasMgL": -0.000756882002505946
+          }
+        },
+        "macroMAEGainContributionMgL": -0.013213944282528393,
+        "macroMSEGainContributionMgL2": -0.0006829462611373789,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 1058,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": -0.01353016722241516
+          },
+          {
+            "season": "spring",
+            "pairs": 645,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -0.01306979969982241
+          },
+          {
+            "season": "summer",
+            "pairs": 346,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": -0.012143649831042689
+          },
+          {
+            "season": "autumn",
+            "pairs": 747,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": -0.014112160376833311
+          }
+        ]
+      },
+      {
+        "group": "wrong-direction",
+        "pairs": 972,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.17407407407407413,
+            "mseMgL2": 0.059156378600823054,
+            "rmseMgL": 0.24322084326969812,
+            "biasMgL": 0.04465020576131691
+          },
+          "same-frozen-ridge-without-fallback": {
+            "maeMgL": 0.2140341036020263,
+            "mseMgL2": 0.08142804474048433,
+            "rmseMgL": 0.2853559965034629,
+            "biasMgL": 0.04083294613731823
+          }
+        },
+        "macroMAEGainContributionMgL": -0.00743773154438441,
+        "macroMSEGainContributionMgL2": -0.004153595886097209,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 63,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": -0.0006505776799856762
+          },
+          {
+            "season": "spring",
+            "pairs": 288,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -0.007000651784242339
+          },
+          {
+            "season": "summer",
+            "pairs": 396,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": -0.01806422564511787
+          },
+          {
+            "season": "autumn",
+            "pairs": 225,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": -0.0040354710681917575
+          }
+        ]
+      },
+      {
+        "group": "right-direction-undershoot",
+        "pairs": 1393,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.2079684134960517,
+            "mseMgL2": 0.09569992821249103,
+            "rmseMgL": 0.3093540499371085,
+            "biasMgL": -0.03510409188801151
+          },
+          "same-frozen-ridge-without-fallback": {
+            "maeMgL": 0.14955163321914067,
+            "mseMgL2": 0.05293711363570797,
+            "rmseMgL": 0.23008066767051066,
+            "biasMgL": -0.014287685102435199
+          }
+        },
+        "macroMAEGainContributionMgL": 0.015590598820616206,
+        "macroMSEGainContributionMgL2": 0.011438668556325759,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 155,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0027967761094351232
+          },
+          {
+            "season": "spring",
+            "pairs": 373,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.012981886158624356
+          },
+          {
+            "season": "summer",
+            "pairs": 519,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.036864045966047115
+          },
+          {
+            "season": "autumn",
+            "pairs": 346,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.00971968704835823
+          }
+        ]
+      },
+      {
+        "group": "overshoot-helps",
+        "pairs": 42,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.11666666666666681,
+            "mseMgL2": 0.015476190476190518,
+            "rmseMgL": 0.12440333788203,
+            "biasMgL": 0.06428571428571435
+          },
+          "same-frozen-ridge-without-fallback": {
+            "maeMgL": 0.03370644813454504,
+            "mseMgL2": 0.0023029881113113865,
+            "rmseMgL": 0.047989458335257196,
+            "biasMgL": -0.02555060989434709
+          }
+        },
+        "macroMAEGainContributionMgL": 0.0006681484678081678,
+        "macroMSEGainContributionMgL2": 0.00010621015454631235,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 12,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0006280103072521793
+          },
+          {
+            "season": "summer",
+            "pairs": 29,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0019738165768586145
+          },
+          {
+            "season": "autumn",
+            "pairs": 1,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 7.076698712187708e-05
+          }
+        ]
+      },
+      {
+        "group": "overshoot-tie",
+        "pairs": 0,
+        "pooledScores": {
+          "persistence": null,
+          "same-frozen-ridge-without-fallback": null
+        },
+        "macroMAEGainContributionMgL": 0.0,
+        "macroMSEGainContributionMgL2": 0.0,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 0,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "summer",
+            "pairs": 0,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "autumn",
+            "pairs": 0,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      },
+      {
+        "group": "overshoot-harms",
+        "pairs": 10,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.09999999999999983,
+            "mseMgL2": 0.009999999999999964,
+            "rmseMgL": 0.09999999999999983,
+            "biasMgL": 0.07999999999999989
+          },
+          "same-frozen-ridge-without-fallback": {
+            "maeMgL": 0.17193012788619289,
+            "mseMgL2": 0.041321115759675606,
+            "rmseMgL": 0.20327595962059952,
+            "biasMgL": -0.13496338681809678
+          }
+        },
+        "macroMAEGainContributionMgL": -0.00013846064729819313,
+        "macroMSEGainContributionMgL2": -6.030877247836862e-05,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 2,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -1.879991316872345e-05
+          },
+          {
+            "season": "summer",
+            "pairs": 8,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": -0.000535042676024049
+          },
+          {
+            "season": "autumn",
+            "pairs": 0,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      }
+    ],
+    "same-frozen-ridge-with-fallback": [
+      {
+        "group": "no-correction-unchanged",
+        "pairs": 434,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.0,
+            "mseMgL2": 0.0,
+            "rmseMgL": 0.0,
+            "biasMgL": 0.0
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.0,
+            "mseMgL2": 0.0,
+            "rmseMgL": 0.0,
+            "biasMgL": 0.0
+          }
+        },
+        "macroMAEGainContributionMgL": 0.0,
+        "macroMSEGainContributionMgL2": 0.0,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 380,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 20,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "summer",
+            "pairs": 0,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "autumn",
+            "pairs": 34,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      },
+      {
+        "group": "no-correction-changed",
+        "pairs": 99,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.11212121212121212,
+            "mseMgL2": 0.014444444444444433,
+            "rmseMgL": 0.12018504251546626,
+            "biasMgL": 0.04343434343434342
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.11212121212121212,
+            "mseMgL2": 0.014444444444444433,
+            "rmseMgL": 0.12018504251546626,
+            "biasMgL": 0.04343434343434342
+          }
+        },
+        "macroMAEGainContributionMgL": 0.0,
+        "macroMSEGainContributionMgL2": 0.0,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 59,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 22,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "summer",
+            "pairs": 0,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "autumn",
+            "pairs": 18,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      },
+      {
+        "group": "corrected-unchanged",
+        "pairs": 2362,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.0,
+            "mseMgL2": 0.0,
+            "rmseMgL": 0.0,
+            "biasMgL": 0.0
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.026828030150181804,
+            "mseMgL2": 0.0014700796934845502,
+            "rmseMgL": 0.03834161829506613,
+            "biasMgL": -0.0017640154514766322
+          }
+        },
+        "macroMAEGainContributionMgL": -0.012135701052971317,
+        "macroMSEGainContributionMgL2": -0.0006646940918712692,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 678,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": -0.009721011538316041
+          },
+          {
+            "season": "spring",
+            "pairs": 625,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -0.012868601852240551
+          },
+          {
+            "season": "summer",
+            "pairs": 346,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": -0.012143649831042689
+          },
+          {
+            "season": "autumn",
+            "pairs": 713,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": -0.013809540990285989
+          }
+        ]
+      },
+      {
+        "group": "wrong-direction",
+        "pairs": 927,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.17723840345199574,
+            "mseMgL2": 0.0613915857605178,
+            "rmseMgL": 0.247773254732059,
+            "biasMgL": 0.04325782092772388
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.218406900106857,
+            "mseMgL2": 0.0845796454421923,
+            "rmseMgL": 0.29082579913445145,
+            "biasMgL": 0.038668163170525564
+          }
+        },
+        "macroMAEGainContributionMgL": -0.007306374297978827,
+        "macroMSEGainContributionMgL2": -0.004124017605931554,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 37,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": -0.0002982565564180397
+          },
+          {
+            "season": "spring",
+            "pairs": 281,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -0.006939373393578738
+          },
+          {
+            "season": "summer",
+            "pairs": 396,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": -0.01806422564511787
+          },
+          {
+            "season": "autumn",
+            "pairs": 213,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": -0.003923641596800664
+          }
+        ]
+      },
+      {
+        "group": "right-direction-undershoot",
+        "pairs": 1339,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.21172516803584765,
+            "mseMgL2": 0.09893203883495146,
+            "rmseMgL": 0.31453463852960845,
+            "biasMgL": -0.03726661687826739
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.15143715308726016,
+            "mseMgL2": 0.05454676897775193,
+            "rmseMgL": 0.23355249726293215,
+            "biasMgL": -0.015719124778334707
+          }
+        },
+        "macroMAEGainContributionMgL": 0.01546536351143514,
+        "macroMSEGainContributionMgL2": 0.0114123441367029,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 122,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0025179143223468814
+          },
+          {
+            "season": "spring",
+            "pairs": 358,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.012809410974752173
+          },
+          {
+            "season": "summer",
+            "pairs": 519,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.036864045966047115
+          },
+          {
+            "season": "autumn",
+            "pairs": 340,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.009670082782594392
+          }
+        ]
+      },
+      {
+        "group": "overshoot-helps",
+        "pairs": 42,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.11666666666666681,
+            "mseMgL2": 0.015476190476190518,
+            "rmseMgL": 0.12440333788203,
+            "biasMgL": 0.06428571428571435
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.03370644813454504,
+            "mseMgL2": 0.0023029881113113865,
+            "rmseMgL": 0.047989458335257196,
+            "biasMgL": -0.02555060989434709
+          }
+        },
+        "macroMAEGainContributionMgL": 0.0006681484678081678,
+        "macroMSEGainContributionMgL2": 0.00010621015454631235,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 12,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0006280103072521793
+          },
+          {
+            "season": "summer",
+            "pairs": 29,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0019738165768586145
+          },
+          {
+            "season": "autumn",
+            "pairs": 1,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 7.076698712187708e-05
+          }
+        ]
+      },
+      {
+        "group": "overshoot-tie",
+        "pairs": 0,
+        "pooledScores": {
+          "persistence": null,
+          "same-frozen-ridge-with-fallback": null
+        },
+        "macroMAEGainContributionMgL": 0.0,
+        "macroMSEGainContributionMgL2": 0.0,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 0,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "summer",
+            "pairs": 0,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "autumn",
+            "pairs": 0,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      },
+      {
+        "group": "overshoot-harms",
+        "pairs": 10,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.09999999999999983,
+            "mseMgL2": 0.009999999999999964,
+            "rmseMgL": 0.09999999999999983,
+            "biasMgL": 0.07999999999999989
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.17193012788619289,
+            "mseMgL2": 0.041321115759675606,
+            "rmseMgL": 0.20327595962059952,
+            "biasMgL": -0.13496338681809678
+          }
+        },
+        "macroMAEGainContributionMgL": -0.00013846064729819313,
+        "macroMSEGainContributionMgL2": -6.030877247836862e-05,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 0,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 2,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -1.879991316872345e-05
+          },
+          {
+            "season": "summer",
+            "pairs": 8,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": -0.000535042676024049
+          },
+          {
+            "season": "autumn",
+            "pairs": 0,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "knownAtOriginGroups": {
+    "flatHistory": [
+      {
+        "group": "flat",
+        "pairs": 533,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.020825515947467167,
+            "mseMgL2": 0.0026829268292682903,
+            "rmseMgL": 0.0517969770282812,
+            "biasMgL": 0.008067542213883675
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.020825515947467167,
+            "mseMgL2": 0.0026829268292682903,
+            "rmseMgL": 0.0517969770282812,
+            "biasMgL": 0.008067542213883675
+          }
+        },
+        "macroMAEGainContributionMgL": 0.0,
+        "macroMSEGainContributionMgL2": 0.0,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 439,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "spring",
+            "pairs": 42,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "summer",
+            "pairs": 0,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.0
+          },
+          {
+            "season": "autumn",
+            "pairs": 52,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0
+          }
+        ]
+      },
+      {
+        "group": "changing",
+        "pairs": 4680,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.09694444444444446,
+            "mseMgL2": 0.04062606837606837,
+            "rmseMgL": 0.20155909400488078,
+            "biasMgL": -0.0013461538461538454
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.10079921446541454,
+            "mseMgL2": 0.033210623906069325,
+            "rmseMgL": 0.18223782238072678,
+            "biasMgL": 0.001753870769392239
+          }
+        },
+        "macroMAEGainContributionMgL": -0.00344702401900503,
+        "macroMSEGainContributionMgL2": 0.006669533820968019,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 837,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": -0.007501353772387199
+          },
+          {
+            "season": "spring",
+            "pairs": 1278,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -0.00638935387698366
+          },
+          {
+            "season": "summer",
+            "pairs": 1298,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.008094944390721122
+          },
+          {
+            "season": "autumn",
+            "pairs": 1267,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": -0.007992332817370384
+          }
+        ]
+      }
+    ],
+    "ridgeCorrectionAmplitude": [
+      {
+        "group": "at-most-0.05",
+        "pairs": 4140,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.05814009661835749,
+            "mseMgL2": 0.014345410628019323,
+            "rmseMgL": 0.11977232830674757,
+            "biasMgL": 0.012632850241545895
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.06646498545789893,
+            "mseMgL2": 0.01473079067336247,
+            "rmseMgL": 0.12137046870372739,
+            "biasMgL": 0.01455592649083122
+          }
+        },
+        "macroMAEGainContributionMgL": -0.006604886903438117,
+        "macroMSEGainContributionMgL2": -0.0003052849103852001,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 1240,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": -0.007246013317799181
+          },
+          {
+            "season": "spring",
+            "pairs": 1048,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": -0.007067794089356466
+          },
+          {
+            "season": "summer",
+            "pairs": 732,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": -0.0037063203934249753
+          },
+          {
+            "season": "autumn",
+            "pairs": 1120,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": -0.008399419813171846
+          }
+        ]
+      },
+      {
+        "group": "above-0.05",
+        "pairs": 1073,
+        "pooledScores": {
+          "persistence": {
+            "maeMgL": 0.20885368126747436,
+            "mseMgL2": 0.12317800559179869,
+            "rmseMgL": 0.3509672429042327,
+            "biasMgL": -0.05060577819198509
+          },
+          "same-frozen-ridge-with-fallback": {
+            "maeMgL": 0.19354639692678327,
+            "mseMgL2": 0.08934785320846582,
+            "rmseMgL": 0.29891111255432745,
+            "biasMgL": -0.044504585714152445
+          }
+        },
+        "macroMAEGainContributionMgL": 0.003157862884433087,
+        "macroMSEGainContributionMgL2": 0.006974818731353218,
+        "bySeason": [
+          {
+            "season": "winter",
+            "pairs": 36,
+            "seasonDenominator": 1276,
+            "maeGainContributionMgL": -0.0002553404545880178
+          },
+          {
+            "season": "spring",
+            "pairs": 272,
+            "seasonDenominator": 1320,
+            "maeGainContributionMgL": 0.0006784402123728069
+          },
+          {
+            "season": "summer",
+            "pairs": 566,
+            "seasonDenominator": 1298,
+            "maeGainContributionMgL": 0.011801264784146098
+          },
+          {
+            "season": "autumn",
+            "pairs": 199,
+            "seasonDenominator": 1319,
+            "maeGainContributionMgL": 0.0004070869958014612
+          }
+        ]
+      }
+    ]
+  },
+  "constantAttenuation": {
+    "same-frozen-ridge-without-fallback": {
+      "bySeason": [
+        {
+          "season": "winter",
+          "rightDerivativeAtZeroMgL": 0.011383968792965713
+        },
+        {
+          "season": "spring",
+          "rightDerivativeAtZeroMgL": 0.005576563598311728
+        },
+        {
+          "season": "summer",
+          "rightDerivativeAtZeroMgL": -0.01199705760600115
+        },
+        {
+          "season": "autumn",
+          "rightDerivativeAtZeroMgL": 0.008347081361044208
+        }
+      ],
+      "macroRightDerivativeAtZeroMgL": 0.0033276390365801246
+    },
+    "same-frozen-ridge-with-fallback": {
+      "bySeason": [
+        {
+          "season": "winter",
+          "rightDerivativeAtZeroMgL": 0.007501353772387199
+        },
+        {
+          "season": "spring",
+          "rightDerivativeAtZeroMgL": 0.005486562543938452
+        },
+        {
+          "season": "summer",
+          "rightDerivativeAtZeroMgL": -0.01199705760600115
+        },
+        {
+          "season": "autumn",
+          "rightDerivativeAtZeroMgL": 0.007982236768869633
+        }
+      ],
+      "macroRightDerivativeAtZeroMgL": 0.002243273869798533
+    }
+  },
+  "examples": {
+    "maximumHarm": {
+      "season": "summer",
+      "origin": "2025-06-03T07:30:00.000Z",
+      "target": "2025-06-03T08:30:00.000Z",
+      "actualMgL": 9.6,
+      "predictionsMgL": {
+        "persistence": 9.3,
+        "same-frozen-ridge-without-fallback": 8.825072810248354,
+        "same-frozen-ridge-with-fallback": 8.825072810248354
+      },
+      "absoluteErrorsMgL": {
+        "persistence": 0.29999999999999893,
+        "same-frozen-ridge-without-fallback": 0.7749271897516454,
+        "same-frozen-ridge-with-fallback": 0.7749271897516454
+      },
+      "fallbackGainMgL": -0.4749271897516465,
+      "oxygenHistory": [
+        {
+          "timeUTC": "2025-06-03T02:00:00.000Z",
+          "value": 9.8
+        },
+        {
+          "timeUTC": "2025-06-03T02:30:00.000Z",
+          "value": 9.8
+        },
+        {
+          "timeUTC": "2025-06-03T03:00:00.000Z",
+          "value": 9.8
+        },
+        {
+          "timeUTC": "2025-06-03T03:30:00.000Z",
+          "value": 9.7
+        },
+        {
+          "timeUTC": "2025-06-03T04:00:00.000Z",
+          "value": 9.6
+        },
+        {
+          "timeUTC": "2025-06-03T04:30:00.000Z",
+          "value": 9.4
+        },
+        {
+          "timeUTC": "2025-06-03T05:00:00.000Z",
+          "value": 8.7
+        },
+        {
+          "timeUTC": "2025-06-03T05:30:00.000Z",
+          "value": 7.6
+        },
+        {
+          "timeUTC": "2025-06-03T06:00:00.000Z",
+          "value": 9.5
+        },
+        {
+          "timeUTC": "2025-06-03T06:30:00.000Z",
+          "value": 8.6
+        },
+        {
+          "timeUTC": "2025-06-03T07:00:00.000Z",
+          "value": 8.8
+        },
+        {
+          "timeUTC": "2025-06-03T07:30:00.000Z",
+          "value": 9.3
+        }
+      ],
+      "outsideTrainingFeatures": [
+        "oxygenDelta2h"
+      ],
+      "numericalContributionsNotPhysicalCauses": {
+        "residualInterceptMgL": 0.0015240328253223903,
+        "contributions": [
+          {
+            "feature": "oxygenNow",
+            "inputValue": 9.3,
+            "standardizedValue": -0.8772850086414634,
+            "contributionMgL": 0.006646581004094943
+          },
+          {
+            "feature": "oxygenDelta30m",
+            "inputValue": 0.5,
+            "standardizedValue": 6.684191781495945,
+            "contributionMgL": -0.10804579281418743
+          },
+          {
+            "feature": "oxygenDelta2h",
+            "inputValue": 1.700000000000001,
+            "standardizedValue": 15.999484338084725,
+            "contributionMgL": -0.3466508875608321
+          },
+          {
+            "feature": "oxygenDelta5h30m",
+            "inputValue": -0.5,
+            "standardizedValue": -3.4769920704078436,
+            "contributionMgL": 0.000697528936305234
+          },
+          {
+            "feature": "clockSinUTC",
+            "inputValue": 0.9238795325112867,
+            "standardizedValue": 1.3072390070278348,
+            "contributionMgL": -0.017646085151755316
+          },
+          {
+            "feature": "clockCosUTC",
+            "inputValue": -0.3826834323650897,
+            "standardizedValue": -0.5112390798125779,
+            "contributionMgL": 0.0003089419199812909
+          },
+          {
+            "feature": "temperatureNow",
+            "inputValue": 18.4,
+            "standardizedValue": 0.7209233587847503,
+            "contributionMgL": -0.007198529285744097
+          },
+          {
+            "feature": "temperatureDelta2h",
+            "inputValue": -0.20000000000000284,
+            "standardizedValue": -2.0855821445983174,
+            "contributionMgL": -0.004562979624831338
+          }
+        ],
+        "totalCorrectionMgL": -0.47492718975164644,
+        "reconstructedPredictionMgL": 8.825072810248354
+      }
+    },
+    "maximumBenefit": {
+      "season": "summer",
+      "origin": "2025-06-02T06:00:00.000Z",
+      "target": "2025-06-02T07:00:00.000Z",
+      "actualMgL": 9.5,
+      "predictionsMgL": {
+        "persistence": 7.0,
+        "same-frozen-ridge-without-fallback": 7.768627472451283,
+        "same-frozen-ridge-with-fallback": 7.768627472451283
+      },
+      "absoluteErrorsMgL": {
+        "persistence": 2.5,
+        "same-frozen-ridge-without-fallback": 1.731372527548717,
+        "same-frozen-ridge-with-fallback": 1.731372527548717
+      },
+      "fallbackGainMgL": 0.7686274724512829,
+      "oxygenHistory": [
+        {
+          "timeUTC": "2025-06-02T00:30:00.000Z",
+          "value": 9.8
+        },
+        {
+          "timeUTC": "2025-06-02T01:00:00.000Z",
+          "value": 9.9
+        },
+        {
+          "timeUTC": "2025-06-02T01:30:00.000Z",
+          "value": 9.9
+        },
+        {
+          "timeUTC": "2025-06-02T02:00:00.000Z",
+          "value": 9.8
+        },
+        {
+          "timeUTC": "2025-06-02T02:30:00.000Z",
+          "value": 9.7
+        },
+        {
+          "timeUTC": "2025-06-02T03:00:00.000Z",
+          "value": 9.6
+        },
+        {
+          "timeUTC": "2025-06-02T03:30:00.000Z",
+          "value": 9.7
+        },
+        {
+          "timeUTC": "2025-06-02T04:00:00.000Z",
+          "value": 9.3
+        },
+        {
+          "timeUTC": "2025-06-02T04:30:00.000Z",
+          "value": 9.3
+        },
+        {
+          "timeUTC": "2025-06-02T05:00:00.000Z",
+          "value": 8.9
+        },
+        {
+          "timeUTC": "2025-06-02T05:30:00.000Z",
+          "value": 8.4
+        },
+        {
+          "timeUTC": "2025-06-02T06:00:00.000Z",
+          "value": 7.0
+        }
+      ],
+      "outsideTrainingFeatures": [
+        "oxygenNow",
+        "oxygenDelta30m",
+        "oxygenDelta2h",
+        "oxygenDelta5h30m"
+      ],
+      "numericalContributionsNotPhysicalCauses": {
+        "residualInterceptMgL": 0.0015240328253223903,
+        "contributions": [
+          {
+            "feature": "oxygenNow",
+            "inputValue": 7.0,
+            "standardizedValue": -2.11786941924218,
+            "contributionMgL": 0.01604562999758452
+          },
+          {
+            "feature": "oxygenDelta30m",
+            "inputValue": -1.4000000000000004,
+            "standardizedValue": -18.75151993550448,
+            "contributionMgL": 0.30310662891380885
+          },
+          {
+            "feature": "oxygenDelta2h",
+            "inputValue": -2.3000000000000007,
+            "standardizedValue": -21.70356184020457,
+            "contributionMgL": 0.47023759117220126
+          },
+          {
+            "feature": "oxygenDelta5h30m",
+            "inputValue": -2.8000000000000007,
+            "standardizedValue": -19.300491822050503,
+            "contributionMgL": 0.0038719247148652873
+          },
+          {
+            "feature": "clockSinUTC",
+            "inputValue": 1.0,
+            "standardizedValue": 1.414560671080488,
+            "contributionMgL": -0.019094792857324013
+          },
+          {
+            "feature": "clockCosUTC",
+            "inputValue": 6.123233995736766e-17,
+            "standardizedValue": 0.031908256075570365,
+            "contributionMgL": -1.9282168137176256e-05
+          },
+          {
+            "feature": "temperatureNow",
+            "inputValue": 18.3,
+            "standardizedValue": 0.7038719518071257,
+            "contributionMgL": -0.007028268396017231
+          },
+          {
+            "feature": "temperatureDelta2h",
+            "inputValue": 0.0,
+            "standardizedValue": -0.007309283217049984,
+            "contributionMgL": -1.599175102160473e-05
+          }
+        ],
+        "totalCorrectionMgL": 0.7686274724512824,
+        "reconstructedPredictionMgL": 7.768627472451282
+      }
+    }
+  },
+  "definitions": {
+    "gain": "abs(persistence-actual) - abs(method-actual); positive helps",
+    "macroMAE": "Equal mean of four within-window MAEs, not a pooled mean",
+    "contribution": "Sum of subgroup error gains / all accepted pairs of that season, then equal mean of four seasons; additive",
+    "pooledScores": "Conditional mean over subgroup pairs pooled across seasons; different denominator from macro contribution",
+    "macroRMSE": "Equal mean of four seasonal RMSEs; does not decompose additively",
+    "mseContribution": "Uses squared errors; additive MSE, not RMSE",
+    "numericTolerance": 1e-09,
+    "futureLabels": "Outcomes and change magnitudes need the target; explanatory only, never available forecast gates",
+    "amplitudeCut": "0.05 mg/L is an inspected post-hoc descriptive cut; not selected, optimized or validated for prediction",
+    "attenuationProof": "F(lambda)=mean_seasons mean_rows |actual-current-lambda*d| is convex. A positive right derivative at zero implies F(lambda)>F(0) for any constant lambda>0 on this finite dataset only"
+  },
+  "scope": {
+    "postHoc": true,
+    "newFinalValidation": false,
+    "newDataDownloaded": false,
+    "modelRefitted": false,
+    "newForecastRuleEvaluated": false,
+    "operationalModelChanged": false,
+    "nextTestAgreedOrFrozen": false
+  },
+  "limitations": [
+    "Four already-inspected 28-day 2025 windows at one tidal station; seasonal labels are not full-season validation",
+    "Archived finalized observations do not establish as-of-origin availability, instrument accuracy or live forecasting skill",
+    "Equality and 0.1 mg/L increments concern published values, not physical constancy or measurement uncertainty",
+    "Examples are deterministic extremes, not typical performance; coefficient contributions are arithmetic, not causal effects",
+    "No attribution to weather, tides, pollution or human activity is established by this decomposition",
+    "No observed target below illustrative 5 mg/L; no hypoxia alert, intervention or ecological benefit validated",
+    "No calibrated prediction intervals or independent subgroup uncertainty estimates; grouped results are descriptive"
+  ],
+  "mission": "Verifiable environmental predictions in support of community and youth decision rights; no change to operational Oracle, governance, quorum, treasury, token or spending"
+}
