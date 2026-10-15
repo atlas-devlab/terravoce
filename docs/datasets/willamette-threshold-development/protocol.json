@@ -1,0 +1,67 @@
+{
+  "version": "willamette-threshold-development-v1",
+  "phase": "plan-and-synthetic-checks-before-candidate-scoring",
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "developmentOnly": true,
+  "allWindowsPreviouslyInspected": true,
+  "inputs": [
+    {
+      "file": "docs/evidence/willamette-stability/evaluation.json.gz",
+      "rawSha256": "5295b0a92a3f6d7c6dbec2efce5cbe1f407cbc5307fa992c4b48d479f020545f"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+      "rawSha256": "72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+    }
+  ],
+  "rule": {
+    "definition": "Use current oxygen when abs(full frozen ridge prediction minus current oxygen) <= threshold; otherwise use full frozen ridge prediction",
+    "thresholdUnit": "mg/L",
+    "candidateThresholdsMgL": [0.0, 0.025, 0.05, 0.1, 0.2],
+    "persistenceIsExplicitAlternative": true,
+    "oneThresholdSharedAcrossWindows": true,
+    "oldFlatHistoryFallback": "Separate comparator, not combined with the new filter",
+    "arithmetic": "Finite binary64 inputs and direct <= comparison; no new rounding, boundary epsilon or clipping",
+    "gridMeaning": "Small engineering search fixed after inspecting the old data, before candidate scoring. Not a sensor accuracy, ecological limit or scientifically privileged set. The 0.05 cut was already inspected descriptively",
+    "newRegressionFitPermitted": false
+  },
+  "split": {
+    "boundaryDaysAfterQueryStart": 14,
+    "selection": "Accepted rows whose target timestamp is strictly before the boundary",
+    "laterCheck": "Accepted rows whose earliest of twelve oxygen history timestamps is at or after the boundary",
+    "between": "Exclude other rows from both parts and report their count; do not move the boundary to improve results",
+    "requiredInequality": "Latest selection target < earliest later-check history timestamp",
+    "minimumOriginSeparationSeconds": 25200,
+    "historySpanSeconds": 19800,
+    "sampleSpacingSeconds": 1800,
+    "minimumAcceptedPairsPerPart": 1,
+    "meaning": "Internal temporal split within each already-inspected 28-day window. Not an unseen holdout, not globally chronological training across seasons, and not statistically independent hydrological blocks"
+  },
+  "selection": {
+    "primaryMetric": "Mean absolute error in mg/L on identical origins; equal weight for each of the four window MAEs",
+    "primaryBaseline": "persistence",
+    "comparators": ["persistence", "same-frozen-ridge-without-fallback", "same-frozen-ridge-with-fallback"],
+    "numericalToleranceMgL": 1e-9,
+    "eligibility": "Strict positive macro-MAE gain over persistence beyond tolerance; no window MAE worse than persistence beyond tolerance; zero invalid or negative candidate predictions",
+    "ranking": "Smallest macro-MAE among eligible candidates; candidates within tolerance of the minimum are tied",
+    "tieBreak": "Among tied candidates choose fewest nonzero corrections on selection rows, then largest threshold",
+    "noEligibleCandidate": "Retain persistence; no promising threshold selected and no forced filter",
+    "baselineTie": "Persistence wins when candidate macro gain does not exceed tolerance",
+    "precisionMeaning": "Tolerance is arithmetic only; not statistical significance or practical environmental benefit"
+  },
+  "laterCheck": {
+    "candidate": "Only the one selected using the first parts; compare on identical later-check origins with all three existing methods",
+    "screen": "Require positive equal-window macro-MAE gain over persistence beyond tolerance, no window MAE loss beyond tolerance and zero invalid or negative predictions",
+    "failure": "Record development failure; do not select another threshold or expand the grid using these later-check outcomes",
+    "secondaryDiagnostics": ["per-window RMSE", "bias", "large errors", "number of corrections", "quality and missing-origin counts"],
+    "successMeaning": "Promising only within already-inspected development data; not new validation or operational promotion"
+  },
+  "nextUnseenTest": {
+    "status": "not-defined-or-launched",
+    "requiredBeforeAcquisition": ["one fixed candidate or explicit no-candidate outcome", "code and candidate commitment", "uninspected target calendar", "quality rules and shared cohorts", "primary and secondary decision criteria", "uncertainty procedure"],
+    "noRetuningOnTest": true,
+    "retrospectiveVersusLive": "Finalized archives do not demonstrate historical as-of-origin availability; a prospective trial must preserve forecasts and available inputs before targets"
+  },
+  "mission": "Verifiable environmental evidence supporting community and youth decision rights. This development plan does not alter operational Oracle, governance, quorum, treasury, token or spending"
+}
