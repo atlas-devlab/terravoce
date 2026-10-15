@@ -117,6 +117,15 @@ Run `python scripts/diagnose_stability_errors.py verify` to reproduce it offline
 This is post-hoc development evidence; a small-correction filter remains a
 proposal, with no new threshold, fit or final validation.
 
+The [threshold-development plan](docs/WILLAMETTE_THRESHOLD_DEVELOPMENT_EN.md)
+([Italian](docs/WILLAMETTE_THRESHOLD_DEVELOPMENT.md)) now fixes five candidate
+thresholds, a shared rule and an internal chronological split of those already
+inspected windows. A past-only filter and synthetic selection checks are
+implemented; the preflight checks timestamps and pinned input hashes only.
+No candidate losses on the real development data have been computed, no
+threshold has been selected and no new test calendar has been launched.
+Run `python scripts/threshold_development.py preflight` to check the plan.
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small
