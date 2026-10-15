@@ -2,6 +2,10 @@
 
 [English explanation](WILLAMETTE_STABILITY_PROTOCOL_EN.md).
 
+**Aggiornamento:** il protocollo storico sotto è rimasto invariato nella sua
+definizione. Raccolta e valutazione sono ora state eseguite: consulta
+[risultati, verifiche e limiti](WILLAMETTE_STABILITY_RESULTS.md).
+
 La domanda è precisa: **annullare le piccole correzioni quando tutta la storia
 recente dell'ossigeno è invariata migliora la previsione su periodi nuovi?**
 Restiamo sull'ossigeno disciolto a un'ora, alla stazione USGS-14211720.

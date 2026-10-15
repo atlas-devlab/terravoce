@@ -98,6 +98,7 @@ jobs:
           node --test scripts/test-capture-stability.mjs
           if [ -f docs/evidence/willamette-stability/evaluation.json.gz ]; then
             python3 scripts/evaluate_stability.py verify --report docs/evidence/willamette-stability/evaluation.json.gz
+            python3 scripts/audit_stability_evidence.py . > "$RUNNER_TEMP/stability-independent-audit.json"
           else
             python3 scripts/stability_protocol.py
           fi

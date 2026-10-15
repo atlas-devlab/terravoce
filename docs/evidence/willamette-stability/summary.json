@@ -1,0 +1,5271 @@
+{
+  "version": "willamette-stability-evaluation-v1",
+  "protocolHash": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522",
+  "frozenModelHash": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+  "baseProtocolHash": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4",
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "methods": [
+    "persistence",
+    "same-frozen-ridge-without-fallback",
+    "same-frozen-ridge-with-fallback"
+  ],
+  "captureAttemptRawSha256": "0xe1935941ea3d65b25912ed6ab9394a9b76e8635e4184350e49d2feea4a90d670",
+  "macro": {
+    "seasonalMeanMAEMgL": {
+      "persistence": 0.08902329404576162,
+      "same-frozen-ridge-without-fallback": 0.09355468323154824,
+      "same-frozen-ridge-with-fallback": 0.09247031806476665
+    },
+    "gainAgainstBaselines": {
+      "persistence": {
+        "gainMgL": -0.0034470240190050266,
+        "relativeGainPercent": -3.8720472612854735
+      },
+      "same-frozen-ridge-without-fallback": {
+        "gainMgL": 0.0010843651667815923,
+        "relativeGainPercent": 1.1590709618435497
+      }
+    }
+  },
+  "bootstrap": [
+    {
+      "blockHours": 48,
+      "iterations": 5000,
+      "seed": 20261062,
+      "nonemptyBlocksPerSeason": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "confidenceFraction": 0.95,
+      "pairedSameBlockDrawsForAllMethods": true,
+      "gainAgainstBaselines": {
+        "persistence": {
+          "lowerGainMgL": -0.005431634319474592,
+          "upperGainMgL": -0.0016667594726711536
+        },
+        "same-frozen-ridge-without-fallback": {
+          "lowerGainMgL": 0.0007851660214700256,
+          "upperGainMgL": 0.0013745843943910392
+        }
+      },
+      "status": "estimated"
+    },
+    {
+      "blockHours": 24,
+      "iterations": 5000,
+      "seed": 20261038,
+      "nonemptyBlocksPerSeason": [
+        28,
+        28,
+        28,
+        28
+      ],
+      "confidenceFraction": 0.95,
+      "pairedSameBlockDrawsForAllMethods": true,
+      "gainAgainstBaselines": {
+        "persistence": {
+          "lowerGainMgL": -0.005007754031605117,
+          "upperGainMgL": -0.0019427910254464133
+        },
+        "same-frozen-ridge-without-fallback": {
+          "lowerGainMgL": 0.000779254017622338,
+          "upperGainMgL": 0.0014245798463866006
+        }
+      },
+      "status": "estimated"
+    },
+    {
+      "blockHours": 72,
+      "iterations": 5000,
+      "seed": 20261086,
+      "nonemptyBlocksPerSeason": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "confidenceFraction": 0.95,
+      "pairedSameBlockDrawsForAllMethods": true,
+      "gainAgainstBaselines": {
+        "persistence": {
+          "lowerGainMgL": -0.00519142699433686,
+          "upperGainMgL": -0.0017218238948903107
+        },
+        "same-frozen-ridge-without-fallback": {
+          "lowerGainMgL": 0.0007650961522421114,
+          "upperGainMgL": 0.0013902106214432352
+        }
+      },
+      "status": "estimated"
+    }
+  ],
+  "decision": "no-overall-improvement",
+  "modelRefittedDuringEvaluation": false,
+  "operationalModelChanged": false,
+  "predictionIntervalsCalibrated": false,
+  "practicalEnvironmentalBenefitDefined": false,
+  "tenPercentIsAcceptanceGate": false,
+  "limitations": [
+    "One-hour dissolved oxygen at one station using finalized retrospective source measurements; no historical as-of-origin availability, real-time forecast, calibrated prediction interval, pollutant attribution or field benefit established",
+    "Exploratory intervals conditional on selected windows and assumed dependence; sensitivity checks are not independent confirmations; multiple criteria do not establish joint 95% coverage or ecological utility",
+    "No observed seasonal point-MAE loss is not a proof of statistical noninferiority in every season",
+    "The rule is defined from past history; count and errors are reported. An empty seasonal flat subgroup has null metrics and supports no subgroup claim. One or more cases alone do not establish subgroup statistical adequacy",
+    "Finalized retrospective USGS records do not establish historical as-of-origin availability or prospective forecast skill",
+    "Local file and Git hashes establish reproducibility and integrity relative to the saved archive, not independently authenticated physical truth or a trusted external timestamp",
+    "One station and four selected 28-day windows do not validate pollutant attribution, interventions, ecological utility or community outcomes"
+  ],
+  "mission": "Verifiable environmental predictions in support of community and youth decision rights; no change to operational Oracle, governance, quorum, treasury, token or spending",
+  "fullReportRawSha256": "0xd0e216eea8127c9b78bb1010068452fa7ca606d7344234f38ea42f4dd3302673",
+  "windows": [
+    {
+      "window": {
+        "id": "winter-february-2025",
+        "season": "winter",
+        "start": "2025-02-01T00:00:00Z",
+        "end": "2025-03-01T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0xa002c76e99cda485a321b7ea97a5b162041f99fe3b20d46aa06b55a8eb1a8a6b",
+        "temperature": "0x4b3b98f8438a19f29be7edc3124482433a7a58fdecfa30cc672ec78325b7bac9",
+        "discharge": "0x8d22afd1c92d6856d3ac3a5aa2e7c4013a14ed8295685935fb38e0bedb7aa750"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 1328,
+          "accepted": 1328,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8065,
+          "accepted": 8065,
+          "excluded": []
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 1315,
+        "acceptedPairs": 1276,
+        "skipped": 39
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 1332,
+        "acceptedExactGridPairs": 1276,
+        "missingApprovedOxygenOrigins": 17,
+        "presentOriginsWithIncompleteHistoryOrTarget": 39,
+        "acceptedGridFraction": 0.9579579579579579
+      },
+      "captureCommitment": {
+        "frozenAtCommit": "e8b4e133aa81ecda548480991584239a8ed142ea",
+        "implementationFiles": [
+          {
+            "file": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+            "rawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-multivariate/manifest.json",
+            "rawSha256": "0x4992a7e5f317b0fbab659d5941fafb6538d30652fc707176ddeef0a6a9387395"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-stability/protocol.json",
+            "rawSha256": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-training-audit/protocol.json",
+            "rawSha256": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-validation/protocol.json",
+            "rawSha256": "0xd528c8e35c657d1fb5603d810a52076d3c655c75e3f27611defb50bada26e02e"
+          },
+          {
+            "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+            "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+          },
+          {
+            "file": "scripts/audit_willamette.py",
+            "rawSha256": "0x9a8de29078d7e4c75260b7f9fea1b7220193f64a97b0b00384ca680ea00f8d12"
+          },
+          {
+            "file": "scripts/capture-willamette-stability.mjs",
+            "rawSha256": "0xf1d84010ff391cd971f9fdfedfa454ecc7df384319cd07e4780979b89f77947c"
+          },
+          {
+            "file": "scripts/evaluate_stability.py",
+            "rawSha256": "0xb29fcc416849b317fdc0140ea48b9a48bf907d1af185c0e917b262ebe86f86bf"
+          },
+          {
+            "file": "scripts/experiment_multiseason.py",
+            "rawSha256": "0x00999b36a5c5fcb5c6a51ca9d00ee076f6bd9b1c2fb47245a402ccf9c5d4dfea"
+          },
+          {
+            "file": "scripts/stability_protocol.py",
+            "rawSha256": "0xc04b2972faa01190c99abf0ae0aaa686b3167475b1ef2f9a90a51ee812a57fd4"
+          },
+          {
+            "file": "scripts/test-capture-stability.mjs",
+            "rawSha256": "0xf660e926b3f3a45bf58d6afd32daef186214de94e2f270c07e259a2e8e687ecb"
+          },
+          {
+            "file": "scripts/test_evaluate_stability.py",
+            "rawSha256": "0xa602ce856d7489ccf79715aa13be78799fabbfbd36f0e796f35d01fb378c04e6"
+          },
+          {
+            "file": "scripts/test_stability_protocol.py",
+            "rawSha256": "0x46a72a91ce04335c1e28831c31d8c73150c791621e83e98b06b844ce7318333c"
+          }
+        ],
+        "implementationSnapshotHash": "0xf223742317b2b32d435b5673ced9a49122b36ceca2353e3a59808c514a080679",
+        "verifiedAgainstCurrentFilesAndGit": true,
+        "manifestRawSha256": "0x5bdf697a90d0018935db043e4e6162f61ac640519702d3e3a0911704a01d93fa",
+        "archivedBodyHashes": {
+          "oxygen": "0xa002c76e99cda485a321b7ea97a5b162041f99fe3b20d46aa06b55a8eb1a8a6b",
+          "temperature": "0x4b3b98f8438a19f29be7edc3124482433a7a58fdecfa30cc672ec78325b7bac9",
+          "discharge": "0x8d22afd1c92d6856d3ac3a5aa2e7c4013a14ed8295685935fb38e0bedb7aa750"
+        }
+      },
+      "dataScreenPassed": true,
+      "scores": {
+        "persistence": {
+          "pairs": 1276,
+          "maeMgL": 0.017084639498432592,
+          "rmseMgL": 0.041333569285064875,
+          "biasMgL": 0.0004702194357366782,
+          "p95AbsoluteErrorMgL": 0.09999999999999964
+        },
+        "same-frozen-ridge-without-fallback": {
+          "pairs": 1276,
+          "maeMgL": 0.028468608291398308,
+          "rmseMgL": 0.04159907423248276,
+          "biasMgL": 0.006686285348672729,
+          "p95AbsoluteErrorMgL": 0.0993724788442818
+        },
+        "same-frozen-ridge-with-fallback": {
+          "pairs": 1276,
+          "maeMgL": 0.024585993270819794,
+          "rmseMgL": 0.04048174591919982,
+          "biasMgL": 0.004932173772781858,
+          "p95AbsoluteErrorMgL": 0.09999999999999964
+        }
+      },
+      "daily": [
+        {
+          "originDayUTC": "2025-02-01",
+          "pairs": 37,
+          "scores": {
+            "persistence": {
+              "pairs": 37,
+              "maeMgL": 0.02162162162162159,
+              "rmseMgL": 0.046499055497527655,
+              "biasMgL": 0.01081081081081082,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.03585741923649424,
+              "rmseMgL": 0.04840356443935721,
+              "biasMgL": 0.028492799006190422,
+              "p95AbsoluteErrorMgL": 0.09865765598128734
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.027658959831812303,
+              "rmseMgL": 0.04415507823183945,
+              "biasMgL": 0.02029433960150848,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-02",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.027083333333333237,
+              "rmseMgL": 0.052041649986653137,
+              "biasMgL": 0.002083333333333326,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.033558423885621615,
+              "rmseMgL": 0.04609005951659012,
+              "biasMgL": 0.011862715410456026,
+              "p95AbsoluteErrorMgL": 0.09581371655493445
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.033137531600121006,
+              "rmseMgL": 0.046487040311237765,
+              "biasMgL": 0.010988212106140946,
+              "p95AbsoluteErrorMgL": 0.09979756490698692
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-03",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.02499999999999991,
+              "rmseMgL": 0.04999999999999982,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03820163336241489,
+              "rmseMgL": 0.050580532954725144,
+              "biasMgL": 0.014173984472536075,
+              "p95AbsoluteErrorMgL": 0.11056840499912572
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03696168701308822,
+              "rmseMgL": 0.048713465258317476,
+              "biasMgL": 0.012934038123209405,
+              "p95AbsoluteErrorMgL": 0.09968634819568649
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-04",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.004166666666666652,
+              "rmseMgL": 0.02041241452319308,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.019654761863023878,
+              "rmseMgL": 0.031947563165007506,
+              "biasMgL": 0.01344337284027508,
+              "p95AbsoluteErrorMgL": 0.05668786060875771
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.009425422875824707,
+              "rmseMgL": 0.02485257393538485,
+              "biasMgL": 0.008816425033740841,
+              "p95AbsoluteErrorMgL": 0.05668786060875771
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-05",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.016666666666666902,
+              "rmseMgL": 0.04082482904638688,
+              "biasMgL": 0.004166666666666726,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03142545041147171,
+              "rmseMgL": 0.044197547664228905,
+              "biasMgL": 0.011454207366136485,
+              "p95AbsoluteErrorMgL": 0.10758777166958512
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.02546891360714465,
+              "rmseMgL": 0.04191335262776255,
+              "biasMgL": 0.005497670561809424,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-06",
+          "pairs": 26,
+          "scores": {
+            "persistence": {
+              "pairs": 26,
+              "maeMgL": 0.003846153846153901,
+              "rmseMgL": 0.019611613513818682,
+              "biasMgL": -0.003846153846153901,
+              "p95AbsoluteErrorMgL": 0.0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 26,
+              "maeMgL": 0.018754160686925002,
+              "rmseMgL": 0.02785802324370235,
+              "biasMgL": 0.00518024052992184,
+              "p95AbsoluteErrorMgL": 0.02649923197203341
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 26,
+              "maeMgL": 0.016439912919346433,
+              "rmseMgL": 0.025347284184423453,
+              "biasMgL": 0.004992270068900991,
+              "p95AbsoluteErrorMgL": 0.02649923197203341
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-07",
+          "pairs": 30,
+          "scores": {
+            "persistence": {
+              "pairs": 30,
+              "maeMgL": 0.006666666666666643,
+              "rmseMgL": 0.025819888974716022,
+              "biasMgL": -0.006666666666666643,
+              "p95AbsoluteErrorMgL": 0.05499999999999952
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 30,
+              "maeMgL": 0.01350928850430062,
+              "rmseMgL": 0.022381041059981257,
+              "biasMgL": -0.010970156237924597,
+              "p95AbsoluteErrorMgL": 0.045715995306621335
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 30,
+              "maeMgL": 0.00703791853515785,
+              "rmseMgL": 0.02234123309910641,
+              "biasMgL": -0.00703791853515785,
+              "p95AbsoluteErrorMgL": 0.045715995306621335
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-08",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.012499999999999956,
+              "rmseMgL": 0.03535533905932725,
+              "biasMgL": -0.008333333333333304,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.022005550197617334,
+              "rmseMgL": 0.03356234774216432,
+              "biasMgL": -0.005670012410482224,
+              "p95AbsoluteErrorMgL": 0.08930329864792794
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.01821594892378405,
+              "rmseMgL": 0.035268889461999874,
+              "biasMgL": -0.004748829264210053,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-09",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.02499999999999991,
+              "rmseMgL": 0.04999999999999982,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03347899049374189,
+              "rmseMgL": 0.04464240975703439,
+              "biasMgL": 0.007600206957367073,
+              "p95AbsoluteErrorMgL": 0.09270066723303447
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03082554946240031,
+              "rmseMgL": 0.04523198086921119,
+              "biasMgL": 0.0062995996130313925,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-10",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.029166666666666563,
+              "rmseMgL": 0.05400617248673198,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.035091577390426086,
+              "rmseMgL": 0.048612475972217975,
+              "biasMgL": 0.01202679017306422,
+              "p95AbsoluteErrorMgL": 0.10346010721058825
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.034948377973425315,
+              "rmseMgL": 0.04902809724992756,
+              "biasMgL": 0.012621299682430606,
+              "p95AbsoluteErrorMgL": 0.10346010721058825
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-11",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.02499999999999991,
+              "rmseMgL": 0.04999999999999982,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.030271800629580126,
+              "rmseMgL": 0.04414576840036762,
+              "biasMgL": 0.013146692843155838,
+              "p95AbsoluteErrorMgL": 0.09128965062123351
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0300524557435079,
+              "rmseMgL": 0.044806427307394446,
+              "biasMgL": 0.013183361161969276,
+              "p95AbsoluteErrorMgL": 0.09710002801750485
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-12",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.016666666666666607,
+              "rmseMgL": 0.04082482904638616,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.025995785138954248,
+              "rmseMgL": 0.03770293469009276,
+              "biasMgL": 0.01321419454467269,
+              "p95AbsoluteErrorMgL": 0.09374570748453692
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.023582401053447555,
+              "rmseMgL": 0.03753854278630142,
+              "biasMgL": 0.0110466053185266,
+              "p95AbsoluteErrorMgL": 0.09586032545298719
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-13",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.012499999999999956,
+              "rmseMgL": 0.03535533905932725,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.02436474493019229,
+              "rmseMgL": 0.034750364534699665,
+              "biasMgL": 0.013398362650127985,
+              "p95AbsoluteErrorMgL": 0.08085563228049235
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.02153598027794786,
+              "rmseMgL": 0.037103876357335586,
+              "biasMgL": 0.013089756565615914,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-14",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.024999999999999984,
+              "rmseMgL": 0.04999999999999997,
+              "biasMgL": 0.004166666666666726,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0322386026128999,
+              "rmseMgL": 0.04637722789372354,
+              "biasMgL": 0.015192859201484684,
+              "p95AbsoluteErrorMgL": 0.09842952191053687
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03197399159383337,
+              "rmseMgL": 0.04657267154162252,
+              "biasMgL": 0.01499277626037987,
+              "p95AbsoluteErrorMgL": 0.1000000000000008
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-15",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.03333333333333358,
+              "rmseMgL": 0.05773502691896301,
+              "biasMgL": -0.01666666666666668,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03637513476708661,
+              "rmseMgL": 0.0522162064083386,
+              "biasMgL": -0.015802965741310387,
+              "p95AbsoluteErrorMgL": 0.10780443544901379
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.035955919370518896,
+              "rmseMgL": 0.05167569312905123,
+              "biasMgL": -0.015383750344742672,
+              "p95AbsoluteErrorMgL": 0.10531553191753361
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-16",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.024999999999999984,
+              "rmseMgL": 0.04999999999999997,
+              "biasMgL": -0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03202456048710445,
+              "rmseMgL": 0.0437390800969367,
+              "biasMgL": -0.005267739107169341,
+              "p95AbsoluteErrorMgL": 0.08790644285900315
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.031701006771034046,
+              "rmseMgL": 0.04558193309876815,
+              "biasMgL": -0.007815938492455246,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-17",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.004166666666666726,
+              "rmseMgL": 0.02041241452319344,
+              "biasMgL": 0.004166666666666726,
+              "p95AbsoluteErrorMgL": 0.0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0202436931306819,
+              "rmseMgL": 0.03263462225883279,
+              "biasMgL": 0.015260825897023711,
+              "p95AbsoluteErrorMgL": 0.05919453006339734
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.009035874182615236,
+              "rmseMgL": 0.02518164475860842,
+              "biasMgL": 0.009035874182615236,
+              "p95AbsoluteErrorMgL": 0.05919453006339734
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-18",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.014583333333333282,
+              "rmseMgL": 0.038188130791298534,
+              "biasMgL": 0.002083333333333326,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03235180562634602,
+              "rmseMgL": 0.04663375781307662,
+              "biasMgL": 0.01272176099835276,
+              "p95AbsoluteErrorMgL": 0.1054757389643199
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.027777468067030336,
+              "rmseMgL": 0.04305628980672061,
+              "biasMgL": 0.009438348568202951,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-19",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.022916666666666585,
+              "rmseMgL": 0.04787135538781674,
+              "biasMgL": 0.01041666666666663,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.041446982990851367,
+              "rmseMgL": 0.05354481429155475,
+              "biasMgL": 0.02221126531785489,
+              "p95AbsoluteErrorMgL": 0.10928033824896034
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04008482861792203,
+              "rmseMgL": 0.05161402269452856,
+              "biasMgL": 0.020849110944925548,
+              "p95AbsoluteErrorMgL": 0.10295871325051813
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-20",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.004166666666666652,
+              "rmseMgL": 0.02041241452319308,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.018595109331551247,
+              "rmseMgL": 0.025698516049757553,
+              "biasMgL": -0.0019444331212816375,
+              "p95AbsoluteErrorMgL": 0.04670085616576722
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.009433484021967087,
+              "rmseMgL": 0.02247097330397411,
+              "biasMgL": -0.009273653655436273,
+              "p95AbsoluteErrorMgL": 0.04670085616576722
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-21",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.01041666666666663,
+              "rmseMgL": 0.032274861218395026,
+              "biasMgL": 0.006249999999999978,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.02281643156707743,
+              "rmseMgL": 0.033646671539931276,
+              "biasMgL": 0.013058351432212826,
+              "p95AbsoluteErrorMgL": 0.0929038656972266
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.013766972427493621,
+              "rmseMgL": 0.030602456170993518,
+              "biasMgL": 0.011793358434389408,
+              "p95AbsoluteErrorMgL": 0.09509711473002118
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-22",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.018750000000000006,
+              "rmseMgL": 0.04330127018922195,
+              "biasMgL": 0.0062500000000000515,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03242437081966972,
+              "rmseMgL": 0.04500373864223264,
+              "biasMgL": 0.014342335067363413,
+              "p95AbsoluteErrorMgL": 0.10883968641224948
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.029304210621331445,
+              "rmseMgL": 0.04347101301918421,
+              "biasMgL": 0.01122217486902514,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-23",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.012499999999999956,
+              "rmseMgL": 0.03535533905932725,
+              "biasMgL": 0.012499999999999956,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.02877910576509494,
+              "rmseMgL": 0.043567739787263984,
+              "biasMgL": 0.023902274106090433,
+              "p95AbsoluteErrorMgL": 0.10556974701072423
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.026530209082509876,
+              "rmseMgL": 0.04301870883048869,
+              "biasMgL": 0.025966947133246248,
+              "p95AbsoluteErrorMgL": 0.10167906804820008
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-24",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.01666666666666668,
+              "rmseMgL": 0.04082482904638634,
+              "biasMgL": -0.01666666666666668,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.027743344416897964,
+              "rmseMgL": 0.044194989278377304,
+              "biasMgL": -0.02126224410325202,
+              "p95AbsoluteErrorMgL": 0.1076777374113627
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.023846904816815395,
+              "rmseMgL": 0.04280002605167376,
+              "biasMgL": -0.01780502410477421,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-25",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.020833333333333332,
+              "rmseMgL": 0.04564354645876384,
+              "biasMgL": -0.016666666666666607,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.028775706683479358,
+              "rmseMgL": 0.04312217156928078,
+              "biasMgL": -0.022617609762512,
+              "p95AbsoluteErrorMgL": 0.09634756140977066
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.027396584854708157,
+              "rmseMgL": 0.043532841180141384,
+              "biasMgL": -0.02072883906144089,
+              "p95AbsoluteErrorMgL": 0.10120720460651862
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-26",
+          "pairs": 32,
+          "scores": {
+            "persistence": {
+              "pairs": 32,
+              "maeMgL": 0.015625000000000167,
+              "rmseMgL": 0.039528470752105166,
+              "biasMgL": -0.009375000000000078,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 32,
+              "maeMgL": 0.03101561414837306,
+              "rmseMgL": 0.04260288052355036,
+              "biasMgL": -0.01440365308965108,
+              "p95AbsoluteErrorMgL": 0.10154249090876766
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 32,
+              "maeMgL": 0.0252898825945973,
+              "rmseMgL": 0.04163138187901591,
+              "biasMgL": -0.02023315603075626,
+              "p95AbsoluteErrorMgL": 0.10245567911726657
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-27",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.006249999999999978,
+              "rmseMgL": 0.02499999999999991,
+              "biasMgL": -0.002083333333333326,
+              "p95AbsoluteErrorMgL": 0.06499999999999963
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.017499090875473227,
+              "rmseMgL": 0.024167549317529027,
+              "biasMgL": -0.004184778836475944,
+              "p95AbsoluteErrorMgL": 0.04766781263322764
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.010313515937195686,
+              "rmseMgL": 0.023920331435784026,
+              "biasMgL": -0.006848616761929678,
+              "p95AbsoluteErrorMgL": 0.04766781263322764
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-02-28",
+          "pairs": 47,
+          "scores": {
+            "persistence": {
+              "pairs": 47,
+              "maeMgL": 0.012765957446808541,
+              "rmseMgL": 0.035729480050524905,
+              "biasMgL": 0.012765957446808541,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.02503033251550114,
+              "rmseMgL": 0.03946807601082654,
+              "biasMgL": 0.01958089141516619,
+              "p95AbsoluteErrorMgL": 0.08994816278896829
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.02126133825132213,
+              "rmseMgL": 0.036440818210809564,
+              "biasMgL": 0.01581189715098718,
+              "p95AbsoluteErrorMgL": 0.08994816278896829
+            }
+          }
+        }
+      ],
+      "subgroups": {
+        "past-flat": {
+          "pairs": 439,
+          "scores": {
+            "persistence": {
+              "pairs": 439,
+              "maeMgL": 0.013439635535307535,
+              "rmseMgL": 0.036660108476800166,
+              "biasMgL": 0.00387243735763099,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 439,
+              "maeMgL": 0.024724867349107497,
+              "rmseMgL": 0.04013143333275506,
+              "biasMgL": 0.008970948452931107,
+              "p95AbsoluteErrorMgL": 0.10840139029179487
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 439,
+              "maeMgL": 0.013439635535307535,
+              "rmseMgL": 0.036660108476800166,
+              "biasMgL": 0.00387243735763099,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            }
+          }
+        },
+        "past-changing": {
+          "pairs": 837,
+          "scores": {
+            "persistence": {
+              "pairs": 837,
+              "maeMgL": 0.018996415770609298,
+              "rmseMgL": 0.04358487784841123,
+              "biasMgL": -0.001314217443249705,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 837,
+              "maeMgL": 0.03043217134237282,
+              "rmseMgL": 0.042348510761099606,
+              "biasMgL": 0.005487997292795276,
+              "p95AbsoluteErrorMgL": 0.09661441111495425
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 837,
+              "maeMgL": 0.03043217134237282,
+              "rmseMgL": 0.042348510761099606,
+              "biasMgL": 0.005487997292795276,
+              "p95AbsoluteErrorMgL": 0.09661441111495425
+            }
+          }
+        }
+      },
+      "predictionDiagnostics": {
+        "nonfinitePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "negativePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "nonfiniteScoreMethods": []
+      },
+      "approvedTargetsBelowIllustrative5MgL": {
+        "pairs": 0,
+        "origins": [],
+        "meaning": "Descriptive only; not a local ecological threshold"
+      },
+      "observedOneHourDeclines": {
+        "pairs": 112,
+        "origins": [
+          "2025-02-01T05:30:00.000Z",
+          "2025-02-01T08:00:00.000Z",
+          "2025-02-01T08:30:00.000Z",
+          "2025-02-01T20:00:00.000Z",
+          "2025-02-01T20:30:00.000Z",
+          "2025-02-01T23:00:00.000Z",
+          "2025-02-02T01:30:00.000Z",
+          "2025-02-02T02:00:00.000Z",
+          "2025-02-02T05:00:00.000Z",
+          "2025-02-02T14:30:00.000Z",
+          "2025-02-02T18:30:00.000Z",
+          "2025-02-02T21:00:00.000Z",
+          "2025-02-02T21:30:00.000Z",
+          "2025-02-03T01:30:00.000Z",
+          "2025-02-03T02:00:00.000Z",
+          "2025-02-03T07:00:00.000Z",
+          "2025-02-03T07:30:00.000Z",
+          "2025-02-03T13:30:00.000Z",
+          "2025-02-03T21:00:00.000Z",
+          "2025-02-03T21:30:00.000Z",
+          "2025-02-04T19:30:00.000Z",
+          "2025-02-04T20:00:00.000Z",
+          "2025-02-05T02:00:00.000Z",
+          "2025-02-05T02:30:00.000Z",
+          "2025-02-05T09:00:00.000Z",
+          "2025-02-05T22:30:00.000Z",
+          "2025-02-05T23:00:00.000Z",
+          "2025-02-08T13:00:00.000Z",
+          "2025-02-09T00:00:00.000Z",
+          "2025-02-09T00:30:00.000Z",
+          "2025-02-09T09:30:00.000Z",
+          "2025-02-09T10:00:00.000Z",
+          "2025-02-09T19:30:00.000Z",
+          "2025-02-09T21:00:00.000Z",
+          "2025-02-10T01:30:00.000Z",
+          "2025-02-10T02:00:00.000Z",
+          "2025-02-10T09:00:00.000Z",
+          "2025-02-10T09:30:00.000Z",
+          "2025-02-10T15:00:00.000Z",
+          "2025-02-10T15:30:00.000Z",
+          "2025-02-10T18:00:00.000Z",
+          "2025-02-10T19:30:00.000Z",
+          "2025-02-11T03:00:00.000Z",
+          "2025-02-11T03:30:00.000Z",
+          "2025-02-11T08:30:00.000Z",
+          "2025-02-11T09:00:00.000Z",
+          "2025-02-11T10:30:00.000Z",
+          "2025-02-11T13:30:00.000Z",
+          "2025-02-11T20:30:00.000Z",
+          "2025-02-12T02:30:00.000Z",
+          "2025-02-12T03:00:00.000Z",
+          "2025-02-12T09:00:00.000Z",
+          "2025-02-12T10:30:00.000Z",
+          "2025-02-12T12:30:00.000Z",
+          "2025-02-13T07:00:00.000Z",
+          "2025-02-13T08:30:00.000Z",
+          "2025-02-13T17:00:00.000Z",
+          "2025-02-13T17:30:00.000Z",
+          "2025-02-14T01:30:00.000Z",
+          "2025-02-14T03:00:00.000Z",
+          "2025-02-14T08:30:00.000Z",
+          "2025-02-14T09:00:00.000Z",
+          "2025-02-14T13:30:00.000Z",
+          "2025-02-14T18:30:00.000Z",
+          "2025-02-14T19:00:00.000Z",
+          "2025-02-15T04:30:00.000Z",
+          "2025-02-15T05:00:00.000Z",
+          "2025-02-15T12:00:00.000Z",
+          "2025-02-15T14:30:00.000Z",
+          "2025-02-16T00:00:00.000Z",
+          "2025-02-16T05:30:00.000Z",
+          "2025-02-16T06:00:00.000Z",
+          "2025-02-16T08:30:00.000Z",
+          "2025-02-17T19:30:00.000Z",
+          "2025-02-17T20:00:00.000Z",
+          "2025-02-18T00:30:00.000Z",
+          "2025-02-18T01:00:00.000Z",
+          "2025-02-18T19:00:00.000Z",
+          "2025-02-18T19:30:00.000Z",
+          "2025-02-19T01:00:00.000Z",
+          "2025-02-19T03:30:00.000Z",
+          "2025-02-19T07:00:00.000Z",
+          "2025-02-19T07:30:00.000Z",
+          "2025-02-19T12:00:00.000Z",
+          "2025-02-19T13:30:00.000Z",
+          "2025-02-19T20:00:00.000Z",
+          "2025-02-19T20:30:00.000Z",
+          "2025-02-21T10:00:00.000Z",
+          "2025-02-21T10:30:00.000Z",
+          "2025-02-21T21:30:00.000Z",
+          "2025-02-21T23:00:00.000Z",
+          "2025-02-22T00:30:00.000Z",
+          "2025-02-22T04:00:00.000Z",
+          "2025-02-22T06:30:00.000Z",
+          "2025-02-22T07:00:00.000Z",
+          "2025-02-22T13:00:00.000Z",
+          "2025-02-22T13:30:00.000Z",
+          "2025-02-23T06:30:00.000Z",
+          "2025-02-23T07:00:00.000Z",
+          "2025-02-23T11:30:00.000Z",
+          "2025-02-23T12:00:00.000Z",
+          "2025-02-23T17:30:00.000Z",
+          "2025-02-23T18:00:00.000Z",
+          "2025-02-25T05:00:00.000Z",
+          "2025-02-26T05:30:00.000Z",
+          "2025-02-27T00:30:00.000Z",
+          "2025-02-28T01:30:00.000Z",
+          "2025-02-28T02:00:00.000Z",
+          "2025-02-28T07:00:00.000Z",
+          "2025-02-28T07:30:00.000Z",
+          "2025-02-28T18:00:00.000Z",
+          "2025-02-28T18:30:00.000Z"
+        ],
+        "meaning": "Targets label this diagnostic after prediction; every row retains all twelve past oxygen samples and its target"
+      },
+      "featureExtrapolation": {
+        "pairs": 376,
+        "fraction": 0.2946708463949843,
+        "byFeature": {
+          "oxygenNow": 0,
+          "oxygenDelta30m": 0,
+          "oxygenDelta2h": 0,
+          "oxygenDelta5h30m": 0,
+          "clockSinUTC": 0,
+          "clockCosUTC": 0,
+          "temperatureNow": 376,
+          "temperatureDelta2h": 0
+        },
+        "meaning": "Univariate training-range check, not a validated applicability domain or uncertainty probability"
+      }
+    },
+    {
+      "window": {
+        "id": "spring-may-2025",
+        "season": "spring",
+        "start": "2025-05-01T00:00:00Z",
+        "end": "2025-05-29T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0x4685a1bdf9be9a42da1276ec0f4aacb663875d3886299672852e4328c43bf204",
+        "temperature": "0x006a2b73e1b4bec9d998e20c60902866eccc6c2affaecfc505035cd4b2d15bdc",
+        "discharge": "0xd74e3cbf014b365a7a32ef8244e113f4d24c299fd2f3c8012390cef3a878895e"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8049,
+          "accepted": 8049,
+          "excluded": []
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 1332,
+        "acceptedPairs": 1320,
+        "skipped": 12
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 1332,
+        "acceptedExactGridPairs": 1320,
+        "missingApprovedOxygenOrigins": 0,
+        "presentOriginsWithIncompleteHistoryOrTarget": 12,
+        "acceptedGridFraction": 0.990990990990991
+      },
+      "captureCommitment": {
+        "frozenAtCommit": "e8b4e133aa81ecda548480991584239a8ed142ea",
+        "implementationFiles": [
+          {
+            "file": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+            "rawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-multivariate/manifest.json",
+            "rawSha256": "0x4992a7e5f317b0fbab659d5941fafb6538d30652fc707176ddeef0a6a9387395"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-stability/protocol.json",
+            "rawSha256": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-training-audit/protocol.json",
+            "rawSha256": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-validation/protocol.json",
+            "rawSha256": "0xd528c8e35c657d1fb5603d810a52076d3c655c75e3f27611defb50bada26e02e"
+          },
+          {
+            "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+            "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+          },
+          {
+            "file": "scripts/audit_willamette.py",
+            "rawSha256": "0x9a8de29078d7e4c75260b7f9fea1b7220193f64a97b0b00384ca680ea00f8d12"
+          },
+          {
+            "file": "scripts/capture-willamette-stability.mjs",
+            "rawSha256": "0xf1d84010ff391cd971f9fdfedfa454ecc7df384319cd07e4780979b89f77947c"
+          },
+          {
+            "file": "scripts/evaluate_stability.py",
+            "rawSha256": "0xb29fcc416849b317fdc0140ea48b9a48bf907d1af185c0e917b262ebe86f86bf"
+          },
+          {
+            "file": "scripts/experiment_multiseason.py",
+            "rawSha256": "0x00999b36a5c5fcb5c6a51ca9d00ee076f6bd9b1c2fb47245a402ccf9c5d4dfea"
+          },
+          {
+            "file": "scripts/stability_protocol.py",
+            "rawSha256": "0xc04b2972faa01190c99abf0ae0aaa686b3167475b1ef2f9a90a51ee812a57fd4"
+          },
+          {
+            "file": "scripts/test-capture-stability.mjs",
+            "rawSha256": "0xf660e926b3f3a45bf58d6afd32daef186214de94e2f270c07e259a2e8e687ecb"
+          },
+          {
+            "file": "scripts/test_evaluate_stability.py",
+            "rawSha256": "0xa602ce856d7489ccf79715aa13be78799fabbfbd36f0e796f35d01fb378c04e6"
+          },
+          {
+            "file": "scripts/test_stability_protocol.py",
+            "rawSha256": "0x46a72a91ce04335c1e28831c31d8c73150c791621e83e98b06b844ce7318333c"
+          }
+        ],
+        "implementationSnapshotHash": "0xf223742317b2b32d435b5673ced9a49122b36ceca2353e3a59808c514a080679",
+        "verifiedAgainstCurrentFilesAndGit": true,
+        "manifestRawSha256": "0x3302d7e779e41e3a1236700647325b8190bd0208fc11860ca8d988671d07b4ee",
+        "archivedBodyHashes": {
+          "oxygen": "0x4685a1bdf9be9a42da1276ec0f4aacb663875d3886299672852e4328c43bf204",
+          "temperature": "0x006a2b73e1b4bec9d998e20c60902866eccc6c2affaecfc505035cd4b2d15bdc",
+          "discharge": "0xd74e3cbf014b365a7a32ef8244e113f4d24c299fd2f3c8012390cef3a878895e"
+        }
+      },
+      "dataScreenPassed": true,
+      "scores": {
+        "persistence": {
+          "pairs": 1320,
+          "maeMgL": 0.08333333333333331,
+          "rmseMgL": 0.14984840824828752,
+          "biasMgL": 0.0009090909090909113,
+          "p95AbsoluteErrorMgL": 0.3000000000000007
+        },
+        "same-frozen-ridge-without-fallback": {
+          "pairs": 1320,
+          "maeMgL": 0.08981268826469024,
+          "rmseMgL": 0.1397784084658712,
+          "biasMgL": 0.0030100249938954855,
+          "p95AbsoluteErrorMgL": 0.2957061999614152
+        },
+        "same-frozen-ridge-with-fallback": {
+          "pairs": 1320,
+          "maeMgL": 0.08972268721031697,
+          "rmseMgL": 0.139864921266472,
+          "biasMgL": 0.0026805933048281044,
+          "p95AbsoluteErrorMgL": 0.2957061999614152
+        }
+      },
+      "daily": [
+        {
+          "originDayUTC": "2025-05-01",
+          "pairs": 37,
+          "scores": {
+            "persistence": {
+              "pairs": 37,
+              "maeMgL": 0.048648648648648575,
+              "rmseMgL": 0.09004503377814964,
+              "biasMgL": -0.010810810810810773,
+              "p95AbsoluteErrorMgL": 0.13999999999999901
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.05387192120163627,
+              "rmseMgL": 0.08179690113756691,
+              "biasMgL": -0.00964463549492626,
+              "p95AbsoluteErrorMgL": 0.12915211705142166
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.05387192120163627,
+              "rmseMgL": 0.08179690113756691,
+              "biasMgL": -0.00964463549492626,
+              "p95AbsoluteErrorMgL": 0.12915211705142166
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-02",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.062499999999999924,
+              "rmseMgL": 0.09574271077563375,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06947699483843106,
+              "rmseMgL": 0.09122345323782663,
+              "biasMgL": 0.003498775055853054,
+              "p95AbsoluteErrorMgL": 0.17188708029490413
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06972773688131235,
+              "rmseMgL": 0.09175509469412138,
+              "biasMgL": 0.0037495170987343527,
+              "p95AbsoluteErrorMgL": 0.17188708029490413
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-03",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.05416666666666662,
+              "rmseMgL": 0.07637626158259725,
+              "biasMgL": 0.008333333333333304,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.061490421614182056,
+              "rmseMgL": 0.0772212272163784,
+              "biasMgL": 0.0146893222484988,
+              "p95AbsoluteErrorMgL": 0.13495271289492466
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.061490421614182056,
+              "rmseMgL": 0.0772212272163784,
+              "biasMgL": 0.0146893222484988,
+              "p95AbsoluteErrorMgL": 0.13495271289492466
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-04",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.04166666666666682,
+              "rmseMgL": 0.0677003200386332,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04883303873188719,
+              "rmseMgL": 0.06481142933424534,
+              "biasMgL": 0.007910251825720768,
+              "p95AbsoluteErrorMgL": 0.11283410786663718
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04810006435499192,
+              "rmseMgL": 0.06419718673588673,
+              "biasMgL": 0.007177277448825496,
+              "p95AbsoluteErrorMgL": 0.10685880821149105
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-05",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.04583333333333339,
+              "rmseMgL": 0.07637626158259744,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.1649999999999999
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.057166287673785364,
+              "rmseMgL": 0.07801483312446422,
+              "biasMgL": -0.005731322416356506,
+              "p95AbsoluteErrorMgL": 0.16261790706498463
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.055987678730424505,
+              "rmseMgL": 0.07835238654828539,
+              "biasMgL": -0.007894575260990208,
+              "p95AbsoluteErrorMgL": 0.16261790706498463
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-06",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07083333333333337,
+              "rmseMgL": 0.12747548783981957,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.3649999999999992
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07807760988500419,
+              "rmseMgL": 0.126534359084599,
+              "biasMgL": 0.0017695321176005214,
+              "p95AbsoluteErrorMgL": 0.26596361171994337
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07896122556511087,
+              "rmseMgL": 0.12715700866112872,
+              "biasMgL": 0.0008859164374938425,
+              "p95AbsoluteErrorMgL": 0.26596361171994337
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-07",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.09999999999999994,
+              "rmseMgL": 0.2051422270848529,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.42999999999999994
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1140918523107212,
+              "rmseMgL": 0.19858242898464423,
+              "biasMgL": 0.005036281420898773,
+              "p95AbsoluteErrorMgL": 0.4826474493626641
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.11445564839828808,
+              "rmseMgL": 0.19874956008624234,
+              "biasMgL": 0.005400077508465643,
+              "p95AbsoluteErrorMgL": 0.4826474493626641
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-08",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.08124999999999982,
+              "rmseMgL": 0.11086778913041696,
+              "biasMgL": 0.006250000000000015,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08657274419549658,
+              "rmseMgL": 0.11322344986845596,
+              "biasMgL": 0.013573983864519912,
+              "p95AbsoluteErrorMgL": 0.22436607583629228
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08657274419549658,
+              "rmseMgL": 0.11322344986845596,
+              "biasMgL": 0.013573983864519912,
+              "p95AbsoluteErrorMgL": 0.22436607583629228
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-09",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.08125000000000011,
+              "rmseMgL": 0.12829003598617225,
+              "biasMgL": -0.010416666666666666,
+              "p95AbsoluteErrorMgL": 0.3000000000000007
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08939746911223749,
+              "rmseMgL": 0.12184921043912784,
+              "biasMgL": -0.013522267689258016,
+              "p95AbsoluteErrorMgL": 0.25737151345447884
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08939746911223749,
+              "rmseMgL": 0.12184921043912784,
+              "biasMgL": -0.013522267689258016,
+              "p95AbsoluteErrorMgL": 0.25737151345447884
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-10",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.09791666666666665,
+              "rmseMgL": 0.15069284433354274,
+              "biasMgL": 0.010416666666666666,
+              "p95AbsoluteErrorMgL": 0.3650000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.09850586810564806,
+              "rmseMgL": 0.1356265906509596,
+              "biasMgL": 0.01267089015509526,
+              "p95AbsoluteErrorMgL": 0.28509441685204584
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.09850586810564806,
+              "rmseMgL": 0.1356265906509596,
+              "biasMgL": 0.01267089015509526,
+              "p95AbsoluteErrorMgL": 0.28509441685204584
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-11",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.10833333333333321,
+              "rmseMgL": 0.18819316317727006,
+              "biasMgL": 0.033333333333333326,
+              "p95AbsoluteErrorMgL": 0.39999999999999974
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1098706181271533,
+              "rmseMgL": 0.17597405160044435,
+              "biasMgL": 0.03922521770707658,
+              "p95AbsoluteErrorMgL": 0.381170903532371
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.11046871619542276,
+              "rmseMgL": 0.17628916618780405,
+              "biasMgL": 0.03862711963880713,
+              "p95AbsoluteErrorMgL": 0.381170903532371
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-12",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.10833333333333339,
+              "rmseMgL": 0.19364916731037074,
+              "biasMgL": -0.008333333333333304,
+              "p95AbsoluteErrorMgL": 0.5
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10847845612929763,
+              "rmseMgL": 0.1691103979242475,
+              "biasMgL": -0.0041124519147470355,
+              "p95AbsoluteErrorMgL": 0.39637873866731493
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10847845612929763,
+              "rmseMgL": 0.1691103979242475,
+              "biasMgL": -0.0041124519147470355,
+              "p95AbsoluteErrorMgL": 0.39637873866731493
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-13",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.09583333333333328,
+              "rmseMgL": 0.19472202409246517,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.3999999999999986
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.12047554116767463,
+              "rmseMgL": 0.19430550431545485,
+              "biasMgL": 0.0027078135176493343,
+              "p95AbsoluteErrorMgL": 0.43670014636146803
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.11933971952849036,
+              "rmseMgL": 0.19423919887181462,
+              "biasMgL": 0.0015719918784650548,
+              "p95AbsoluteErrorMgL": 0.43670014636146803
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-14",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.06458333333333333,
+              "rmseMgL": 0.11636866703140761,
+              "biasMgL": -0.010416666666666704,
+              "p95AbsoluteErrorMgL": 0.2649999999999989
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08230214428014548,
+              "rmseMgL": 0.11659428999751419,
+              "biasMgL": -0.01111098642754064,
+              "p95AbsoluteErrorMgL": 0.2735612795008395
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08130884928287396,
+              "rmseMgL": 0.11693532684902663,
+              "biasMgL": -0.013374186911724317,
+              "p95AbsoluteErrorMgL": 0.2735612795008395
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-15",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07500000000000011,
+              "rmseMgL": 0.14433756729740654,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.39999999999999974
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08136038427791474,
+              "rmseMgL": 0.1292368939042439,
+              "biasMgL": -0.006434642634021344,
+              "p95AbsoluteErrorMgL": 0.2514608755225921
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08189241653651332,
+              "rmseMgL": 0.12986221188097705,
+              "biasMgL": -0.006293912819750447,
+              "p95AbsoluteErrorMgL": 0.2514608755225921
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-16",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.12916666666666665,
+              "rmseMgL": 0.25576682088704683,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.5299999999999996
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.12724671004631183,
+              "rmseMgL": 0.2244817506701063,
+              "biasMgL": 0.0024149924354447405,
+              "p95AbsoluteErrorMgL": 0.4614709059810452
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.12724671004631183,
+              "rmseMgL": 0.2244817506701063,
+              "biasMgL": 0.0024149924354447405,
+              "p95AbsoluteErrorMgL": 0.4614709059810452
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-17",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.12916666666666665,
+              "rmseMgL": 0.24916527312876768,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.6650000000000005
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1516609291536519,
+              "rmseMgL": 0.2398144131054057,
+              "biasMgL": -0.0024244689036325338,
+              "p95AbsoluteErrorMgL": 0.5725808141154447
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1521566310767226,
+              "rmseMgL": 0.2400083199273356,
+              "biasMgL": -0.0029201708267032243,
+              "p95AbsoluteErrorMgL": 0.5725808141154447
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-18",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.06458333333333326,
+              "rmseMgL": 0.09242113755341172,
+              "biasMgL": 0.006249999999999978,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06805285787530575,
+              "rmseMgL": 0.09047881355487772,
+              "biasMgL": 0.011261472162749383,
+              "p95AbsoluteErrorMgL": 0.17917736718602284
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06805285787530575,
+              "rmseMgL": 0.09047881355487772,
+              "biasMgL": 0.011261472162749383,
+              "p95AbsoluteErrorMgL": 0.17917736718602284
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-19",
+          "pairs": 36,
+          "scores": {
+            "persistence": {
+              "pairs": 36,
+              "maeMgL": 0.04444444444444448,
+              "rmseMgL": 0.07453559924999312,
+              "biasMgL": 0.005555555555555635,
+              "p95AbsoluteErrorMgL": 0.12500000000000133
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 36,
+              "maeMgL": 0.05714291604789458,
+              "rmseMgL": 0.07781103206336584,
+              "biasMgL": 1.4839087486833651e-05,
+              "p95AbsoluteErrorMgL": 0.14201855270882602
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 36,
+              "maeMgL": 0.05639588387463432,
+              "rmseMgL": 0.07716769061655471,
+              "biasMgL": -0.0007104054573488443,
+              "p95AbsoluteErrorMgL": 0.14201855270882602
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-20",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07083333333333323,
+              "rmseMgL": 0.11180339887498945,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0828921819842648,
+              "rmseMgL": 0.11520995253360422,
+              "biasMgL": -0.0031041872197991407,
+              "p95AbsoluteErrorMgL": 0.22927167132442522
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0828921819842648,
+              "rmseMgL": 0.11520995253360422,
+              "biasMgL": -0.0031041872197991407,
+              "p95AbsoluteErrorMgL": 0.22927167132442522
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-21",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.08333333333333326,
+              "rmseMgL": 0.15942605391424147,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.39999999999999974
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08914135102449412,
+              "rmseMgL": 0.147831332757325,
+              "biasMgL": 0.008725634477196728,
+              "p95AbsoluteErrorMgL": 0.36217528216740186
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0881433100553926,
+              "rmseMgL": 0.14791569222455223,
+              "biasMgL": 0.007727593508095191,
+              "p95AbsoluteErrorMgL": 0.3715114788450152
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-22",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.0916666666666665,
+              "rmseMgL": 0.1471960144387972,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.3649999999999992
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10015467320381077,
+              "rmseMgL": 0.13548155251114535,
+              "biasMgL": -0.0024824837012624723,
+              "p95AbsoluteErrorMgL": 0.29174715611923563
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10015467320381077,
+              "rmseMgL": 0.13548155251114535,
+              "biasMgL": -0.0024824837012624723,
+              "p95AbsoluteErrorMgL": 0.29174715611923563
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-23",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.10416666666666674,
+              "rmseMgL": 0.16201851746019658,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.3650000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10710682630939894,
+              "rmseMgL": 0.14916013633532557,
+              "biasMgL": 0.00956956851513154,
+              "p95AbsoluteErrorMgL": 0.28497486928622173
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10710682630939894,
+              "rmseMgL": 0.14916013633532557,
+              "biasMgL": 0.00956956851513154,
+              "p95AbsoluteErrorMgL": 0.28497486928622173
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-24",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.08333333333333326,
+              "rmseMgL": 0.14860462083439172,
+              "biasMgL": -0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.40000000000000036
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08254184727913046,
+              "rmseMgL": 0.12717090095293523,
+              "biasMgL": -0.00786107538084028,
+              "p95AbsoluteErrorMgL": 0.29313768721265104
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08254184727913046,
+              "rmseMgL": 0.12717090095293523,
+              "biasMgL": -0.00786107538084028,
+              "p95AbsoluteErrorMgL": 0.29313768721265104
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-25",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.08124999999999993,
+              "rmseMgL": 0.1282900359861718,
+              "biasMgL": 0.014583333333333356,
+              "p95AbsoluteErrorMgL": 0.29999999999999893
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08285058954130368,
+              "rmseMgL": 0.11639973343229693,
+              "biasMgL": 0.022422628277022977,
+              "p95AbsoluteErrorMgL": 0.2599242778053732
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08285058954130368,
+              "rmseMgL": 0.11639973343229693,
+              "biasMgL": 0.022422628277022977,
+              "p95AbsoluteErrorMgL": 0.2599242778053732
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-26",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07916666666666661,
+              "rmseMgL": 0.11365151414154863,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08363254221912557,
+              "rmseMgL": 0.10834827427007927,
+              "biasMgL": -0.0018621629271322233,
+              "p95AbsoluteErrorMgL": 0.21187422262670202
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08363254221912557,
+              "rmseMgL": 0.10834827427007927,
+              "biasMgL": -0.0018621629271322233,
+              "p95AbsoluteErrorMgL": 0.21187422262670202
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-27",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.09375,
+              "rmseMgL": 0.14505745987941016,
+              "biasMgL": 0.010416666666666666,
+              "p95AbsoluteErrorMgL": 0.3650000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08493306759000407,
+              "rmseMgL": 0.1255818357293992,
+              "biasMgL": 0.009683820914883992,
+              "p95AbsoluteErrorMgL": 0.2229486141945033
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08493306759000407,
+              "rmseMgL": 0.1255818357293992,
+              "biasMgL": 0.009683820914883992,
+              "p95AbsoluteErrorMgL": 0.2229486141945033
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-05-28",
+          "pairs": 47,
+          "scores": {
+            "persistence": {
+              "pairs": 47,
+              "maeMgL": 0.12553191489361698,
+              "rmseMgL": 0.1816004499010269,
+              "biasMgL": -0.01489361702127658,
+              "p95AbsoluteErrorMgL": 0.37000000000000005
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.12168761971787433,
+              "rmseMgL": 0.15930451967096237,
+              "biasMgL": -0.01666230223343229,
+              "p95AbsoluteErrorMgL": 0.32792181419399774
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.12168761971787433,
+              "rmseMgL": 0.15930451967096237,
+              "biasMgL": -0.01666230223343229,
+              "p95AbsoluteErrorMgL": 0.32792181419399774
+            }
+          }
+        }
+      ],
+      "subgroups": {
+        "past-flat": {
+          "pairs": 42,
+          "scores": {
+            "persistence": {
+              "pairs": 42,
+              "maeMgL": 0.06666666666666655,
+              "rmseMgL": 0.10465362369445651,
+              "biasMgL": 0.01904761904761894,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 42,
+              "maeMgL": 0.0694952712326838,
+              "rmseMgL": 0.10095562433159883,
+              "biasMgL": 0.02940118641830806,
+              "p95AbsoluteErrorMgL": 0.1928128541879583
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 42,
+              "maeMgL": 0.06666666666666655,
+              "rmseMgL": 0.10465362369445651,
+              "biasMgL": 0.01904761904761894,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            }
+          }
+        },
+        "past-changing": {
+          "pairs": 1278,
+          "scores": {
+            "persistence": {
+              "pairs": 1278,
+              "maeMgL": 0.08388106416275429,
+              "rmseMgL": 0.1511044369326059,
+              "biasMgL": 0.0003129890453834174,
+              "p95AbsoluteErrorMgL": 0.3000000000000007
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 1278,
+              "maeMgL": 0.0904803968056482,
+              "rmseMgL": 0.14087280743887232,
+              "biasMgL": 0.0021427098297129125,
+              "p95AbsoluteErrorMgL": 0.29791704902890015
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 1278,
+              "maeMgL": 0.0904803968056482,
+              "rmseMgL": 0.14087280743887232,
+              "biasMgL": 0.0021427098297129125,
+              "p95AbsoluteErrorMgL": 0.29791704902890015
+            }
+          }
+        }
+      },
+      "predictionDiagnostics": {
+        "nonfinitePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "negativePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "nonfiniteScoreMethods": []
+      },
+      "approvedTargetsBelowIllustrative5MgL": {
+        "pairs": 0,
+        "origins": [],
+        "meaning": "Descriptive only; not a local ecological threshold"
+      },
+      "observedOneHourDeclines": {
+        "pairs": 343,
+        "origins": [
+          "2025-05-01T09:30:00.000Z",
+          "2025-05-01T10:00:00.000Z",
+          "2025-05-01T11:30:00.000Z",
+          "2025-05-01T13:30:00.000Z",
+          "2025-05-01T14:00:00.000Z",
+          "2025-05-02T02:30:00.000Z",
+          "2025-05-02T03:00:00.000Z",
+          "2025-05-02T05:30:00.000Z",
+          "2025-05-02T06:00:00.000Z",
+          "2025-05-02T06:30:00.000Z",
+          "2025-05-02T07:00:00.000Z",
+          "2025-05-02T10:30:00.000Z",
+          "2025-05-02T11:00:00.000Z",
+          "2025-05-02T13:00:00.000Z",
+          "2025-05-02T13:30:00.000Z",
+          "2025-05-02T14:00:00.000Z",
+          "2025-05-02T14:30:00.000Z",
+          "2025-05-03T00:30:00.000Z",
+          "2025-05-03T01:00:00.000Z",
+          "2025-05-03T02:00:00.000Z",
+          "2025-05-03T02:30:00.000Z",
+          "2025-05-03T03:00:00.000Z",
+          "2025-05-03T03:30:00.000Z",
+          "2025-05-03T04:00:00.000Z",
+          "2025-05-03T06:00:00.000Z",
+          "2025-05-03T06:30:00.000Z",
+          "2025-05-03T07:00:00.000Z",
+          "2025-05-03T07:30:00.000Z",
+          "2025-05-03T11:00:00.000Z",
+          "2025-05-03T11:30:00.000Z",
+          "2025-05-03T15:00:00.000Z",
+          "2025-05-04T00:30:00.000Z",
+          "2025-05-04T03:00:00.000Z",
+          "2025-05-04T03:30:00.000Z",
+          "2025-05-04T04:30:00.000Z",
+          "2025-05-04T05:00:00.000Z",
+          "2025-05-04T07:00:00.000Z",
+          "2025-05-04T07:30:00.000Z",
+          "2025-05-04T08:00:00.000Z",
+          "2025-05-04T09:30:00.000Z",
+          "2025-05-04T15:30:00.000Z",
+          "2025-05-05T04:00:00.000Z",
+          "2025-05-05T04:30:00.000Z",
+          "2025-05-05T05:00:00.000Z",
+          "2025-05-05T05:30:00.000Z",
+          "2025-05-05T06:00:00.000Z",
+          "2025-05-05T06:30:00.000Z",
+          "2025-05-05T08:30:00.000Z",
+          "2025-05-05T09:30:00.000Z",
+          "2025-05-05T10:00:00.000Z",
+          "2025-05-06T04:00:00.000Z",
+          "2025-05-06T05:30:00.000Z",
+          "2025-05-06T06:00:00.000Z",
+          "2025-05-06T06:30:00.000Z",
+          "2025-05-06T07:00:00.000Z",
+          "2025-05-06T09:30:00.000Z",
+          "2025-05-06T10:00:00.000Z",
+          "2025-05-06T10:30:00.000Z",
+          "2025-05-06T11:00:00.000Z",
+          "2025-05-06T11:30:00.000Z",
+          "2025-05-07T04:30:00.000Z",
+          "2025-05-07T05:00:00.000Z",
+          "2025-05-07T06:00:00.000Z",
+          "2025-05-07T06:30:00.000Z",
+          "2025-05-07T07:00:00.000Z",
+          "2025-05-07T07:30:00.000Z",
+          "2025-05-07T08:00:00.000Z",
+          "2025-05-07T11:00:00.000Z",
+          "2025-05-07T11:30:00.000Z",
+          "2025-05-07T12:00:00.000Z",
+          "2025-05-07T12:30:00.000Z",
+          "2025-05-07T23:00:00.000Z",
+          "2025-05-07T23:30:00.000Z",
+          "2025-05-08T04:30:00.000Z",
+          "2025-05-08T05:00:00.000Z",
+          "2025-05-08T05:30:00.000Z",
+          "2025-05-08T06:00:00.000Z",
+          "2025-05-08T06:30:00.000Z",
+          "2025-05-08T07:00:00.000Z",
+          "2025-05-08T07:30:00.000Z",
+          "2025-05-08T08:00:00.000Z",
+          "2025-05-08T09:00:00.000Z",
+          "2025-05-08T11:30:00.000Z",
+          "2025-05-08T12:00:00.000Z",
+          "2025-05-08T12:30:00.000Z",
+          "2025-05-08T13:00:00.000Z",
+          "2025-05-08T20:00:00.000Z",
+          "2025-05-08T20:30:00.000Z",
+          "2025-05-08T21:00:00.000Z",
+          "2025-05-09T05:30:00.000Z",
+          "2025-05-09T06:00:00.000Z",
+          "2025-05-09T07:00:00.000Z",
+          "2025-05-09T07:30:00.000Z",
+          "2025-05-09T09:30:00.000Z",
+          "2025-05-09T10:00:00.000Z",
+          "2025-05-09T12:00:00.000Z",
+          "2025-05-09T12:30:00.000Z",
+          "2025-05-09T13:30:00.000Z",
+          "2025-05-09T14:00:00.000Z",
+          "2025-05-09T22:00:00.000Z",
+          "2025-05-10T01:00:00.000Z",
+          "2025-05-10T01:30:00.000Z",
+          "2025-05-10T02:00:00.000Z",
+          "2025-05-10T05:00:00.000Z",
+          "2025-05-10T05:30:00.000Z",
+          "2025-05-10T07:00:00.000Z",
+          "2025-05-10T07:30:00.000Z",
+          "2025-05-10T08:00:00.000Z",
+          "2025-05-10T10:00:00.000Z",
+          "2025-05-10T10:30:00.000Z",
+          "2025-05-10T12:00:00.000Z",
+          "2025-05-10T12:30:00.000Z",
+          "2025-05-10T13:00:00.000Z",
+          "2025-05-10T13:30:00.000Z",
+          "2025-05-10T14:00:00.000Z",
+          "2025-05-10T14:30:00.000Z",
+          "2025-05-10T22:00:00.000Z",
+          "2025-05-11T01:30:00.000Z",
+          "2025-05-11T02:00:00.000Z",
+          "2025-05-11T05:00:00.000Z",
+          "2025-05-11T08:00:00.000Z",
+          "2025-05-11T08:30:00.000Z",
+          "2025-05-11T09:00:00.000Z",
+          "2025-05-11T10:30:00.000Z",
+          "2025-05-11T11:00:00.000Z",
+          "2025-05-11T13:00:00.000Z",
+          "2025-05-11T13:30:00.000Z",
+          "2025-05-11T14:00:00.000Z",
+          "2025-05-11T14:30:00.000Z",
+          "2025-05-11T22:30:00.000Z",
+          "2025-05-11T23:00:00.000Z",
+          "2025-05-11T23:30:00.000Z",
+          "2025-05-12T02:00:00.000Z",
+          "2025-05-12T06:30:00.000Z",
+          "2025-05-12T08:30:00.000Z",
+          "2025-05-12T09:00:00.000Z",
+          "2025-05-12T11:00:00.000Z",
+          "2025-05-12T11:30:00.000Z",
+          "2025-05-12T13:30:00.000Z",
+          "2025-05-12T14:00:00.000Z",
+          "2025-05-12T14:30:00.000Z",
+          "2025-05-12T15:00:00.000Z",
+          "2025-05-12T15:30:00.000Z",
+          "2025-05-12T16:00:00.000Z",
+          "2025-05-12T19:00:00.000Z",
+          "2025-05-12T22:30:00.000Z",
+          "2025-05-12T23:00:00.000Z",
+          "2025-05-12T23:30:00.000Z",
+          "2025-05-13T00:00:00.000Z",
+          "2025-05-13T00:30:00.000Z",
+          "2025-05-13T03:30:00.000Z",
+          "2025-05-13T09:00:00.000Z",
+          "2025-05-13T09:30:00.000Z",
+          "2025-05-13T10:00:00.000Z",
+          "2025-05-13T10:30:00.000Z",
+          "2025-05-13T11:00:00.000Z",
+          "2025-05-13T15:00:00.000Z",
+          "2025-05-13T23:30:00.000Z",
+          "2025-05-14T00:00:00.000Z",
+          "2025-05-14T00:30:00.000Z",
+          "2025-05-14T09:30:00.000Z",
+          "2025-05-14T10:00:00.000Z",
+          "2025-05-14T10:30:00.000Z",
+          "2025-05-14T11:00:00.000Z",
+          "2025-05-14T11:30:00.000Z",
+          "2025-05-15T00:00:00.000Z",
+          "2025-05-15T00:30:00.000Z",
+          "2025-05-15T01:00:00.000Z",
+          "2025-05-15T10:00:00.000Z",
+          "2025-05-15T10:30:00.000Z",
+          "2025-05-15T11:00:00.000Z",
+          "2025-05-15T12:30:00.000Z",
+          "2025-05-16T00:30:00.000Z",
+          "2025-05-16T01:00:00.000Z",
+          "2025-05-16T01:30:00.000Z",
+          "2025-05-16T02:00:00.000Z",
+          "2025-05-16T05:30:00.000Z",
+          "2025-05-16T10:00:00.000Z",
+          "2025-05-16T10:30:00.000Z",
+          "2025-05-16T11:00:00.000Z",
+          "2025-05-16T11:30:00.000Z",
+          "2025-05-16T13:00:00.000Z",
+          "2025-05-16T13:30:00.000Z",
+          "2025-05-16T16:00:00.000Z",
+          "2025-05-16T16:30:00.000Z",
+          "2025-05-17T01:30:00.000Z",
+          "2025-05-17T02:00:00.000Z",
+          "2025-05-17T02:30:00.000Z",
+          "2025-05-17T03:00:00.000Z",
+          "2025-05-17T05:00:00.000Z",
+          "2025-05-17T10:00:00.000Z",
+          "2025-05-17T10:30:00.000Z",
+          "2025-05-17T11:00:00.000Z",
+          "2025-05-17T11:30:00.000Z",
+          "2025-05-17T12:00:00.000Z",
+          "2025-05-17T12:30:00.000Z",
+          "2025-05-17T13:00:00.000Z",
+          "2025-05-17T13:30:00.000Z",
+          "2025-05-18T02:00:00.000Z",
+          "2025-05-18T02:30:00.000Z",
+          "2025-05-18T03:00:00.000Z",
+          "2025-05-18T06:00:00.000Z",
+          "2025-05-18T06:30:00.000Z",
+          "2025-05-18T08:00:00.000Z",
+          "2025-05-18T08:30:00.000Z",
+          "2025-05-18T10:30:00.000Z",
+          "2025-05-18T11:00:00.000Z",
+          "2025-05-18T12:00:00.000Z",
+          "2025-05-18T12:30:00.000Z",
+          "2025-05-18T13:30:00.000Z",
+          "2025-05-18T14:00:00.000Z",
+          "2025-05-18T16:30:00.000Z",
+          "2025-05-19T02:30:00.000Z",
+          "2025-05-19T03:00:00.000Z",
+          "2025-05-19T03:30:00.000Z",
+          "2025-05-19T04:00:00.000Z",
+          "2025-05-19T13:00:00.000Z",
+          "2025-05-19T13:30:00.000Z",
+          "2025-05-19T14:00:00.000Z",
+          "2025-05-19T14:30:00.000Z",
+          "2025-05-20T02:30:00.000Z",
+          "2025-05-20T03:00:00.000Z",
+          "2025-05-20T04:00:00.000Z",
+          "2025-05-20T04:30:00.000Z",
+          "2025-05-20T05:00:00.000Z",
+          "2025-05-20T08:30:00.000Z",
+          "2025-05-20T09:00:00.000Z",
+          "2025-05-20T13:30:00.000Z",
+          "2025-05-20T14:00:00.000Z",
+          "2025-05-20T15:30:00.000Z",
+          "2025-05-20T16:00:00.000Z",
+          "2025-05-21T04:30:00.000Z",
+          "2025-05-21T05:00:00.000Z",
+          "2025-05-21T06:00:00.000Z",
+          "2025-05-21T06:30:00.000Z",
+          "2025-05-21T09:00:00.000Z",
+          "2025-05-21T09:30:00.000Z",
+          "2025-05-21T10:00:00.000Z",
+          "2025-05-21T16:30:00.000Z",
+          "2025-05-21T17:00:00.000Z",
+          "2025-05-21T17:30:00.000Z",
+          "2025-05-22T03:30:00.000Z",
+          "2025-05-22T04:00:00.000Z",
+          "2025-05-22T05:00:00.000Z",
+          "2025-05-22T07:00:00.000Z",
+          "2025-05-22T07:30:00.000Z",
+          "2025-05-22T09:30:00.000Z",
+          "2025-05-22T10:00:00.000Z",
+          "2025-05-22T11:00:00.000Z",
+          "2025-05-22T11:30:00.000Z",
+          "2025-05-22T17:30:00.000Z",
+          "2025-05-22T18:00:00.000Z",
+          "2025-05-22T18:30:00.000Z",
+          "2025-05-22T19:00:00.000Z",
+          "2025-05-23T02:00:00.000Z",
+          "2025-05-23T02:30:00.000Z",
+          "2025-05-23T05:00:00.000Z",
+          "2025-05-23T05:30:00.000Z",
+          "2025-05-23T06:00:00.000Z",
+          "2025-05-23T08:00:00.000Z",
+          "2025-05-23T08:30:00.000Z",
+          "2025-05-23T10:30:00.000Z",
+          "2025-05-23T11:00:00.000Z",
+          "2025-05-23T11:30:00.000Z",
+          "2025-05-23T15:30:00.000Z",
+          "2025-05-23T16:00:00.000Z",
+          "2025-05-23T19:00:00.000Z",
+          "2025-05-23T19:30:00.000Z",
+          "2025-05-23T20:00:00.000Z",
+          "2025-05-23T20:30:00.000Z",
+          "2025-05-24T02:30:00.000Z",
+          "2025-05-24T04:30:00.000Z",
+          "2025-05-24T05:00:00.000Z",
+          "2025-05-24T06:00:00.000Z",
+          "2025-05-24T06:30:00.000Z",
+          "2025-05-24T09:00:00.000Z",
+          "2025-05-24T09:30:00.000Z",
+          "2025-05-24T11:00:00.000Z",
+          "2025-05-24T11:30:00.000Z",
+          "2025-05-24T12:00:00.000Z",
+          "2025-05-24T12:30:00.000Z",
+          "2025-05-25T01:00:00.000Z",
+          "2025-05-25T01:30:00.000Z",
+          "2025-05-25T05:00:00.000Z",
+          "2025-05-25T05:30:00.000Z",
+          "2025-05-25T06:00:00.000Z",
+          "2025-05-25T06:30:00.000Z",
+          "2025-05-25T07:00:00.000Z",
+          "2025-05-25T09:30:00.000Z",
+          "2025-05-25T10:00:00.000Z",
+          "2025-05-25T12:00:00.000Z",
+          "2025-05-25T12:30:00.000Z",
+          "2025-05-25T13:00:00.000Z",
+          "2025-05-25T13:30:00.000Z",
+          "2025-05-25T15:30:00.000Z",
+          "2025-05-25T18:00:00.000Z",
+          "2025-05-25T21:30:00.000Z",
+          "2025-05-26T01:00:00.000Z",
+          "2025-05-26T04:30:00.000Z",
+          "2025-05-26T05:30:00.000Z",
+          "2025-05-26T07:00:00.000Z",
+          "2025-05-26T07:30:00.000Z",
+          "2025-05-26T10:00:00.000Z",
+          "2025-05-26T10:30:00.000Z",
+          "2025-05-26T12:30:00.000Z",
+          "2025-05-26T13:00:00.000Z",
+          "2025-05-26T13:30:00.000Z",
+          "2025-05-26T14:00:00.000Z",
+          "2025-05-26T17:30:00.000Z",
+          "2025-05-26T22:00:00.000Z",
+          "2025-05-27T00:30:00.000Z",
+          "2025-05-27T02:00:00.000Z",
+          "2025-05-27T03:00:00.000Z",
+          "2025-05-27T03:30:00.000Z",
+          "2025-05-27T06:00:00.000Z",
+          "2025-05-27T06:30:00.000Z",
+          "2025-05-27T07:00:00.000Z",
+          "2025-05-27T07:30:00.000Z",
+          "2025-05-27T08:30:00.000Z",
+          "2025-05-27T11:00:00.000Z",
+          "2025-05-27T11:30:00.000Z",
+          "2025-05-27T14:00:00.000Z",
+          "2025-05-27T14:30:00.000Z",
+          "2025-05-27T15:00:00.000Z",
+          "2025-05-27T23:00:00.000Z",
+          "2025-05-28T01:30:00.000Z",
+          "2025-05-28T02:00:00.000Z",
+          "2025-05-28T03:00:00.000Z",
+          "2025-05-28T03:30:00.000Z",
+          "2025-05-28T04:00:00.000Z",
+          "2025-05-28T04:30:00.000Z",
+          "2025-05-28T08:00:00.000Z",
+          "2025-05-28T08:30:00.000Z",
+          "2025-05-28T09:00:00.000Z",
+          "2025-05-28T11:30:00.000Z",
+          "2025-05-28T12:00:00.000Z",
+          "2025-05-28T12:30:00.000Z",
+          "2025-05-28T14:00:00.000Z",
+          "2025-05-28T14:30:00.000Z",
+          "2025-05-28T15:00:00.000Z",
+          "2025-05-28T15:30:00.000Z",
+          "2025-05-28T21:00:00.000Z",
+          "2025-05-28T21:30:00.000Z"
+        ],
+        "meaning": "Targets label this diagnostic after prediction; every row retains all twelve past oxygen samples and its target"
+      },
+      "featureExtrapolation": {
+        "pairs": 2,
+        "fraction": 0.0015151515151515152,
+        "byFeature": {
+          "oxygenNow": 0,
+          "oxygenDelta30m": 1,
+          "oxygenDelta2h": 0,
+          "oxygenDelta5h30m": 2,
+          "clockSinUTC": 0,
+          "clockCosUTC": 0,
+          "temperatureNow": 0,
+          "temperatureDelta2h": 0
+        },
+        "meaning": "Univariate training-range check, not a validated applicability domain or uncertainty probability"
+      }
+    },
+    {
+      "window": {
+        "id": "summer-june-2025",
+        "season": "summer",
+        "start": "2025-06-01T00:00:00Z",
+        "end": "2025-06-29T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0x4bb728d283ead391209c6b60a688e93f727b58fb23d8d30c5cb25da16e1bfd3a",
+        "temperature": "0xff64c66f6357e72671afed518fc7d8ba964295d199e861f6501d1225bbe2dc5d",
+        "discharge": "0x58b5ccdb988d8e3b4818a35b4bc1b85d3a12123ae4b90723867e736b12b6b313"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 1343,
+          "accepted": 1343,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1345,
+          "accepted": 1345,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8065,
+          "accepted": 8065,
+          "excluded": []
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 1330,
+        "acceptedPairs": 1298,
+        "skipped": 32
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 1332,
+        "acceptedExactGridPairs": 1298,
+        "missingApprovedOxygenOrigins": 8,
+        "presentOriginsWithIncompleteHistoryOrTarget": 26,
+        "acceptedGridFraction": 0.9744744744744744
+      },
+      "captureCommitment": {
+        "frozenAtCommit": "e8b4e133aa81ecda548480991584239a8ed142ea",
+        "implementationFiles": [
+          {
+            "file": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+            "rawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-multivariate/manifest.json",
+            "rawSha256": "0x4992a7e5f317b0fbab659d5941fafb6538d30652fc707176ddeef0a6a9387395"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-stability/protocol.json",
+            "rawSha256": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-training-audit/protocol.json",
+            "rawSha256": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-validation/protocol.json",
+            "rawSha256": "0xd528c8e35c657d1fb5603d810a52076d3c655c75e3f27611defb50bada26e02e"
+          },
+          {
+            "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+            "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+          },
+          {
+            "file": "scripts/audit_willamette.py",
+            "rawSha256": "0x9a8de29078d7e4c75260b7f9fea1b7220193f64a97b0b00384ca680ea00f8d12"
+          },
+          {
+            "file": "scripts/capture-willamette-stability.mjs",
+            "rawSha256": "0xf1d84010ff391cd971f9fdfedfa454ecc7df384319cd07e4780979b89f77947c"
+          },
+          {
+            "file": "scripts/evaluate_stability.py",
+            "rawSha256": "0xb29fcc416849b317fdc0140ea48b9a48bf907d1af185c0e917b262ebe86f86bf"
+          },
+          {
+            "file": "scripts/experiment_multiseason.py",
+            "rawSha256": "0x00999b36a5c5fcb5c6a51ca9d00ee076f6bd9b1c2fb47245a402ccf9c5d4dfea"
+          },
+          {
+            "file": "scripts/stability_protocol.py",
+            "rawSha256": "0xc04b2972faa01190c99abf0ae0aaa686b3167475b1ef2f9a90a51ee812a57fd4"
+          },
+          {
+            "file": "scripts/test-capture-stability.mjs",
+            "rawSha256": "0xf660e926b3f3a45bf58d6afd32daef186214de94e2f270c07e259a2e8e687ecb"
+          },
+          {
+            "file": "scripts/test_evaluate_stability.py",
+            "rawSha256": "0xa602ce856d7489ccf79715aa13be78799fabbfbd36f0e796f35d01fb378c04e6"
+          },
+          {
+            "file": "scripts/test_stability_protocol.py",
+            "rawSha256": "0x46a72a91ce04335c1e28831c31d8c73150c791621e83e98b06b844ce7318333c"
+          }
+        ],
+        "implementationSnapshotHash": "0xf223742317b2b32d435b5673ced9a49122b36ceca2353e3a59808c514a080679",
+        "verifiedAgainstCurrentFilesAndGit": true,
+        "manifestRawSha256": "0xb193580637bfdc9439149daa93f2090ff5712e334b2db2d3034a6eced61e6608",
+        "archivedBodyHashes": {
+          "oxygen": "0x4bb728d283ead391209c6b60a688e93f727b58fb23d8d30c5cb25da16e1bfd3a",
+          "temperature": "0xff64c66f6357e72671afed518fc7d8ba964295d199e861f6501d1225bbe2dc5d",
+          "discharge": "0x58b5ccdb988d8e3b4818a35b4bc1b85d3a12123ae4b90723867e736b12b6b313"
+        }
+      },
+      "dataScreenPassed": true,
+      "scores": {
+        "persistence": {
+          "pairs": 1298,
+          "maeMgL": 0.2016949152542373,
+          "rmseMgL": 0.33896879785135836,
+          "biasMgL": -0.0027734976887519285,
+          "p95AbsoluteErrorMgL": 0.799999999999999
+        },
+        "same-frozen-ridge-without-fallback": {
+          "pairs": 1298,
+          "maeMgL": 0.19359997086351616,
+          "rmseMgL": 0.3030653598880788,
+          "biasMgL": -0.0035510091434239432,
+          "p95AbsoluteErrorMgL": 0.6726042649654443
+        },
+        "same-frozen-ridge-with-fallback": {
+          "pairs": 1298,
+          "maeMgL": 0.19359997086351616,
+          "rmseMgL": 0.3030653598880788,
+          "biasMgL": -0.0035510091434239432,
+          "p95AbsoluteErrorMgL": 0.6726042649654443
+        }
+      },
+      "daily": [
+        {
+          "originDayUTC": "2025-06-01",
+          "pairs": 37,
+          "scores": {
+            "persistence": {
+              "pairs": 37,
+              "maeMgL": 0.21081081081081096,
+              "rmseMgL": 0.39524197172898556,
+              "biasMgL": -0.005405405405405434,
+              "p95AbsoluteErrorMgL": 0.9000000000000004
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.23805444964655412,
+              "rmseMgL": 0.3884377965948396,
+              "biasMgL": -0.01073223635041123,
+              "p95AbsoluteErrorMgL": 0.9970703252959807
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.23805444964655412,
+              "rmseMgL": 0.3884377965948396,
+              "biasMgL": -0.01073223635041123,
+              "p95AbsoluteErrorMgL": 0.9970703252959807
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-02",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.2624999999999999,
+              "rmseMgL": 0.5303300858899106,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.8299999999999997
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.29008125677519664,
+              "rmseMgL": 0.5016223408906423,
+              "biasMgL": 0.006491763667409389,
+              "p95AbsoluteErrorMgL": 0.9531607718069276
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.29008125677519664,
+              "rmseMgL": 0.5016223408906423,
+              "biasMgL": 0.006491763667409389,
+              "p95AbsoluteErrorMgL": 0.9531607718069276
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-03",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.2125,
+              "rmseMgL": 0.40414518843273806,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.8650000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1912209325809613,
+              "rmseMgL": 0.3749428884540002,
+              "biasMgL": 0.0003712958979146623,
+              "p95AbsoluteErrorMgL": 0.7777843736136136
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1912209325809613,
+              "rmseMgL": 0.3749428884540002,
+              "biasMgL": 0.0003712958979146623,
+              "p95AbsoluteErrorMgL": 0.7777843736136136
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-04",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.15833333333333313,
+              "rmseMgL": 0.3482097069296028,
+              "biasMgL": 0.01250000000000003,
+              "p95AbsoluteErrorMgL": 1.1299999999999992
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1613287801207037,
+              "rmseMgL": 0.29884723150932824,
+              "biasMgL": 0.014952967745681259,
+              "p95AbsoluteErrorMgL": 0.7365196079515411
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1613287801207037,
+              "rmseMgL": 0.29884723150932824,
+              "biasMgL": 0.014952967745681259,
+              "p95AbsoluteErrorMgL": 0.7365196079515411
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-05",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.1291666666666665,
+              "rmseMgL": 0.22912878474779194,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.39999999999999974
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1165005454477314,
+              "rmseMgL": 0.19795684157803659,
+              "biasMgL": -0.004208660242541666,
+              "p95AbsoluteErrorMgL": 0.42041557322689116
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1165005454477314,
+              "rmseMgL": 0.19795684157803659,
+              "biasMgL": -0.004208660242541666,
+              "p95AbsoluteErrorMgL": 0.42041557322689116
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-06",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.15416666666666679,
+              "rmseMgL": 0.2791355704074039,
+              "biasMgL": -0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.5
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15025230798685438,
+              "rmseMgL": 0.24807987967667253,
+              "biasMgL": -0.006580377640947359,
+              "p95AbsoluteErrorMgL": 0.4886566344241387
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15025230798685438,
+              "rmseMgL": 0.24807987967667253,
+              "biasMgL": -0.006580377640947359,
+              "p95AbsoluteErrorMgL": 0.4886566344241387
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-07",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.14583333333333356,
+              "rmseMgL": 0.24065881796989463,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.6000000000000014
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.13428717584012914,
+              "rmseMgL": 0.20875101977818358,
+              "biasMgL": 0.0051451294725731,
+              "p95AbsoluteErrorMgL": 0.5038412959204867
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.13428717584012914,
+              "rmseMgL": 0.20875101977818358,
+              "biasMgL": 0.0051451294725731,
+              "p95AbsoluteErrorMgL": 0.5038412959204867
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-08",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.10416666666666674,
+              "rmseMgL": 0.16457014715109583,
+              "biasMgL": 0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.3650000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10312478875794491,
+              "rmseMgL": 0.1434198907886772,
+              "biasMgL": 0.00880229326088744,
+              "p95AbsoluteErrorMgL": 0.29558438234974665
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.10312478875794491,
+              "rmseMgL": 0.1434198907886772,
+              "biasMgL": 0.00880229326088744,
+              "p95AbsoluteErrorMgL": 0.29558438234974665
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-09",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.12291666666666667,
+              "rmseMgL": 0.1652018966799918,
+              "biasMgL": -0.010416666666666704,
+              "p95AbsoluteErrorMgL": 0.3650000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.12152118279998425,
+              "rmseMgL": 0.16202087857575279,
+              "biasMgL": -0.014228257680917325,
+              "p95AbsoluteErrorMgL": 0.35671392419678777
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.12152118279998425,
+              "rmseMgL": 0.16202087857575279,
+              "biasMgL": -0.014228257680917325,
+              "p95AbsoluteErrorMgL": 0.35671392419678777
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-10",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.18333333333333335,
+              "rmseMgL": 0.2541325113662818,
+              "biasMgL": -0.008333333333333304,
+              "p95AbsoluteErrorMgL": 0.5649999999999996
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.17079298098075268,
+              "rmseMgL": 0.2395713850199551,
+              "biasMgL": -0.015550920685814576,
+              "p95AbsoluteErrorMgL": 0.510710933793682
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.17079298098075268,
+              "rmseMgL": 0.2395713850199551,
+              "biasMgL": -0.015550920685814576,
+              "p95AbsoluteErrorMgL": 0.510710933793682
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-11",
+          "pairs": 31,
+          "scores": {
+            "persistence": {
+              "pairs": 31,
+              "maeMgL": 0.23870967741935514,
+              "rmseMgL": 0.34919261714842703,
+              "biasMgL": -0.019354838709677465,
+              "p95AbsoluteErrorMgL": 0.7500000000000009
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 31,
+              "maeMgL": 0.22393826575125286,
+              "rmseMgL": 0.29715907141229103,
+              "biasMgL": -0.03564912797244188,
+              "p95AbsoluteErrorMgL": 0.6683439818054309
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 31,
+              "maeMgL": 0.22393826575125286,
+              "rmseMgL": 0.29715907141229103,
+              "biasMgL": -0.03564912797244188,
+              "p95AbsoluteErrorMgL": 0.6683439818054309
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-12",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.2562499999999999,
+              "rmseMgL": 0.39237524556645165,
+              "biasMgL": 0.010416666666666666,
+              "p95AbsoluteErrorMgL": 0.8949999999999987
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.25708083728748826,
+              "rmseMgL": 0.36177259688565566,
+              "biasMgL": 0.02026951988760245,
+              "p95AbsoluteErrorMgL": 0.8367794714648085
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.25708083728748826,
+              "rmseMgL": 0.36177259688565566,
+              "biasMgL": 0.02026951988760245,
+              "p95AbsoluteErrorMgL": 0.8367794714648085
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-13",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.2270833333333334,
+              "rmseMgL": 0.343693177121688,
+              "biasMgL": 0.03125,
+              "p95AbsoluteErrorMgL": 0.8
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.22256823028353412,
+              "rmseMgL": 0.30850358044170617,
+              "biasMgL": 0.0393252736541449,
+              "p95AbsoluteErrorMgL": 0.6689500957026585
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.22256823028353412,
+              "rmseMgL": 0.30850358044170617,
+              "biasMgL": 0.0393252736541449,
+              "p95AbsoluteErrorMgL": 0.6689500957026585
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-14",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.17499999999999982,
+              "rmseMgL": 0.2622022120425377,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.39999999999999913
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15849612692937,
+              "rmseMgL": 0.2293653421821825,
+              "biasMgL": -0.002978702184750178,
+              "p95AbsoluteErrorMgL": 0.3480550113316152
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15849612692937,
+              "rmseMgL": 0.2293653421821825,
+              "biasMgL": -0.002978702184750178,
+              "p95AbsoluteErrorMgL": 0.3480550113316152
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-15",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.17499999999999993,
+              "rmseMgL": 0.2669269563007826,
+              "biasMgL": -0.01666666666666668,
+              "p95AbsoluteErrorMgL": 0.6999999999999998
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1753534742737833,
+              "rmseMgL": 0.23625248059670095,
+              "biasMgL": -0.020170599898373404,
+              "p95AbsoluteErrorMgL": 0.5143449916522642
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1753534742737833,
+              "rmseMgL": 0.23625248059670095,
+              "biasMgL": -0.020170599898373404,
+              "p95AbsoluteErrorMgL": 0.5143449916522642
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-16",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.22083333333333333,
+              "rmseMgL": 0.3958114029012638,
+              "biasMgL": -0.024999999999999984,
+              "p95AbsoluteErrorMgL": 0.9650000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.21506933673761033,
+              "rmseMgL": 0.3543917388779759,
+              "biasMgL": -0.039876719507565196,
+              "p95AbsoluteErrorMgL": 0.6814313344009469
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.21506933673761033,
+              "rmseMgL": 0.3543917388779759,
+              "biasMgL": -0.039876719507565196,
+              "p95AbsoluteErrorMgL": 0.6814313344009469
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-17",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.2833333333333332,
+              "rmseMgL": 0.3791437722025775,
+              "biasMgL": -0.008333333333333304,
+              "p95AbsoluteErrorMgL": 0.7950000000000003
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.2752906069822256,
+              "rmseMgL": 0.3562291520928977,
+              "biasMgL": -0.01690949614349189,
+              "p95AbsoluteErrorMgL": 0.7449243249059303
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.2752906069822256,
+              "rmseMgL": 0.3562291520928977,
+              "biasMgL": -0.01690949614349189,
+              "p95AbsoluteErrorMgL": 0.7449243249059303
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-18",
+          "pairs": 31,
+          "scores": {
+            "persistence": {
+              "pairs": 31,
+              "maeMgL": 0.19354838709677408,
+              "rmseMgL": 0.312120737597984,
+              "biasMgL": -0.05806451612903239,
+              "p95AbsoluteErrorMgL": 0.7000000000000002
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 31,
+              "maeMgL": 0.21781877518327808,
+              "rmseMgL": 0.29340740154395334,
+              "biasMgL": -0.07455011122292303,
+              "p95AbsoluteErrorMgL": 0.5693958359781219
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 31,
+              "maeMgL": 0.21781877518327808,
+              "rmseMgL": 0.29340740154395334,
+              "biasMgL": -0.07455011122292303,
+              "p95AbsoluteErrorMgL": 0.5693958359781219
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-19",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.26458333333333345,
+              "rmseMgL": 0.4520785330006282,
+              "biasMgL": 0.002083333333333326,
+              "p95AbsoluteErrorMgL": 1.0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.24886215860339375,
+              "rmseMgL": 0.3888280430574514,
+              "biasMgL": 0.0037773332937137325,
+              "p95AbsoluteErrorMgL": 0.9592539586827997
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.24886215860339375,
+              "rmseMgL": 0.3888280430574514,
+              "biasMgL": 0.0037773332937137325,
+              "p95AbsoluteErrorMgL": 0.9592539586827997
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-20",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.22500000000000012,
+              "rmseMgL": 0.4218016911614589,
+              "biasMgL": 0.025000000000000022,
+              "p95AbsoluteErrorMgL": 0.7000000000000004
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.20992618786579334,
+              "rmseMgL": 0.3813257609641436,
+              "biasMgL": 0.028956877271073194,
+              "p95AbsoluteErrorMgL": 0.7922086673725375
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.20992618786579334,
+              "rmseMgL": 0.3813257609641436,
+              "biasMgL": 0.028956877271073194,
+              "p95AbsoluteErrorMgL": 0.7922086673725375
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-21",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.20416666666666652,
+              "rmseMgL": 0.38837267325770125,
+              "biasMgL": 0.004166666666666689,
+              "p95AbsoluteErrorMgL": 1.129999999999999
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1944585785380083,
+              "rmseMgL": 0.3313992521748752,
+              "biasMgL": 0.012798915303531425,
+              "p95AbsoluteErrorMgL": 0.8264828275956677
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1944585785380083,
+              "rmseMgL": 0.3313992521748752,
+              "biasMgL": 0.012798915303531425,
+              "p95AbsoluteErrorMgL": 0.8264828275956677
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-22",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.22916666666666655,
+              "rmseMgL": 0.3588175023601831,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.8000000000000004
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.20326344872488736,
+              "rmseMgL": 0.29888291157405616,
+              "biasMgL": 0.0062900300684453625,
+              "p95AbsoluteErrorMgL": 0.6846347289827353
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.20326344872488736,
+              "rmseMgL": 0.29888291157405616,
+              "biasMgL": 0.0062900300684453625,
+              "p95AbsoluteErrorMgL": 0.6846347289827353
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-23",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.16666666666666652,
+              "rmseMgL": 0.24324199198877364,
+              "biasMgL": -0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.5649999999999996
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15725703592208531,
+              "rmseMgL": 0.22104110354141182,
+              "biasMgL": -0.01544595120933164,
+              "p95AbsoluteErrorMgL": 0.4857955692367222
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15725703592208531,
+              "rmseMgL": 0.22104110354141182,
+              "biasMgL": -0.01544595120933164,
+              "p95AbsoluteErrorMgL": 0.4857955692367222
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-24",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.1500000000000001,
+              "rmseMgL": 0.21114765765533228,
+              "biasMgL": -0.016666666666666646,
+              "p95AbsoluteErrorMgL": 0.46499999999999997
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1414833449212436,
+              "rmseMgL": 0.1925726976059027,
+              "biasMgL": -0.018729328209056817,
+              "p95AbsoluteErrorMgL": 0.43392066024246556
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.1414833449212436,
+              "rmseMgL": 0.1925726976059027,
+              "biasMgL": -0.018729328209056817,
+              "p95AbsoluteErrorMgL": 0.43392066024246556
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-25",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.16875000000000007,
+              "rmseMgL": 0.2393567769390845,
+              "biasMgL": 0.014583333333333356,
+              "p95AbsoluteErrorMgL": 0.5
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15721461934682698,
+              "rmseMgL": 0.2088578602082314,
+              "biasMgL": 0.01969384411999268,
+              "p95AbsoluteErrorMgL": 0.41834139474215803
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.15721461934682698,
+              "rmseMgL": 0.2088578602082314,
+              "biasMgL": 0.01969384411999268,
+              "p95AbsoluteErrorMgL": 0.41834139474215803
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-26",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.22916666666666677,
+              "rmseMgL": 0.32723589860119773,
+              "biasMgL": 0.00833333333333334,
+              "p95AbsoluteErrorMgL": 0.7299999999999995
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.21211728105129404,
+              "rmseMgL": 0.2837324079154566,
+              "biasMgL": -0.0001342919485251374,
+              "p95AbsoluteErrorMgL": 0.6326144288925745
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.21211728105129404,
+              "rmseMgL": 0.2837324079154566,
+              "biasMgL": -0.0001342919485251374,
+              "p95AbsoluteErrorMgL": 0.6326144288925745
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-27",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.31458333333333327,
+              "rmseMgL": 0.4264680527307994,
+              "biasMgL": -0.027083333333333386,
+              "p95AbsoluteErrorMgL": 0.9649999999999994
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.2671483134574847,
+              "rmseMgL": 0.3517647094353761,
+              "biasMgL": -0.02682584664701959,
+              "p95AbsoluteErrorMgL": 0.6771205947365984
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.2671483134574847,
+              "rmseMgL": 0.3517647094353761,
+              "biasMgL": -0.02682584664701959,
+              "p95AbsoluteErrorMgL": 0.6771205947365984
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-06-28",
+          "pairs": 47,
+          "scores": {
+            "persistence": {
+              "pairs": 47,
+              "maeMgL": 0.25531914893617025,
+              "rmseMgL": 0.3881214988535684,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.8000000000000005
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.23669578145994088,
+              "rmseMgL": 0.33247354155684306,
+              "biasMgL": -0.0018568746188344955,
+              "p95AbsoluteErrorMgL": 0.7943341809428475
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.23669578145994088,
+              "rmseMgL": 0.33247354155684306,
+              "biasMgL": -0.0018568746188344955,
+              "p95AbsoluteErrorMgL": 0.7943341809428475
+            }
+          }
+        }
+      ],
+      "subgroups": {
+        "past-flat": {
+          "pairs": 0,
+          "scores": {
+            "persistence": null,
+            "same-frozen-ridge-without-fallback": null,
+            "same-frozen-ridge-with-fallback": null
+          }
+        },
+        "past-changing": {
+          "pairs": 1298,
+          "scores": {
+            "persistence": {
+              "pairs": 1298,
+              "maeMgL": 0.2016949152542373,
+              "rmseMgL": 0.33896879785135836,
+              "biasMgL": -0.0027734976887519285,
+              "p95AbsoluteErrorMgL": 0.799999999999999
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 1298,
+              "maeMgL": 0.19359997086351616,
+              "rmseMgL": 0.3030653598880788,
+              "biasMgL": -0.0035510091434239432,
+              "p95AbsoluteErrorMgL": 0.6726042649654443
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 1298,
+              "maeMgL": 0.19359997086351616,
+              "rmseMgL": 0.3030653598880788,
+              "biasMgL": -0.0035510091434239432,
+              "p95AbsoluteErrorMgL": 0.6726042649654443
+            }
+          }
+        }
+      },
+      "predictionDiagnostics": {
+        "nonfinitePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "negativePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "nonfiniteScoreMethods": []
+      },
+      "approvedTargetsBelowIllustrative5MgL": {
+        "pairs": 0,
+        "origins": [],
+        "meaning": "Descriptive only; not a local ecological threshold"
+      },
+      "observedOneHourDeclines": {
+        "pairs": 475,
+        "origins": [
+          "2025-06-01T07:00:00.000Z",
+          "2025-06-01T07:30:00.000Z",
+          "2025-06-01T09:30:00.000Z",
+          "2025-06-01T11:00:00.000Z",
+          "2025-06-01T11:30:00.000Z",
+          "2025-06-01T12:30:00.000Z",
+          "2025-06-01T13:00:00.000Z",
+          "2025-06-01T13:30:00.000Z",
+          "2025-06-01T14:00:00.000Z",
+          "2025-06-01T14:30:00.000Z",
+          "2025-06-01T15:00:00.000Z",
+          "2025-06-01T15:30:00.000Z",
+          "2025-06-01T18:00:00.000Z",
+          "2025-06-01T19:30:00.000Z",
+          "2025-06-01T20:00:00.000Z",
+          "2025-06-01T23:00:00.000Z",
+          "2025-06-01T23:30:00.000Z",
+          "2025-06-02T01:00:00.000Z",
+          "2025-06-02T01:30:00.000Z",
+          "2025-06-02T02:00:00.000Z",
+          "2025-06-02T03:00:00.000Z",
+          "2025-06-02T03:30:00.000Z",
+          "2025-06-02T04:00:00.000Z",
+          "2025-06-02T04:30:00.000Z",
+          "2025-06-02T05:00:00.000Z",
+          "2025-06-02T08:00:00.000Z",
+          "2025-06-02T11:00:00.000Z",
+          "2025-06-02T11:30:00.000Z",
+          "2025-06-02T13:30:00.000Z",
+          "2025-06-02T14:00:00.000Z",
+          "2025-06-02T14:30:00.000Z",
+          "2025-06-02T15:00:00.000Z",
+          "2025-06-02T15:30:00.000Z",
+          "2025-06-02T16:00:00.000Z",
+          "2025-06-02T19:00:00.000Z",
+          "2025-06-02T19:30:00.000Z",
+          "2025-06-03T02:30:00.000Z",
+          "2025-06-03T03:00:00.000Z",
+          "2025-06-03T03:30:00.000Z",
+          "2025-06-03T04:00:00.000Z",
+          "2025-06-03T04:30:00.000Z",
+          "2025-06-03T06:00:00.000Z",
+          "2025-06-03T08:30:00.000Z",
+          "2025-06-03T10:30:00.000Z",
+          "2025-06-03T14:30:00.000Z",
+          "2025-06-03T15:00:00.000Z",
+          "2025-06-03T16:00:00.000Z",
+          "2025-06-03T16:30:00.000Z",
+          "2025-06-03T17:30:00.000Z",
+          "2025-06-03T18:00:00.000Z",
+          "2025-06-03T20:30:00.000Z",
+          "2025-06-04T01:30:00.000Z",
+          "2025-06-04T02:30:00.000Z",
+          "2025-06-04T03:00:00.000Z",
+          "2025-06-04T03:30:00.000Z",
+          "2025-06-04T04:00:00.000Z",
+          "2025-06-04T04:30:00.000Z",
+          "2025-06-04T05:00:00.000Z",
+          "2025-06-04T06:30:00.000Z",
+          "2025-06-04T07:00:00.000Z",
+          "2025-06-04T09:30:00.000Z",
+          "2025-06-04T11:00:00.000Z",
+          "2025-06-04T16:00:00.000Z",
+          "2025-06-04T16:30:00.000Z",
+          "2025-06-04T18:00:00.000Z",
+          "2025-06-04T18:30:00.000Z",
+          "2025-06-04T23:30:00.000Z",
+          "2025-06-05T00:00:00.000Z",
+          "2025-06-05T02:30:00.000Z",
+          "2025-06-05T03:00:00.000Z",
+          "2025-06-05T03:30:00.000Z",
+          "2025-06-05T04:00:00.000Z",
+          "2025-06-05T05:00:00.000Z",
+          "2025-06-05T05:30:00.000Z",
+          "2025-06-05T07:30:00.000Z",
+          "2025-06-05T08:00:00.000Z",
+          "2025-06-05T09:30:00.000Z",
+          "2025-06-05T11:00:00.000Z",
+          "2025-06-05T19:30:00.000Z",
+          "2025-06-05T22:00:00.000Z",
+          "2025-06-05T22:30:00.000Z",
+          "2025-06-06T01:00:00.000Z",
+          "2025-06-06T01:30:00.000Z",
+          "2025-06-06T03:00:00.000Z",
+          "2025-06-06T03:30:00.000Z",
+          "2025-06-06T04:00:00.000Z",
+          "2025-06-06T04:30:00.000Z",
+          "2025-06-06T05:00:00.000Z",
+          "2025-06-06T05:30:00.000Z",
+          "2025-06-06T06:00:00.000Z",
+          "2025-06-06T08:30:00.000Z",
+          "2025-06-06T09:00:00.000Z",
+          "2025-06-06T11:00:00.000Z",
+          "2025-06-06T11:30:00.000Z",
+          "2025-06-06T12:00:00.000Z",
+          "2025-06-06T12:30:00.000Z",
+          "2025-06-06T19:00:00.000Z",
+          "2025-06-06T19:30:00.000Z",
+          "2025-06-06T21:00:00.000Z",
+          "2025-06-07T00:00:00.000Z",
+          "2025-06-07T00:30:00.000Z",
+          "2025-06-07T02:00:00.000Z",
+          "2025-06-07T02:30:00.000Z",
+          "2025-06-07T03:30:00.000Z",
+          "2025-06-07T04:00:00.000Z",
+          "2025-06-07T05:30:00.000Z",
+          "2025-06-07T06:00:00.000Z",
+          "2025-06-07T06:30:00.000Z",
+          "2025-06-07T08:30:00.000Z",
+          "2025-06-07T09:00:00.000Z",
+          "2025-06-07T11:00:00.000Z",
+          "2025-06-07T12:00:00.000Z",
+          "2025-06-07T12:30:00.000Z",
+          "2025-06-07T19:30:00.000Z",
+          "2025-06-07T22:00:00.000Z",
+          "2025-06-08T00:30:00.000Z",
+          "2025-06-08T01:00:00.000Z",
+          "2025-06-08T01:30:00.000Z",
+          "2025-06-08T02:30:00.000Z",
+          "2025-06-08T03:00:00.000Z",
+          "2025-06-08T03:30:00.000Z",
+          "2025-06-08T06:00:00.000Z",
+          "2025-06-08T06:30:00.000Z",
+          "2025-06-08T07:00:00.000Z",
+          "2025-06-08T09:30:00.000Z",
+          "2025-06-08T10:00:00.000Z",
+          "2025-06-08T11:30:00.000Z",
+          "2025-06-08T12:00:00.000Z",
+          "2025-06-08T12:30:00.000Z",
+          "2025-06-08T13:00:00.000Z",
+          "2025-06-09T01:00:00.000Z",
+          "2025-06-09T01:30:00.000Z",
+          "2025-06-09T02:00:00.000Z",
+          "2025-06-09T03:30:00.000Z",
+          "2025-06-09T04:00:00.000Z",
+          "2025-06-09T06:30:00.000Z",
+          "2025-06-09T07:00:00.000Z",
+          "2025-06-09T09:30:00.000Z",
+          "2025-06-09T10:00:00.000Z",
+          "2025-06-09T10:30:00.000Z",
+          "2025-06-09T12:30:00.000Z",
+          "2025-06-09T19:30:00.000Z",
+          "2025-06-09T21:30:00.000Z",
+          "2025-06-09T22:00:00.000Z",
+          "2025-06-10T00:00:00.000Z",
+          "2025-06-10T00:30:00.000Z",
+          "2025-06-10T02:30:00.000Z",
+          "2025-06-10T03:00:00.000Z",
+          "2025-06-10T03:30:00.000Z",
+          "2025-06-10T05:30:00.000Z",
+          "2025-06-10T06:30:00.000Z",
+          "2025-06-10T07:00:00.000Z",
+          "2025-06-10T07:30:00.000Z",
+          "2025-06-10T08:00:00.000Z",
+          "2025-06-10T10:30:00.000Z",
+          "2025-06-10T11:00:00.000Z",
+          "2025-06-10T12:30:00.000Z",
+          "2025-06-10T14:00:00.000Z",
+          "2025-06-10T17:00:00.000Z",
+          "2025-06-10T22:00:00.000Z",
+          "2025-06-11T00:30:00.000Z",
+          "2025-06-11T01:00:00.000Z",
+          "2025-06-11T01:30:00.000Z",
+          "2025-06-11T03:00:00.000Z",
+          "2025-06-11T12:00:00.000Z",
+          "2025-06-11T13:30:00.000Z",
+          "2025-06-11T14:00:00.000Z",
+          "2025-06-11T14:30:00.000Z",
+          "2025-06-11T23:00:00.000Z",
+          "2025-06-11T23:30:00.000Z",
+          "2025-06-12T01:30:00.000Z",
+          "2025-06-12T03:00:00.000Z",
+          "2025-06-12T03:30:00.000Z",
+          "2025-06-12T04:00:00.000Z",
+          "2025-06-12T04:30:00.000Z",
+          "2025-06-12T06:00:00.000Z",
+          "2025-06-12T06:30:00.000Z",
+          "2025-06-12T07:00:00.000Z",
+          "2025-06-12T07:30:00.000Z",
+          "2025-06-12T08:00:00.000Z",
+          "2025-06-12T08:30:00.000Z",
+          "2025-06-12T09:00:00.000Z",
+          "2025-06-12T12:00:00.000Z",
+          "2025-06-12T12:30:00.000Z",
+          "2025-06-12T13:30:00.000Z",
+          "2025-06-12T14:00:00.000Z",
+          "2025-06-12T22:30:00.000Z",
+          "2025-06-12T23:30:00.000Z",
+          "2025-06-13T00:00:00.000Z",
+          "2025-06-13T02:00:00.000Z",
+          "2025-06-13T02:30:00.000Z",
+          "2025-06-13T03:30:00.000Z",
+          "2025-06-13T04:00:00.000Z",
+          "2025-06-13T04:30:00.000Z",
+          "2025-06-13T05:00:00.000Z",
+          "2025-06-13T05:30:00.000Z",
+          "2025-06-13T06:00:00.000Z",
+          "2025-06-13T06:30:00.000Z",
+          "2025-06-13T07:00:00.000Z",
+          "2025-06-13T07:30:00.000Z",
+          "2025-06-13T08:30:00.000Z",
+          "2025-06-13T09:00:00.000Z",
+          "2025-06-13T09:30:00.000Z",
+          "2025-06-13T12:00:00.000Z",
+          "2025-06-13T12:30:00.000Z",
+          "2025-06-13T13:00:00.000Z",
+          "2025-06-13T15:00:00.000Z",
+          "2025-06-13T15:30:00.000Z",
+          "2025-06-13T18:30:00.000Z",
+          "2025-06-13T23:00:00.000Z",
+          "2025-06-13T23:30:00.000Z",
+          "2025-06-14T00:00:00.000Z",
+          "2025-06-14T02:00:00.000Z",
+          "2025-06-14T02:30:00.000Z",
+          "2025-06-14T03:00:00.000Z",
+          "2025-06-14T05:00:00.000Z",
+          "2025-06-14T05:30:00.000Z",
+          "2025-06-14T06:30:00.000Z",
+          "2025-06-14T07:00:00.000Z",
+          "2025-06-14T08:00:00.000Z",
+          "2025-06-14T08:30:00.000Z",
+          "2025-06-14T09:00:00.000Z",
+          "2025-06-14T09:30:00.000Z",
+          "2025-06-14T10:00:00.000Z",
+          "2025-06-14T10:30:00.000Z",
+          "2025-06-14T13:00:00.000Z",
+          "2025-06-14T13:30:00.000Z",
+          "2025-06-14T15:30:00.000Z",
+          "2025-06-14T16:00:00.000Z",
+          "2025-06-14T16:30:00.000Z",
+          "2025-06-14T19:00:00.000Z",
+          "2025-06-14T23:30:00.000Z",
+          "2025-06-15T00:30:00.000Z",
+          "2025-06-15T02:30:00.000Z",
+          "2025-06-15T03:00:00.000Z",
+          "2025-06-15T03:30:00.000Z",
+          "2025-06-15T04:00:00.000Z",
+          "2025-06-15T05:30:00.000Z",
+          "2025-06-15T06:00:00.000Z",
+          "2025-06-15T06:30:00.000Z",
+          "2025-06-15T08:30:00.000Z",
+          "2025-06-15T09:00:00.000Z",
+          "2025-06-15T09:30:00.000Z",
+          "2025-06-15T10:00:00.000Z",
+          "2025-06-15T10:30:00.000Z",
+          "2025-06-15T11:00:00.000Z",
+          "2025-06-15T14:00:00.000Z",
+          "2025-06-15T14:30:00.000Z",
+          "2025-06-15T16:30:00.000Z",
+          "2025-06-16T00:00:00.000Z",
+          "2025-06-16T03:30:00.000Z",
+          "2025-06-16T04:00:00.000Z",
+          "2025-06-16T04:30:00.000Z",
+          "2025-06-16T05:30:00.000Z",
+          "2025-06-16T06:00:00.000Z",
+          "2025-06-16T07:00:00.000Z",
+          "2025-06-16T08:30:00.000Z",
+          "2025-06-16T09:00:00.000Z",
+          "2025-06-16T10:00:00.000Z",
+          "2025-06-16T10:30:00.000Z",
+          "2025-06-16T12:00:00.000Z",
+          "2025-06-16T14:30:00.000Z",
+          "2025-06-16T15:00:00.000Z",
+          "2025-06-16T20:30:00.000Z",
+          "2025-06-17T01:00:00.000Z",
+          "2025-06-17T01:30:00.000Z",
+          "2025-06-17T02:00:00.000Z",
+          "2025-06-17T03:30:00.000Z",
+          "2025-06-17T04:00:00.000Z",
+          "2025-06-17T04:30:00.000Z",
+          "2025-06-17T05:00:00.000Z",
+          "2025-06-17T05:30:00.000Z",
+          "2025-06-17T06:30:00.000Z",
+          "2025-06-17T07:00:00.000Z",
+          "2025-06-17T07:30:00.000Z",
+          "2025-06-17T08:00:00.000Z",
+          "2025-06-17T10:00:00.000Z",
+          "2025-06-17T10:30:00.000Z",
+          "2025-06-17T12:00:00.000Z",
+          "2025-06-17T12:30:00.000Z",
+          "2025-06-17T13:00:00.000Z",
+          "2025-06-17T13:30:00.000Z",
+          "2025-06-17T15:30:00.000Z",
+          "2025-06-17T16:00:00.000Z",
+          "2025-06-17T18:00:00.000Z",
+          "2025-06-17T18:30:00.000Z",
+          "2025-06-17T22:00:00.000Z",
+          "2025-06-17T22:30:00.000Z",
+          "2025-06-18T11:00:00.000Z",
+          "2025-06-18T11:30:00.000Z",
+          "2025-06-18T12:00:00.000Z",
+          "2025-06-18T14:00:00.000Z",
+          "2025-06-18T14:30:00.000Z",
+          "2025-06-18T16:30:00.000Z",
+          "2025-06-18T17:00:00.000Z",
+          "2025-06-18T23:30:00.000Z",
+          "2025-06-19T00:00:00.000Z",
+          "2025-06-19T01:30:00.000Z",
+          "2025-06-19T02:00:00.000Z",
+          "2025-06-19T02:30:00.000Z",
+          "2025-06-19T04:30:00.000Z",
+          "2025-06-19T06:00:00.000Z",
+          "2025-06-19T06:30:00.000Z",
+          "2025-06-19T08:00:00.000Z",
+          "2025-06-19T09:00:00.000Z",
+          "2025-06-19T09:30:00.000Z",
+          "2025-06-19T15:00:00.000Z",
+          "2025-06-19T15:30:00.000Z",
+          "2025-06-19T16:00:00.000Z",
+          "2025-06-19T18:00:00.000Z",
+          "2025-06-19T18:30:00.000Z",
+          "2025-06-19T19:00:00.000Z",
+          "2025-06-19T21:00:00.000Z",
+          "2025-06-20T02:30:00.000Z",
+          "2025-06-20T03:00:00.000Z",
+          "2025-06-20T03:30:00.000Z",
+          "2025-06-20T05:30:00.000Z",
+          "2025-06-20T06:00:00.000Z",
+          "2025-06-20T06:30:00.000Z",
+          "2025-06-20T07:00:00.000Z",
+          "2025-06-20T07:30:00.000Z",
+          "2025-06-20T10:30:00.000Z",
+          "2025-06-20T11:00:00.000Z",
+          "2025-06-20T13:00:00.000Z",
+          "2025-06-20T13:30:00.000Z",
+          "2025-06-20T17:00:00.000Z",
+          "2025-06-20T17:30:00.000Z",
+          "2025-06-20T18:00:00.000Z",
+          "2025-06-20T19:00:00.000Z",
+          "2025-06-20T19:30:00.000Z",
+          "2025-06-20T21:30:00.000Z",
+          "2025-06-20T22:00:00.000Z",
+          "2025-06-20T22:30:00.000Z",
+          "2025-06-20T23:00:00.000Z",
+          "2025-06-21T02:30:00.000Z",
+          "2025-06-21T03:00:00.000Z",
+          "2025-06-21T03:30:00.000Z",
+          "2025-06-21T04:00:00.000Z",
+          "2025-06-21T06:30:00.000Z",
+          "2025-06-21T07:00:00.000Z",
+          "2025-06-21T07:30:00.000Z",
+          "2025-06-21T08:00:00.000Z",
+          "2025-06-21T12:30:00.000Z",
+          "2025-06-21T18:00:00.000Z",
+          "2025-06-21T18:30:00.000Z",
+          "2025-06-21T20:30:00.000Z",
+          "2025-06-21T21:00:00.000Z",
+          "2025-06-21T23:30:00.000Z",
+          "2025-06-22T00:00:00.000Z",
+          "2025-06-22T02:30:00.000Z",
+          "2025-06-22T03:00:00.000Z",
+          "2025-06-22T03:30:00.000Z",
+          "2025-06-22T04:00:00.000Z",
+          "2025-06-22T04:30:00.000Z",
+          "2025-06-22T05:00:00.000Z",
+          "2025-06-22T07:30:00.000Z",
+          "2025-06-22T08:00:00.000Z",
+          "2025-06-22T08:30:00.000Z",
+          "2025-06-22T11:30:00.000Z",
+          "2025-06-22T12:00:00.000Z",
+          "2025-06-22T12:30:00.000Z",
+          "2025-06-22T16:00:00.000Z",
+          "2025-06-22T19:00:00.000Z",
+          "2025-06-22T19:30:00.000Z",
+          "2025-06-22T20:00:00.000Z",
+          "2025-06-22T22:00:00.000Z",
+          "2025-06-22T22:30:00.000Z",
+          "2025-06-23T00:30:00.000Z",
+          "2025-06-23T01:00:00.000Z",
+          "2025-06-23T03:30:00.000Z",
+          "2025-06-23T04:30:00.000Z",
+          "2025-06-23T05:00:00.000Z",
+          "2025-06-23T05:30:00.000Z",
+          "2025-06-23T06:00:00.000Z",
+          "2025-06-23T08:00:00.000Z",
+          "2025-06-23T08:30:00.000Z",
+          "2025-06-23T09:00:00.000Z",
+          "2025-06-23T09:30:00.000Z",
+          "2025-06-23T13:30:00.000Z",
+          "2025-06-23T14:00:00.000Z",
+          "2025-06-23T19:30:00.000Z",
+          "2025-06-23T20:00:00.000Z",
+          "2025-06-23T20:30:00.000Z",
+          "2025-06-23T23:30:00.000Z",
+          "2025-06-24T01:30:00.000Z",
+          "2025-06-24T02:00:00.000Z",
+          "2025-06-24T02:30:00.000Z",
+          "2025-06-24T05:00:00.000Z",
+          "2025-06-24T05:30:00.000Z",
+          "2025-06-24T06:00:00.000Z",
+          "2025-06-24T06:30:00.000Z",
+          "2025-06-24T09:00:00.000Z",
+          "2025-06-24T09:30:00.000Z",
+          "2025-06-24T10:00:00.000Z",
+          "2025-06-24T10:30:00.000Z",
+          "2025-06-24T13:00:00.000Z",
+          "2025-06-24T13:30:00.000Z",
+          "2025-06-24T17:30:00.000Z",
+          "2025-06-24T22:00:00.000Z",
+          "2025-06-25T00:30:00.000Z",
+          "2025-06-25T02:00:00.000Z",
+          "2025-06-25T02:30:00.000Z",
+          "2025-06-25T03:00:00.000Z",
+          "2025-06-25T03:30:00.000Z",
+          "2025-06-25T05:30:00.000Z",
+          "2025-06-25T06:00:00.000Z",
+          "2025-06-25T07:00:00.000Z",
+          "2025-06-25T07:30:00.000Z",
+          "2025-06-25T08:00:00.000Z",
+          "2025-06-25T10:30:00.000Z",
+          "2025-06-25T11:00:00.000Z",
+          "2025-06-25T14:00:00.000Z",
+          "2025-06-25T14:30:00.000Z",
+          "2025-06-25T21:00:00.000Z",
+          "2025-06-25T21:30:00.000Z",
+          "2025-06-25T22:30:00.000Z",
+          "2025-06-25T23:00:00.000Z",
+          "2025-06-26T01:00:00.000Z",
+          "2025-06-26T01:30:00.000Z",
+          "2025-06-26T03:00:00.000Z",
+          "2025-06-26T03:30:00.000Z",
+          "2025-06-26T04:00:00.000Z",
+          "2025-06-26T04:30:00.000Z",
+          "2025-06-26T06:30:00.000Z",
+          "2025-06-26T07:00:00.000Z",
+          "2025-06-26T07:30:00.000Z",
+          "2025-06-26T08:00:00.000Z",
+          "2025-06-26T08:30:00.000Z",
+          "2025-06-26T11:30:00.000Z",
+          "2025-06-26T12:00:00.000Z",
+          "2025-06-26T15:30:00.000Z",
+          "2025-06-26T16:00:00.000Z",
+          "2025-06-26T19:00:00.000Z",
+          "2025-06-26T22:30:00.000Z",
+          "2025-06-26T23:00:00.000Z",
+          "2025-06-26T23:30:00.000Z",
+          "2025-06-27T01:00:00.000Z",
+          "2025-06-27T01:30:00.000Z",
+          "2025-06-27T02:00:00.000Z",
+          "2025-06-27T02:30:00.000Z",
+          "2025-06-27T04:00:00.000Z",
+          "2025-06-27T04:30:00.000Z",
+          "2025-06-27T05:00:00.000Z",
+          "2025-06-27T05:30:00.000Z",
+          "2025-06-27T08:00:00.000Z",
+          "2025-06-27T08:30:00.000Z",
+          "2025-06-27T09:00:00.000Z",
+          "2025-06-27T09:30:00.000Z",
+          "2025-06-27T12:00:00.000Z",
+          "2025-06-27T12:30:00.000Z",
+          "2025-06-27T13:00:00.000Z",
+          "2025-06-27T15:30:00.000Z",
+          "2025-06-27T16:00:00.000Z",
+          "2025-06-27T16:30:00.000Z",
+          "2025-06-27T17:00:00.000Z",
+          "2025-06-27T22:00:00.000Z",
+          "2025-06-28T00:00:00.000Z",
+          "2025-06-28T02:00:00.000Z",
+          "2025-06-28T02:30:00.000Z",
+          "2025-06-28T03:00:00.000Z",
+          "2025-06-28T03:30:00.000Z",
+          "2025-06-28T05:00:00.000Z",
+          "2025-06-28T05:30:00.000Z",
+          "2025-06-28T06:00:00.000Z",
+          "2025-06-28T08:00:00.000Z",
+          "2025-06-28T09:30:00.000Z",
+          "2025-06-28T10:00:00.000Z",
+          "2025-06-28T10:30:00.000Z",
+          "2025-06-28T13:30:00.000Z",
+          "2025-06-28T14:00:00.000Z",
+          "2025-06-28T15:30:00.000Z",
+          "2025-06-28T16:00:00.000Z",
+          "2025-06-28T16:30:00.000Z",
+          "2025-06-28T17:00:00.000Z",
+          "2025-06-28T23:00:00.000Z"
+        ],
+        "meaning": "Targets label this diagnostic after prediction; every row retains all twelve past oxygen samples and its target"
+      },
+      "featureExtrapolation": {
+        "pairs": 94,
+        "fraction": 0.0724191063174114,
+        "byFeature": {
+          "oxygenNow": 6,
+          "oxygenDelta30m": 48,
+          "oxygenDelta2h": 24,
+          "oxygenDelta5h30m": 49,
+          "clockSinUTC": 0,
+          "clockCosUTC": 0,
+          "temperatureNow": 0,
+          "temperatureDelta2h": 4
+        },
+        "meaning": "Univariate training-range check, not a validated applicability domain or uncertainty probability"
+      }
+    },
+    {
+      "window": {
+        "id": "autumn-november-2025",
+        "season": "autumn",
+        "start": "2025-11-01T00:00:00Z",
+        "end": "2025-11-29T00:00:00Z"
+      },
+      "status": "audited",
+      "sourceHashes": {
+        "oxygen": "0x6c12687833d16bd677ce3c38ff8ce0207ece89b670e8210b272a1c9e35e732de",
+        "temperature": "0x24e5fdda25304666515519bbe10789499bc73b7be857201c61963cb998fa7363",
+        "discharge": "0x10dc4e6416064d9fca48b234b458be27bb8e443c62bcf42699bcd765f75479bd"
+      },
+      "quality": {
+        "oxygen": {
+          "total": 1344,
+          "accepted": 1344,
+          "excluded": []
+        },
+        "temperature": {
+          "total": 1344,
+          "accepted": 1344,
+          "excluded": []
+        },
+        "discharge": {
+          "total": 8065,
+          "accepted": 8065,
+          "excluded": []
+        }
+      },
+      "alignment": {
+        "eligibleOrigins": 1331,
+        "acceptedPairs": 1319,
+        "skipped": 12
+      },
+      "fullExpectedGrid": {
+        "expectedOrigins": 1332,
+        "acceptedExactGridPairs": 1319,
+        "missingApprovedOxygenOrigins": 1,
+        "presentOriginsWithIncompleteHistoryOrTarget": 12,
+        "acceptedGridFraction": 0.9902402402402403
+      },
+      "captureCommitment": {
+        "frozenAtCommit": "e8b4e133aa81ecda548480991584239a8ed142ea",
+        "implementationFiles": [
+          {
+            "file": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+            "rawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-multivariate/manifest.json",
+            "rawSha256": "0x4992a7e5f317b0fbab659d5941fafb6538d30652fc707176ddeef0a6a9387395"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-stability/protocol.json",
+            "rawSha256": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-training-audit/protocol.json",
+            "rawSha256": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b"
+          },
+          {
+            "file": "docs/datasets/usgs-willamette-validation/protocol.json",
+            "rawSha256": "0xd528c8e35c657d1fb5603d810a52076d3c655c75e3f27611defb50bada26e02e"
+          },
+          {
+            "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+            "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+          },
+          {
+            "file": "scripts/audit_willamette.py",
+            "rawSha256": "0x9a8de29078d7e4c75260b7f9fea1b7220193f64a97b0b00384ca680ea00f8d12"
+          },
+          {
+            "file": "scripts/capture-willamette-stability.mjs",
+            "rawSha256": "0xf1d84010ff391cd971f9fdfedfa454ecc7df384319cd07e4780979b89f77947c"
+          },
+          {
+            "file": "scripts/evaluate_stability.py",
+            "rawSha256": "0xb29fcc416849b317fdc0140ea48b9a48bf907d1af185c0e917b262ebe86f86bf"
+          },
+          {
+            "file": "scripts/experiment_multiseason.py",
+            "rawSha256": "0x00999b36a5c5fcb5c6a51ca9d00ee076f6bd9b1c2fb47245a402ccf9c5d4dfea"
+          },
+          {
+            "file": "scripts/stability_protocol.py",
+            "rawSha256": "0xc04b2972faa01190c99abf0ae0aaa686b3167475b1ef2f9a90a51ee812a57fd4"
+          },
+          {
+            "file": "scripts/test-capture-stability.mjs",
+            "rawSha256": "0xf660e926b3f3a45bf58d6afd32daef186214de94e2f270c07e259a2e8e687ecb"
+          },
+          {
+            "file": "scripts/test_evaluate_stability.py",
+            "rawSha256": "0xa602ce856d7489ccf79715aa13be78799fabbfbd36f0e796f35d01fb378c04e6"
+          },
+          {
+            "file": "scripts/test_stability_protocol.py",
+            "rawSha256": "0x46a72a91ce04335c1e28831c31d8c73150c791621e83e98b06b844ce7318333c"
+          }
+        ],
+        "implementationSnapshotHash": "0xf223742317b2b32d435b5673ced9a49122b36ceca2353e3a59808c514a080679",
+        "verifiedAgainstCurrentFilesAndGit": true,
+        "manifestRawSha256": "0x06d896419db32400fbfa515f96f36dc78244b28d747ed2758ed3225e50cd1c49",
+        "archivedBodyHashes": {
+          "oxygen": "0x6c12687833d16bd677ce3c38ff8ce0207ece89b670e8210b272a1c9e35e732de",
+          "temperature": "0x24e5fdda25304666515519bbe10789499bc73b7be857201c61963cb998fa7363",
+          "discharge": "0x10dc4e6416064d9fca48b234b458be27bb8e443c62bcf42699bcd765f75479bd"
+        }
+      },
+      "dataScreenPassed": true,
+      "scores": {
+        "persistence": {
+          "pairs": 1319,
+          "maeMgL": 0.05398028809704327,
+          "rmseMgL": 0.08964592129851028,
+          "biasMgL": -0.00015163002274450288,
+          "p95AbsoluteErrorMgL": 0.20000000000000107
+        },
+        "same-frozen-ridge-without-fallback": {
+          "pairs": 1319,
+          "maeMgL": 0.062337465506588224,
+          "rmseMgL": 0.08596532177374626,
+          "biasMgL": 0.005574036016942192,
+          "p95AbsoluteErrorMgL": 0.19138725096232814
+        },
+        "same-frozen-ridge-with-fallback": {
+          "pairs": 1319,
+          "maeMgL": 0.061972620914413655,
+          "rmseMgL": 0.08585762007612716,
+          "biasMgL": 0.005523493686487647,
+          "p95AbsoluteErrorMgL": 0.1917561625028511
+        }
+      },
+      "daily": [
+        {
+          "originDayUTC": "2025-11-01",
+          "pairs": 37,
+          "scores": {
+            "persistence": {
+              "pairs": 37,
+              "maeMgL": 0.0702702702702706,
+              "rmseMgL": 0.11389895949030032,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.22000000000000058
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.08186787707171446,
+              "rmseMgL": 0.10585757235497291,
+              "biasMgL": 0.012420740597281916,
+              "p95AbsoluteErrorMgL": 0.21531885285386834
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.08186787707171446,
+              "rmseMgL": 0.10585757235497291,
+              "biasMgL": 0.012420740597281916,
+              "p95AbsoluteErrorMgL": 0.21531885285386834
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-02",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.06458333333333333,
+              "rmseMgL": 0.09895285072531597,
+              "biasMgL": 0.0062500000000000515,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0709585886441227,
+              "rmseMgL": 0.0902715272758241,
+              "biasMgL": 0.014470273001530623,
+              "p95AbsoluteErrorMgL": 0.19625404950399916
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0709585886441227,
+              "rmseMgL": 0.0902715272758241,
+              "biasMgL": 0.014470273001530623,
+              "p95AbsoluteErrorMgL": 0.19625404950399916
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-03",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.06250000000000007,
+              "rmseMgL": 0.09354143466934864,
+              "biasMgL": -0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.20000000000000046
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06240085628919282,
+              "rmseMgL": 0.08598130541696573,
+              "biasMgL": -0.010725247539833838,
+              "p95AbsoluteErrorMgL": 0.18972707352863596
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06229759686412506,
+              "rmseMgL": 0.08685023373534397,
+              "biasMgL": -0.009488060364656178,
+              "p95AbsoluteErrorMgL": 0.19429831445271786
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-04",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07083333333333353,
+              "rmseMgL": 0.10408329997330694,
+              "biasMgL": 0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07384169693510574,
+              "rmseMgL": 0.09615967784221752,
+              "biasMgL": 0.01707108248740985,
+              "p95AbsoluteErrorMgL": 0.21753181700336058
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07384169693510574,
+              "rmseMgL": 0.09615967784221752,
+              "biasMgL": 0.01707108248740985,
+              "p95AbsoluteErrorMgL": 0.21753181700336058
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-05",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.047916666666667086,
+              "rmseMgL": 0.07772815877574066,
+              "biasMgL": 0.002083333333333326,
+              "p95AbsoluteErrorMgL": 0.1649999999999999
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.054727001884248616,
+              "rmseMgL": 0.06870349672850887,
+              "biasMgL": 0.008028227309194317,
+              "p95AbsoluteErrorMgL": 0.12100231628217752
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.054727001884248616,
+              "rmseMgL": 0.06870349672850887,
+              "biasMgL": 0.008028227309194317,
+              "p95AbsoluteErrorMgL": 0.12100231628217752
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-06",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.043749999999999845,
+              "rmseMgL": 0.07499999999999973,
+              "biasMgL": 0.002083333333333326,
+              "p95AbsoluteErrorMgL": 0.16499999999999926
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.049872079196440544,
+              "rmseMgL": 0.06951111671612084,
+              "biasMgL": 0.006851299437358145,
+              "p95AbsoluteErrorMgL": 0.13452008705737356
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.0482893579326236,
+              "rmseMgL": 0.06879244007548418,
+              "biasMgL": 0.005268578173541205,
+              "p95AbsoluteErrorMgL": 0.13452008705737356
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-07",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.058333333333333647,
+              "rmseMgL": 0.10000000000000035,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.1649999999999999
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07159042207264776,
+              "rmseMgL": 0.09918745179122264,
+              "biasMgL": 0.003727796163308724,
+              "p95AbsoluteErrorMgL": 0.22930513566806582
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07140517458010247,
+              "rmseMgL": 0.09899219108555647,
+              "biasMgL": 0.0035425486707634235,
+              "p95AbsoluteErrorMgL": 0.22930513566806582
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-08",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.04166666666666663,
+              "rmseMgL": 0.08164965809277264,
+              "biasMgL": -0.00833333333333334,
+              "p95AbsoluteErrorMgL": 0.1000000000000008
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05464642419050969,
+              "rmseMgL": 0.0788503525421719,
+              "biasMgL": -0.009111454294979171,
+              "p95AbsoluteErrorMgL": 0.15374013394805
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05411227389443222,
+              "rmseMgL": 0.07817522942817479,
+              "biasMgL": -0.00913334949782211,
+              "p95AbsoluteErrorMgL": 0.15374013394805
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-09",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.04999999999999986,
+              "rmseMgL": 0.07071067811865456,
+              "biasMgL": -0.004166666666666689,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05521327340646546,
+              "rmseMgL": 0.06951905124121839,
+              "biasMgL": 0.0018927554289844457,
+              "p95AbsoluteErrorMgL": 0.12001307771996154
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05521327340646546,
+              "rmseMgL": 0.06951905124121839,
+              "biasMgL": 0.0018927554289844457,
+              "p95AbsoluteErrorMgL": 0.12001307771996154
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-10",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07500000000000002,
+              "rmseMgL": 0.12247448713915911,
+              "biasMgL": -0.008333333333333304,
+              "p95AbsoluteErrorMgL": 0.3000000000000007
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08215073768169723,
+              "rmseMgL": 0.11479826839778096,
+              "biasMgL": -0.00767008435887595,
+              "p95AbsoluteErrorMgL": 0.2150102198957761
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08215073768169723,
+              "rmseMgL": 0.11479826839778096,
+              "biasMgL": -0.00767008435887595,
+              "p95AbsoluteErrorMgL": 0.2150102198957761
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-11",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07916666666666654,
+              "rmseMgL": 0.12247448713915884,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.26500000000000007
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.09085182476130389,
+              "rmseMgL": 0.11975205752255853,
+              "biasMgL": 0.0037288636428741695,
+              "p95AbsoluteErrorMgL": 0.26317749894630393
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.09085182476130389,
+              "rmseMgL": 0.11975205752255853,
+              "biasMgL": 0.0037288636428741695,
+              "p95AbsoluteErrorMgL": 0.26317749894630393
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-12",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07499999999999973,
+              "rmseMgL": 0.1136515141415484,
+              "biasMgL": 0.0,
+              "p95AbsoluteErrorMgL": 0.2649999999999989
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08389068074509409,
+              "rmseMgL": 0.10863810119802358,
+              "biasMgL": 0.003483382027362684,
+              "p95AbsoluteErrorMgL": 0.2324604909066689
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08389068074509409,
+              "rmseMgL": 0.10863810119802358,
+              "biasMgL": 0.003483382027362684,
+              "p95AbsoluteErrorMgL": 0.2324604909066689
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-13",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.07083333333333323,
+              "rmseMgL": 0.10606601717798207,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.20000000000000046
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.074575661002047,
+              "rmseMgL": 0.10532874921018458,
+              "biasMgL": 0.01081815745117587,
+              "p95AbsoluteErrorMgL": 0.21789260775803088
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.074575661002047,
+              "rmseMgL": 0.10532874921018458,
+              "biasMgL": 0.01081815745117587,
+              "p95AbsoluteErrorMgL": 0.21789260775803088
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-14",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.05833333333333357,
+              "rmseMgL": 0.09789450103725646,
+              "biasMgL": 0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06925666985835965,
+              "rmseMgL": 0.0968314343789039,
+              "biasMgL": 0.013936477947758949,
+              "p95AbsoluteErrorMgL": 0.21123976274056563
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06730658135515637,
+              "rmseMgL": 0.09572294233498754,
+              "biasMgL": 0.011986389444555656,
+              "p95AbsoluteErrorMgL": 0.21123976274056563
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-15",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.04166666666666682,
+              "rmseMgL": 0.07071067811865503,
+              "biasMgL": 0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05142315705781072,
+              "rmseMgL": 0.0673771058293401,
+              "biasMgL": 0.01613569730211099,
+              "p95AbsoluteErrorMgL": 0.12029868625502152
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05142315705781072,
+              "rmseMgL": 0.0673771058293401,
+              "biasMgL": 0.01613569730211099,
+              "p95AbsoluteErrorMgL": 0.12029868625502152
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-16",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.0666666666666665,
+              "rmseMgL": 0.10992421631894067,
+              "biasMgL": 0.008333333333333304,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07332184396193227,
+              "rmseMgL": 0.10233257918490288,
+              "biasMgL": 0.019166561793397856,
+              "p95AbsoluteErrorMgL": 0.23221781498213345
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.07332184396193227,
+              "rmseMgL": 0.10233257918490288,
+              "biasMgL": 0.019166561793397856,
+              "p95AbsoluteErrorMgL": 0.23221781498213345
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-17",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.058333333333333494,
+              "rmseMgL": 0.09789450103725635,
+              "biasMgL": 0.01250000000000003,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06560392866883247,
+              "rmseMgL": 0.0916246558563768,
+              "biasMgL": 0.024721394183599865,
+              "p95AbsoluteErrorMgL": 0.16421936715072882
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.06575624172957391,
+              "rmseMgL": 0.09217767540965145,
+              "biasMgL": 0.025704403764403565,
+              "p95AbsoluteErrorMgL": 0.16421936715072882
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-18",
+          "pairs": 37,
+          "scores": {
+            "persistence": {
+              "pairs": 37,
+              "maeMgL": 0.032432432432432316,
+              "rmseMgL": 0.06974858324629132,
+              "biasMgL": 0.005405405405405387,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.04293346574916848,
+              "rmseMgL": 0.0699263251072983,
+              "biasMgL": 0.009434554928309415,
+              "p95AbsoluteErrorMgL": 0.17472017978596233
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 37,
+              "maeMgL": 0.0404791494543133,
+              "rmseMgL": 0.0705334417810834,
+              "biasMgL": 0.012481628906558273,
+              "p95AbsoluteErrorMgL": 0.17601134746274227
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-19",
+          "pairs": 46,
+          "scores": {
+            "persistence": {
+              "pairs": 46,
+              "maeMgL": 0.03913043478260902,
+              "rmseMgL": 0.07518094115561179,
+              "biasMgL": -0.004347826086956506,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 46,
+              "maeMgL": 0.050632447266995964,
+              "rmseMgL": 0.06973262260767674,
+              "biasMgL": -0.002729432249599052,
+              "p95AbsoluteErrorMgL": 0.13391950825320853
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 46,
+              "maeMgL": 0.04869960965966293,
+              "rmseMgL": 0.06865172562895422,
+              "biasMgL": -0.0046622698569320775,
+              "p95AbsoluteErrorMgL": 0.13366476501404145
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-20",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.04583333333333339,
+              "rmseMgL": 0.07905694150420967,
+              "biasMgL": -0.004166666666666726,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05349560080837882,
+              "rmseMgL": 0.07065543283328282,
+              "biasMgL": -0.00040770207119456003,
+              "p95AbsoluteErrorMgL": 0.12933349130210245
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05349560080837882,
+              "rmseMgL": 0.07065543283328282,
+              "biasMgL": -0.00040770207119456003,
+              "p95AbsoluteErrorMgL": 0.12933349130210245
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-21",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.03333333333333329,
+              "rmseMgL": 0.057735026918962505,
+              "biasMgL": 0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.045183578375550905,
+              "rmseMgL": 0.059001451325997815,
+              "biasMgL": 0.02080516019204522,
+              "p95AbsoluteErrorMgL": 0.12052348747585126
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.045183578375550905,
+              "rmseMgL": 0.059001451325997815,
+              "biasMgL": 0.02080516019204522,
+              "p95AbsoluteErrorMgL": 0.12052348747585126
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-22",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.03333333333333351,
+              "rmseMgL": 0.061237243569579776,
+              "biasMgL": -0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04438065219059598,
+              "rmseMgL": 0.06030780298757771,
+              "biasMgL": -0.003331612042746975,
+              "p95AbsoluteErrorMgL": 0.12134626531973618
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04438065219059598,
+              "rmseMgL": 0.06030780298757771,
+              "biasMgL": -0.003331612042746975,
+              "p95AbsoluteErrorMgL": 0.12134626531973618
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-23",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.029166666666666712,
+              "rmseMgL": 0.05400617248673225,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03646913877336041,
+              "rmseMgL": 0.047813740868379175,
+              "biasMgL": -0.0005615465694136512,
+              "p95AbsoluteErrorMgL": 0.09557323840672359
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.03632410333126405,
+              "rmseMgL": 0.04779832174238329,
+              "biasMgL": -0.0004165111273172946,
+              "p95AbsoluteErrorMgL": 0.09542200526663602
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-24",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.033333333333333215,
+              "rmseMgL": 0.05773502691896237,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.09999999999999964
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.041880254311795394,
+              "rmseMgL": 0.058886471405566895,
+              "biasMgL": 0.0008944662538569551,
+              "p95AbsoluteErrorMgL": 0.11891649251834505
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04116893424499753,
+              "rmseMgL": 0.058055633902121935,
+              "biasMgL": 0.0016057863206548155,
+              "p95AbsoluteErrorMgL": 0.11842789398937484
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-25",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.041666666666666664,
+              "rmseMgL": 0.06454972243679027,
+              "biasMgL": -0.004166666666666652,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04996288170835794,
+              "rmseMgL": 0.06749871172807224,
+              "biasMgL": 0.0005422997460980591,
+              "p95AbsoluteErrorMgL": 0.12922265649153947
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.04874093729906933,
+              "rmseMgL": 0.06655470719544745,
+              "biasMgL": -0.0006796446631905558,
+              "p95AbsoluteErrorMgL": 0.12922265649153947
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-26",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.04583333333333347,
+              "rmseMgL": 0.07071067811865497,
+              "biasMgL": -0.008333333333333378,
+              "p95AbsoluteErrorMgL": 0.10000000000000142
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05569628372767129,
+              "rmseMgL": 0.07087940853705016,
+              "biasMgL": -0.002072150630106425,
+              "p95AbsoluteErrorMgL": 0.14386714567482295
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.05569628372767129,
+              "rmseMgL": 0.07087940853705016,
+              "biasMgL": -0.002072150630106425,
+              "p95AbsoluteErrorMgL": 0.14386714567482295
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-27",
+          "pairs": 48,
+          "scores": {
+            "persistence": {
+              "pairs": 48,
+              "maeMgL": 0.08125000000000022,
+              "rmseMgL": 0.10897247358851714,
+              "biasMgL": -0.002083333333333326,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08877655984360948,
+              "rmseMgL": 0.10931593511271197,
+              "biasMgL": 0.005070785472696533,
+              "p95AbsoluteErrorMgL": 0.20980387370420803
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 48,
+              "maeMgL": 0.08877655984360948,
+              "rmseMgL": 0.10931593511271197,
+              "biasMgL": 0.005070785472696533,
+              "p95AbsoluteErrorMgL": 0.20980387370420803
+            }
+          }
+        },
+        {
+          "originDayUTC": "2025-11-28",
+          "pairs": 47,
+          "scores": {
+            "persistence": {
+              "pairs": 47,
+              "maeMgL": 0.0595744680851064,
+              "rmseMgL": 0.0899172196132572,
+              "biasMgL": -0.004255319148936155,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.0695366921695555,
+              "rmseMgL": 0.09142015804262403,
+              "biasMgL": 0.0015052575184684878,
+              "p95AbsoluteErrorMgL": 0.21137914949807446
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 47,
+              "maeMgL": 0.0695366921695555,
+              "rmseMgL": 0.09142015804262403,
+              "biasMgL": 0.0015052575184684878,
+              "p95AbsoluteErrorMgL": 0.21137914949807446
+            }
+          }
+        }
+      ],
+      "subgroups": {
+        "past-flat": {
+          "pairs": 52,
+          "scores": {
+            "persistence": {
+              "pairs": 52,
+              "maeMgL": 0.046153846153846094,
+              "rmseMgL": 0.08548504142651092,
+              "biasMgL": 0.034615384615384596,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 52,
+              "maeMgL": 0.05540826955919732,
+              "rmseMgL": 0.08818783669327815,
+              "biasMgL": 0.03589741026672198,
+              "p95AbsoluteErrorMgL": 0.19441970844735693
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 52,
+              "maeMgL": 0.046153846153846094,
+              "rmseMgL": 0.08548504142651092,
+              "biasMgL": 0.034615384615384596,
+              "p95AbsoluteErrorMgL": 0.1999999999999993
+            }
+          }
+        },
+        "past-changing": {
+          "pairs": 1267,
+          "scores": {
+            "persistence": {
+              "pairs": 1267,
+              "maeMgL": 0.05430149960536707,
+              "rmseMgL": 0.08981257341008249,
+              "biasMgL": -0.0015785319652722955,
+              "p95AbsoluteErrorMgL": 0.20000000000000107
+            },
+            "same-frozen-ridge-without-fallback": {
+              "pairs": 1267,
+              "maeMgL": 0.06262185239629962,
+              "rmseMgL": 0.08587287685230544,
+              "biasMgL": 0.004329509212689193,
+              "p95AbsoluteErrorMgL": 0.19031650364731126
+            },
+            "same-frozen-ridge-with-fallback": {
+              "pairs": 1267,
+              "maeMgL": 0.06262185239629962,
+              "rmseMgL": 0.08587287685230544,
+              "biasMgL": 0.004329509212689193,
+              "p95AbsoluteErrorMgL": 0.19031650364731126
+            }
+          }
+        }
+      },
+      "predictionDiagnostics": {
+        "nonfinitePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "negativePredictions": {
+          "persistence": 0,
+          "same-frozen-ridge-without-fallback": 0,
+          "same-frozen-ridge-with-fallback": 0
+        },
+        "nonfiniteScoreMethods": []
+      },
+      "approvedTargetsBelowIllustrative5MgL": {
+        "pairs": 0,
+        "origins": [],
+        "meaning": "Descriptive only; not a local ecological threshold"
+      },
+      "observedOneHourDeclines": {
+        "pairs": 287,
+        "origins": [
+          "2025-11-01T05:30:00.000Z",
+          "2025-11-01T07:30:00.000Z",
+          "2025-11-01T13:00:00.000Z",
+          "2025-11-01T13:30:00.000Z",
+          "2025-11-01T17:00:00.000Z",
+          "2025-11-01T17:30:00.000Z",
+          "2025-11-01T20:00:00.000Z",
+          "2025-11-01T20:30:00.000Z",
+          "2025-11-02T02:00:00.000Z",
+          "2025-11-02T02:30:00.000Z",
+          "2025-11-02T04:00:00.000Z",
+          "2025-11-02T04:30:00.000Z",
+          "2025-11-02T07:00:00.000Z",
+          "2025-11-02T07:30:00.000Z",
+          "2025-11-02T08:30:00.000Z",
+          "2025-11-02T12:30:00.000Z",
+          "2025-11-02T13:00:00.000Z",
+          "2025-11-02T17:30:00.000Z",
+          "2025-11-02T19:00:00.000Z",
+          "2025-11-02T21:00:00.000Z",
+          "2025-11-02T21:30:00.000Z",
+          "2025-11-03T01:00:00.000Z",
+          "2025-11-03T08:00:00.000Z",
+          "2025-11-03T08:30:00.000Z",
+          "2025-11-03T09:30:00.000Z",
+          "2025-11-03T13:30:00.000Z",
+          "2025-11-03T15:00:00.000Z",
+          "2025-11-03T19:00:00.000Z",
+          "2025-11-03T19:30:00.000Z",
+          "2025-11-03T21:30:00.000Z",
+          "2025-11-03T22:00:00.000Z",
+          "2025-11-04T01:30:00.000Z",
+          "2025-11-04T02:00:00.000Z",
+          "2025-11-04T04:30:00.000Z",
+          "2025-11-04T08:00:00.000Z",
+          "2025-11-04T08:30:00.000Z",
+          "2025-11-04T09:00:00.000Z",
+          "2025-11-04T09:30:00.000Z",
+          "2025-11-04T10:30:00.000Z",
+          "2025-11-04T14:30:00.000Z",
+          "2025-11-04T15:00:00.000Z",
+          "2025-11-04T16:30:00.000Z",
+          "2025-11-04T19:30:00.000Z",
+          "2025-11-04T20:00:00.000Z",
+          "2025-11-04T22:00:00.000Z",
+          "2025-11-04T22:30:00.000Z",
+          "2025-11-05T03:00:00.000Z",
+          "2025-11-05T03:30:00.000Z",
+          "2025-11-05T05:00:00.000Z",
+          "2025-11-05T09:00:00.000Z",
+          "2025-11-05T10:00:00.000Z",
+          "2025-11-05T11:30:00.000Z",
+          "2025-11-05T15:30:00.000Z",
+          "2025-11-05T16:00:00.000Z",
+          "2025-11-05T18:00:00.000Z",
+          "2025-11-05T22:30:00.000Z",
+          "2025-11-06T00:00:00.000Z",
+          "2025-11-06T05:30:00.000Z",
+          "2025-11-06T07:00:00.000Z",
+          "2025-11-06T07:30:00.000Z",
+          "2025-11-06T10:00:00.000Z",
+          "2025-11-06T10:30:00.000Z",
+          "2025-11-06T12:00:00.000Z",
+          "2025-11-06T12:30:00.000Z",
+          "2025-11-06T23:00:00.000Z",
+          "2025-11-07T03:00:00.000Z",
+          "2025-11-07T03:30:00.000Z",
+          "2025-11-07T07:00:00.000Z",
+          "2025-11-07T11:30:00.000Z",
+          "2025-11-07T12:00:00.000Z",
+          "2025-11-07T13:00:00.000Z",
+          "2025-11-07T16:30:00.000Z",
+          "2025-11-07T17:00:00.000Z",
+          "2025-11-07T22:30:00.000Z",
+          "2025-11-07T23:00:00.000Z",
+          "2025-11-07T23:30:00.000Z",
+          "2025-11-08T09:00:00.000Z",
+          "2025-11-08T12:00:00.000Z",
+          "2025-11-08T13:30:00.000Z",
+          "2025-11-08T17:00:00.000Z",
+          "2025-11-08T23:00:00.000Z",
+          "2025-11-08T23:30:00.000Z",
+          "2025-11-09T01:00:00.000Z",
+          "2025-11-09T05:00:00.000Z",
+          "2025-11-09T06:30:00.000Z",
+          "2025-11-09T13:30:00.000Z",
+          "2025-11-09T14:00:00.000Z",
+          "2025-11-09T14:30:00.000Z",
+          "2025-11-09T18:30:00.000Z",
+          "2025-11-09T19:00:00.000Z",
+          "2025-11-09T21:00:00.000Z",
+          "2025-11-09T21:30:00.000Z",
+          "2025-11-09T23:00:00.000Z",
+          "2025-11-10T00:00:00.000Z",
+          "2025-11-10T00:30:00.000Z",
+          "2025-11-10T01:30:00.000Z",
+          "2025-11-10T05:30:00.000Z",
+          "2025-11-10T06:00:00.000Z",
+          "2025-11-10T10:30:00.000Z",
+          "2025-11-10T15:00:00.000Z",
+          "2025-11-10T15:30:00.000Z",
+          "2025-11-10T21:30:00.000Z",
+          "2025-11-10T22:00:00.000Z",
+          "2025-11-11T00:00:00.000Z",
+          "2025-11-11T00:30:00.000Z",
+          "2025-11-11T01:00:00.000Z",
+          "2025-11-11T01:30:00.000Z",
+          "2025-11-11T02:30:00.000Z",
+          "2025-11-11T06:30:00.000Z",
+          "2025-11-11T07:00:00.000Z",
+          "2025-11-11T09:00:00.000Z",
+          "2025-11-11T11:30:00.000Z",
+          "2025-11-11T14:00:00.000Z",
+          "2025-11-11T15:30:00.000Z",
+          "2025-11-11T16:00:00.000Z",
+          "2025-11-11T17:00:00.000Z",
+          "2025-11-11T21:30:00.000Z",
+          "2025-11-11T22:00:00.000Z",
+          "2025-11-12T00:00:00.000Z",
+          "2025-11-12T02:00:00.000Z",
+          "2025-11-12T02:30:00.000Z",
+          "2025-11-12T03:00:00.000Z",
+          "2025-11-12T08:00:00.000Z",
+          "2025-11-12T08:30:00.000Z",
+          "2025-11-12T10:30:00.000Z",
+          "2025-11-12T12:00:00.000Z",
+          "2025-11-12T14:00:00.000Z",
+          "2025-11-12T14:30:00.000Z",
+          "2025-11-12T16:00:00.000Z",
+          "2025-11-12T16:30:00.000Z",
+          "2025-11-12T18:00:00.000Z",
+          "2025-11-13T00:30:00.000Z",
+          "2025-11-13T01:00:00.000Z",
+          "2025-11-13T04:00:00.000Z",
+          "2025-11-13T04:30:00.000Z",
+          "2025-11-13T05:00:00.000Z",
+          "2025-11-13T12:30:00.000Z",
+          "2025-11-13T13:00:00.000Z",
+          "2025-11-13T14:30:00.000Z",
+          "2025-11-13T16:00:00.000Z",
+          "2025-11-13T16:30:00.000Z",
+          "2025-11-13T17:00:00.000Z",
+          "2025-11-13T19:00:00.000Z",
+          "2025-11-13T23:00:00.000Z",
+          "2025-11-14T01:30:00.000Z",
+          "2025-11-14T03:00:00.000Z",
+          "2025-11-14T05:00:00.000Z",
+          "2025-11-14T05:30:00.000Z",
+          "2025-11-14T06:00:00.000Z",
+          "2025-11-14T06:30:00.000Z",
+          "2025-11-14T07:00:00.000Z",
+          "2025-11-14T15:30:00.000Z",
+          "2025-11-14T16:00:00.000Z",
+          "2025-11-14T17:00:00.000Z",
+          "2025-11-14T17:30:00.000Z",
+          "2025-11-14T19:30:00.000Z",
+          "2025-11-14T20:00:00.000Z",
+          "2025-11-15T01:00:00.000Z",
+          "2025-11-15T01:30:00.000Z",
+          "2025-11-15T03:30:00.000Z",
+          "2025-11-15T06:00:00.000Z",
+          "2025-11-15T06:30:00.000Z",
+          "2025-11-15T08:30:00.000Z",
+          "2025-11-15T13:00:00.000Z",
+          "2025-11-15T13:30:00.000Z",
+          "2025-11-15T18:00:00.000Z",
+          "2025-11-15T20:30:00.000Z",
+          "2025-11-16T02:00:00.000Z",
+          "2025-11-16T06:00:00.000Z",
+          "2025-11-16T06:30:00.000Z",
+          "2025-11-16T07:30:00.000Z",
+          "2025-11-16T09:00:00.000Z",
+          "2025-11-16T09:30:00.000Z",
+          "2025-11-16T14:00:00.000Z",
+          "2025-11-16T14:30:00.000Z",
+          "2025-11-16T16:30:00.000Z",
+          "2025-11-16T17:00:00.000Z",
+          "2025-11-16T18:00:00.000Z",
+          "2025-11-16T18:30:00.000Z",
+          "2025-11-16T21:00:00.000Z",
+          "2025-11-17T05:00:00.000Z",
+          "2025-11-17T05:30:00.000Z",
+          "2025-11-17T08:00:00.000Z",
+          "2025-11-17T08:30:00.000Z",
+          "2025-11-17T10:00:00.000Z",
+          "2025-11-17T10:30:00.000Z",
+          "2025-11-17T14:00:00.000Z",
+          "2025-11-17T14:30:00.000Z",
+          "2025-11-17T17:00:00.000Z",
+          "2025-11-17T17:30:00.000Z",
+          "2025-11-17T19:00:00.000Z",
+          "2025-11-17T21:30:00.000Z",
+          "2025-11-17T22:00:00.000Z",
+          "2025-11-18T09:00:00.000Z",
+          "2025-11-18T09:30:00.000Z",
+          "2025-11-18T11:00:00.000Z",
+          "2025-11-18T16:30:00.000Z",
+          "2025-11-18T17:00:00.000Z",
+          "2025-11-19T09:00:00.000Z",
+          "2025-11-19T09:30:00.000Z",
+          "2025-11-19T12:00:00.000Z",
+          "2025-11-19T20:00:00.000Z",
+          "2025-11-19T23:00:00.000Z",
+          "2025-11-19T23:30:00.000Z",
+          "2025-11-20T06:30:00.000Z",
+          "2025-11-20T10:00:00.000Z",
+          "2025-11-20T12:30:00.000Z",
+          "2025-11-20T14:00:00.000Z",
+          "2025-11-20T19:00:00.000Z",
+          "2025-11-20T19:30:00.000Z",
+          "2025-11-20T23:00:00.000Z",
+          "2025-11-20T23:30:00.000Z",
+          "2025-11-21T05:30:00.000Z",
+          "2025-11-21T06:00:00.000Z",
+          "2025-11-21T09:00:00.000Z",
+          "2025-11-21T09:30:00.000Z",
+          "2025-11-21T10:30:00.000Z",
+          "2025-11-21T16:00:00.000Z",
+          "2025-11-21T18:00:00.000Z",
+          "2025-11-21T19:30:00.000Z",
+          "2025-11-21T21:00:00.000Z",
+          "2025-11-21T23:30:00.000Z",
+          "2025-11-22T06:30:00.000Z",
+          "2025-11-22T11:00:00.000Z",
+          "2025-11-22T14:00:00.000Z",
+          "2025-11-22T20:00:00.000Z",
+          "2025-11-22T20:30:00.000Z",
+          "2025-11-22T21:30:00.000Z",
+          "2025-11-23T00:00:00.000Z",
+          "2025-11-23T00:30:00.000Z",
+          "2025-11-23T12:00:00.000Z",
+          "2025-11-23T14:30:00.000Z",
+          "2025-11-23T20:30:00.000Z",
+          "2025-11-23T21:00:00.000Z",
+          "2025-11-24T07:30:00.000Z",
+          "2025-11-24T12:30:00.000Z",
+          "2025-11-24T15:00:00.000Z",
+          "2025-11-24T19:30:00.000Z",
+          "2025-11-24T20:00:00.000Z",
+          "2025-11-24T21:30:00.000Z",
+          "2025-11-24T22:00:00.000Z",
+          "2025-11-25T01:30:00.000Z",
+          "2025-11-25T13:00:00.000Z",
+          "2025-11-25T13:30:00.000Z",
+          "2025-11-25T15:30:00.000Z",
+          "2025-11-25T16:00:00.000Z",
+          "2025-11-25T21:30:00.000Z",
+          "2025-11-25T22:00:00.000Z",
+          "2025-11-25T22:30:00.000Z",
+          "2025-11-25T23:00:00.000Z",
+          "2025-11-26T00:00:00.000Z",
+          "2025-11-26T02:30:00.000Z",
+          "2025-11-26T07:00:00.000Z",
+          "2025-11-26T08:00:00.000Z",
+          "2025-11-26T11:00:00.000Z",
+          "2025-11-26T11:30:00.000Z",
+          "2025-11-26T14:00:00.000Z",
+          "2025-11-26T21:00:00.000Z",
+          "2025-11-26T21:30:00.000Z",
+          "2025-11-27T01:30:00.000Z",
+          "2025-11-27T02:00:00.000Z",
+          "2025-11-27T03:00:00.000Z",
+          "2025-11-27T07:30:00.000Z",
+          "2025-11-27T08:00:00.000Z",
+          "2025-11-27T09:00:00.000Z",
+          "2025-11-27T09:30:00.000Z",
+          "2025-11-27T10:00:00.000Z",
+          "2025-11-27T12:30:00.000Z",
+          "2025-11-27T15:00:00.000Z",
+          "2025-11-27T15:30:00.000Z",
+          "2025-11-27T18:30:00.000Z",
+          "2025-11-27T21:30:00.000Z",
+          "2025-11-27T22:00:00.000Z",
+          "2025-11-27T22:30:00.000Z",
+          "2025-11-27T23:00:00.000Z",
+          "2025-11-28T02:00:00.000Z",
+          "2025-11-28T02:30:00.000Z",
+          "2025-11-28T04:00:00.000Z",
+          "2025-11-28T04:30:00.000Z",
+          "2025-11-28T08:00:00.000Z",
+          "2025-11-28T08:30:00.000Z",
+          "2025-11-28T09:00:00.000Z",
+          "2025-11-28T14:30:00.000Z",
+          "2025-11-28T15:00:00.000Z",
+          "2025-11-28T17:30:00.000Z",
+          "2025-11-28T21:30:00.000Z",
+          "2025-11-28T22:30:00.000Z"
+        ],
+        "meaning": "Targets label this diagnostic after prediction; every row retains all twelve past oxygen samples and its target"
+      },
+      "featureExtrapolation": {
+        "pairs": 0,
+        "fraction": 0.0,
+        "byFeature": {
+          "oxygenNow": 0,
+          "oxygenDelta30m": 0,
+          "oxygenDelta2h": 0,
+          "oxygenDelta5h30m": 0,
+          "clockSinUTC": 0,
+          "clockCosUTC": 0,
+          "temperatureNow": 0,
+          "temperatureDelta2h": 0
+        },
+        "meaning": "Univariate training-range check, not a validated applicability domain or uncertainty probability"
+      }
+    }
+  ]
+}

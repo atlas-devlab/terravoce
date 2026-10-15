@@ -2,6 +2,9 @@
 
 [Versione italiana](WILLAMETTE_STABILITY_PROTOCOL.md)
 
+**Update:** the historical definition below remains unchanged. Capture and
+evaluation have now run; see the [results, verification and limitations](WILLAMETTE_STABILITY_RESULTS_EN.md).
+
 Protocol defined on 14 October 2026, before collecting or evaluating the new
 verification windows. This step defines the experiment and its checks. It does
 not train a model, fetch new observations, or produce new forecast scores.

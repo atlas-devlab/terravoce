@@ -1,0 +1,156 @@
+{
+  "verified": true,
+  "networkUsed": false,
+  "modelFitted": false,
+  "experimentModulesImported": false,
+  "rawEvaluationSha256": "0xd0e216eea8127c9b78bb1010068452fa7ca606d7344234f38ea42f4dd3302673",
+  "pairsIndependentlyRebuilt": 5213,
+  "maximumArithmeticDifference": 0.0,
+  "toleranceMgL": 1e-09,
+  "windows": [
+    {
+      "season": "winter",
+      "pairs": 1276,
+      "expectedOrigins": 1332,
+      "coverage": 0.9579579579579579,
+      "flatHistories": 439,
+      "flatHistoriesWithChangedTarget": 59,
+      "negativeDischargeOrigins": 79,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.017084639498432592,
+          "rmseMgL": 0.041333569285064875,
+          "biasMgL": 0.0004702194357366782,
+          "p95AbsoluteErrorMgL": 0.09999999999999964
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.028468608291398308,
+          "rmseMgL": 0.04159907423248276,
+          "biasMgL": 0.006686285348672729,
+          "p95AbsoluteErrorMgL": 0.0993724788442818
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.024585993270819794,
+          "rmseMgL": 0.04048174591919982,
+          "biasMgL": 0.004932173772781858,
+          "p95AbsoluteErrorMgL": 0.09999999999999964
+        }
+      },
+      "lowestRecordedTargetMgL": 12.9,
+      "largestPersistenceErrorMgL": 0.10000000000000142,
+      "largestFallbackErrorMgL": 0.13035360343203983,
+      "sourceRevisionRange": {
+        "min": "2026-03-24T22:41:03.509431+00:00",
+        "max": "2026-04-29T20:20:13.953137+00:00"
+      }
+    },
+    {
+      "season": "spring",
+      "pairs": 1320,
+      "expectedOrigins": 1332,
+      "coverage": 0.990990990990991,
+      "flatHistories": 42,
+      "flatHistoriesWithChangedTarget": 22,
+      "negativeDischargeOrigins": 66,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.08333333333333331,
+          "rmseMgL": 0.14984840824828752,
+          "biasMgL": 0.0009090909090909113,
+          "p95AbsoluteErrorMgL": 0.3000000000000007
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.08981268826469024,
+          "rmseMgL": 0.1397784084658712,
+          "biasMgL": 0.0030100249938954855,
+          "p95AbsoluteErrorMgL": 0.2957061999614152
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.08972268721031697,
+          "rmseMgL": 0.139864921266472,
+          "biasMgL": 0.0026805933048281044,
+          "p95AbsoluteErrorMgL": 0.2957061999614152
+        }
+      },
+      "lowestRecordedTargetMgL": 9.4,
+      "largestPersistenceErrorMgL": 1.0,
+      "largestFallbackErrorMgL": 0.9651263836940256,
+      "sourceRevisionRange": {
+        "min": "2026-03-24T22:41:03.848347+00:00",
+        "max": "2026-04-29T21:15:15.518161+00:00"
+      }
+    },
+    {
+      "season": "summer",
+      "pairs": 1298,
+      "expectedOrigins": 1332,
+      "coverage": 0.9744744744744744,
+      "flatHistories": 0,
+      "flatHistoriesWithChangedTarget": 0,
+      "negativeDischargeOrigins": 227,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.2016949152542373,
+          "rmseMgL": 0.33896879785135836,
+          "biasMgL": -0.0027734976887519285,
+          "p95AbsoluteErrorMgL": 0.799999999999999
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.19359997086351616,
+          "rmseMgL": 0.3030653598880788,
+          "biasMgL": -0.0035510091434239432,
+          "p95AbsoluteErrorMgL": 0.6726042649654443
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.19359997086351616,
+          "rmseMgL": 0.3030653598880788,
+          "biasMgL": -0.0035510091434239432,
+          "p95AbsoluteErrorMgL": 0.6726042649654443
+        }
+      },
+      "lowestRecordedTargetMgL": 7.0,
+      "largestPersistenceErrorMgL": 2.5,
+      "largestFallbackErrorMgL": 2.115653833322032,
+      "sourceRevisionRange": {
+        "min": "2026-03-24T22:41:03.595685+00:00",
+        "max": "2026-04-29T21:15:15.518161+00:00"
+      }
+    },
+    {
+      "season": "autumn",
+      "pairs": 1319,
+      "expectedOrigins": 1332,
+      "coverage": 0.9902402402402403,
+      "flatHistories": 52,
+      "flatHistoriesWithChangedTarget": 18,
+      "negativeDischargeOrigins": 179,
+      "scores": {
+        "persistence": {
+          "maeMgL": 0.05398028809704327,
+          "rmseMgL": 0.08964592129851028,
+          "biasMgL": -0.00015163002274450288,
+          "p95AbsoluteErrorMgL": 0.20000000000000107
+        },
+        "same-frozen-ridge-without-fallback": {
+          "maeMgL": 0.062337465506588224,
+          "rmseMgL": 0.08596532177374626,
+          "biasMgL": 0.005574036016942192,
+          "p95AbsoluteErrorMgL": 0.19138725096232814
+        },
+        "same-frozen-ridge-with-fallback": {
+          "maeMgL": 0.061972620914413655,
+          "rmseMgL": 0.08585762007612716,
+          "biasMgL": 0.005523493686487647,
+          "p95AbsoluteErrorMgL": 0.1917561625028511
+        }
+      },
+      "lowestRecordedTargetMgL": 10.5,
+      "largestPersistenceErrorMgL": 0.40000000000000036,
+      "largestFallbackErrorMgL": 0.3332401000715546,
+      "sourceRevisionRange": {
+        "min": "2026-03-24T22:41:04.470798+00:00",
+        "max": "2026-08-06T20:32:25.593159+00:00"
+      }
+    }
+  ]
+}
