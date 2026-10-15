@@ -1,0 +1,90 @@
+{
+  "version": "willamette-stability-one-hour-v1",
+  "phase": "protocol-only-before-new-test-capture",
+  "stationId": "USGS-14211720",
+  "horizonSeconds": 3600,
+  "purpose": "Test one past-history persistence fallback against persistence and the identical frozen ridge on four new retrospective windows; no retraining or parameter search",
+  "baseModel": {
+    "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+    "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+    "protocolFile": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+    "protocolRawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4",
+    "recipe": "Existing eight-feature residual ridge, alpha=100, learned on 2559 archived 2024 pairs; same means, scales, coefficients and intercept",
+    "newFitPermitted": false
+  },
+  "rule": {
+    "name": "twelve-sample-exact-persistence-fallback",
+    "historySamples": 12,
+    "sampleSpacingSeconds": 1800,
+    "historySpanSeconds": 19800,
+    "flatDefinition": "All twelve accepted published oxygen values at exact timestamps from origin minus 5h30m through origin are numerically identical; no new rounding, epsilon threshold or target labels",
+    "flatResidualMultiplier": 0,
+    "changingResidualMultiplier": 1,
+    "multiplyFullResidualIncludingIntercept": true,
+    "parameterSearchPermitted": false
+  },
+  "testWindows": [
+    {"id": "winter-february-2025", "season": "winter", "start": "2025-02-01T00:00:00Z", "end": "2025-03-01T00:00:00Z"},
+    {"id": "spring-may-2025", "season": "spring", "start": "2025-05-01T00:00:00Z", "end": "2025-05-29T00:00:00Z"},
+    {"id": "summer-june-2025", "season": "summer", "start": "2025-06-01T00:00:00Z", "end": "2025-06-29T00:00:00Z"},
+    {"id": "autumn-november-2025", "season": "autumn", "start": "2025-11-01T00:00:00Z", "end": "2025-11-29T00:00:00Z"}
+  ],
+  "testWindowSelection": "Four complete 28-day northern meteorological-season windows distinct from all previously acquired windows for this station; selected by calendar before new values are acquired; retrospective, not a live prospective forecast",
+  "previouslyInspectedProtocolFiles": [
+    "docs/datasets/usgs-willamette-training-audit/protocol.json",
+    "docs/datasets/usgs-willamette-multiseason/protocol.json",
+    "docs/datasets/usgs-willamette-validation/protocol.json",
+    "docs/datasets/usgs-willamette-multivariate/manifest.json"
+  ],
+  "eligibility": {
+    "sourceSpecifications": "Exactly the station, series, parameter, unit and scale definitions of the pinned base protocol",
+    "quality": "Approved, unqualified, finite; nonnegative dissolved oxygen; statistic 00011; preserve signed instantaneous discharge",
+    "history": "Twelve exact consecutive 30-minute UTC records in oxygen, temperature and discharge, ending at origin; exact oxygen target one hour later",
+    "dischargeMeaning": "Required for identical pair eligibility and contextual diagnosis, not one of the eight model inputs",
+    "missingData": "No interpolation, zero filling, selective deletion of difficult targets or replacement of unavailable windows",
+    "expectedOriginsPerWindow": 1332,
+    "minimumAcceptedPairsPerWindow": 1000,
+    "minimumExpectedGridCoveragePerWindow": 0.9,
+    "screenMeaning": "Practical completeness screen, not a statistical power or environmental accuracy guarantee"
+  },
+  "evaluation": {
+    "methods": ["persistence", "same-frozen-ridge-without-fallback", "same-frozen-ridge-with-fallback"],
+    "primaryBaseline": "persistence",
+    "mechanismBaseline": "same-frozen-ridge-without-fallback",
+    "primaryMetric": "MAE in mg/L on identical accepted origin-target pairs",
+    "aggregation": "Equal-weight arithmetic mean of the four seasonal MAEs, retaining zero-coverage or unavailable windows as insufficient rather than dropping them",
+    "pairedGain": "Baseline absolute error minus fallback absolute error; positive is better",
+    "relativeGain": "100 times macro absolute gain divided by macro baseline MAE; null when baseline is zero",
+    "diagnostics": ["seasonal RMSE", "seasonal signed bias", "seasonal p95 absolute error", "daily MAE", "full expected-grid missing counts", "past-flat count and performance per season", "all twelve history samples for low targets", "negative predictions", "feature-range extrapolation"],
+    "futureTargetGroupingPermittedForPrediction": false,
+    "removeLargeErrorsPermitted": false,
+    "clipPredictionsPermitted": false
+  },
+  "uncertainty": {
+    "method": "Paired UTC calendar-block bootstrap within each season; resample the same blocks for all three methods and recompute equally weighted seasonal mean absolute-error gains against both baselines",
+    "primaryBlockHours": 48,
+    "sensitivityBlockHours": [24, 72],
+    "sensitivityLowerBoundsAreRequired": true,
+    "iterations": 5000,
+    "baseSeed": 20261014,
+    "seedRule": "baseSeed plus blockHours, Python Random MT19937",
+    "confidenceFraction": 0.95,
+    "quantiles": "Linear interpolation at 0.025 and 0.975",
+    "minimumNonemptyBlocksPerSeason": 4,
+    "limitations": "Exploratory intervals conditional on selected windows and assumed dependence; sensitivity checks are not independent confirmations; multiple criteria do not establish joint 95% coverage or ecological utility"
+  },
+  "decision": {
+    "numericalToleranceMgL": 1e-9,
+    "pass": "All four completeness screens and bootstrap calculations pass; at least one past-flat case exists; fallback has strictly lower macro MAE than each baseline; no seasonal point MAE exceeds either baseline beyond numerical tolerance; 48h, 24h and 72h lower exploratory gain bounds against both baselines exceed numerical tolerance; all methods produce finite predictions and no fallback prediction is negative",
+    "outcomes": ["insufficient-data", "invalid-prediction", "stability-rule-not-exercised", "no-overall-improvement", "observed-seasonal-tradeoff", "inconclusive-gain", "credible-exploratory-improvement"],
+    "stableSubgroupMeaning": "The rule is defined from past history; count and errors are reported. An empty seasonal flat subgroup has null metrics and supports no subgroup claim. One or more cases alone do not establish subgroup statistical adequacy",
+    "seasonalMeaning": "No observed seasonal point-MAE loss is not a proof of statistical noninferiority in every season",
+    "tenPercentIsAcceptanceGate": false,
+    "practicalEnvironmentalBenefitDefined": false,
+    "operationalPromotion": false
+  },
+  "freezeOrder": "Commit this protocol and the exact rule before new test capture; also commit the new-window capture and evaluation implementation before reading fresh targets. Bind future capture manifests to that commit, this protocol hash and the already frozen model raw hash. Acquire each fixed window once, freeze raw responses and compute all three methods without fit or tuning. A new recipe or retraining requires another protocol and separate verification windows",
+  "implementationPhase": "This increment supplies protocol validation and synthetic rule tests; a new-window capture and evaluation runner is not yet implemented or executed",
+  "scope": "One-hour dissolved oxygen at one station using finalized retrospective source measurements; no historical as-of-origin availability, real-time forecast, calibrated prediction interval, pollutant attribution or field benefit established",
+  "mission": "Verifiable environmental predictions in support of community and youth decision rights; no change to operational Oracle, governance, quorum, treasury, token or spending"
+}

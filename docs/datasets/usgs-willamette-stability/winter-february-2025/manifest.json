@@ -1,0 +1,108 @@
+{
+  "version": "stability-test-capture-v1",
+  "protocolHash": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522",
+  "frozenModelHash": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+  "frozenAtCommit": "e8b4e133aa81ecda548480991584239a8ed142ea",
+  "implementationFiles": [
+    {
+      "file": "docs/datasets/usgs-willamette-multiseason/protocol.json",
+      "rawSha256": "0x40c8b28cc139c8b195a2aacdb5374157b0811186024d2a8370c796f4b9475fb4"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-multivariate/manifest.json",
+      "rawSha256": "0x4992a7e5f317b0fbab659d5941fafb6538d30652fc707176ddeef0a6a9387395"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-stability/protocol.json",
+      "rawSha256": "0xdb27fb083dc830b977268cd0572ab2c451cb3e12f833e7016fb4b6dff665d522"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-training-audit/protocol.json",
+      "rawSha256": "0x4d8b9121cf64d415b6288c2a13f7888156ac42aacf5d2ca7bdc9ef0a22882a9b"
+    },
+    {
+      "file": "docs/datasets/usgs-willamette-validation/protocol.json",
+      "rawSha256": "0xd528c8e35c657d1fb5603d810a52076d3c655c75e3f27611defb50bada26e02e"
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+      "rawSha256": "0x72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9"
+    },
+    {
+      "file": "scripts/audit_willamette.py",
+      "rawSha256": "0x9a8de29078d7e4c75260b7f9fea1b7220193f64a97b0b00384ca680ea00f8d12"
+    },
+    {
+      "file": "scripts/capture-willamette-stability.mjs",
+      "rawSha256": "0xf1d84010ff391cd971f9fdfedfa454ecc7df384319cd07e4780979b89f77947c"
+    },
+    {
+      "file": "scripts/evaluate_stability.py",
+      "rawSha256": "0xb29fcc416849b317fdc0140ea48b9a48bf907d1af185c0e917b262ebe86f86bf"
+    },
+    {
+      "file": "scripts/experiment_multiseason.py",
+      "rawSha256": "0x00999b36a5c5fcb5c6a51ca9d00ee076f6bd9b1c2fb47245a402ccf9c5d4dfea"
+    },
+    {
+      "file": "scripts/stability_protocol.py",
+      "rawSha256": "0xc04b2972faa01190c99abf0ae0aaa686b3167475b1ef2f9a90a51ee812a57fd4"
+    },
+    {
+      "file": "scripts/test-capture-stability.mjs",
+      "rawSha256": "0xf660e926b3f3a45bf58d6afd32daef186214de94e2f270c07e259a2e8e687ecb"
+    },
+    {
+      "file": "scripts/test_evaluate_stability.py",
+      "rawSha256": "0xa602ce856d7489ccf79715aa13be78799fabbfbd36f0e796f35d01fb378c04e6"
+    },
+    {
+      "file": "scripts/test_stability_protocol.py",
+      "rawSha256": "0x46a72a91ce04335c1e28831c31d8c73150c791621e83e98b06b844ce7318333c"
+    }
+  ],
+  "implementationSnapshotHash": "0xf223742317b2b32d435b5673ced9a49122b36ceca2353e3a59808c514a080679",
+  "window": {
+    "id": "winter-february-2025",
+    "season": "winter",
+    "start": "2025-02-01T00:00:00Z",
+    "end": "2025-03-01T00:00:00Z"
+  },
+  "status": "captured",
+  "license": "US Government work; public domain",
+  "sources": {
+    "oxygen": {
+      "file": "oxygen.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00300&time=2025-02-01T00%3A00%3A00Z%2F2025-03-01T00%3A00%3A00Z&limit=10000",
+      "requestedAtUTC": "2026-10-15T15:25:35.725Z",
+      "httpStatus": 200,
+      "rawSha256": "0xa002c76e99cda485a321b7ea97a5b162041f99fe3b20d46aa06b55a8eb1a8a6b",
+      "capturedAt": "2026-10-15T15:25:37.597Z",
+      "responseContentType": "application/json; charset=utf-8",
+      "records": 1328,
+      "captureStatus": "captured"
+    },
+    "temperature": {
+      "file": "temperature.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00010&time=2025-02-01T00%3A00%3A00Z%2F2025-03-01T00%3A00%3A00Z&limit=10000",
+      "requestedAtUTC": "2026-10-15T15:25:35.764Z",
+      "httpStatus": 200,
+      "rawSha256": "0x4b3b98f8438a19f29be7edc3124482433a7a58fdecfa30cc672ec78325b7bac9",
+      "capturedAt": "2026-10-15T15:25:37.805Z",
+      "responseContentType": "application/json; charset=utf-8",
+      "records": 1345,
+      "captureStatus": "captured"
+    },
+    "discharge": {
+      "file": "discharge.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-14211720&parameter_code=00060&time=2025-02-01T00%3A00%3A00Z%2F2025-03-01T00%3A00%3A00Z&limit=10000",
+      "requestedAtUTC": "2026-10-15T15:25:35.765Z",
+      "httpStatus": 200,
+      "rawSha256": "0x8d22afd1c92d6856d3ac3a5aa2e7c4013a14ed8295685935fb38e0bedb7aa750",
+      "capturedAt": "2026-10-15T15:25:39.482Z",
+      "responseContentType": "application/json; charset=utf-8",
+      "records": 8065,
+      "captureStatus": "captured"
+    }
+  }
+}

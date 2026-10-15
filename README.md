@@ -92,6 +92,22 @@ record-level context for the two low summer targets. Future context is marked
 explicitly; no model is fitted or promoted. Run `pnpm forecast:diagnose:verify`
 to reproduce the committed diagnosis using local archives.
 
+The [one-hour stability protocol](docs/WILLAMETTE_STABILITY_PROTOCOL.md)
+([English](docs/WILLAMETTE_STABILITY_PROTOCOL_EN.md)) fixes a single past-only
+persistence fallback and four separate 28-day verification windows. Capture
+and evaluation code was committed and pushed before requesting those targets.
+The [completed real-data test](docs/WILLAMETTE_STABILITY_RESULTS_EN.md)
+([Italian](docs/WILLAMETTE_STABILITY_RESULTS.md)) uses 5,213 pairs with all four
+coverage screens passing. Equal-season MAE is 0.089023 mg/L for persistence,
+0.093555 for the frozen ridge and 0.092470 with fallback: the modification
+improves ridge by 1.16% but remains 3.87% worse than persistence. The declared
+outcome is `no-overall-improvement`; 24/48/72-hour exploratory intervals retain
+that comparison's signs. Secondary RMSE improves against persistence in each
+window, without replacing the primary criterion. No model is refitted or
+promoted. Run `pnpm forecast:stability:verify` for offline replay and
+`python scripts/audit_stability_evidence.py .` for the separate arithmetic
+check. See the [executed notebook](docs/notebooks/willamette-stability.ipynb).
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small

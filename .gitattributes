@@ -8,3 +8,5 @@ docs/datasets/usgs-willamette-training-audit/*/*.gz -text
 docs/datasets/usgs-willamette-multiseason/*/*.gz -text
 docs/evidence/willamette-forecast/*.gz -text
 docs/evidence/willamette-multiseason/*.gz -text
+docs/datasets/usgs-willamette-stability/*/*.gz -text
+docs/evidence/willamette-stability/*.gz -text
