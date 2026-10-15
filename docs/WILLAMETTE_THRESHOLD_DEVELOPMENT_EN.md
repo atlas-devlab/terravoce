@@ -2,8 +2,9 @@
 
 [Spiegazione italiana](WILLAMETTE_THRESHOLD_DEVELOPMENT.md).
 
-**First we specify how to choose a threshold; then we will calculate results
-on the data already studied. No threshold has been selected or shown better.**
+**This document preserves the plan fixed before comparing thresholds.**
+The subsequent stage selected 0.10 mg/L exclusively on Willamette development
+data: [results and the later lake transfer](OWASCO_LAKE_TRANSFER_EN.md).
 MAE, the mean absolute forecast error in mg/L, remains the primary criterion.
 
 ## 1. A simple example
@@ -96,10 +97,11 @@ The [protocol](datasets/willamette-threshold-development/protocol.json) and
 and criteria reviewable. Synthetic tests cover boundary cases.
 Preflight may read the existing archive to verify its integrity and temporal
 partition; it does not calculate real-data errors for the five candidates.
-The selector is tested on invented summaries; the runner that calculates
-real-data MAEs has not been implemented or run. This stage selects no
-threshold, retrains nothing, acquires no new targets and does not define
-the calendar for the next one-hour test. From the repository root:
+When this plan was published, selection was tested only on invented summaries
+and the real-data runner had not run. The [runner](../scripts/evaluate_threshold_development.py)
+was subsequently committed before scoring; the [development result](evidence/willamette-threshold-development/evaluation.json)
+selects 0.10 mg/L without refitting. The original protocol remains unchanged.
+From the repository root:
 
 ```sh
 python scripts/threshold_development.py preflight

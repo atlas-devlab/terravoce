@@ -2,9 +2,11 @@
 
 [Spiegazione italiana](OWASCO_LAKE_TRANSFER.md).
 
-**Status: protocol prepared; lake acquisition and results are pending.**
-This document describes the experiment before inspecting lake observations.
-It does not yet assign an advantage to any of the four methods.
+**Status: completed, `no-overall-improvement`.** The filter does not beat
+persistence on MAE: it is almost identical, slightly worse. Exploratory
+intervals include zero; they establish neither a benefit nor statistically
+confirmed deterioration. Sections 1–6 preserve the design fixed before
+capture; section 8 reports outcomes without changing the threshold.
 
 ## 1. The question being tested
 
@@ -109,7 +111,7 @@ intervals or three independent confirmations. RMSE, signed bias, extreme
 errors, daily comparisons and departures from univariate training ranges
 remain diagnostics.
 
-## 7. Traceability, limitations and pending results
+## 7. Traceability and limitations
 
 The protocol requires committing and publishing the exact implementation,
 metadata, threshold and calendar before the first lake measurement request.
@@ -124,11 +126,67 @@ forecaster in 2020. One sonde in one summer cannot establish skill across
 the entire lake, deep layers, four seasons, other lakes or live operation.
 Practical environmental benefits and operational promotion are not defined.
 
-**Results: pending.** Planned outputs are `docs/evidence/owasco-lake-transfer/evaluation.json`
-and `docs/notebooks/owasco-lake-transfer.ipynb`; neither is presented here as
-a completed artifact. This experiment changes no operational Oracle, quorum,
+Commit `c06f1a79f073f71764aef501e9ae0f298a775377` was pushed before the first
+request for either series. Both responses returned HTTP 200 and were archived
+completely without repeating capture. The
+[complete report](evidence/owasco-lake-transfer/evaluation.json) and
+[executed notebook](notebooks/owasco-lake-transfer.ipynb) retain the results.
+This experiment changes no operational Oracle, quorum,
 governance, treasury, token or spending. Its purpose is understandable,
 verifiable environmental evidence supporting communities and youth.
+
+## 8. Observed result
+
+All 2,685 oxygen and 2,684 temperature records are approved and unqualified.
+The exact grid yields **1,275 pairs out of 1,332**, **95.7207%**: 44 origins
+without DO on the required grid and 13 with incomplete history or target.
+The declared completeness screen passes.
+
+| Method | MAE, mg/L | RMSE, mg/L |
+| --- | ---: | ---: |
+| Persistence P | 0.038667 | 0.068428 |
+| Frozen ridge R | 0.048166 | 0.067191 |
+| Previous fallback C | 0.047860 | 0.067450 |
+| Filter F, threshold 0.10 | 0.038692 | 0.068125 |
+
+MAE F−P is **+0.000025693 mg/L**, approximately +0.06645%: a small point
+disadvantage, not evidence of significant deterioration. Digits serve
+arithmetic reproducibility, not claims about physical sensor accuracy.
+The filter changes only **4 predictions**: 2 wins, 2 losses and 1,271 ties.
+An ability to select useful events has not been demonstrated.
+
+| Bootstrap blocks | Lower filter gain over persistence | Upper gain, mg/L |
+| --- | ---: | ---: |
+| 48 hours, primary | −0.000403597 | +0.000422240 |
+| 24 hours | −0.000396982 | +0.000398638 |
+| 72 hours | −0.000525352 | +0.000460663 |
+
+All include zero. Slightly better secondary RMSE does not change the primary
+MAE outcome. No threshold was adjusted using lake results.
+
+A timestamp check finds 84 oxygen and 82 temperature samples on July 27–28
+with `minute % 15 = 10`. Missing exact-grid origins therefore do not equal
+the same number of physical gaps. The cause is unknown; timestamps were
+neither rounded nor shifted to recover examples.
+
+**819 pairs (64.24%)** have at least one input outside univariate training
+ranges, mainly current temperature (814 pairs). This identifies unseen input
+values, not a causal explanation or a validated reliability domain. No target
+is below the illustrative 5 mg/L level: no alert skill or local ecological
+threshold is validated.
+
+Replay and a [separate standard-library-only audit](../scripts/audit_owasco_evidence.py)
+reconstruct the cohort, features, forecasts, scores and 48-hour bootstrap
+within 1.78×10⁻¹⁵. This is independent code/arithmetic verification, not a
+second independent observation of the lake. The notebook completes six code
+cells without errors. From the repository root, without network access:
+
+```sh
+python scripts/evaluate_threshold_development.py verify --report docs/evidence/willamette-threshold-development/evaluation.json
+python scripts/lake_transfer.py verify --report docs/evidence/owasco-lake-transfer/evaluation.json
+python scripts/audit_owasco_evidence.py
+python -m unittest discover -s scripts -p 'test_*.py'
+```
 
 ## Primary sources
 

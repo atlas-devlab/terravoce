@@ -122,9 +122,20 @@ The [threshold-development plan](docs/WILLAMETTE_THRESHOLD_DEVELOPMENT_EN.md)
 thresholds, a shared rule and an internal chronological split of those already
 inspected windows. A past-only filter and synthetic selection checks are
 implemented; the preflight checks timestamps and pinned input hashes only.
-No candidate losses on the real development data have been computed, no
-threshold has been selected and no new test calendar has been launched.
-Run `python scripts/threshold_development.py preflight` to check the plan.
+The separately committed scoring runner subsequently selected 0.10 mg/L on
+the first development parts. On the later, already-inspected parts, equal-window
+MAE decreases from 0.093487 to 0.088022 mg/L, with no window loss. This remains
+development evidence. See the offline [development verifier](scripts/evaluate_threshold_development.py).
+
+The [Owasco Lake transfer](docs/OWASCO_LAKE_TRANSFER_EN.md)
+([Italian](docs/OWASCO_LAKE_TRANSFER.md)) freezes that threshold and the same
+Willamette weights before acquiring one July 2020 window from a near-surface
+EXO 1 sonde. All methods share 1,275 of 1,332 expected pairs (95.72% coverage).
+MAE is 0.038667 mg/L for persistence and 0.038692 for the filter; it changes only
+four forecasts and does not demonstrate improvement. Exploratory paired block
+intervals include zero. The [executed notebook](docs/notebooks/owasco-lake-transfer.ipynb)
+and offline replay retain the negative result, raw evidence and scope limits.
+No lake tuning, operational promotion or governance changes occur.
 
 ## Awash irrigation observation and prediction game
 

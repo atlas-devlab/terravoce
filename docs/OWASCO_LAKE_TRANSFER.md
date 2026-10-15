@@ -2,15 +2,17 @@
 
 [English explanation](OWASCO_LAKE_TRANSFER_EN.md).
 
-**Stato: protocollo preparato; acquisizione e risultati del lago ancora in attesa.**
-Questo documento descrive la prova prima di leggere le osservazioni lacustri.
-Non attribuisce ancora un vantaggio a nessuno dei quattro metodi.
+**Stato: prova conclusa, `no-overall-improvement`.** Il filtro non supera
+la persistenza sulla MAE: è quasi uguale, lievemente peggiore. Gli intervalli
+esplorativi includono zero; non dimostrano un vantaggio né un peggioramento
+statisticamente accertato. Le sezioni 1–6 conservano il disegno fissato prima
+della cattura; la sezione 8 riporta i risultati senza cambiare la soglia.
 
 ## 1. La domanda che vogliamo verificare
 
 Il modello sviluppato sul Willamette sa prevedere l'ossigeno un'ora dopo
 anche presso una sonda di un lago, senza imparare dai risultati di quel lago?
-È una prova rigorosa di trasferimento geografico e ambientale.
+È una prova di trasferimento geografico e ambientale.
 Non stiamo costruendo un modello ottimizzato localmente per Owasco.
 Un insuccesso sarebbe un risultato da conservare, non un motivo per cambiare
 il lago, il periodo o la soglia dopo aver visto gli errori.
@@ -106,7 +108,7 @@ Sono intervalli esplorativi condizionati a questa finestra, non intervalli
 di previsione né tre conferme indipendenti. RMSE, bias, errori estremi,
 confronti giornalieri e uscite dai range di addestramento restano diagnostici.
 
-## 7. Tracciabilità, limiti e risultati in attesa
+## 7. Tracciabilità e limiti
 
 Il protocollo impone di committare e pubblicare codice, metadati, soglia e
 calendario prima della prima richiesta di misure del lago. L'acquisizione
@@ -120,11 +122,67 @@ avrebbe potuto sapere nel 2020. Una sonda e un'estate non dimostrano capacità
 su tutto il lago, i fondali, quattro stagioni, altri laghi o previsioni live.
 Non sono definiti benefici ambientali pratici né autorizzazioni operative.
 
-**Risultati: in attesa.** Sono previsti `docs/evidence/owasco-lake-transfer/evaluation.json`
-e `docs/notebooks/owasco-lake-transfer.ipynb`; non sono ancora presentati come
-artefatti completati. Questa prova non cambia Oracle operativo, quorum,
+Il commit `c06f1a79f073f71764aef501e9ae0f298a775377` è stato pubblicato prima
+della prima richiesta delle due serie. Entrambe le risposte HTTP sono 200,
+complete e archiviate senza ripetere la cattura. Il
+[rapporto completo](evidence/owasco-lake-transfer/evaluation.json) e il
+[notebook eseguito](notebooks/owasco-lake-transfer.ipynb) conservano i risultati.
+Questa prova non cambia Oracle operativo, quorum,
 governance, tesoreria, token o spese: serve a produrre prove ambientali
 comprensibili e verificabili a sostegno delle comunità e dei giovani.
+
+## 8. Risultato osservato
+
+Tutti i 2.685 record DO e i 2.684 record di temperatura sono approvati e
+senza qualificatori. Il reticolo esatto produce **1.275 coppie su 1.332**,
+il **95,7207%**: 44 origini senza DO sul reticolo richiesto e 13 con storia
+o target incompleti. Il controllo di completezza dichiarato è superato.
+
+| Metodo | MAE, mg/L | RMSE, mg/L |
+| --- | ---: | ---: |
+| Ultima misura P | 0,038667 | 0,068428 |
+| Regressione R | 0,048166 | 0,067191 |
+| Vecchio fallback C | 0,047860 | 0,067450 |
+| Filtro F, soglia 0,10 | 0,038692 | 0,068125 |
+
+La differenza MAE F−P è **+0,000025693 mg/L**, circa +0,06645%: lieve
+svantaggio puntuale, non prova di un peggioramento significativo. Le cifre
+servono al controllo aritmetico, non indicano precisione fisica del sensore.
+Il filtro interviene solo **4 volte**: 2 benefici, 2 danni, 1.271 pareggi.
+Non è dimostrata una capacità di selezionare gli eventi utili.
+
+| Blocchi bootstrap | Limite inferiore guadagno F su P | Limite superiore, mg/L |
+| --- | ---: | ---: |
+| 48 ore, primario | −0,000403597 | +0,000422240 |
+| 24 ore | −0,000396982 | +0,000398638 |
+| 72 ore | −0,000525352 | +0,000460663 |
+
+Tutti includono zero. La RMSE secondaria lievemente migliore non cambia
+l'esito sul criterio primario MAE. Nessuna soglia è stata ritoccata sul lago.
+
+Un controllo dei timestamp mostra 84 campioni DO e 82 di temperatura del
+27–28 luglio con `minuto % 15 = 10`. Perciò le origini assenti sul reticolo
+non sono altrettanti buchi fisici. La causa non è stata accertata; non abbiamo
+arrotondato o spostato gli orari per recuperare esempi.
+
+**819 coppie (64,24%)** hanno almeno un ingresso fuori dai range univariati
+del training, soprattutto la temperatura corrente (814 coppie). Questo
+segnala valori non visti nel training, senza dimostrare la causa dell'esito
+o un dominio di affidabilità. Nessun target è sotto i 5 mg/L illustrativi:
+nessuna capacità di allerta o soglia ecologica locale viene validata.
+
+Il replay e un [audit separato in sola libreria standard](../scripts/audit_owasco_evidence.py)
+ricostruiscono coorte, caratteristiche, previsioni, metriche e bootstrap a
+48 ore entro 1,78×10⁻¹⁵. È verifica indipendente del codice e del calcolo,
+non una seconda osservazione indipendente del lago. Il notebook completa
+sei celle senza errori. Dalla radice del repository, senza rete:
+
+```sh
+python scripts/evaluate_threshold_development.py verify --report docs/evidence/willamette-threshold-development/evaluation.json
+python scripts/lake_transfer.py verify --report docs/evidence/owasco-lake-transfer/evaluation.json
+python scripts/audit_owasco_evidence.py
+python -m unittest discover -s scripts -p 'test_*.py'
+```
 
 ## Fonti primarie
 
