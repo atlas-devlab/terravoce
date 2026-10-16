@@ -1,0 +1,24 @@
+{
+  "frozenAtUTC": "2026-10-16T15:47:09.735177+00:00",
+  "freezeCommit": "b8b350c6c92ecc15bbb6ccdffc449755f3ff92af",
+  "verifiedRemoteHead": "b8b350c6c92ecc15bbb6ccdffc449755f3ff92af",
+  "realSelectorScoringPerformed": false,
+  "unitTests": {
+    "count": 152,
+    "passed": true,
+    "command": "python -B -m unittest discover -s scripts -p 'test_*.py' -q",
+    "durationSeconds": 9.779
+  },
+  "separateStaticReview": {
+    "agent": "blind_methodology_review",
+    "materialBlockers": false,
+    "scope": "No real scoring or observation access; method and static code review only"
+  },
+  "files": {
+    "docs/datasets/owasco-direction-diagnostic/protocol.json": "438b66c99e1ed602ea572d15442e309c82be5972307619e1e63d37702c69d2bd",
+    "scripts/owasco_direction_diagnostic.py": "cdcc85324dd68a13b09895b6808351e385e731d622d6a97f8793fbbf754e9a02",
+    "scripts/test_owasco_direction_diagnostic.py": "efd85ef2692a875f82665a606c70d1b549e93caa98c7947f304864fb20b0929e"
+  },
+  "historicalPreservation": "preservation-before-score.json",
+  "geminiPreResultResponse": "gemini-round01-response.txt"
+}

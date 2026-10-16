@@ -1,0 +1,56 @@
+{
+  "createdAtUTC": "2026-10-16T16:00:05.929946+00:00",
+  "scope": "Fully SYNTHETIC explanatory loss-function example; no environmental observations, new forecast, candidate, fitting, threshold or evaluation criterion change",
+  "arithmetic": "Python Decimal, precision 50, exact decimal inputs",
+  "synthetic_distribution": {
+    "equiprobable_outcomes": 10,
+    "values": [
+      {
+        "value": "9.2",
+        "count": 9,
+        "probability": "0.9"
+      },
+      {
+        "value": "9.0",
+        "count": 1,
+        "probability": "0.1"
+      }
+    ]
+  },
+  "synthetic_mean": "9.18",
+  "synthetic_median": "9.2",
+  "predictions": [
+    {
+      "prediction": "9.2",
+      "MAE": "0.02",
+      "MAE_unit": "mg/L (synthetic scale)",
+      "MSE": "0.004",
+      "MSE_unit": "(mg/L)^2 (synthetic scale)"
+    },
+    {
+      "prediction": "9.18",
+      "MAE": "0.036",
+      "MAE_unit": "mg/L (synthetic scale)",
+      "MSE": "0.0036",
+      "MSE_unit": "(mg/L)^2 (synthetic scale)"
+    }
+  ],
+  "demonstration": "For this synthetic distribution, moving from 9.2 to 9.18 reduces squared error from 0.004 to 0.0036 while increasing absolute error from 0.02 to 0.036. Optimizing one loss need not optimize the other.",
+  "ideal_population_fact": "For a conditional distribution with the required finite moments, an unconstrained population squared-error minimizer is its conditional mean; absolute-error minimizers are its conditional medians. These are ideal optimization facts, not a property guaranteed for a finite penalized fitted model.",
+  "not_inferred_from_Owasco": [
+    "The 86/116 and 109/190 unchanged-target counts are retrospective selected-R group summaries. Histories and P values differ within each group; these proportions do not identify the full conditional distribution of y at every forecast origin.",
+    "A majority of zero residuals in each selected group makes zero an empirical median residual for that group, but does not prove that P is the conditional population median at each history or on future data.",
+    "Temporal dependence, finite sample selection, source quantization and transfer between locations limit inference; equality of published measurements is not proof of physical constancy.",
+    "Finite regularized ridge minimizes its specified sample loss plus penalty within its fitted function class. It is not guaranteed to equal the conditional population mean, especially under transfer.",
+    "The primary MAE objective remains fixed. This toy neither rescues the failed selector nor justifies changing the primary metric after seeing its score."
+  ],
+  "environmental_data_acquired": false,
+  "repo_modified": false,
+  "primary_metric_changed": false,
+  "candidate_changed": false,
+  "reference_context": {
+    "paper": "Gneiting (2011), Making and Evaluating Point Forecasts",
+    "url": "https://arxiv.org/pdf/0912.0902",
+    "verification": "Primary-paper loss/functional correspondence was independently verified by parent; this subtask checks the exact synthetic arithmetic and inference limits."
+  }
+}

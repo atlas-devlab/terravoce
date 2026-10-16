@@ -1,0 +1,1849 @@
+{
+  "createdAtUTC": "2026-10-16T15:49:34.718732Z",
+  "status": "PASS",
+  "checks": 208907,
+  "failures": [],
+  "arithmeticComparisonToleranceMgL": 1e-12,
+  "maximumNumericDifferenceMgL": 1.4210854715202004e-14,
+  "exactPerRowRoutingAndSavedValues": true,
+  "auditedRows": 2581,
+  "productionSelectorImported": false,
+  "auditScriptSHA256": "5d30c41266490ef9356f0a45970dfee0c1665eca6fa8456088971f6dd336107a",
+  "reportSHA256": "4820b19a9df12356721d5466bacc9c985ce54db162a9d73b68ee0459d9c0b93e",
+  "protocolSHA256": "438b66c99e1ed602ea572d15442e309c82be5972307619e1e63d37702c69d2bd",
+  "sourceBindings": [
+    {
+      "id": "july-2020",
+      "file": "docs/evidence/owasco-lake-transfer/evaluation.json",
+      "rawSha256": "7bd27ec609a7c4f471385498b61fff7b9d74546de13711559e84fcb16536ff85",
+      "pairs": 1275,
+      "window": {
+        "start": "2020-07-01T00:00:00Z",
+        "end": "2020-07-29T00:00:00Z"
+      }
+    },
+    {
+      "id": "august-2020",
+      "file": "docs/evidence/owasco-temporal-validation/evaluation.json",
+      "rawSha256": "65e1b3793c78982e1496eaf9b3e56e8157d684b6df84343ed5f5b5e0abe98853",
+      "pairs": 1306,
+      "window": {
+        "start": "2020-08-01T00:00:00Z",
+        "end": "2020-08-29T00:00:00Z"
+      }
+    }
+  ],
+  "freezeReceiptSHA256": "093ca3edc0720a21c51e2c4db594088cf7042eb4bdab59e5d52901f1cfcb0e61",
+  "months": [
+    {
+      "id": "july-2020",
+      "N": 1275,
+      "overall": {
+        "count": 1275,
+        "globalDenominator": 1275,
+        "chooseRCount": 116,
+        "choosePCount": 1159,
+        "invalidCandidateCount": 0,
+        "invalidRawRidgeCount": 0,
+        "methods": {
+          "persistence": {
+            "count": 1275,
+            "sumAbsoluteErrorMgL": 49.29999999999997,
+            "maeMgL": 0.03866666666666664,
+            "sumGainMgL": 0.0,
+            "meanGainMgL": 0.0,
+            "globalGainContributionMgL": 0.0,
+            "wins": 0,
+            "ties": 1275,
+            "losses": 0,
+            "positiveGainMagnitudeMgL": 0.0,
+            "negativeGainMagnitudeMgL": 0.0,
+            "invalidErrorCount": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "count": 1275,
+            "sumAbsoluteErrorMgL": 61.41153162548184,
+            "maeMgL": 0.04816590715724066,
+            "sumGainMgL": -12.111531625481875,
+            "meanGainMgL": -0.00949924049057402,
+            "globalGainContributionMgL": -0.00949924049057402,
+            "wins": 298,
+            "ties": 0,
+            "losses": 977,
+            "positiveGainMagnitudeMgL": 7.809882000443871,
+            "negativeGainMagnitudeMgL": 19.921413625925744,
+            "invalidErrorCount": 0
+          },
+          "small-correction-filter": {
+            "count": 1275,
+            "sumAbsoluteErrorMgL": 49.3327589135168,
+            "maeMgL": 0.03869235993217004,
+            "sumGainMgL": -0.032758913516831356,
+            "meanGainMgL": -2.5693265503397143e-05,
+            "globalGainContributionMgL": -2.5693265503397143e-05,
+            "wins": 2,
+            "ties": 1271,
+            "losses": 2,
+            "positiveGainMagnitudeMgL": 0.20393742672201753,
+            "negativeGainMagnitudeMgL": 0.2366963402388489,
+            "invalidErrorCount": 0
+          },
+          "two-hour-direction-selector": {
+            "count": 1275,
+            "sumAbsoluteErrorMgL": 49.78387297654162,
+            "maeMgL": 0.03904617488356206,
+            "sumGainMgL": -0.4838729765416545,
+            "meanGainMgL": -0.0003795082168954153,
+            "globalGainContributionMgL": -0.0003795082168954153,
+            "wins": 21,
+            "ties": 1159,
+            "losses": 95,
+            "positiveGainMagnitudeMgL": 0.14447396545311797,
+            "negativeGainMagnitudeMgL": 0.6283469419947725,
+            "invalidErrorCount": 0
+          }
+        }
+      },
+      "gainOverPersistenceMgL": -0.0003795082168954189,
+      "developmentMonthPass": false,
+      "retainedP": {
+        "count": 1159,
+        "missedRidgeGainCount": 277,
+        "missedRidgeGainSumMgL": 7.665408034990753,
+        "avoidedRidgeLossCount": 882,
+        "avoidedRidgeLossSumMgL": 19.293066683930974
+      },
+      "oldFilterRoutingComparison": {
+        "both_ridge": {
+          "count": 0,
+          "globalDenominator": 1275,
+          "chooseRCount": 0,
+          "choosePCount": 0,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "candidate_only_ridge": {
+          "count": 116,
+          "globalDenominator": 1275,
+          "chooseRCount": 116,
+          "choosePCount": 0,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 116,
+              "sumAbsoluteErrorMgL": 3.4999999999999893,
+              "maeMgL": 0.030172413793103356,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 116,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 116,
+              "sumAbsoluteErrorMgL": 3.983872976541644,
+              "maeMgL": 0.03434373255639348,
+              "sumGainMgL": -0.4838729765416545,
+              "meanGainMgL": -0.004171318763290125,
+              "globalGainContributionMgL": -0.0003795082168954153,
+              "wins": 21,
+              "ties": 0,
+              "losses": 95,
+              "positiveGainMagnitudeMgL": 0.14447396545311797,
+              "negativeGainMagnitudeMgL": 0.6283469419947725,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 116,
+              "sumAbsoluteErrorMgL": 3.4999999999999893,
+              "maeMgL": 0.030172413793103356,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 116,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 116,
+              "sumAbsoluteErrorMgL": 3.983872976541644,
+              "maeMgL": 0.03434373255639348,
+              "sumGainMgL": -0.4838729765416545,
+              "meanGainMgL": -0.004171318763290125,
+              "globalGainContributionMgL": -0.0003795082168954153,
+              "wins": 21,
+              "ties": 0,
+              "losses": 95,
+              "positiveGainMagnitudeMgL": 0.14447396545311797,
+              "negativeGainMagnitudeMgL": 0.6283469419947725,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "old_filter_only_ridge": {
+          "count": 4,
+          "globalDenominator": 1275,
+          "chooseRCount": 0,
+          "choosePCount": 4,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 4,
+              "sumAbsoluteErrorMgL": 0.4999999999999982,
+              "maeMgL": 0.12499999999999956,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 4,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 4,
+              "sumAbsoluteErrorMgL": 0.5327589135168296,
+              "maeMgL": 0.1331897283792074,
+              "sumGainMgL": -0.032758913516831356,
+              "meanGainMgL": -0.008189728379207839,
+              "globalGainContributionMgL": -2.5693265503397143e-05,
+              "wins": 2,
+              "ties": 0,
+              "losses": 2,
+              "positiveGainMagnitudeMgL": 0.20393742672201753,
+              "negativeGainMagnitudeMgL": 0.2366963402388489,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 4,
+              "sumAbsoluteErrorMgL": 0.5327589135168296,
+              "maeMgL": 0.1331897283792074,
+              "sumGainMgL": -0.032758913516831356,
+              "meanGainMgL": -0.008189728379207839,
+              "globalGainContributionMgL": -2.5693265503397143e-05,
+              "wins": 2,
+              "ties": 0,
+              "losses": 2,
+              "positiveGainMagnitudeMgL": 0.20393742672201753,
+              "negativeGainMagnitudeMgL": 0.2366963402388489,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 4,
+              "sumAbsoluteErrorMgL": 0.4999999999999982,
+              "maeMgL": 0.12499999999999956,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 4,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "both_persistence": {
+          "count": 1155,
+          "globalDenominator": 1275,
+          "chooseRCount": 0,
+          "choosePCount": 1155,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 1155,
+              "sumAbsoluteErrorMgL": 45.29999999999998,
+              "maeMgL": 0.039220779220779205,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 1155,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 1155,
+              "sumAbsoluteErrorMgL": 56.89489973542337,
+              "maeMgL": 0.04925965345058301,
+              "sumGainMgL": -11.59489973542339,
+              "meanGainMgL": -0.0100388742298038,
+              "globalGainContributionMgL": -0.009094039008175207,
+              "wins": 275,
+              "ties": 0,
+              "losses": 880,
+              "positiveGainMagnitudeMgL": 7.461470608268735,
+              "negativeGainMagnitudeMgL": 19.056370343692123,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 1155,
+              "sumAbsoluteErrorMgL": 45.29999999999998,
+              "maeMgL": 0.039220779220779205,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 1155,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 1155,
+              "sumAbsoluteErrorMgL": 45.29999999999998,
+              "maeMgL": 0.039220779220779205,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 1155,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "invalid": {
+          "count": 0,
+          "globalDenominator": 1275,
+          "chooseRCount": 0,
+          "choosePCount": 0,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        }
+      },
+      "firstChronologicalExamples": {
+        "selectedRImproves": 54,
+        "selectedRWorsens": 0,
+        "retainedPAvoidsRidgeLoss": 1,
+        "retainedPMissesRidgeGain": 3
+      },
+      "activationOccupancy": {
+        "originDays": [
+          {
+            "originDayUTC": "2020-07-01",
+            "acceptedPairs": 37,
+            "activations": 2
+          },
+          {
+            "originDayUTC": "2020-07-02",
+            "acceptedPairs": 48,
+            "activations": 2
+          },
+          {
+            "originDayUTC": "2020-07-03",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-07-04",
+            "acceptedPairs": 48,
+            "activations": 3
+          },
+          {
+            "originDayUTC": "2020-07-05",
+            "acceptedPairs": 48,
+            "activations": 2
+          },
+          {
+            "originDayUTC": "2020-07-06",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-07-07",
+            "acceptedPairs": 48,
+            "activations": 4
+          },
+          {
+            "originDayUTC": "2020-07-08",
+            "acceptedPairs": 48,
+            "activations": 6
+          },
+          {
+            "originDayUTC": "2020-07-09",
+            "acceptedPairs": 48,
+            "activations": 2
+          },
+          {
+            "originDayUTC": "2020-07-10",
+            "acceptedPairs": 48,
+            "activations": 4
+          },
+          {
+            "originDayUTC": "2020-07-11",
+            "acceptedPairs": 48,
+            "activations": 1
+          },
+          {
+            "originDayUTC": "2020-07-12",
+            "acceptedPairs": 48,
+            "activations": 6
+          },
+          {
+            "originDayUTC": "2020-07-13",
+            "acceptedPairs": 48,
+            "activations": 4
+          },
+          {
+            "originDayUTC": "2020-07-14",
+            "acceptedPairs": 48,
+            "activations": 6
+          },
+          {
+            "originDayUTC": "2020-07-15",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-07-16",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-07-17",
+            "acceptedPairs": 48,
+            "activations": 3
+          },
+          {
+            "originDayUTC": "2020-07-18",
+            "acceptedPairs": 48,
+            "activations": 4
+          },
+          {
+            "originDayUTC": "2020-07-19",
+            "acceptedPairs": 48,
+            "activations": 4
+          },
+          {
+            "originDayUTC": "2020-07-20",
+            "acceptedPairs": 48,
+            "activations": 3
+          },
+          {
+            "originDayUTC": "2020-07-21",
+            "acceptedPairs": 48,
+            "activations": 3
+          },
+          {
+            "originDayUTC": "2020-07-22",
+            "acceptedPairs": 48,
+            "activations": 6
+          },
+          {
+            "originDayUTC": "2020-07-23",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-07-24",
+            "acceptedPairs": 48,
+            "activations": 3
+          },
+          {
+            "originDayUTC": "2020-07-25",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-07-26",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-07-27",
+            "acceptedPairs": 33,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-07-28",
+            "acceptedPairs": 5,
+            "activations": 0
+          }
+        ],
+        "activeDayCount": 27,
+        "blocks": {
+          "24": {
+            "blockHours": 24,
+            "anchorUTC": "2020-07-01T00:00:00Z",
+            "occupiedBlockCount": 28,
+            "activeBlockCount": 27,
+            "items": [
+              {
+                "blockIndex": 0,
+                "startUTC": "2020-07-01T00:00:00Z",
+                "acceptedPairs": 37,
+                "activations": 2
+              },
+              {
+                "blockIndex": 1,
+                "startUTC": "2020-07-02T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 2
+              },
+              {
+                "blockIndex": 2,
+                "startUTC": "2020-07-03T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 3,
+                "startUTC": "2020-07-04T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 3
+              },
+              {
+                "blockIndex": 4,
+                "startUTC": "2020-07-05T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 2
+              },
+              {
+                "blockIndex": 5,
+                "startUTC": "2020-07-06T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 6,
+                "startUTC": "2020-07-07T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 4
+              },
+              {
+                "blockIndex": 7,
+                "startUTC": "2020-07-08T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 6
+              },
+              {
+                "blockIndex": 8,
+                "startUTC": "2020-07-09T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 2
+              },
+              {
+                "blockIndex": 9,
+                "startUTC": "2020-07-10T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 4
+              },
+              {
+                "blockIndex": 10,
+                "startUTC": "2020-07-11T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 1
+              },
+              {
+                "blockIndex": 11,
+                "startUTC": "2020-07-12T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 6
+              },
+              {
+                "blockIndex": 12,
+                "startUTC": "2020-07-13T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 4
+              },
+              {
+                "blockIndex": 13,
+                "startUTC": "2020-07-14T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 6
+              },
+              {
+                "blockIndex": 14,
+                "startUTC": "2020-07-15T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 15,
+                "startUTC": "2020-07-16T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 16,
+                "startUTC": "2020-07-17T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 3
+              },
+              {
+                "blockIndex": 17,
+                "startUTC": "2020-07-18T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 4
+              },
+              {
+                "blockIndex": 18,
+                "startUTC": "2020-07-19T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 4
+              },
+              {
+                "blockIndex": 19,
+                "startUTC": "2020-07-20T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 3
+              },
+              {
+                "blockIndex": 20,
+                "startUTC": "2020-07-21T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 3
+              },
+              {
+                "blockIndex": 21,
+                "startUTC": "2020-07-22T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 6
+              },
+              {
+                "blockIndex": 22,
+                "startUTC": "2020-07-23T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 23,
+                "startUTC": "2020-07-24T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 3
+              },
+              {
+                "blockIndex": 24,
+                "startUTC": "2020-07-25T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 25,
+                "startUTC": "2020-07-26T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 26,
+                "startUTC": "2020-07-27T00:00:00Z",
+                "acceptedPairs": 33,
+                "activations": 7
+              },
+              {
+                "blockIndex": 27,
+                "startUTC": "2020-07-28T00:00:00Z",
+                "acceptedPairs": 5,
+                "activations": 0
+              }
+            ]
+          },
+          "48": {
+            "blockHours": 48,
+            "anchorUTC": "2020-07-01T00:00:00Z",
+            "occupiedBlockCount": 14,
+            "activeBlockCount": 14,
+            "items": [
+              {
+                "blockIndex": 0,
+                "startUTC": "2020-07-01T00:00:00Z",
+                "acceptedPairs": 85,
+                "activations": 4
+              },
+              {
+                "blockIndex": 1,
+                "startUTC": "2020-07-03T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 10
+              },
+              {
+                "blockIndex": 2,
+                "startUTC": "2020-07-05T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 9
+              },
+              {
+                "blockIndex": 3,
+                "startUTC": "2020-07-07T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 10
+              },
+              {
+                "blockIndex": 4,
+                "startUTC": "2020-07-09T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 6
+              },
+              {
+                "blockIndex": 5,
+                "startUTC": "2020-07-11T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 7
+              },
+              {
+                "blockIndex": 6,
+                "startUTC": "2020-07-13T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 10
+              },
+              {
+                "blockIndex": 7,
+                "startUTC": "2020-07-15T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 12
+              },
+              {
+                "blockIndex": 8,
+                "startUTC": "2020-07-17T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 7
+              },
+              {
+                "blockIndex": 9,
+                "startUTC": "2020-07-19T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 7
+              },
+              {
+                "blockIndex": 10,
+                "startUTC": "2020-07-21T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 9
+              },
+              {
+                "blockIndex": 11,
+                "startUTC": "2020-07-23T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 8
+              },
+              {
+                "blockIndex": 12,
+                "startUTC": "2020-07-25T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 10
+              },
+              {
+                "blockIndex": 13,
+                "startUTC": "2020-07-27T00:00:00Z",
+                "acceptedPairs": 38,
+                "activations": 7
+              }
+            ]
+          },
+          "72": {
+            "blockHours": 72,
+            "anchorUTC": "2020-07-01T00:00:00Z",
+            "occupiedBlockCount": 10,
+            "activeBlockCount": 9,
+            "items": [
+              {
+                "blockIndex": 0,
+                "startUTC": "2020-07-01T00:00:00Z",
+                "acceptedPairs": 133,
+                "activations": 11
+              },
+              {
+                "blockIndex": 1,
+                "startUTC": "2020-07-04T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 12
+              },
+              {
+                "blockIndex": 2,
+                "startUTC": "2020-07-07T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 12
+              },
+              {
+                "blockIndex": 3,
+                "startUTC": "2020-07-10T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 11
+              },
+              {
+                "blockIndex": 4,
+                "startUTC": "2020-07-13T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 17
+              },
+              {
+                "blockIndex": 5,
+                "startUTC": "2020-07-16T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 12
+              },
+              {
+                "blockIndex": 6,
+                "startUTC": "2020-07-19T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 10
+              },
+              {
+                "blockIndex": 7,
+                "startUTC": "2020-07-22T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 14
+              },
+              {
+                "blockIndex": 8,
+                "startUTC": "2020-07-25T00:00:00Z",
+                "acceptedPairs": 129,
+                "activations": 17
+              },
+              {
+                "blockIndex": 9,
+                "startUTC": "2020-07-28T00:00:00Z",
+                "acceptedPairs": 5,
+                "activations": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "august-2020",
+      "N": 1306,
+      "overall": {
+        "count": 1306,
+        "globalDenominator": 1306,
+        "chooseRCount": 190,
+        "choosePCount": 1116,
+        "invalidCandidateCount": 0,
+        "invalidRawRidgeCount": 0,
+        "methods": {
+          "persistence": {
+            "count": 1306,
+            "sumAbsoluteErrorMgL": 72.50000000000001,
+            "maeMgL": 0.05551301684532926,
+            "sumGainMgL": 0.0,
+            "meanGainMgL": 0.0,
+            "globalGainContributionMgL": 0.0,
+            "wins": 0,
+            "ties": 1306,
+            "losses": 0,
+            "positiveGainMagnitudeMgL": 0.0,
+            "negativeGainMagnitudeMgL": 0.0,
+            "invalidErrorCount": 0
+          },
+          "same-frozen-ridge-without-fallback": {
+            "count": 1306,
+            "sumAbsoluteErrorMgL": 86.43571585674457,
+            "maeMgL": 0.06618354966060074,
+            "sumGainMgL": -13.935715856744546,
+            "meanGainMgL": -0.010670532815271475,
+            "globalGainContributionMgL": -0.010670532815271475,
+            "wins": 337,
+            "ties": 0,
+            "losses": 969,
+            "positiveGainMagnitudeMgL": 9.116830984078808,
+            "negativeGainMagnitudeMgL": 23.052546840823354,
+            "invalidErrorCount": 0
+          },
+          "small-correction-filter": {
+            "count": 1306,
+            "sumAbsoluteErrorMgL": 72.42212234627314,
+            "maeMgL": 0.055453386176319404,
+            "sumGainMgL": 0.07787765372687616,
+            "meanGainMgL": 5.963066900985923e-05,
+            "globalGainContributionMgL": 5.963066900985923e-05,
+            "wins": 8,
+            "ties": 1290,
+            "losses": 8,
+            "positiveGainMagnitudeMgL": 1.1321516693271505,
+            "negativeGainMagnitudeMgL": 1.0542740156002743,
+            "invalidErrorCount": 0
+          },
+          "two-hour-direction-selector": {
+            "count": 1306,
+            "sumAbsoluteErrorMgL": 72.6266469552039,
+            "maeMgL": 0.055609990011641575,
+            "sumGainMgL": -0.1266469552038778,
+            "meanGainMgL": -9.697316631231073e-05,
+            "globalGainContributionMgL": -9.697316631231073e-05,
+            "wins": 75,
+            "ties": 1116,
+            "losses": 115,
+            "positiveGainMagnitudeMgL": 0.7068929942664486,
+            "negativeGainMagnitudeMgL": 0.8335399494703264,
+            "invalidErrorCount": 0
+          }
+        }
+      },
+      "gainOverPersistenceMgL": -9.697316631231134e-05,
+      "developmentMonthPass": false,
+      "retainedP": {
+        "count": 1116,
+        "missedRidgeGainCount": 262,
+        "missedRidgeGainSumMgL": 8.40993798981236,
+        "avoidedRidgeLossCount": 854,
+        "avoidedRidgeLossSumMgL": 22.219006891353025
+      },
+      "oldFilterRoutingComparison": {
+        "both_ridge": {
+          "count": 0,
+          "globalDenominator": 1306,
+          "chooseRCount": 0,
+          "choosePCount": 0,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "candidate_only_ridge": {
+          "count": 190,
+          "globalDenominator": 1306,
+          "chooseRCount": 190,
+          "choosePCount": 0,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 190,
+              "sumAbsoluteErrorMgL": 9.100000000000001,
+              "maeMgL": 0.04789473684210527,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 190,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 190,
+              "sumAbsoluteErrorMgL": 9.22664695520388,
+              "maeMgL": 0.048561299764230945,
+              "sumGainMgL": -0.1266469552038778,
+              "meanGainMgL": -0.0006665629221256727,
+              "globalGainContributionMgL": -9.697316631231073e-05,
+              "wins": 75,
+              "ties": 0,
+              "losses": 115,
+              "positiveGainMagnitudeMgL": 0.7068929942664486,
+              "negativeGainMagnitudeMgL": 0.8335399494703264,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 190,
+              "sumAbsoluteErrorMgL": 9.100000000000001,
+              "maeMgL": 0.04789473684210527,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 190,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 190,
+              "sumAbsoluteErrorMgL": 9.22664695520388,
+              "maeMgL": 0.048561299764230945,
+              "sumGainMgL": -0.1266469552038778,
+              "meanGainMgL": -0.0006665629221256727,
+              "globalGainContributionMgL": -9.697316631231073e-05,
+              "wins": 75,
+              "ties": 0,
+              "losses": 115,
+              "positiveGainMagnitudeMgL": 0.7068929942664486,
+              "negativeGainMagnitudeMgL": 0.8335399494703264,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "old_filter_only_ridge": {
+          "count": 16,
+          "globalDenominator": 1306,
+          "chooseRCount": 0,
+          "choosePCount": 16,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 16,
+              "sumAbsoluteErrorMgL": 1.9000000000000021,
+              "maeMgL": 0.11875000000000013,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 16,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 16,
+              "sumAbsoluteErrorMgL": 1.822122346273126,
+              "maeMgL": 0.11388264664207037,
+              "sumGainMgL": 0.07787765372687616,
+              "meanGainMgL": 0.00486735335792976,
+              "globalGainContributionMgL": 5.963066900985923e-05,
+              "wins": 8,
+              "ties": 0,
+              "losses": 8,
+              "positiveGainMagnitudeMgL": 1.1321516693271505,
+              "negativeGainMagnitudeMgL": 1.0542740156002743,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 16,
+              "sumAbsoluteErrorMgL": 1.822122346273126,
+              "maeMgL": 0.11388264664207037,
+              "sumGainMgL": 0.07787765372687616,
+              "meanGainMgL": 0.00486735335792976,
+              "globalGainContributionMgL": 5.963066900985923e-05,
+              "wins": 8,
+              "ties": 0,
+              "losses": 8,
+              "positiveGainMagnitudeMgL": 1.1321516693271505,
+              "negativeGainMagnitudeMgL": 1.0542740156002743,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 16,
+              "sumAbsoluteErrorMgL": 1.9000000000000021,
+              "maeMgL": 0.11875000000000013,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 16,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "both_persistence": {
+          "count": 1100,
+          "globalDenominator": 1306,
+          "chooseRCount": 0,
+          "choosePCount": 1100,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 1100,
+              "sumAbsoluteErrorMgL": 61.500000000000014,
+              "maeMgL": 0.05590909090909092,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 1100,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 1100,
+              "sumAbsoluteErrorMgL": 75.38694655526756,
+              "maeMgL": 0.06853358777751596,
+              "sumGainMgL": -13.886946555267544,
+              "meanGainMgL": -0.01262449686842504,
+              "globalGainContributionMgL": -0.010633190317969023,
+              "wins": 254,
+              "ties": 0,
+              "losses": 846,
+              "positiveGainMagnitudeMgL": 7.277786320485209,
+              "negativeGainMagnitudeMgL": 21.164732875752755,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 1100,
+              "sumAbsoluteErrorMgL": 61.500000000000014,
+              "maeMgL": 0.05590909090909092,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 1100,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 1100,
+              "sumAbsoluteErrorMgL": 61.500000000000014,
+              "maeMgL": 0.05590909090909092,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": 0.0,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 1100,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        },
+        "invalid": {
+          "count": 0,
+          "globalDenominator": 1306,
+          "chooseRCount": 0,
+          "choosePCount": 0,
+          "invalidCandidateCount": 0,
+          "invalidRawRidgeCount": 0,
+          "methods": {
+            "persistence": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "same-frozen-ridge-without-fallback": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "small-correction-filter": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            },
+            "two-hour-direction-selector": {
+              "count": 0,
+              "sumAbsoluteErrorMgL": 0.0,
+              "maeMgL": null,
+              "sumGainMgL": 0.0,
+              "meanGainMgL": null,
+              "globalGainContributionMgL": 0.0,
+              "wins": 0,
+              "ties": 0,
+              "losses": 0,
+              "positiveGainMagnitudeMgL": 0.0,
+              "negativeGainMagnitudeMgL": 0.0,
+              "invalidErrorCount": 0
+            }
+          }
+        }
+      },
+      "firstChronologicalExamples": {
+        "selectedRImproves": 46,
+        "selectedRWorsens": 0,
+        "retainedPAvoidsRidgeLoss": 1,
+        "retainedPMissesRidgeGain": 6
+      },
+      "activationOccupancy": {
+        "originDays": [
+          {
+            "originDayUTC": "2020-08-01",
+            "acceptedPairs": 37,
+            "activations": 2
+          },
+          {
+            "originDayUTC": "2020-08-02",
+            "acceptedPairs": 48,
+            "activations": 8
+          },
+          {
+            "originDayUTC": "2020-08-03",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-08-04",
+            "acceptedPairs": 48,
+            "activations": 8
+          },
+          {
+            "originDayUTC": "2020-08-05",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-08-06",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-08-07",
+            "acceptedPairs": 48,
+            "activations": 6
+          },
+          {
+            "originDayUTC": "2020-08-08",
+            "acceptedPairs": 48,
+            "activations": 6
+          },
+          {
+            "originDayUTC": "2020-08-09",
+            "acceptedPairs": 48,
+            "activations": 4
+          },
+          {
+            "originDayUTC": "2020-08-10",
+            "acceptedPairs": 35,
+            "activations": 9
+          },
+          {
+            "originDayUTC": "2020-08-11",
+            "acceptedPairs": 48,
+            "activations": 9
+          },
+          {
+            "originDayUTC": "2020-08-12",
+            "acceptedPairs": 48,
+            "activations": 13
+          },
+          {
+            "originDayUTC": "2020-08-13",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-08-14",
+            "acceptedPairs": 48,
+            "activations": 13
+          },
+          {
+            "originDayUTC": "2020-08-15",
+            "acceptedPairs": 48,
+            "activations": 2
+          },
+          {
+            "originDayUTC": "2020-08-16",
+            "acceptedPairs": 48,
+            "activations": 8
+          },
+          {
+            "originDayUTC": "2020-08-17",
+            "acceptedPairs": 48,
+            "activations": 6
+          },
+          {
+            "originDayUTC": "2020-08-18",
+            "acceptedPairs": 48,
+            "activations": 8
+          },
+          {
+            "originDayUTC": "2020-08-19",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-08-20",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-08-21",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-08-22",
+            "acceptedPairs": 48,
+            "activations": 8
+          },
+          {
+            "originDayUTC": "2020-08-23",
+            "acceptedPairs": 48,
+            "activations": 7
+          },
+          {
+            "originDayUTC": "2020-08-24",
+            "acceptedPairs": 35,
+            "activations": 4
+          },
+          {
+            "originDayUTC": "2020-08-25",
+            "acceptedPairs": 48,
+            "activations": 5
+          },
+          {
+            "originDayUTC": "2020-08-26",
+            "acceptedPairs": 48,
+            "activations": 8
+          },
+          {
+            "originDayUTC": "2020-08-27",
+            "acceptedPairs": 48,
+            "activations": 10
+          },
+          {
+            "originDayUTC": "2020-08-28",
+            "acceptedPairs": 47,
+            "activations": 3
+          }
+        ],
+        "activeDayCount": 28,
+        "blocks": {
+          "24": {
+            "blockHours": 24,
+            "anchorUTC": "2020-08-01T00:00:00Z",
+            "occupiedBlockCount": 28,
+            "activeBlockCount": 28,
+            "items": [
+              {
+                "blockIndex": 0,
+                "startUTC": "2020-08-01T00:00:00Z",
+                "acceptedPairs": 37,
+                "activations": 2
+              },
+              {
+                "blockIndex": 1,
+                "startUTC": "2020-08-02T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 8
+              },
+              {
+                "blockIndex": 2,
+                "startUTC": "2020-08-03T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 3,
+                "startUTC": "2020-08-04T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 8
+              },
+              {
+                "blockIndex": 4,
+                "startUTC": "2020-08-05T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 5,
+                "startUTC": "2020-08-06T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 6,
+                "startUTC": "2020-08-07T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 6
+              },
+              {
+                "blockIndex": 7,
+                "startUTC": "2020-08-08T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 6
+              },
+              {
+                "blockIndex": 8,
+                "startUTC": "2020-08-09T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 4
+              },
+              {
+                "blockIndex": 9,
+                "startUTC": "2020-08-10T00:00:00Z",
+                "acceptedPairs": 35,
+                "activations": 9
+              },
+              {
+                "blockIndex": 10,
+                "startUTC": "2020-08-11T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 9
+              },
+              {
+                "blockIndex": 11,
+                "startUTC": "2020-08-12T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 13
+              },
+              {
+                "blockIndex": 12,
+                "startUTC": "2020-08-13T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 13,
+                "startUTC": "2020-08-14T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 13
+              },
+              {
+                "blockIndex": 14,
+                "startUTC": "2020-08-15T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 2
+              },
+              {
+                "blockIndex": 15,
+                "startUTC": "2020-08-16T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 8
+              },
+              {
+                "blockIndex": 16,
+                "startUTC": "2020-08-17T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 6
+              },
+              {
+                "blockIndex": 17,
+                "startUTC": "2020-08-18T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 8
+              },
+              {
+                "blockIndex": 18,
+                "startUTC": "2020-08-19T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 19,
+                "startUTC": "2020-08-20T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 20,
+                "startUTC": "2020-08-21T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 21,
+                "startUTC": "2020-08-22T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 8
+              },
+              {
+                "blockIndex": 22,
+                "startUTC": "2020-08-23T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 7
+              },
+              {
+                "blockIndex": 23,
+                "startUTC": "2020-08-24T00:00:00Z",
+                "acceptedPairs": 35,
+                "activations": 4
+              },
+              {
+                "blockIndex": 24,
+                "startUTC": "2020-08-25T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 5
+              },
+              {
+                "blockIndex": 25,
+                "startUTC": "2020-08-26T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 8
+              },
+              {
+                "blockIndex": 26,
+                "startUTC": "2020-08-27T00:00:00Z",
+                "acceptedPairs": 48,
+                "activations": 10
+              },
+              {
+                "blockIndex": 27,
+                "startUTC": "2020-08-28T00:00:00Z",
+                "acceptedPairs": 47,
+                "activations": 3
+              }
+            ]
+          },
+          "48": {
+            "blockHours": 48,
+            "anchorUTC": "2020-08-01T00:00:00Z",
+            "occupiedBlockCount": 14,
+            "activeBlockCount": 14,
+            "items": [
+              {
+                "blockIndex": 0,
+                "startUTC": "2020-08-01T00:00:00Z",
+                "acceptedPairs": 85,
+                "activations": 10
+              },
+              {
+                "blockIndex": 1,
+                "startUTC": "2020-08-03T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 13
+              },
+              {
+                "blockIndex": 2,
+                "startUTC": "2020-08-05T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 12
+              },
+              {
+                "blockIndex": 3,
+                "startUTC": "2020-08-07T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 12
+              },
+              {
+                "blockIndex": 4,
+                "startUTC": "2020-08-09T00:00:00Z",
+                "acceptedPairs": 83,
+                "activations": 13
+              },
+              {
+                "blockIndex": 5,
+                "startUTC": "2020-08-11T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 22
+              },
+              {
+                "blockIndex": 6,
+                "startUTC": "2020-08-13T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 20
+              },
+              {
+                "blockIndex": 7,
+                "startUTC": "2020-08-15T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 10
+              },
+              {
+                "blockIndex": 8,
+                "startUTC": "2020-08-17T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 14
+              },
+              {
+                "blockIndex": 9,
+                "startUTC": "2020-08-19T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 14
+              },
+              {
+                "blockIndex": 10,
+                "startUTC": "2020-08-21T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 13
+              },
+              {
+                "blockIndex": 11,
+                "startUTC": "2020-08-23T00:00:00Z",
+                "acceptedPairs": 83,
+                "activations": 11
+              },
+              {
+                "blockIndex": 12,
+                "startUTC": "2020-08-25T00:00:00Z",
+                "acceptedPairs": 96,
+                "activations": 13
+              },
+              {
+                "blockIndex": 13,
+                "startUTC": "2020-08-27T00:00:00Z",
+                "acceptedPairs": 95,
+                "activations": 13
+              }
+            ]
+          },
+          "72": {
+            "blockHours": 72,
+            "anchorUTC": "2020-08-01T00:00:00Z",
+            "occupiedBlockCount": 10,
+            "activeBlockCount": 10,
+            "items": [
+              {
+                "blockIndex": 0,
+                "startUTC": "2020-08-01T00:00:00Z",
+                "acceptedPairs": 133,
+                "activations": 15
+              },
+              {
+                "blockIndex": 1,
+                "startUTC": "2020-08-04T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 20
+              },
+              {
+                "blockIndex": 2,
+                "startUTC": "2020-08-07T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 16
+              },
+              {
+                "blockIndex": 3,
+                "startUTC": "2020-08-10T00:00:00Z",
+                "acceptedPairs": 131,
+                "activations": 31
+              },
+              {
+                "blockIndex": 4,
+                "startUTC": "2020-08-13T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 22
+              },
+              {
+                "blockIndex": 5,
+                "startUTC": "2020-08-16T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 22
+              },
+              {
+                "blockIndex": 6,
+                "startUTC": "2020-08-19T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 19
+              },
+              {
+                "blockIndex": 7,
+                "startUTC": "2020-08-22T00:00:00Z",
+                "acceptedPairs": 131,
+                "activations": 19
+              },
+              {
+                "blockIndex": 8,
+                "startUTC": "2020-08-25T00:00:00Z",
+                "acceptedPairs": 144,
+                "activations": 23
+              },
+              {
+                "blockIndex": 9,
+                "startUTC": "2020-08-28T00:00:00Z",
+                "acceptedPairs": 47,
+                "activations": 3
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "developmentContinuationPassed": false,
+  "materialIssues": [],
+  "limits": [
+    "Internal same-Codex-family arithmetic review, not independent environmental validation.",
+    "No R recomputation, model fit, new observations, new period, threshold search or alternative selector.",
+    "July/August are opened development months; passing arithmetic does not establish temporal generalization, causal or ecological effects, as-of-origin availability or live performance.",
+    "Freeze chronology is consistent with the preserved receipt and local file hashes; remote push was reported by root, not independently queried here.",
+    "All archived values in this run are evaluated as saved; temperature histories and measurement QA/QC are not independently validated.",
+    "Empty/invalid handling is checked only in cells encountered here; synthetic tests cover other cases separately."
+  ]
+}
