@@ -274,6 +274,8 @@ def audit(repo, freeze_path):
         checks.equal(digest(repo/file), expected, "binding."+file)
     checks.equal(digest(freeze_path), FREEZE_SHA, "binding.freezeReceipt")
     protocol, report, freeze = load(repo/PROTOCOL), load(repo/REPORT), load(freeze_path)
+    checks.equal(digest(repo/"docs/evidence/owasco-attenuation-diagnostic/pre-score-static-review.json"),
+                 freeze["staticReviewSHA256"], "freeze.staticReviewRawSHA256")
     checks.equal(freeze["commit"], "c69f63ca3f5a8d2dad322cad53e3d1dcb32f7ac2", "freeze.commit")
     checks.equal(freeze["candidateEnvironmentalScoreExists"], False, "freeze.preScoreFlag")
     checks.equal(utc(report["createdAtUTC"]) >= utc(freeze["verifiedAtUTC"]) >= utc(protocol["adoptedAtUTC"]), True, "freeze.receiptChronology")
