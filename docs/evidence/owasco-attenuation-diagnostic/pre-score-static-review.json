@@ -1,0 +1,33 @@
+{
+  "version": "owasco-attenuation-pre-score-static-review-v1",
+  "createdAtUTC": "2026-10-16T17:02:03.4917363Z",
+  "status": "PASS_NO_MATERIAL_BLOCKERS",
+  "perspective": "Internal separate Codex-family code review, not environmental validation.",
+  "scope": "Read-only static inspection of the adopted protocol and two new Python files; no environmental source rows, Q scores, model execution or tests run by this reviewer.",
+  "bindings": {
+    "docs/datasets/owasco-attenuation-diagnostic/protocol.json": "b952df8d503c986e3b84567a5c81dfcf5eb21ca27cefe81f3aa1e6f5d5acb2c1",
+    "scripts/owasco_attenuation_diagnostic.py": "63275501f0c04ee9515e76de0a10d8470d6a642b3746baab50aa440b2cd308dd",
+    "scripts/test_owasco_attenuation_diagnostic.py": "d636c6593d502b036b589e0a3d810abde47d05938d7f9b88d224155fa6f1d806"
+  },
+  "checked": [
+    {
+      "topic": "Exact Q and information boundary",
+      "finding": "attenuate_prediction takes only P and saved R; finite c=R-P, strict abs(c)>0.100, residual magnitude subtraction, sign application then addition to P. Inactive branch preserves P exactly. No two-hour direction routing, target argument, algebraic reorder, epsilon, quantization or clipping. gateActive and predictionChanged are distinct, including active-but-unchanged counts."
+    },
+    {
+      "topic": "Full cohort, primary decision and recomposition",
+      "finding": "Fixed bound monthly row counts; unique ordered origins, exact one-hour target and twelve half-hour oxygen samples/features checked without repair or deletion. Full monthly N for every primary MAE and global contribution; empty means null. Source P/R/F MAEs, all partition sums and Q-minus-oldF paired gains reconcile. Continuation requires all Q rows valid and MAE_P-MAE_Q>1e-9 in BOTH months."
+    },
+    {
+      "topic": "Validity, source pins and explanatory reporting",
+      "finding": "Nonfinite R/c or invalid Q blocks continuation without silent rescue; finite negative raw R stays numeric/flagged and does not alone invalidate nonnegative Q. Protocol, dependency file and actually imported dependency, model metadata and both saved evaluations have hash checks. Shared integrity dependency does not invoke its direction selector. Post-target Q-versus-oldF strata carry Q-versus-P summaries and recompose full N; first chronological four categories are fixed with null if absent. Active contexts retain source history/features, occupancy anchored to source-window start."
+    }
+  ],
+  "testInspection": "Synthetic tests cover threshold neighbors, exact operation-order discrimination, active-but-unchanged representability, future-target routing invariance, negative/nonfinite cases, full-N sums and paired outcomes, empty cells, missing/duplicate/inconsistent source rows, read-only replay/tampering/pins and both-month continuation. This statement records test coverage by inspection, not a fresh test execution.",
+  "findings": [],
+  "pending": [
+    "Root must complete and record the promised commit/push freeze before the first real Q score.",
+    "Actual archived source hashes, result arithmetic and real occupied cells have not been inspected in this pre-score review; verify separately after the frozen single run."
+  ],
+  "noPermissionExtension": "No September acquisition, model change, alternative rule, threshold scan or operational promotion follows from this static PASS."
+}

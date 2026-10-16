@@ -1,0 +1,226 @@
+{
+  "createdAtUTC": "2026-10-16T17:03:35.315153+00:00",
+  "scope": "Same-family arithmetic and plain-language review of frozen Q report only; no environmental validation, new prediction, model change, threshold search or new observations. All computations are readback consistency checks of stored predictions/errors.",
+  "source": "work/virdacora-hourly-diagnostics/docs/evidence/owasco-attenuation-diagnostic/diagnostic.json",
+  "sourceSHA256": "0a5dad4d240073028fc05d5671a86a36fe567e0b79a0a888e70f34c7d270974c",
+  "months": [
+    {
+      "id": "july-2020",
+      "N": 1275,
+      "activeCrossTab": {
+        "hurtsOldF_helpsP": 2,
+        "helpsOldF_hurtsP": 2
+      },
+      "MAE": {
+        "persistence": 0.03866666666666664,
+        "small-correction-filter": 0.03869235993217004,
+        "fixed-attenuated-correction": 0.03869235993217004
+      },
+      "gainVsP": {
+        "positiveMagnitude": 0.003937426722018245,
+        "negativeMagnitude": 0.0366963402388496,
+        "sum": -0.032758913516831356
+      },
+      "gainVsOldF": {
+        "positiveMagnitude": 0.1999999999999993,
+        "negativeMagnitude": 0.1999999999999993,
+        "sum": 0.0,
+        "exactFractionSumFromStoredBinary64Errors": "0"
+      },
+      "activeRowGains": [
+        {
+          "rowIndex": 8,
+          "gainVsP": 0.0033701988665608695,
+          "gainVsOldF": -0.09999999999999964
+        },
+        {
+          "rowIndex": 9,
+          "gainVsP": 0.0005672278554573751,
+          "gainVsOldF": -0.09999999999999964
+        },
+        {
+          "rowIndex": 149,
+          "gainVsP": -0.029460369966882283,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 272,
+          "gainVsP": -0.007235970271967318,
+          "gainVsOldF": 0.09999999999999964
+        }
+      ],
+      "examples": [
+        {
+          "sourceRowIndex": 8,
+          "origin": "2020-07-01T09:30:00.000Z",
+          "target": "2020-07-01T10:30:00.000Z",
+          "actual": 9.8,
+          "P": 10.0,
+          "oldF": 9.89662980113344,
+          "Q": 9.99662980113344,
+          "absoluteErrors": {
+            "persistence": 0.1999999999999993,
+            "small-correction-filter": 0.09662980113343878,
+            "fixed-attenuated-correction": 0.19662980113343842
+          },
+          "explanation": "Q moves toward the later published target and beats P, but attenuation removes a useful part of oldF correction and makes its error larger."
+        },
+        {
+          "sourceRowIndex": 149,
+          "origin": "2020-07-04T08:00:00.000Z",
+          "target": "2020-07-04T09:00:00.000Z",
+          "actual": 10.2,
+          "P": 10.2,
+          "oldF": 10.070539630033117,
+          "Q": 10.170539630033117,
+          "absoluteErrors": {
+            "persistence": 0.0,
+            "small-correction-filter": 0.12946036996688193,
+            "fixed-attenuated-correction": 0.029460369966882283
+          },
+          "explanation": "Attenuation reduces oldF error but introduces a nonzero error relative to perfect P on an unchanged published target."
+        }
+      ]
+    },
+    {
+      "id": "august-2020",
+      "N": 1306,
+      "activeCrossTab": {
+        "helpsOldF_hurtsP": 8,
+        "hurtsOldF_helpsP": 8
+      },
+      "MAE": {
+        "persistence": 0.05551301684532926,
+        "small-correction-filter": 0.055453386176319404,
+        "fixed-attenuated-correction": 0.055435990071182856
+      },
+      "gainVsP": {
+        "positiveMagnitude": 0.3548709826354859,
+        "negativeMagnitude": 0.2542740156002772,
+        "sum": 0.1005969670352087
+      },
+      "gainVsOldF": {
+        "positiveMagnitude": 0.7999999999999972,
+        "negativeMagnitude": 0.7772806866916646,
+        "sum": 0.022719313308332545,
+        "exactFractionSumFromStoredBinary64Errors": "6394918184345/281474976710656"
+      },
+      "activeRowGains": [
+        {
+          "rowIndex": 4,
+          "gainVsP": -0.012964282312648123,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 28,
+          "gainVsP": 0.004142524923732793,
+          "gainVsOldF": -0.09171495015253406
+        },
+        {
+          "rowIndex": 450,
+          "gainVsP": -0.027568467776088568,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 451,
+          "gainVsP": 0.07283954442639207,
+          "gainVsOldF": -0.09999999999999964
+        },
+        {
+          "rowIndex": 478,
+          "gainVsP": 0.020807482664636723,
+          "gainVsOldF": -0.09999999999999964
+        },
+        {
+          "rowIndex": 590,
+          "gainVsP": 0.0027533419431247097,
+          "gainVsOldF": -0.09449331611375378
+        },
+        {
+          "rowIndex": 660,
+          "gainVsP": -0.10506318689109051,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 662,
+          "gainVsP": 0.1533307068781955,
+          "gainVsOldF": -0.09999999999999964
+        },
+        {
+          "rowIndex": 663,
+          "gainVsP": 0.0687778172120268,
+          "gainVsOldF": -0.09999999999999964
+        },
+        {
+          "rowIndex": 680,
+          "gainVsP": -0.03299977535225729,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 681,
+          "gainVsP": -0.011689902028935606,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 682,
+          "gainVsP": -0.013099463311860404,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 717,
+          "gainVsP": -0.0031743636471830428,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 723,
+          "gainVsP": -0.04771457428021364,
+          "gainVsOldF": 0.09999999999999964
+        },
+        {
+          "rowIndex": 742,
+          "gainVsP": 0.004463789787310546,
+          "gainVsOldF": -0.09107242042537855
+        },
+        {
+          "rowIndex": 1071,
+          "gainVsP": 0.027755774800066746,
+          "gainVsOldF": -0.09999999999999964
+        }
+      ],
+      "examples": [
+        {
+          "sourceRowIndex": 4,
+          "origin": "2020-08-01T07:30:00.000Z",
+          "target": "2020-08-01T08:30:00.000Z",
+          "actual": 9.4,
+          "P": 9.4,
+          "oldF": 9.287035717687353,
+          "Q": 9.387035717687352,
+          "absoluteErrors": {
+            "persistence": 0.0,
+            "small-correction-filter": 0.11296428231264777,
+            "fixed-attenuated-correction": 0.012964282312648123
+          },
+          "explanation": "Attenuation reduces oldF error but introduces a nonzero error relative to perfect P on an unchanged published target."
+        },
+        {
+          "sourceRowIndex": 28,
+          "origin": "2020-08-01T19:30:00.000Z",
+          "target": "2020-08-01T20:30:00.000Z",
+          "actual": 9.5,
+          "P": 9.4,
+          "oldF": 9.504142524923733,
+          "Q": 9.404142524923733,
+          "absoluteErrors": {
+            "persistence": 0.09999999999999964,
+            "small-correction-filter": 0.004142524923732793,
+            "fixed-attenuated-correction": 0.09585747507626685
+          },
+          "explanation": "Q moves toward the later published target and beats P, but attenuation removes a useful part of oldF correction and makes its error larger."
+        }
+      ]
+    }
+  ],
+  "julyCancellation": "Exact equality at the stored binary64 error level: attenuation saves 0.09999999999999964 on each of 2 oldF losses and sacrifices exactly the same amount on each of 2 oldF wins. The signed sum is rationally zero, not an aggregation bug. Q and oldF differ row by row despite identical overall MAE.",
+  "inferenceLimit": "The examples use the subsequently observed target; they illustrate error geometry, not a past-only prediction trigger, environmental cause, sensor accuracy or generalizable effectiveness. The candidate still fails its pre-adopted both-month MAE continuation rule because July does not improve on P."
+}

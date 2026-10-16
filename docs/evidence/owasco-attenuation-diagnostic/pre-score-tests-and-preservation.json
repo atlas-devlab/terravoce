@@ -1,0 +1,29 @@
+{
+  "checkedAtUTC": "2026-10-16T17:02:03.427568+00:00",
+  "syntheticAndExistingSuite": {
+    "command": "python -B -m unittest discover -s scripts -p 'test_*.py'",
+    "tests": 169,
+    "passed": true,
+    "runtimeSeconds": 9.084,
+    "newCandidateEnvironmentalRowsScored": false
+  },
+  "preservedFilesChecked": 31,
+  "allEqualBase": true,
+  "newFiles": [
+    {
+      "file": "docs/datasets/owasco-attenuation-diagnostic/protocol.json",
+      "sha256": "b952df8d503c986e3b84567a5c81dfcf5eb21ca27cefe81f3aa1e6f5d5acb2c1",
+      "CRLF": 0
+    },
+    {
+      "file": "scripts/owasco_attenuation_diagnostic.py",
+      "sha256": "63275501f0c04ee9515e76de0a10d8470d6a642b3746baab50aa440b2cd308dd",
+      "CRLF": 0
+    },
+    {
+      "file": "scripts/test_owasco_attenuation_diagnostic.py",
+      "sha256": "d636c6593d502b036b589e0a3d810abde47d05938d7f9b88d224155fa6f1d806",
+      "CRLF": 0
+    }
+  ]
+}

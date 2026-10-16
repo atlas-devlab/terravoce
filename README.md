@@ -154,6 +154,14 @@ no September acquisition, refit, threshold search or operational promotion.
 Code and protocol were committed before the first selector score; offline
 replay preserves the original evidence and explicitly labels post-target examples.
 
+The [fixed attenuation check, in Italian and English](docs/OWASCO_ATTENUATED_CORRECTION_IT_EN.md)
+then reduces only the amplitude beyond the inherited 0.100 mg/L gate, using
+the exact saved regression predictions on those already-open months. July MAE
+is 0.038692 mg/L versus persistence's 0.038667; August is 0.055436 versus
+0.055513. The joint development screen fails because both months had to improve.
+The candidate stops; its frozen code, full-cohort evidence, actual helps/failures
+and offline arithmetic audit remain reviewable, with no refit or September data.
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small
