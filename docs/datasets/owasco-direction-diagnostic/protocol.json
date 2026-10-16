@@ -1,0 +1,159 @@
+{
+  "version": "owasco-direction-diagnostic-v1",
+  "status": "ADOPTED_BEFORE_FIRST_SELECTOR_SCORE",
+  "adoptedAtUTC": "2026-10-16T15:40:40.243290+00:00",
+  "authorization": "Direct user request2026-10-16: execute first July/August2hselectorcheck; onehourGemini consultation; do not proceedSeptemberorchangeR.",
+  "proposalSHA256": "7e8e5c572d46fefda1c676c4083a523ccabfe3b84e2699ed1253094b23e1990b",
+  "stationId": "USGS-425327076313601",
+  "horizonSeconds": 3600,
+  "features": [
+    "oxygenNow",
+    "oxygenDelta30m",
+    "oxygenDelta2h",
+    "oxygenDelta5h30m",
+    "clockSinUTC",
+    "clockCosUTC",
+    "temperatureNow",
+    "temperatureDelta2h"
+  ],
+  "model": {
+    "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+    "rawSha256": "72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+    "newFitPermitted": false,
+    "meaning": "Bind exactsavedmodel metadata only; never callfit or recomputeR."
+  },
+  "months": [
+    {
+      "id": "july-2020",
+      "file": "docs/evidence/owasco-lake-transfer/evaluation.json",
+      "rawSha256": "7bd27ec609a7c4f471385498b61fff7b9d74546de13711559e84fcb16536ff85",
+      "pairs": 1275,
+      "window": {
+        "start": "2020-07-01T00:00:00Z",
+        "end": "2020-07-29T00:00:00Z"
+      }
+    },
+    {
+      "id": "august-2020",
+      "file": "docs/evidence/owasco-temporal-validation/evaluation.json",
+      "rawSha256": "65e1b3793c78982e1496eaf9b3e56e8157d684b6df84343ed5f5b5e0abe98853",
+      "pairs": 1306,
+      "window": {
+        "start": "2020-08-01T00:00:00Z",
+        "end": "2020-08-29T00:00:00Z"
+      }
+    }
+  ],
+  "rule": {
+    "P": "O(t)",
+    "R": "saved same-frozen-ridge-without-fallback",
+    "oldF": "saved small-correction-filter; fixed abs(R-P)>0.100mg/L gate comparator",
+    "d": "O(t)-O(t-2h), history[-1]-history[-5]",
+    "c": "R-P",
+    "selectR": "(d>0 and c>0) or (d<0 and c<0)",
+    "otherwise": "P, includingd==0or c==0",
+    "replacesOldGate": true,
+    "amplitudeThreshold": null,
+    "epsilon": null,
+    "clippingPermitted": false,
+    "roundingPermitted": false,
+    "futureTargetUsedForRouting": false
+  },
+  "continuation": {
+    "criterion": "BOTH_MONTHS_MAE_GAIN_ABOVE_TOLERANCE_AND_VALID_CANDIDATE",
+    "primaryMetric": "MAE on ALL unchanged accepted pairs, eachmonth separately",
+    "primaryBaseline": "P",
+    "numericalToleranceMgL": 1e-09,
+    "requireBothMonths": true,
+    "requireFiniteNonnegativeSelectedPrediction": true,
+    "finiteNegativeUnselectedRBlocksCandidate": false,
+    "invalidRPolicy": "NonfiniteR makesc/selectorinvalid; record, no rowdrop or silentfallback. Finite negative unselectedR remains counted diagnostically and in its finiteMAE, doesnotaloneblockS. SelectednegativeSinvalid.",
+    "ifNotMet": "STOP_CANDIDATE_AND_DISCUSS; no automaticnewrule,thresholdscan,September or alternativeperiod",
+    "meaning": "Conservative development continuation policy adopted beforeSscores; not hypothesis-test significance, ecological standard or proofaboutotherperiods."
+  },
+  "fixedBins": [
+    {
+      "id": "B1",
+      "lower": 0.0,
+      "lowerInclusive": true,
+      "upper": 0.025,
+      "upperInclusive": false
+    },
+    {
+      "id": "B2",
+      "lower": 0.025,
+      "lowerInclusive": true,
+      "upper": 0.05,
+      "upperInclusive": false
+    },
+    {
+      "id": "B3",
+      "lower": 0.05,
+      "lowerInclusive": true,
+      "upper": 0.075,
+      "upperInclusive": false
+    },
+    {
+      "id": "B4",
+      "lower": 0.075,
+      "lowerInclusive": true,
+      "upper": 0.1,
+      "upperInclusive": true
+    },
+    {
+      "id": "B5",
+      "lower": 0.1,
+      "lowerInclusive": false,
+      "upper": null,
+      "upperInclusive": false
+    }
+  ],
+  "reporting": {
+    "methods": [
+      "P",
+      "R",
+      "oldF",
+      "S"
+    ],
+    "fullCohortDenominator": true,
+    "emptyWithinGroupMeans": "null",
+    "originDefinedGroups": [
+      "selectR/retainP",
+      "sign(d)xsign(c)",
+      "fixed abs(c)bin"
+    ],
+    "timeOccupancy": [
+      "UTCcalendar-day",
+      "24hour blocks",
+      "48hour blocks",
+      "72hour blocks"
+    ],
+    "blockAnchor": "Each saved sourcewindow start; occupancy only, no newbootstrap.",
+    "gain": "abs(P-actual)-abs(method-actual); positive helps; report wins,ties,losses,sumpositive,sumnegative and globalN contributions.",
+    "oldResults": "Verify P/R/oldF scores reconstruct savedreferences within tolerance; never overwrite historical outcomes.",
+    "examplePolicy": "After scoring save allrow provenance; explain examples as descriptive episodes, not independent environmental events.",
+    "interpretation": "Selected-group error may be reported descriptively, never replace fullcohort primary MAE; d0 not physicalstability; no causalattribution."
+  },
+  "integrity": {
+    "clockFeatureTolerance": 1e-12,
+    "clockToleranceMeaning": "Only sourcefeature sin/cos integrity across mathlibraries; not applied to d,c,routing or bins.",
+    "recompositionToleranceMgL": 1e-09,
+    "history": "Exactly12finite nonnegativeoxygenvaluesat30min endingorigin; feature0/1/2/3 exactlymatchpastoxygen; sourcefeature6/7finite, temperaturehistory not independently reconstructed here.",
+    "cohort": "No interpolation, row deletion, originshifts, targetbasedselection or neweligibility; Nmustmatchsavedboundcohorts."
+  },
+  "implementationFiles": [
+    "docs/datasets/owasco-direction-diagnostic/protocol.json",
+    "scripts/owasco_direction_diagnostic.py",
+    "scripts/test_owasco_direction_diagnostic.py"
+  ],
+  "freezeOrder": "Commit exactprotocol and diagnostic/tests before first real Sscore; first execution recorded, offline replay must not overwrite result.",
+  "scope": "One descriptive development check on alreadyopenedJuly/August2020retrospectiveUSGSarchives using unchangedWillamette2024R; no heldout evidence, independent-sensor verification or practicalecologicalbenefit claim.",
+  "prohibited": [
+    "New observations includingSeptember",
+    "Training or recomputingR",
+    "Alternative rules or thresholds",
+    "New bootstrap or pvalue to rescuecandidate",
+    "Operational Oracle/quorum/governance/blockchain/fundchanges"
+  ],
+  "mission": "Verifiable understandable environmental evidence serving communities and youth; LLM advisory outside operationalconsensus."
+}
