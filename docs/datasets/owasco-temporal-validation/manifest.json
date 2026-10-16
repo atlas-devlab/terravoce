@@ -1,0 +1,35 @@
+{
+  "version": "owasco-temporal-capture-v1",
+  "attemptSHA256": "ff453ab266b1ac1877f631747fb7b14e52ef6c00da081745e4cc241b9945813a",
+  "protocolSHA256": "b9746290e6ffd702440c257b62a72cd49d0161ffbf73fe887a668f508397439d",
+  "sources": {
+    "oxygen": {
+      "file": "oxygen.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-425327076313601&parameter_code=00300&time_series_id=b3904dc881b44599bc5f7eeb63da5a40&time=2020-08-01T00%3A00%3A00Z%2F2020-08-29T00%3A00%3A00Z&limit=10000",
+      "startedAtUTC": "2026-10-16T01:46:17.072Z",
+      "httpStatus": 200,
+      "bodyTruncated": false,
+      "rawSHA256": "7fd97fde8c18ff4ad92ad4f05f25c328a639d0866359f973711be4ef2479509d",
+      "compressedSHA256": "078809deb00f1e7fde543ce90527c07355aa4cf4a235aefb19ecbfa063ea5563",
+      "rawBytes": 1912860,
+      "records": 2687,
+      "status": "captured",
+      "finishedAtUTC": "2026-10-16T01:46:19.558Z"
+    },
+    "temperature": {
+      "file": "temperature.json.gz",
+      "sourceUrl": "https://api.waterdata.usgs.gov/ogcapi/v1/collections/continuous/items?f=json&monitoring_location_id=USGS-425327076313601&parameter_code=00010&time_series_id=d584a0bd0b6f4e979451c8498c85a192&time=2020-08-01T00%3A00%3A00Z%2F2020-08-29T00%3A00%3A00Z&limit=10000",
+      "startedAtUTC": "2026-10-16T01:46:19.558Z",
+      "httpStatus": 200,
+      "bodyTruncated": false,
+      "rawSHA256": "24d8ee8343be42f5d3d950129b7946c6dedb9d514598ddd17594295288a00c7e",
+      "compressedSHA256": "e5296ef54afc42daea5510cfc73013163bb38ceb367823741a35db6da4669086",
+      "rawBytes": 1915042,
+      "records": 2687,
+      "status": "captured",
+      "finishedAtUTC": "2026-10-16T01:46:22.063Z"
+    }
+  },
+  "captureEligible": true,
+  "finishedAtUTC": "2026-10-16T01:46:22.063Z"
+}

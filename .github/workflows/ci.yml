@@ -104,6 +104,8 @@ jobs:
             python3 scripts/evaluate_threshold_development.py verify --report docs/evidence/willamette-threshold-development/evaluation.json
             python3 scripts/lake_transfer.py verify --report docs/evidence/owasco-lake-transfer/evaluation.json
             python3 scripts/audit_owasco_evidence.py
+            python3 scripts/owasco_gain_bins.py --input docs/evidence/owasco-lake-transfer/evaluation.json --protocol docs/datasets/owasco-gain-diagnostic/protocol.json --verify-report docs/evidence/owasco-gain-diagnostic/diagnostic.json
+            python3 scripts/owasco_temporal_validation.py verify --report docs/evidence/owasco-temporal-validation/evaluation.json
           else
             python3 scripts/stability_protocol.py
           fi

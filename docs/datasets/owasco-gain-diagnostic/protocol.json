@@ -1,0 +1,185 @@
+{
+  "version": "owasco-gain-diagnostic-v1",
+  "status": "ADOPTED_BEFORE_FIRST_BIN_CALCULATION",
+  "adoptedAtUTC": "2026-10-16T01:35:11.409470+00:00",
+  "authorization": "Direct user request on2026-10-16 to apply both proposed tracks",
+  "sourceProposalSHA256": "1b965fa73b53af73ed18c84ccd78ff62bd11de081eda3d82e4eca6effa7ff2ba",
+  "purpose": "Describe where absolute-error and paired-gain contributions accumulate in the already opened Owasco window before considering a model change. This proposal does not establish new temporal evidence or exhaust the possible explanations.",
+  "inputBinding": {
+    "file": "docs/evidence/owasco-lake-transfer/evaluation.json",
+    "repositoryRelativeFile": "docs/evidence/owasco-lake-transfer/evaluation.json",
+    "rawFileSHA256": "7bd27ec609a7c4f471385498b61fff7b9d74546de13711559e84fcb16536ff85",
+    "orderedOriginTimestampListSHA256": "c6361869f5df11bb39f8ac394b2c1fd3f4153e54a89067ea767353607764ed97",
+    "timestampCanonicalization": "Read rows[].origin only; parse as an instant, convert to UTC, render ISO8601 with six fractional-second digits and terminal Z, sort ascending, preserve duplicates, join with LF and one terminal LF, encode UTF-8 without BOM. Only its hash is emitted, not the timestamp list.",
+    "cohort": "The unchanged 1275 saved accepted origin-target rows; no fresh source query, new eligibility calculation, interpolation or outcome-based exclusion.",
+    "existingSavedReferences_notNewCalculations": {
+      "P": {
+        "pairs": 1275,
+        "maeMgL": 0.03866666666666664
+      },
+      "R": {
+        "pairs": 1275,
+        "maeMgL": 0.04816590715724066
+      },
+      "F_original": {
+        "pairs": 1275,
+        "maeMgL": 0.03869235993217004
+      }
+    },
+    "integrityRuleIfLaterExecuted": "The source file hash and canonical cohort hash must match this draft before any calculation. Missing/nonfinite/invalid required fields cause a recorded stop; never silently drop rows or change the denominator."
+  },
+  "definitions": {
+    "N": "1275, the fixed global cohort denominator copied from the saved evaluation; not a per-bin or subgroup count.",
+    "P": "The saved persistence prediction.",
+    "R": "The saved same-frozen-ridge-without-fallback prediction. Never recompute it from weights in this diagnostic.",
+    "actual": "The saved +1h target.",
+    "score": "abs(R-P), in mg/L.",
+    "errorP": "abs(P-actual)",
+    "errorR": "abs(R-actual)",
+    "gain": "errorP-errorR; positive means the saved ridge has smaller absolute error on that row.",
+    "gainIsNot": "A probability, a confidence measure, an ecological benefit, or a newly trained predictor.",
+    "F_original": "The saved small-correction-filter prediction: P when score<=0.100, otherwise R. This rule remains fixed."
+  },
+  "fixedBins": [
+    {
+      "id": "B1",
+      "interval": "[0,0.025)",
+      "lower": 0.0,
+      "lowerInclusive": true,
+      "upper": 0.025,
+      "upperInclusive": false
+    },
+    {
+      "id": "B2",
+      "interval": "[0.025,0.050)",
+      "lower": 0.025,
+      "lowerInclusive": true,
+      "upper": 0.05,
+      "upperInclusive": false
+    },
+    {
+      "id": "B3",
+      "interval": "[0.050,0.075)",
+      "lower": 0.05,
+      "lowerInclusive": true,
+      "upper": 0.075,
+      "upperInclusive": false
+    },
+    {
+      "id": "B4",
+      "interval": "[0.075,0.100]",
+      "lower": 0.075,
+      "lowerInclusive": true,
+      "upper": 0.1,
+      "upperInclusive": true
+    },
+    {
+      "id": "B5",
+      "interval": "(0.100,+infinity)",
+      "lower": 0.1,
+      "lowerInclusive": false,
+      "upper": null,
+      "upperInclusive": false
+    }
+  ],
+  "boundaryAndArithmeticPolicy": [
+    "Assign each finite score to exactly one fixed bin using full-precision saved predictions and the same floating-point comparison semantics as the original gate.",
+    "Do not round predictions or score before comparisons. The exact 0.100 boundary belongs to B4 and is inactive under the original gate.",
+    "No epsilon, deadband, jitter or threshold adjustment may change membership. A numerical tolerance is for recomposition checks only, not bin assignment.",
+    "Use a compensated or accurate deterministic sum for reported sums and retain full numerical precision in machine-readable output. Display rounding must not feed back into assignment or checks."
+  ],
+  "proposedOutputFields_notComputed": {
+    "perBin": [
+      {
+        "field": "N_j",
+        "definition": "Number of saved rows in bin j. No value is calculated in this draft."
+      },
+      {
+        "field": "cohortFraction_j",
+        "definition": "N_j/N; denominator is the full cohort."
+      },
+      {
+        "field": "sumErrorP_j",
+        "definition": "Sum of errorP over bin j."
+      },
+      {
+        "field": "sumErrorR_j",
+        "definition": "Sum of errorR over bin j."
+      },
+      {
+        "field": "sumGain_j",
+        "definition": "Sum of gain over bin j = sumErrorP_j-sumErrorR_j."
+      },
+      {
+        "field": "meanErrorP_j",
+        "definition": "sumErrorP_j/N_j only when N_j>0."
+      },
+      {
+        "field": "meanErrorR_j",
+        "definition": "sumErrorR_j/N_j only when N_j>0."
+      },
+      {
+        "field": "meanGain_j",
+        "definition": "sumGain_j/N_j only when N_j>0; describes this bin, not its global contribution."
+      },
+      {
+        "field": "globalErrorContributionP_j",
+        "definition": "sumErrorP_j/N, in mg/L."
+      },
+      {
+        "field": "globalErrorContributionR_j",
+        "definition": "sumErrorR_j/N, in mg/L."
+      },
+      {
+        "field": "globalGainContribution_j",
+        "definition": "sumGain_j/N, in mg/L; these contributions add to the global gain."
+      }
+    ],
+    "emptyBinPolicy": "If N_j=0: count, fraction, sums and global contributions are zero; all within-bin means are JSON null, rendered as N/A. Do not encode a zero mean or a literal NaN in strict JSON. A numerical format that supports NaN may use it only as the missing-mean marker.",
+    "aggregationRule": "Recompose global means from sums divided by N, or equivalently count-weighted bin means. Never average bin means with equal bin weights."
+  },
+  "descriptiveObservedChangeDecomposition": {
+    "unchanged": "actual==P using the saved numerical values, with no new tolerance or smoothing.",
+    "changed": "actual!=P; the complementary saved-row stratum.",
+    "outputsIfLaterExecuted": "The same count, sums, within-cell means and global contributions for each bin x stratum, plus stratum totals. Cell means divide by N_j,stratum; stratum means divide by N_stratum; contributions to the original full-cohort score always divide by N=1275.",
+    "emptyCellPolicy": "The same null-mean and zero-sum policy as an empty bin.",
+    "interpretation": "These are observed target-based categories, not claims about exact physical stability. The category is unavailable at forecast origin and must never become a routing rule, gate feature or operational selection criterion.",
+    "conditionalMedianLimit": "A marginal majority of observed zero changes does not show that the conditional median is zero at every available feature vector."
+  },
+  "recompositionChecks": {
+    "toleranceMgL": 1e-09,
+    "counts": [
+      "Sum_j N_j=N.",
+      "For every bin, its unchanged and changed cell counts sum to N_j.",
+      "The two stratum counts sum to N."
+    ],
+    "sums": [
+      "For every bin, sumGain_j=sumErrorP_j-sumErrorR_j.",
+      "Cell sums recompose bin sums and stratum sums without dropping empty cells."
+    ],
+    "savedGlobalMAE": [
+      "Sum_j sumErrorP_j/N matches saved scores.persistence.maeMgL.",
+      "Sum_j sumErrorR_j/N matches saved scores.same-frozen-ridge-without-fallback.maeMgL.",
+      "Sum_j sumGain_j/N matches saved MAE_P-saved MAE_R.",
+      "Saved MAE_P-Sum_j sumGain_j/N recomposes the saved unfiltered-ridge MAE."
+    ],
+    "originalFilterBridge": [
+      "B5 is exactly score>0.100; B1-B4 are score<=0.100.",
+      "For each saved row, the original-filter field must agree with P outside B5 and R inside B5; a discrepancy stops interpretation rather than modifying the original gate.",
+      "The original filter's total gain is sumGain_B5, and its global mean gain is sumGain_B5/N.",
+      "Saved MAE_P-sumGain_B5/N must match saved scores.small-correction-filter.maeMgL.",
+      "B1-B4 contribute zero paired gain to the original filter because it returns P there, even though their diagnostic ridge gains can be nonzero."
+    ],
+    "failurePolicy": "A mismatch is an artifact/arithmetic/protocol discrepancy to investigate. Do not change bins, thresholds, cohort or published reference metrics to force agreement."
+  },
+  "interpretationConstraints": [
+    "This is a fixed descriptive table on an already inspected month, not a new test or independent validation.",
+    "No threshold may be selected by looking at this table; the 0.1 gate and all five reporting bins are fixed in this draft.",
+    "A negative tail or negative coarse-bin sum does not prove that every possible amplitude filter is impossible. Conversely, a positive bin does not establish a deployable profitable selector.",
+    "No bootstrap, significance tests, threshold scan, active-only replacement of the primary metric, reweighting, new model or prediction recalculation belongs to this proposal.",
+    "The table can localize realized contributions at the chosen resolution. It cannot exhaust the hypotheses about quantization, environmental dynamics, domain shift or instrument processing.",
+    "Approved finalized archives and general USGS QA/QC documentation do not establish row-level as-of-origin values, revision timing or operational availability."
+  ],
+  "prespecificationLevel": "Proposed before any bin calculation but after the original primary cohort was inspected. This is not original pre-lake preregistration, adoption or execution.",
+  "mission": "Research-only environmental evidence for communities; no operational Oracle, governance, funding or blockchain change."
+}

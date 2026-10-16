@@ -1,0 +1,20 @@
+{
+  "verifiedAtUTC": "2026-10-16T01:45:15.685494+00:00",
+  "freezeCommit": "3715d25fce3083b6152ae26c4cc37769719abfc5",
+  "remoteBranch": "feat/owasco-two-track-validation",
+  "remoteHeadVerified": "3715d25fce3083b6152ae26c4cc37769719abfc5",
+  "preflightSHA256": "5e000650f833b96bf149c7a7e1d2153c58c3d1e425bf0a0a6b0c8d64458d4ade",
+  "codeReview": "temporal-independent-code-review.json",
+  "allPythonTests": {
+    "passed": 136,
+    "newSyntheticTests": 26
+  },
+  "captureStarted": false,
+  "binsStarted": false,
+  "window": {
+    "id": "owasco-august-2020",
+    "start": "2020-08-01T00:00:00Z",
+    "end": "2020-08-29T00:00:00Z"
+  },
+  "scope": "Exact committed bytes and remote branch head verified before the first real bin calculation and August observation request; not a physical-data or independent-time attestation."
+}

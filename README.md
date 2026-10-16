@@ -137,6 +137,13 @@ intervals include zero. The [executed notebook](docs/notebooks/owasco-lake-trans
 and offline replay retain the negative result, raw evidence and scope limits.
 No lake tuning, operational promotion or governance changes occur.
 
+The [two-track follow-up, in Italian and English](docs/OWASCO_TWO_TRACK_RESULTS_IT_EN.md)
+decomposes July's saved errors into fixed reporting bins and evaluates the same
+frozen pipeline on a previously uninspected August 1–29 window. August has
+1,306 accepted pairs: filtered MAE is 0.055453 mg/L versus 0.055513 for
+persistence, but all three exploratory gain intervals include zero. The result
+is inconclusive; the original July result and operational system remain intact.
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small
