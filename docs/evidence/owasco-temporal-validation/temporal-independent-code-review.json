@@ -1,0 +1,51 @@
+{
+  "kind": "internal-static-temporal-adapter-code-review",
+  "createdAtUTC": "2026-10-16T01:44:43.858624Z",
+  "conclusion": "PASS_STATIC_NO_BLOCKING_FINDINGS",
+  "sourceSHA256": {
+    "scripts/owasco_temporal_validation.py": "100c2ddd339bfaddae4eeb7820f0b3579822b99a78c78a73674389c4e8ee7c6f",
+    "scripts/test_owasco_temporal_validation.py": "9377e457703c40c19b30b8dd71248cb1b9fba723a8a3ab33e46ccad09e254798",
+    "docs/datasets/owasco-temporal-validation/protocol.json": "b9746290e6ffd702440c257b62a72cd49d0161ffbf73fe887a668f508397439d"
+  },
+  "protocolPinMatchesCurrentBytes": true,
+  "scope": {
+    "authorSeparation": "Review of an adapter written by another agent; reviewer uses the same Codex model family. This is internal code review, not independent environmental validation.",
+    "reviewMethod": "Static inspection of adapter, synthetic tests, adopted protocol and relevant frozen-kernel source excerpts only.",
+    "environmentalObservationsRead": false,
+    "networkUsed": false,
+    "codeExecuted": false,
+    "predictionsOrScoresComputed": false,
+    "repositoryFilesEdited": false,
+    "testExecution": "The parent reports 26 new tests passed. No tests were rerun in this static-review task.",
+    "staticDependencyExcerpts": [
+      "scripts/lake_transfer.py",
+      "scripts/audit_willamette.py",
+      "scripts/audit_stability_compare.py",
+      "import statements of scripts/experiment_multiseason.py, scripts/evaluate_threshold_development.py and scripts/threshold_development.py"
+    ]
+  },
+  "findings": [],
+  "threeRiskAreasChecked": [
+    {
+      "area": "Dates, source identities and origin/target grid",
+      "result": "No actionable mismatch found.",
+      "evidence": "Adapter lines16 and55-70 pin August1-August29 UTC, the two exact USGS series, horizon and eligibility. Capture and offline reread pass the adopted start/end into the source validator. evaluate passes those bounds into the unchanged make_rows kernel. The synthetic test checks the query interval,1332 expected origins, first origin and final target boundary.",
+      "importantBoundary": "The adopted study is the next calendar-month window starting August1, not a strictly contiguous July29 successor. This matches the current protocol; do not call it contiguous in later prose.",
+      "limit": "No actual source body, sampling coverage, source revision history or availability at forecast origin was inspected or established."
+    },
+    {
+      "area": "Freeze, exclusive capture and manifest replay",
+      "result": "No blocking code defect found in the stated workflow.",
+      "evidence": "Adapter lines50-101 pin protocol, historical kernels, model, threshold and source metadata. Lines104-119 compare all17 snapshot files with the supplied full Git object. Lines129-165 create an exclusive attempt before HTTP and preserve bounded failure bodies. Lines169-219 check snapshot, attempt/manifest binding, expected URLs/files, sequential chronology, body hashes and source-state consistency offline.",
+      "externalWorkflowLimit": "The adapter proves local committed-byte consistency and the capture path writes the attempt before its requests. It does not itself prove that the commit was pushed to a remote or that the required pre-capture cache/provenance review established the window was uninspected in this workflow. Preserve those separate workflow receipts before capture.",
+      "classification": "Nonblocking external precondition to satisfy operationally before the authorized capture, not a request to modify the frozen kernels."
+    },
+    {
+      "area": "Decision criterion, denominators and paired block bootstrap",
+      "result": "No actionable change from the adopted recipe found.",
+      "evidence": "Adapter lines253-265 preserve the accepted shared cohort, coverage checks, gain against persistence, three fixed block lengths and lower-bound rule. Lines222-237 recompose weighted daily MAE and paired gain using accepted-row counts. The reused kernel computes paired method gains from the same sampled calendar blocks and divides each replicate by its selected row count; July results are referenced as context, not pooled into the August primary metric.",
+      "limit": "The fixed completeness/block rules and retrospective bootstrap remain exploratory; the static check establishes neither power, independent events, interval coverage in this environment nor ecological usefulness."
+    }
+  ],
+  "recommendation": "Proceed to the planned freeze workflow without adapter edits based on this review; retain separate evidence of remote publication and the pre-capture provenance/cache check before the first August request. No observation acquisition or evaluation is authorized by this review itself."
+}
