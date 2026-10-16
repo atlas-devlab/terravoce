@@ -1,0 +1,173 @@
+{
+  "verifiedAtUTC": "2026-10-16T17:06:21.073695+00:00",
+  "baseCommit": "a20607a4192a5b79fc9e635afe64ac619d97001d",
+  "preservedFiles": [
+    {
+      "file": "docs/OWASCO_DIRECTION_DIAGNOSTIC.md",
+      "sha256": "9946e948741c1b8a881ee6b0b63fe9ea15e64321024e6354b1b16a1a1423f656",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/datasets/owasco-direction-diagnostic/protocol.json",
+      "sha256": "438b66c99e1ed602ea572d15442e309c82be5972307619e1e63d37702c69d2bd",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/datasets/owasco-lake-transfer/continuous-queryables.json.gz",
+      "sha256": "9e0b99dea92e13b5d2ef912378d3ae4bd8e5ff7e949760324ec4fa36304c996d",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/datasets/owasco-lake-transfer/protocol.json",
+      "sha256": "a97f7eae9c9ad4c0f7e2e46848e2cc5df15c1cf8b5b50473c2a0a7f3e866c02b",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/datasets/owasco-lake-transfer/time-series-metadata.json.gz",
+      "sha256": "2f1f154b74b5ab40ba23ec021b1d98fda0b25ab95306f5497cb57a6290f15a12",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/datasets/owasco-temporal-validation/protocol.json",
+      "sha256": "b9746290e6ffd702440c257b62a72cd49d0161ffbf73fe887a668f508397439d",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/datasets/willamette-threshold-development/protocol.json",
+      "sha256": "d68381c42e992e4328b6bb454642a51878bedcf4b1d1748aafdc7576bb335d9e",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-direction-diagnostic/arithmetic-portable-review.json",
+      "sha256": "a38f389adffd0003f09e088b4ec1fec0eed64e0f7b92eb9b0f5896e92ba8b685",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-direction-diagnostic/arithmetic-review.json",
+      "sha256": "b5a02975f8e8eaf8f517771e7ea052182c424687fd91093b35058c59569963f4",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-direction-diagnostic/diagnostic.json",
+      "sha256": "4820b19a9df12356721d5466bacc9c985ce54db162a9d73b68ee0459d9c0b93e",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-direction-diagnostic/expost-error-mechanism.json",
+      "sha256": "6d661329c4833e3be4d520c4abac6aa6b081734f37020ed7adf69e153f46ab77",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-direction-diagnostic/freeze-before-score.json",
+      "sha256": "093ca3edc0720a21c51e2c4db594088cf7042eb4bdab59e5d52901f1cfcb0e61",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-direction-diagnostic/gemini-contribution.json",
+      "sha256": "e4fe7b61a3429f7200386b72ea03ed79189347f384c613e489a88fc5242b6c1a",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-direction-diagnostic/theoretical-loss-example.json",
+      "sha256": "842b4c962c0d567a5dbf1bf62b811fd587d247db3fc9b048707a647dea1a8f1c",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-lake-transfer/evaluation.json",
+      "sha256": "7bd27ec609a7c4f471385498b61fff7b9d74546de13711559e84fcb16536ff85",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/owasco-temporal-validation/evaluation.json",
+      "sha256": "65e1b3793c78982e1496eaf9b3e56e8157d684b6df84343ed5f5b5e0abe98853",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+      "sha256": "72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+      "equalsBase": true
+    },
+    {
+      "file": "docs/evidence/willamette-threshold-development/evaluation.json",
+      "sha256": "d8b4d73751f457df5a34b82d2c2202c14585d02e17ae3e206f182ab8c185c5f2",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/audit_owasco_direction.py",
+      "sha256": "8bb26f8d77f7860a474226eb057154b48cdc1f0462e710643dc5f0ad532a39bd",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/audit_stability_compare.py",
+      "sha256": "b08e369bfb7e75ecd931457387e0f2e8f41696b256e68c0cf191cdac3aa9d64a",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/audit_willamette.py",
+      "sha256": "9a8de29078d7e4c75260b7f9fea1b7220193f64a97b0b00384ca680ea00f8d12",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/evaluate_threshold_development.py",
+      "sha256": "e0065e82d5eb7e2acbe3680c903a2c37370188b8133d2020877a0907764c73f7",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/experiment_multiseason.py",
+      "sha256": "00999b36a5c5fcb5c6a51ca9d00ee076f6bd9b1c2fb47245a402ccf9c5d4dfea",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/lake_transfer.py",
+      "sha256": "e3579938b0d1c4991fcfc69506e871323f8e6d1c3a52089caa48bb0e4790079c",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/owasco_direction_diagnostic.py",
+      "sha256": "cdcc85324dd68a13b09895b6808351e385e731d622d6a97f8793fbbf754e9a02",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/owasco_temporal_validation.py",
+      "sha256": "100c2ddd339bfaddae4eeb7820f0b3579822b99a78c78a73674389c4e8ee7c6f",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/test_lake_transfer.py",
+      "sha256": "ad44e2603230bc28fd06aeb3689eae974a7e8e8c835524ab1b5a4d0624e8018a",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/test_owasco_direction_diagnostic.py",
+      "sha256": "efd85ef2692a875f82665a606c70d1b549e93caa98c7947f304864fb20b0929e",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/test_owasco_temporal_validation.py",
+      "sha256": "9377e457703c40c19b30b8dd71248cb1b9fba723a8a3ab33e46ccad09e254798",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/test_threshold_development.py",
+      "sha256": "3c904d228a51b2ff90ca4705d4d969d62c6d50819228c0c076d41433e5d99099",
+      "equalsBase": true
+    },
+    {
+      "file": "scripts/threshold_development.py",
+      "sha256": "153d614d06306add9fe55cc8b5d435edac15557b4ba493035ec083cebe7a5caf",
+      "equalsBase": true
+    }
+  ],
+  "preservedCount": 31,
+  "frozenCandidateFilesUnchanged": true,
+  "firstQReportUnchanged": true,
+  "QReportSHA256": "0a5dad4d240073028fc05d5671a86a36fe567e0b79a0a888e70f34c7d270974c",
+  "offlineReplayPassedWithoutWrites": true,
+  "separateArithmeticAuditStatus": "PASS",
+  "rowsAudited": 2581,
+  "arithmeticComparisonToleranceMgL": 1e-12,
+  "maximumAggregationDifferenceMgL": 1.4210854715202004e-14,
+  "perRowQBinary64Exact": true,
+  "documentationLocalLinksResolve": 7,
+  "candidateJointCriterionPassed": false
+}

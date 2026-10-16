@@ -1,0 +1,155 @@
+{
+  "version": "owasco-attenuation-diagnostic-v1",
+  "status": "ADOPTED_BEFORE_FIRST_ATTENUATION_SCORE",
+  "adoptedAtUTC": "2026-10-16T16:58:22.961852+00:00",
+  "authorization": "User2026-10-16 adopted execution of the single attenuated correction on opened July/August Owasco; MAE primary, no regression change or September.",
+  "stationId": "USGS-425327076313601",
+  "horizonSeconds": 3600,
+  "features": [
+    "oxygenNow",
+    "oxygenDelta30m",
+    "oxygenDelta2h",
+    "oxygenDelta5h30m",
+    "clockSinUTC",
+    "clockCosUTC",
+    "temperatureNow",
+    "temperatureDelta2h"
+  ],
+  "model": {
+    "file": "docs/evidence/willamette-multiseason/frozen-model.json",
+    "rawSha256": "72d7d14221c7b14c173dba59d69d2a1d36cbb27ee146378b9e046eea998762c9",
+    "newFitPermitted": false,
+    "meaning": "Bind exactsavedmodel metadata only; never callfit or recomputeR."
+  },
+  "months": [
+    {
+      "id": "july-2020",
+      "file": "docs/evidence/owasco-lake-transfer/evaluation.json",
+      "rawSha256": "7bd27ec609a7c4f471385498b61fff7b9d74546de13711559e84fcb16536ff85",
+      "pairs": 1275,
+      "window": {
+        "start": "2020-07-01T00:00:00Z",
+        "end": "2020-07-29T00:00:00Z"
+      }
+    },
+    {
+      "id": "august-2020",
+      "file": "docs/evidence/owasco-temporal-validation/evaluation.json",
+      "rawSha256": "65e1b3793c78982e1496eaf9b3e56e8157d684b6df84343ed5f5b5e0abe98853",
+      "pairs": 1306,
+      "window": {
+        "start": "2020-08-01T00:00:00Z",
+        "end": "2020-08-29T00:00:00Z"
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "file": "scripts/owasco_direction_diagnostic.py",
+      "rawSha256": "cdcc85324dd68a13b09895b6808351e385e731d622d6a97f8793fbbf754e9a02"
+    }
+  ],
+  "rule": {
+    "P": "O(t), exact saved persistence",
+    "R": "Exact saved same-frozen-ridge-without-fallback; never refit or recompute R",
+    "oldF": "Exact saved small-correction-filter at abs(R-P)>0.100; unchanged comparator",
+    "c": "R-P",
+    "thresholdMgL": 0.1,
+    "ifAbsCorrectionLTEThreshold": "Q=P; attenuated correction=0.0",
+    "otherwise": "magnitude=abs(c)-0.100; attenuatedCorrection=magnitude if c>0 else -magnitude; Q=P+attenuatedCorrection",
+    "operationOrder": "Strict binary64 subtract R-P, compare abs(c)<=0.1; otherwise subtract threshold, apply sign, then add P. No algebraic reorder, decimal quantization, clipping, epsilon or future target input.",
+    "previousDirectionGateUsed": false,
+    "meaning": "Single soft-threshold postprocessor; same gate-active origins as oldF, smaller correction magnitude, not a new count reduction over oldF",
+    "parameterMeaning": "0.100 inherited from previous development filter; not sensor accuracy, ecological threshold or independently selected after seeing Q scores. No parameter scan.",
+    "gateActiveDefinition": "finite c and abs(c)>0.1, independent of target",
+    "changedPredictionDefinition": "finite Q and Q!=P; distinguish representability degeneracies from gate-active count"
+  },
+  "continuation": {
+    "criterion": "BOTH_MONTHS_MAE_GAIN_ABOVE_TOLERANCE_AND_VALID_Q",
+    "primaryMetric": "MAE over the full unchanged accepted monthly cohort",
+    "primaryBaseline": "P",
+    "numericalToleranceMgL": 1e-09,
+    "requireBothMonths": true,
+    "requireFiniteNonnegativeQ": true,
+    "invalidComputedPolicy": "Nonfinite R/c/Q or Q<0 prevents success; record on full eligible cohort with null uncomputable errors; no row deletion or silent P rescue. Finite negative R/F remains a flagged numeric comparator; does not alone invalidate nonnegative Q.",
+    "sourceIntegrityPolicy": "Broken source hash, timestamps, station, feature order, missing or inconsistent source history/P/actual stops execution; never drop, interpolate or repair those rows.",
+    "ifNotMet": "STOP_Q_AND_DISCUSS; no automatic variant, threshold scan, substitute window, September or model change",
+    "meaning": "Development screen adopted before first Q score, not statistical significance or ecological usefulness"
+  },
+  "reporting": {
+    "methods": [
+      "P",
+      "R",
+      "oldF",
+      "Q"
+    ],
+    "fullCohortDenominator": true,
+    "emptyWithinGroupMeans": "null",
+    "originGroups": [
+      "gate-active/retained/invalid",
+      "sign(c)",
+      "fixed abs(c) bins from previous protocol"
+    ],
+    "outcomeGroups": "Q vs oldF improves/ties/worsens AFTER routing; show Q-P gain on same groups, not a forecast trigger",
+    "gainVsP": "abs(P-actual)-abs(method-actual); positive helps",
+    "gainVsOldF": "abs(oldF-actual)-abs(Q-actual); positive attenuation helps oldF",
+    "rowEvidence": "Every source row index, origin/target, exact P/R/F/Q,c,attenuatedc,actual,errors,gains and validity; source hashes bind exact shared history/features. Complete original history/features for every gate-active case.",
+    "examples": "First chronological QImprovesP,QWorsensP,attenuationImprovesOldF,attenuationWorsensOldF; null if empty; selected post-hoc only for explanation",
+    "recomposition": "Verify monthly P/R/F reconstruct original scores; group counts/sums reconstruct all-cohort N/errors/gains; Q gain vs oldF equals error reductions on gate-active rows",
+    "timeOccupancy": "UTC days and24/48/72hour blocks anchored sourcewindow start; descriptive only, not independence or inference"
+  },
+  "fixedBins": [
+    {
+      "id": "B1",
+      "lower": 0.0,
+      "lowerInclusive": true,
+      "upper": 0.025,
+      "upperInclusive": false
+    },
+    {
+      "id": "B2",
+      "lower": 0.025,
+      "lowerInclusive": true,
+      "upper": 0.05,
+      "upperInclusive": false
+    },
+    {
+      "id": "B3",
+      "lower": 0.05,
+      "lowerInclusive": true,
+      "upper": 0.075,
+      "upperInclusive": false
+    },
+    {
+      "id": "B4",
+      "lower": 0.075,
+      "lowerInclusive": true,
+      "upper": 0.1,
+      "upperInclusive": true
+    },
+    {
+      "id": "B5",
+      "lower": 0.1,
+      "lowerInclusive": false,
+      "upper": null,
+      "upperInclusive": false
+    }
+  ],
+  "integrity": {
+    "clockFeatureTolerance": 1e-12,
+    "clockToleranceMeaning": "Only sourcefeature sin/cos integrity across mathlibraries; not applied to d,c,routing or bins.",
+    "recompositionToleranceMgL": 1e-09,
+    "history": "Exactly12finite nonnegativeoxygenvaluesat30min endingorigin; feature0/1/2/3 exactlymatchpastoxygen; sourcefeature6/7finite, temperaturehistory not independently reconstructed here.",
+    "cohort": "No interpolation, row deletion, originshifts, targetbasedselection or neweligibility; Nmustmatchsavedboundcohorts."
+  },
+  "freezeOrder": "Commit/push exact protocol+diagnostic+synthetic tests before first Q environmental score; exclusive first output, subsequent no-write replay",
+  "scope": "Retrospective development on opened July/August2020 USGS Owasco with unchanged2024 Willamette R. Previous results preserved, no new or blind validation.",
+  "prohibited": [
+    "New environmental observations including September",
+    "Fit or recompute R",
+    "Alternative gate or threshold search",
+    "New bootstrap/pvalue to rescue candidate",
+    "Operational Oracle, blockchain, consensus, governance or funding changes"
+  ],
+  "mission": "Understandable verifiable environmental evidence serving communities; numerical research only, LLM outside operational consensus."
+}

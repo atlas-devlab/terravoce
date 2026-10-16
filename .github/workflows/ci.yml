@@ -108,6 +108,8 @@ jobs:
             python3 scripts/owasco_temporal_validation.py verify --report docs/evidence/owasco-temporal-validation/evaluation.json
             python3 scripts/owasco_direction_diagnostic.py --protocol docs/datasets/owasco-direction-diagnostic/protocol.json --verify-report docs/evidence/owasco-direction-diagnostic/diagnostic.json
             python3 scripts/audit_owasco_direction.py
+            python3 scripts/owasco_attenuation_diagnostic.py --protocol docs/datasets/owasco-attenuation-diagnostic/protocol.json --verify-report docs/evidence/owasco-attenuation-diagnostic/diagnostic.json
+            python3 scripts/audit_owasco_attenuation.py
           else
             python3 scripts/stability_protocol.py
           fi

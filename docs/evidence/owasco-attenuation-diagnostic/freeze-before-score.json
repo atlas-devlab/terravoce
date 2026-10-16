@@ -1,0 +1,30 @@
+{
+  "version": "owasco-attenuation-freeze-before-score-v1",
+  "verifiedAtUTC": "2026-10-16T17:02:38.415226+00:00",
+  "commit": "c69f63ca3f5a8d2dad322cad53e3d1dcb32f7ac2",
+  "remoteCommitVerified": "c69f63ca3f5a8d2dad322cad53e3d1dcb32f7ac2",
+  "branch": "feat/owasco-attenuated-correction",
+  "candidateEnvironmentalScoreExists": false,
+  "files": [
+    {
+      "file": "docs/datasets/owasco-attenuation-diagnostic/protocol.json",
+      "sha256": "b952df8d503c986e3b84567a5c81dfcf5eb21ca27cefe81f3aa1e6f5d5acb2c1",
+      "CRLF": 0
+    },
+    {
+      "file": "scripts/owasco_attenuation_diagnostic.py",
+      "sha256": "63275501f0c04ee9515e76de0a10d8470d6a642b3746baab50aa440b2cd308dd",
+      "CRLF": 0
+    },
+    {
+      "file": "scripts/test_owasco_attenuation_diagnostic.py",
+      "sha256": "d636c6593d502b036b589e0a3d810abde47d05938d7f9b88d224155fa6f1d806",
+      "CRLF": 0
+    }
+  ],
+  "tests": 169,
+  "allPassed": true,
+  "preservedHistoricalFiles": 31,
+  "staticReviewSHA256": "6207f703e25ef98d8610db807fc4fb4fa34c110e77904b6cc96e7fb558afc103",
+  "scope": "Single previously adopted Q on opened July/August only. No fit, recomputing R, threshold search or September."
+}
