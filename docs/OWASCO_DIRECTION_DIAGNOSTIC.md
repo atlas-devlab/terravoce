@@ -136,7 +136,20 @@ Le righe e le finestre si sovrappongono nel tempo: i conteggi non sono osservazi
 
 **La decisione applicata è fermare questa candidata.** Non passiamo a settembre, non modifichiamo R, non sostituiamo la finestra e non proviamo automaticamente altre soglie o formule. Il risultato lascia aperta una discussione successiva sul modello o sulle misure, mantenendo distinti sviluppo e verifica.
 
-### 8. Contributo di Gemini e controlli distinti
+### 8. Un esempio sintetico: obiettivo di training e MAE
+
+Il modello R archiviato usa errori quadratici e penalità ridge; il nostro criterio principale resta la MAE. La corrispondenza ideale fra errore quadratico e media, ed errore assoluto e mediana, è descritta da [Gneiting](https://arxiv.org/abs/0912.0902). Un modello lineare penalizzato, stimato su dati finiti, non coincide automaticamente con questi ottimi teorici.
+
+Immaginiamo **dieci esiti inventati ed equiprobabili**, nove pari a 9.2 e uno pari a 9.0. Non sono letture del lago, nuove previsioni ambientali o una nuova candidata:
+
+| Numero previsto nell'esempio | MAE, mg/L | MSE, (mg/L)² |
+|---|---:|---:|
+| 9.2, mediana sintetica | 0.020 | 0.0040 |
+| 9.18, media sintetica | 0.036 | 0.0036 |
+
+La correzione verso la media migliora la MSE e peggiora la MAE. La [ricevuta di aritmetica decimale esatta](evidence/owasco-direction-diagnostic/theoretical-loss-example.json) conserva l'esempio. Non attribuiamo per questo la causa degli errori reali all'obiettivo di training, non stimiamo probabilità future dai conteggi 86/116 o 109/190 e non cambiamo il criterio dopo aver visto il risultato. Una maggioranza di residui nulli nel gruppo rende zero una mediana empirica del gruppo; non identifica la distribuzione condizionale a ogni istante o nei mesi futuri.
+
+### 9. Contributo di Gemini e controlli distinti
 
 Prima dello score, Gemini nella modalità visibile **Argon / Alta** ha proposto di verificare la partizione fra interventi aggiunti e rimossi e la ricomposizione dei guadagni sul denominatore completo. Questi controlli sono stati verificati numericamente. Abbiamo invece ristretto una sua affermazione: una scomposizione algebrica non dimostra una causa fisica, ma neppure basta a falsificarla. Il confronto sui segni resta implementato senza moltiplicare `d*c`, evitando differenze da overflow o underflow.
 
@@ -144,7 +157,7 @@ Il turno successivo, con i risultati, ha restituito una non-risposta e un limite
 
 Questa collaborazione aggiunge critica metodologica e una spiegazione, non una seconda misura ambientale o un audit scientifico indipendente. I replay deterministici e il controllo aritmetico separato della stessa famiglia Codex sostengono i numeri. L'etichetta Flash-Lite della chat non identifica da sola la versione API. La [documentazione ufficiale Google](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite) descrive compiti leggeri ed estrazione di dati per un modello API Flash-Lite: è un'indicazione per assegnare compiti circoscritti, non prova di superiorità o equivalenza con questa chat. Non è stato acquistato un abbonamento o integrato un LLM operativo.
 
-In un secondo compito breve, Flash-Lite ha distinto utilmente il miglioramento rispetto a R dal confronto principale contro P, respinto la generalizzazione a tutti i laghi e separato i decimali dall'accuratezza. Le formulazioni finali restano quelle verificate sopra: P può comunque sbagliare una previsione, e molti decimali non certificano né escludono un cambiamento fisico. La [ricevuta dei contributi](evidence/owasco-direction-diagnostic/gemini-contribution.json) distingue tre risposte sostanziali e due non-risposte. Il tempo di sessione include attese e lavoro Codex; non indica ragionamento continuo di Gemini.
+In un secondo compito breve, Flash-Lite ha distinto utilmente il miglioramento rispetto a R dal confronto principale contro P, respinto la generalizzazione a tutti i laghi e separato i decimali dall'accuratezza. Le formulazioni finali restano quelle verificate sopra: P può comunque sbagliare una previsione, e molti decimali non certificano né escludono un cambiamento fisico. Ha anche verificato i quattro errori dell'esempio sintetico. Abbiamo corretto una sua frase: la media minimizza la MSE, non la varianza della distribuzione, che resta fissa; Gemini ha accolto la rettifica. Non abbiamo adottato la sua successiva attribuzione causale congiunta a quantizzazione, trasferimento e soglie: queste cause non sono stabilite dal controllo, e S non usa una soglia d'ampiezza. La [ricevuta dei contributi](evidence/owasco-direction-diagnostic/gemini-contribution.json) distingue cinque risposte sostanziali e due non-risposte. Il tempo di sessione include attese e lavoro Codex; non indica ragionamento continuo di Gemini.
 
 ## English
 
@@ -255,6 +268,19 @@ Rows/history windows overlap, so counts are not independent observations. Finali
 
 **This candidate is stopped at Stage A.** No September data, replacement window, model change or automatic alternative rule/threshold follows from this result. Any later change requires a new, explicit development and verification decision. Original Oracle, blockchain, quorum, governance and funding behavior are unchanged.
 
+### Synthetic example: training loss and MAE
+
+The saved R model uses squared residuals and a ridge penalty; primary evaluation remains MAE. [Gneiting](https://arxiv.org/abs/0912.0902) describes the ideal correspondence of squared error to the mean and absolute error to a median. A finite fitted penalized linear model need not attain those population optima.
+
+Consider **ten invented equiprobable outcomes**, nine at 9.2 and one at 9.0. These are not lake measurements, new environmental predictions or a replacement candidate:
+
+| Hypothetical point prediction | MAE, mg/L | MSE, (mg/L)² |
+|---|---:|---:|
+| 9.2, synthetic median | 0.020 | 0.0040 |
+| 9.18, synthetic mean | 0.036 | 0.0036 |
+
+Moving toward the mean improves MSE but worsens MAE; the [exact decimal receipt](evidence/owasco-direction-diagnostic/theoretical-loss-example.json) records the calculation. This does not establish the cause of Owasco errors, estimate future probabilities from the 86/116 or 109/190 counts, or justify changing the primary criterion. A majority of zero residuals makes zero an empirical median within each group, without identifying the conditional distribution at every history or in future months.
+
 ### Gemini's bounded contribution
 
 Before scoring, Gemini, visibly set to **Argon / High**, proposed checking added/removed interventions and full-denominator gain recomposition; these identities were numerically verified. We narrowed one overclaim: algebraic decomposition neither establishes a physical cause nor suffices to falsify one. Implementation compares signs directly rather than multiplying `d*c`, avoiding overflow/underflow differences.
@@ -263,7 +289,7 @@ The results-review turn returned a non-answer and an Argon quota limit until 21:
 
 This is methodological criticism and explanation, not independent environmental measurement or external scientific validation. Deterministic replay and a separate Codex-family arithmetic implementation support the numerical results. The chat's Flash-Lite label does not identify an API version. [Google's official API documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite) describes lightweight tasks and data extraction for an API Flash-Lite model; this informs bounded task assignment without establishing general superiority or equivalence with this chat. No subscription purchase or operational LLM integration occurred.
 
-In a second short task, Flash-Lite usefully separated improvement over R from the primary P comparison, rejected generalization to every lake, and distinguished decimals from accuracy. The checked wording above remains authoritative: P can still make forecast errors, and extra decimals neither certify nor rule out a physical change. The [contribution receipt](evidence/owasco-direction-diagnostic/gemini-contribution.json) distinguishes three substantive replies from two non-answers. Session duration includes waits and Codex work; it is not continuous Gemini reasoning.
+In a second short task, Flash-Lite usefully separated improvement over R from the primary P comparison, rejected generalization to every lake, and distinguished decimals from accuracy. The checked wording above remains authoritative: P can still make forecast errors, and extra decimals neither certify nor rule out a physical change. It also checked the synthetic example's four errors. We corrected its claim that the mean minimizes the distribution's variance: variance stays fixed; the mean minimizes MSE. Gemini accepted this correction. We did not adopt its later joint causal attribution to quantization, transfer and thresholds: these causes were not established, and S has no amplitude threshold. The [contribution receipt](evidence/owasco-direction-diagnostic/gemini-contribution.json) distinguishes five substantive replies from two non-answers. Session duration includes waits and Codex work; it is not continuous Gemini reasoning.
 
 ## Reproduction / Riproduzione
 
