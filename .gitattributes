@@ -1,6 +1,8 @@
 * text=auto eol=lf
 # Preserve the pre-score receipt's exact captured bytes and hash across platforms.
 docs/evidence/owasco-direction-diagnostic/freeze-before-score.json -text whitespace=cr-at-eol
+# This pre-score review is bound by raw SHA in the attenuation freeze receipt.
+docs/evidence/owasco-attenuation-diagnostic/pre-score-static-review.json -text whitespace=cr-at-eol
 docs/datasets/usgs-willamette/continuous.json -text
 docs/datasets/usgs-willamette/station.json -text
 docs/datasets/autonomous-source/*.json -text
