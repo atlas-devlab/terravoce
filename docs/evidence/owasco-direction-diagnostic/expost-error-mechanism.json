@@ -1,0 +1,264 @@
+{
+  "scope": "Ex-post descriptive partition of already-scored selected-R cases only; not a new forecast trigger or test criterion",
+  "createdAtUTC": "2026-10-16T15:49:43.370401+00:00",
+  "source": "work/virdacora-hourly-diagnostics/docs/evidence/owasco-direction-diagnostic/diagnostic.json",
+  "sourceSHA256": "4820b19a9df12356721d5466bacc9c985ce54db162a9d73b68ee0459d9c0b93e",
+  "scriptSHA256": "ce37d6b367bd2a665c63b02d1ce09b88cc122ee353c58a742b4adbd65b509333",
+  "mathematicalIdentityOverReals": "For e=y-P and c=R-P: |e-c|<|e| iff c*(2*e-c)>0; equivalently e and c have the same nonzero sign and 0<|c|<2*|e|.",
+  "tiesOverReals": "c=0 always ties; if c is nonzero, equality occurs exactly at c=2*e. When e=0, every nonzero correction loses.",
+  "overshootMeaning": "A correction may pass the target and still help if it does not reach twice the true displacement. Overshooting is not by itself a loss.",
+  "binary64Boundary": "Outcomes here are from direct errors abs(y-P) and abs(y-R), using the frozen stored binary64 values. Symbolic identities are over reals; product/expanded identities were never used to route or score. Mechanism bin boundaries use e=y-P and c=R-P and binary64 comparisons; near exact boundaries rounding may matter.",
+  "physicalInterpretationLimit": "Unchanged published target means the stored target equals P, not proof of physically constant oxygen, sensor accuracy, or a causal source of failure. Target displacement categories are only observable after the forecast.",
+  "months": [
+    {
+      "id": "july-2020",
+      "fullCohortCount": 1275,
+      "selectedRCount": 116,
+      "outcomes": {
+        "win": 21,
+        "loss": 95,
+        "tie": 0
+      },
+      "mechanisms": {
+        "zero_correction": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        },
+        "unchanged_published_target": {
+          "count": 86,
+          "outcomes": {
+            "win": 0,
+            "loss": 86,
+            "tie": 0
+          },
+          "firstChronologicalExample": {
+            "sourceRowIndex": 0,
+            "origin": "2020-07-01T05:30:00.000Z",
+            "target": "2020-07-01T06:30:00.000Z",
+            "P": 9.9,
+            "R": 9.898364011095152,
+            "y": 9.9,
+            "e": 0.0,
+            "c": -0.0016359889048480625,
+            "absoluteErrorP": 0.0,
+            "absoluteErrorR": 0.0016359889048480625,
+            "outcome": "loss"
+          },
+          "sumGainMgL": -0.543832419832432,
+          "globalGainContributionMgL": -0.00042653523124112317
+        },
+        "target_displacement_opposite_correction": {
+          "count": 9,
+          "outcomes": {
+            "win": 0,
+            "loss": 9,
+            "tie": 0
+          },
+          "firstChronologicalExample": {
+            "sourceRowIndex": 116,
+            "origin": "2020-07-03T15:30:00.000Z",
+            "target": "2020-07-03T16:30:00.000Z",
+            "P": 10.0,
+            "R": 10.010044007528428,
+            "y": 9.9,
+            "e": -0.09999999999999964,
+            "c": 0.010044007528428267,
+            "absoluteErrorP": 0.09999999999999964,
+            "absoluteErrorR": 0.11004400752842791,
+            "outcome": "loss"
+          },
+          "sumGainMgL": -0.08451452216234046,
+          "globalGainContributionMgL": -6.628589973516898e-05
+        },
+        "same_direction_without_overshoot": {
+          "count": 21,
+          "outcomes": {
+            "win": 21,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": {
+            "sourceRowIndex": 54,
+            "origin": "2020-07-02T08:30:00.000Z",
+            "target": "2020-07-02T09:30:00.000Z",
+            "P": 9.9,
+            "R": 9.899302804684197,
+            "y": 9.8,
+            "e": -0.09999999999999964,
+            "c": -0.0006971953158032562,
+            "absoluteErrorP": 0.09999999999999964,
+            "absoluteErrorR": 0.09930280468419639,
+            "outcome": "win"
+          },
+          "sumGainMgL": 0.14447396545311797,
+          "globalGainContributionMgL": 0.00011331291408087684
+        },
+        "same_direction_overshoot_below_twice_displacement": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        },
+        "same_direction_overshoot_twice_displacement": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        },
+        "same_direction_overshoot_above_twice_displacement": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        }
+      }
+    },
+    {
+      "id": "august-2020",
+      "fullCohortCount": 1306,
+      "selectedRCount": 190,
+      "outcomes": {
+        "win": 75,
+        "loss": 115,
+        "tie": 0
+      },
+      "mechanisms": {
+        "zero_correction": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        },
+        "unchanged_published_target": {
+          "count": 109,
+          "outcomes": {
+            "win": 0,
+            "loss": 109,
+            "tie": 0
+          },
+          "firstChronologicalExample": {
+            "sourceRowIndex": 0,
+            "origin": "2020-08-01T05:30:00.000Z",
+            "target": "2020-08-01T06:30:00.000Z",
+            "P": 9.2,
+            "R": 9.191086852677302,
+            "y": 9.2,
+            "e": 0.0,
+            "c": -0.008913147322697768,
+            "absoluteErrorP": 0.0,
+            "absoluteErrorR": 0.008913147322697768,
+            "outcome": "loss"
+          },
+          "sumGainMgL": -0.8132096183494646,
+          "globalGainContributionMgL": -0.000622671989547829
+        },
+        "target_displacement_opposite_correction": {
+          "count": 6,
+          "outcomes": {
+            "win": 0,
+            "loss": 6,
+            "tie": 0
+          },
+          "firstChronologicalExample": {
+            "sourceRowIndex": 476,
+            "origin": "2020-08-11T10:00:00.000Z",
+            "target": "2020-08-11T11:00:00.000Z",
+            "P": 9.5,
+            "R": 9.496000242731979,
+            "y": 9.8,
+            "e": 0.3000000000000007,
+            "c": -0.0039997572680210425,
+            "absoluteErrorP": 0.3000000000000007,
+            "absoluteErrorR": 0.30399975726802175,
+            "outcome": "loss"
+          },
+          "sumGainMgL": -0.0203303311208618,
+          "globalGainContributionMgL": -1.5566869158393416e-05
+        },
+        "same_direction_without_overshoot": {
+          "count": 75,
+          "outcomes": {
+            "win": 75,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": {
+            "sourceRowIndex": 46,
+            "origin": "2020-08-02T04:30:00.000Z",
+            "target": "2020-08-02T05:30:00.000Z",
+            "P": 9.4,
+            "R": 9.392144792619833,
+            "y": 9.3,
+            "e": -0.09999999999999964,
+            "c": -0.007855207380167428,
+            "absoluteErrorP": 0.09999999999999964,
+            "absoluteErrorR": 0.09214479261983222,
+            "outcome": "win"
+          },
+          "sumGainMgL": 0.7068929942664486,
+          "globalGainContributionMgL": 0.0005412656923939116
+        },
+        "same_direction_overshoot_below_twice_displacement": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        },
+        "same_direction_overshoot_twice_displacement": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        },
+        "same_direction_overshoot_above_twice_displacement": {
+          "count": 0,
+          "outcomes": {
+            "win": 0,
+            "loss": 0,
+            "tie": 0
+          },
+          "firstChronologicalExample": null,
+          "sumGainMgL": 0.0,
+          "globalGainContributionMgL": 0.0
+        }
+      }
+    }
+  ]
+}

@@ -144,6 +144,16 @@ frozen pipeline on a previously uninspected August 1–29 window. August has
 persistence, but all three exploratory gain intervals include zero. The result
 is inconclusive; the original July result and operational system remain intact.
 
+The [two-hour direction diagnostic, in Italian and English](docs/OWASCO_DIRECTION_DIAGNOSTIC.md)
+then checks a single past-only selector on those already-open July/August rows.
+It retains the last observation unless the frozen ridge correction and the
+two-hour oxygen change have the same nonzero sign. Full-cohort MAE increases
+from 0.038667 to 0.039046 mg/L in July and from 0.055513 to 0.055610 in August.
+The adopted development screen fails in both months: this candidate stops, with
+no September acquisition, refit, threshold search or operational promotion.
+Code and protocol were committed before the first selector score; offline
+replay preserves the original evidence and explicitly labels post-target examples.
+
 ## Awash irrigation observation and prediction game
 
 The separate [Awash learning game](docs/AWASH_IRRIGATION_GAME.md) archives small
